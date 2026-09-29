@@ -6,8 +6,6 @@ node_modules/
 _capture/*
 !_capture/package.json
 !_capture/package-lock.json
-!_capture/capture.js
-!_capture/optimise.js
 !_capture/copy.json
 !_capture/acc-fees.json
 !_capture/v2c.js
@@ -15,6 +13,11 @@ _capture/*
 
 # abandoned early concept, superseded by site-v2
 _old_concept_a/
+
+# old Wix-faithful rebuild — kept locally, not in the repo
+/site/
+/build-wix/
+/_archive/
 
 *.log
 Thumbs.db
