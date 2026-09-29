@@ -1,0 +1,18 @@
+{
+  "name": "_capture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "recv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.12.0",
+    "sharp": "^0.35.4"
+  }
+}

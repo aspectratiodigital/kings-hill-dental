@@ -1,0 +1,4267 @@
+{
+ "d1": [
+  {
+   "ul": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "15px",
+    "rect": [
+     51.33,
+     399.83,
+     555.55,
+     750.53
+    ]
+   },
+   "li": {
+    "backgroundColor": "rgb(255, 246, 236)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "20px",
+    "borderBottom": "1px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "display": "list-item",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     51.33,
+     399.83,
+     555.55,
+     54.59
+    ]
+   },
+   "btn": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "10px 15px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px solid rgb(26, 106, 255)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal 15px",
+    "rect": [
+     51.33,
+     399.83,
+     555.55,
+     53.59
+    ]
+   },
+   "label": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(70, 28, 17)",
+    "fontSize": "24px",
+    "fontFamily": "madefor-display-bold",
+    "fontWeight": "700",
+    "lineHeight": "33.6px",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(70, 28, 17)",
+    "boxShadow": "none",
+    "display": "block",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     66.33,
+     409.83,
+     494.55,
+     33.59
+    ]
+   },
+   "icon": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     575.88,
+     418.63,
+     16,
+     16
+    ]
+   },
+   "count": 11,
+   "ids": [
+    "comp-mqtrdbgz",
+    "comp-mrp0sh6d"
+   ],
+   "titles": [
+    "Examination Services",
+    "Hygienist Services",
+    "Dental Treatments",
+    "Crowns & Bridges",
+    "Dentures",
+    "Implant Services",
+    "Children's Services",
+    "Cosmetic Treatments",
+    "Orthodontic Services",
+    "Root Canal Treatment",
+    "Facial Aesthetics"
+   ],
+   "liRects": [
+    [
+     399.828125,
+     54.59375
+    ],
+    [
+     469.421875,
+     54.59375
+    ],
+    [
+     539.015625,
+     54.59375
+    ],
+    [
+     608.609375,
+     54.59375
+    ],
+    [
+     678.203125,
+     54.59375
+    ],
+    [
+     747.796875,
+     54.59375
+    ],
+    [
+     817.390625,
+     54.59375
+    ],
+    [
+     886.984375,
+     54.59375
+    ],
+    [
+     956.578125,
+     54.59375
+    ],
+    [
+     1026.171875,
+     54.59375
+    ],
+    [
+     1095.765625,
+     54.59375
+    ]
+   ],
+   "svgFill": "rgb(70, 28, 17)",
+   "open": {
+    "li": {
+     "backgroundColor": "rgb(255, 246, 236)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "20px",
+     "borderBottom": "1px solid rgb(255, 255, 255)",
+     "boxShadow": "none",
+     "display": "list-item",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      51.33,
+      399.83,
+      555.55,
+      54.59
+     ]
+    },
+    "btn": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "13.3333px",
+     "fontFamily": "Arial",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "10px 15px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px solid rgb(26, 106, 255)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal 15px",
+     "rect": [
+      51.33,
+      399.83,
+      555.55,
+      53.59
+     ]
+    },
+    "label": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(70, 28, 17)",
+     "fontSize": "24px",
+     "fontFamily": "madefor-display-bold",
+     "fontWeight": "700",
+     "lineHeight": "33.6px",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(70, 28, 17)",
+     "boxShadow": "none",
+     "display": "block",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      66.33,
+      409.83,
+      494.55,
+      33.59
+     ]
+    },
+    "svgFill": "rgb(70, 28, 17)",
+    "svgHTML": "<svg viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13.2222 5.05556H8.94444V0.777778C8.94444 0.35 8.59444 0 8.16667 0H5.83333C5.40556 0 5.05556 0.35 5.05556 0.777778V5.05556H0.777778C0.35 5.05556 0 5.40556 0 5.83333V8.16667C0 8.59444 0.35 8.94444 0.777778 8.94444H5.05556V13.2222C5.05556 13.65 5.40556 14 5.83333 14H8.16667C8.59444 14 8.94444 13.65 8.94444 13.2222V8.94444H13.2222C13.65 8.94444 14 8.59444 14 8.16667V5.83333C14 5.40556 13.65 5.05556 13.2222 5.05556Z\"></path></svg>",
+    "panel": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "grid",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      51.33,
+      453.42,
+      555.55,
+      0
+     ]
+    },
+    "table": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rows": [
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(70, 28, 17, 0.2)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "13.3333px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "18.6666px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        0,
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    ],
+    "rowCount": 6
+   },
+   "tables": [
+    [
+     [
+      "Out of hours Emergency appointment New patient",
+      "£250"
+     ],
+     [
+      "Emergency appointment for New Patients",
+      "£150"
+     ],
+     [
+      "Digital X-rays",
+      "£15.75"
+     ],
+     [
+      "Student Dental Examination 18+",
+      "£35"
+     ],
+     [
+      "Routine Dental Examination",
+      "£55"
+     ],
+     [
+      "New Patient consultation",
+      "from £85"
+     ]
+    ],
+    [
+     [
+      "Periodontal treatment with dentist",
+      "£245"
+     ],
+     [
+      "Routine hygiene with dentist",
+      "£120"
+     ],
+     [
+      "New patient hygiene with dentist",
+      "£130"
+     ],
+     [
+      "Direct Access Extensive Hygienist session (full payment on booking)",
+      "£180"
+     ],
+     [
+      "First visit Hygienist session (after initial consultation, full payment on booking)",
+      "£95"
+     ],
+     [
+      "Routine Hygienist Session (deposit £30)",
+      "£85"
+     ]
+    ],
+    [
+     [
+      "Extraction 3rd Molar",
+      "From £315"
+     ],
+     [
+      "Extraction Simple",
+      "From £209"
+     ],
+     [
+      "Extraction Complex",
+      "From £262.50"
+     ],
+     [
+      "Tooth-coloured filling Anterior tooth",
+      "From £189"
+     ],
+     [
+      "Silver Amalgam filling",
+      "£120"
+     ],
+     [
+      "Tooth coloured filling posterior tooth",
+      "From £189 – £262.50"
+     ]
+    ],
+    [
+     [
+      "Bridges (per tooth)",
+      "From £880"
+     ],
+     [
+      "Full Gold Crown",
+      "From £1000"
+     ],
+     [
+      "All porcelain Crown",
+      "From £880"
+     ],
+     [
+      "Porcelain bonded to precious Metal",
+      "From £880"
+     ]
+    ],
+    [
+     [
+      "Full Acrylic Denture",
+      "from £880"
+     ],
+     [
+      "Cobalt chrome Denture",
+      "from £650"
+     ],
+     [
+      "Partial Acrylic Denture",
+      "From £650"
+     ]
+    ],
+    [
+     [
+      "CBCT Scan",
+      "£200"
+     ],
+     [
+      "Dental implant",
+      "From £3000"
+     ],
+     [
+      "Dental Implant consultation",
+      "£95"
+     ]
+    ],
+    [
+     [
+      "Tooth Coloured Filling Children (non adult tooth)",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist over 12 years",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist under 12 years",
+      "£42.50"
+     ],
+     [
+      "Children’s Examination (Age 12-17)",
+      "£30"
+     ],
+     [
+      "Children’s Examination (Age 8-12)",
+      "£25"
+     ],
+     [
+      "Children’s Examination (Age 0-7)",
+      "£20"
+     ],
+     [
+      "New Patient Children’s Examination",
+      "£30"
+     ]
+    ],
+    [
+     [
+      "Enlighten tooth whitening",
+      "From £650"
+     ],
+     [
+      "Veneers",
+      "From £880"
+     ],
+     [
+      "Anterior composite bonding",
+      "From £300"
+     ]
+    ],
+    [
+     [
+      "Spark Aligners",
+      "From £3900"
+     ],
+     [
+      "Children Fixed Braces (Under 18 years Dual arch)",
+      "From £3500-4500"
+     ],
+     [
+      "Adult Fixed braces (Dual arch)",
+      "From £3800-5300"
+     ],
+     [
+      "Invisalign Lite/Full",
+      "From £3100-5000"
+     ],
+     [
+      "Invisalign Go With dentist - Dual Arch",
+      "From £3900"
+     ],
+     [
+      "Orthodontic Consultation (Consultant)",
+      "From £95"
+     ],
+     [
+      "Invisalign Go With dentist - Single Arch",
+      "From £3000"
+     ],
+     [
+      "Invisalign Go Consult – redeemable with Invisalign Go",
+      "From £55"
+     ]
+    ],
+    [
+     [
+      "Consultation (redeemable if proceed with treatment)",
+      "£75"
+     ],
+     [
+      "CBCT",
+      "£250"
+     ],
+     [
+      "RCT Incisor",
+      "From £630"
+     ],
+     [
+      "RCT pre molar",
+      "From £740"
+     ],
+     [
+      "RCT molar",
+      "From £850"
+     ],
+     [
+      "Re-RCT",
+      "From an additional £265 per tooth"
+     ],
+     [
+      "Core restoration",
+      "From £180"
+     ]
+    ],
+    [
+     [
+      "Skin Consultation (redeemable against skincare product)",
+      "£50"
+     ],
+     [
+      "Obagi Blue Peel Radiance Chemical Peel",
+      "£120"
+     ],
+     [
+      "Profhilo (per Treatment)",
+      "From £300"
+     ],
+     [
+      "Dermal Fillers",
+      "From £350"
+     ],
+     [
+      "3 Areas",
+      "From £325"
+     ],
+     [
+      "Anti Wrinkle Treatment Consultation (redeemable against treatment)",
+      "£95"
+     ],
+     [
+      "2 Areas",
+      "From £280"
+     ]
+    ]
+   ],
+   "panelHTML": "<div><div><div role=\"group\"><div><div><div><table><tbody><tr role=\"row\"><td><div><div>Out of hours Emergency appointment New patient\n</div></div></td><td><div><div>£250</div></div></td></tr><tr role=\"row\"><td><div><div>Emergency appointment for New Patients\n</div></div></td><td><div><div>£150</div></div></td></tr><tr role=\"row\"><td><div><div>Digital X-rays\n</div></div></td><td><div><div>£15.75</div></div></td></tr><tr role=\"row\"><td><div><div>Student Dental Examination 18+\n</div></div></td><td><div><div>£35</div></div></td></tr><tr role=\"row\"><td><div><div>Routine Dental Examination\n</div></div></td><td><div><div>£55</div></div></td></tr><tr role=\"row\"><td><div><div>New Patient consultation</div></div></td><td><div><div>from £85</div></div></td></tr></tbody></table></div></div></div></div></div></div>"
+  }
+ ],
+ "d2": [
+  {
+   "ul": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "15px",
+    "rect": [
+     69.98,
+     474.83,
+     757.56,
+     750.53
+    ]
+   },
+   "li": {
+    "backgroundColor": "rgb(255, 246, 236)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "20px",
+    "borderBottom": "1px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "display": "list-item",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     69.98,
+     474.83,
+     757.56,
+     54.59
+    ]
+   },
+   "btn": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "10px 15px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px solid rgb(26, 106, 255)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal 15px",
+    "rect": [
+     69.98,
+     474.83,
+     757.56,
+     53.59
+    ]
+   },
+   "label": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(70, 28, 17)",
+    "fontSize": "24px",
+    "fontFamily": "madefor-display-bold",
+    "fontWeight": "700",
+    "lineHeight": "33.6px",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(70, 28, 17)",
+    "boxShadow": "none",
+    "display": "block",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     84.98,
+     484.83,
+     696.56,
+     33.59
+    ]
+   },
+   "icon": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     796.55,
+     493.63,
+     16,
+     16
+    ]
+   },
+   "count": 11,
+   "ids": [
+    "comp-mqtrdbgz",
+    "comp-mrp0sh6d"
+   ],
+   "titles": [
+    "Examination Services",
+    "Hygienist Services",
+    "Dental Treatments",
+    "Crowns & Bridges",
+    "Dentures",
+    "Implant Services",
+    "Children's Services",
+    "Cosmetic Treatments",
+    "Orthodontic Services",
+    "Root Canal Treatment",
+    "Facial Aesthetics"
+   ],
+   "liRects": [
+    [
+     474.828125,
+     54.59375
+    ],
+    [
+     544.421875,
+     54.59375
+    ],
+    [
+     614.015625,
+     54.59375
+    ],
+    [
+     683.609375,
+     54.59375
+    ],
+    [
+     753.203125,
+     54.59375
+    ],
+    [
+     822.796875,
+     54.59375
+    ],
+    [
+     892.390625,
+     54.59375
+    ],
+    [
+     961.984375,
+     54.59375
+    ],
+    [
+     1031.578125,
+     54.59375
+    ],
+    [
+     1101.171875,
+     54.59375
+    ],
+    [
+     1170.765625,
+     54.59375
+    ]
+   ],
+   "svgFill": "rgb(70, 28, 17)",
+   "open": {
+    "li": {
+     "backgroundColor": "rgb(255, 246, 236)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "20px",
+     "borderBottom": "1px solid rgb(255, 255, 255)",
+     "boxShadow": "none",
+     "display": "list-item",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      69.98,
+      474.83,
+      757.56,
+      311.05
+     ]
+    },
+    "btn": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "13.3333px",
+     "fontFamily": "Arial",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "10px 15px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px solid rgb(26, 106, 255)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal 15px",
+     "rect": [
+      69.98,
+      474.83,
+      757.56,
+      53.59
+     ]
+    },
+    "label": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(70, 28, 17)",
+     "fontSize": "24px",
+     "fontFamily": "madefor-display-bold",
+     "fontWeight": "700",
+     "lineHeight": "33.6px",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(70, 28, 17)",
+     "boxShadow": "none",
+     "display": "block",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      84.98,
+      484.83,
+      696.56,
+      33.59
+     ]
+    },
+    "svgFill": "",
+    "svgHTML": "<svg viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13.2222 5.05556H8.94444V0.777778C8.94444 0.35 8.59444 0 8.16667 0H5.83333C5.40556 0 5.05556 0.35 5.05556 0.777778V5.05556H0.777778C0.35 5.05556 0 5.40556 0 5.83333V8.16667C0 8.59444 0.35 8.94444 0.777778 8.94444H5.05556V13.2222C5.05556 13.65 5.40556 14 5.83333 14H8.16667C8.59444 14 8.94444 13.65 8.94444 13.2222V8.94444H13.2222C13.65 8.94444 14 8.59444 14 8.16667V5.83333C14 5.40556 13.65 5.05556 13.2222 5.05556Z\"></path></svg>",
+    "panel": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "grid",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      69.98,
+      528.42,
+      757.56,
+      256.45
+     ]
+    },
+    "table": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      85.55,
+      527.36,
+      726.44,
+      240
+     ]
+    },
+    "rows": [
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        527.36,
+        726.44,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        527.36,
+        588.06,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        673.61,
+        527.36,
+        138.38,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        527.36,
+        588.06,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(70, 28, 17, 0.2)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        567.36,
+        726.44,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        567.36,
+        588.06,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        673.61,
+        567.36,
+        138.38,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        567.36,
+        588.06,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        607.36,
+        726.44,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        607.36,
+        588.06,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        673.61,
+        607.36,
+        138.38,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "18.1818px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "25.4545px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        85.55,
+        607.36,
+        588.06,
+        40
+       ]
+      }
+     }
+    ],
+    "rowCount": 6
+   },
+   "tables": [
+    [
+     [
+      "Out of hours Emergency appointment New patient",
+      "£250"
+     ],
+     [
+      "Emergency appointment for New Patients",
+      "£150"
+     ],
+     [
+      "Digital X-rays",
+      "£15.75"
+     ],
+     [
+      "Student Dental Examination 18+",
+      "£35"
+     ],
+     [
+      "Routine Dental Examination",
+      "£55"
+     ],
+     [
+      "New Patient consultation",
+      "from £85"
+     ]
+    ],
+    [
+     [
+      "Periodontal treatment with dentist",
+      "£245"
+     ],
+     [
+      "Routine hygiene with dentist",
+      "£120"
+     ],
+     [
+      "New patient hygiene with dentist",
+      "£130"
+     ],
+     [
+      "Direct Access Extensive Hygienist session (full payment on booking)",
+      "£180"
+     ],
+     [
+      "First visit Hygienist session (after initial consultation, full payment on booking)",
+      "£95"
+     ],
+     [
+      "Routine Hygienist Session (deposit £30)",
+      "£85"
+     ]
+    ],
+    [
+     [
+      "Extraction 3rd Molar",
+      "From £315"
+     ],
+     [
+      "Extraction Simple",
+      "From £209"
+     ],
+     [
+      "Extraction Complex",
+      "From £262.50"
+     ],
+     [
+      "Tooth-coloured filling Anterior tooth",
+      "From £189"
+     ],
+     [
+      "Silver Amalgam filling",
+      "£120"
+     ],
+     [
+      "Tooth coloured filling posterior tooth",
+      "From £189 – £262.50"
+     ]
+    ],
+    [
+     [
+      "Bridges (per tooth)",
+      "From £880"
+     ],
+     [
+      "Full Gold Crown",
+      "From £1000"
+     ],
+     [
+      "All porcelain Crown",
+      "From £880"
+     ],
+     [
+      "Porcelain bonded to precious Metal",
+      "From £880"
+     ]
+    ],
+    [
+     [
+      "Full Acrylic Denture",
+      "from £880"
+     ],
+     [
+      "Cobalt chrome Denture",
+      "from £650"
+     ],
+     [
+      "Partial Acrylic Denture",
+      "From £650"
+     ]
+    ],
+    [
+     [
+      "CBCT Scan",
+      "£200"
+     ],
+     [
+      "Dental implant",
+      "From £3000"
+     ],
+     [
+      "Dental Implant consultation",
+      "£95"
+     ]
+    ],
+    [
+     [
+      "Tooth Coloured Filling Children (non adult tooth)",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist over 12 years",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist under 12 years",
+      "£42.50"
+     ],
+     [
+      "Children’s Examination (Age 12-17)",
+      "£30"
+     ],
+     [
+      "Children’s Examination (Age 8-12)",
+      "£25"
+     ],
+     [
+      "Children’s Examination (Age 0-7)",
+      "£20"
+     ],
+     [
+      "New Patient Children’s Examination",
+      "£30"
+     ]
+    ],
+    [
+     [
+      "Enlighten tooth whitening",
+      "From £650"
+     ],
+     [
+      "Veneers",
+      "From £880"
+     ],
+     [
+      "Anterior composite bonding",
+      "From £300"
+     ]
+    ],
+    [
+     [
+      "Spark Aligners",
+      "From £3900"
+     ],
+     [
+      "Children Fixed Braces (Under 18 years Dual arch)",
+      "From £3500-4500"
+     ],
+     [
+      "Adult Fixed braces (Dual arch)",
+      "From £3800-5300"
+     ],
+     [
+      "Invisalign Lite/Full",
+      "From £3100-5000"
+     ],
+     [
+      "Invisalign Go With dentist - Dual Arch",
+      "From £3900"
+     ],
+     [
+      "Orthodontic Consultation (Consultant)",
+      "From £95"
+     ],
+     [
+      "Invisalign Go With dentist - Single Arch",
+      "From £3000"
+     ],
+     [
+      "Invisalign Go Consult – redeemable with Invisalign Go",
+      "From £55"
+     ]
+    ],
+    [
+     [
+      "Consultation (redeemable if proceed with treatment)",
+      "£75"
+     ],
+     [
+      "CBCT",
+      "£250"
+     ],
+     [
+      "RCT Incisor",
+      "From £630"
+     ],
+     [
+      "RCT pre molar",
+      "From £740"
+     ],
+     [
+      "RCT molar",
+      "From £850"
+     ],
+     [
+      "Re-RCT",
+      "From an additional £265 per tooth"
+     ],
+     [
+      "Core restoration",
+      "From £180"
+     ]
+    ],
+    [
+     [
+      "Skin Consultation (redeemable against skincare product)",
+      "£50"
+     ],
+     [
+      "Obagi Blue Peel Radiance Chemical Peel",
+      "£120"
+     ],
+     [
+      "Profhilo (per Treatment)",
+      "From £300"
+     ],
+     [
+      "Dermal Fillers",
+      "From £350"
+     ],
+     [
+      "3 Areas",
+      "From £325"
+     ],
+     [
+      "Anti Wrinkle Treatment Consultation (redeemable against treatment)",
+      "£95"
+     ],
+     [
+      "2 Areas",
+      "From £280"
+     ]
+    ]
+   ],
+   "panelHTML": "<div><div><div role=\"group\"><div><div><div><table><tbody><tr role=\"row\"><td><div><div>Out of hours Emergency appointment New patient\n</div></div></td><td><div><div>£250</div></div></td></tr><tr role=\"row\"><td><div><div>Emergency appointment for New Patients\n</div></div></td><td><div><div>£150</div></div></td></tr><tr role=\"row\"><td><div><div>Digital X-rays\n</div></div></td><td><div><div>£15.75</div></div></td></tr><tr role=\"row\"><td><div><div>Student Dental Examination 18+\n</div></div></td><td><div><div>£35</div></div></td></tr><tr role=\"row\"><td><div><div>Routine Dental Examination\n</div></div></td><td><div><div>£55</div></div></td></tr><tr role=\"row\"><td><div><div>New Patient consultation</div></div></td><td><div><div>from £85</div></div></td></tr></tbody></table></div></div></div></div></div></div>"
+  }
+ ],
+ "t": [
+  {
+   "ul": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "15px",
+    "rect": [
+     41.98,
+     384.52,
+     661,
+     750.53
+    ]
+   },
+   "li": {
+    "backgroundColor": "rgb(255, 246, 236)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "20px",
+    "borderBottom": "1px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "display": "list-item",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     41.98,
+     384.52,
+     661,
+     54.59
+    ]
+   },
+   "btn": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "10px 15px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px solid rgb(26, 106, 255)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal 15px",
+    "rect": [
+     41.98,
+     384.52,
+     661,
+     53.59
+    ]
+   },
+   "label": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(70, 28, 17)",
+    "fontSize": "24px",
+    "fontFamily": "madefor-display-bold",
+    "fontWeight": "700",
+    "lineHeight": "33.6px",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(70, 28, 17)",
+    "boxShadow": "none",
+    "display": "block",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     56.98,
+     394.52,
+     600,
+     33.59
+    ]
+   },
+   "icon": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     671.98,
+     403.31,
+     16,
+     16
+    ]
+   },
+   "count": 11,
+   "ids": [
+    "comp-mqtrdbgz",
+    "comp-mrp0sh6d"
+   ],
+   "titles": [
+    "Examination Services",
+    "Hygienist Services",
+    "Dental Treatments",
+    "Crowns & Bridges",
+    "Dentures",
+    "Implant Services",
+    "Children's Services",
+    "Cosmetic Treatments",
+    "Orthodontic Services",
+    "Root Canal Treatment",
+    "Facial Aesthetics"
+   ],
+   "liRects": [
+    [
+     384.515625,
+     54.59375
+    ],
+    [
+     454.109375,
+     54.59375
+    ],
+    [
+     523.703125,
+     54.59375
+    ],
+    [
+     593.296875,
+     54.59375
+    ],
+    [
+     662.890625,
+     54.59375
+    ],
+    [
+     732.484375,
+     54.59375
+    ],
+    [
+     802.078125,
+     54.59375
+    ],
+    [
+     871.671875,
+     54.59375
+    ],
+    [
+     941.265625,
+     54.59375
+    ],
+    [
+     1010.859375,
+     54.59375
+    ],
+    [
+     1080.453125,
+     54.59375
+    ]
+   ],
+   "svgFill": "rgb(70, 28, 17)",
+   "open": {
+    "li": {
+     "backgroundColor": "rgb(255, 246, 236)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "20px",
+     "borderBottom": "1px solid rgb(255, 255, 255)",
+     "boxShadow": "none",
+     "display": "list-item",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      41.98,
+      384.52,
+      661,
+      359.06
+     ]
+    },
+    "btn": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "13.3333px",
+     "fontFamily": "Arial",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "10px 15px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px solid rgb(26, 106, 255)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal 15px",
+     "rect": [
+      41.98,
+      384.52,
+      661,
+      53.59
+     ]
+    },
+    "label": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(70, 28, 17)",
+     "fontSize": "24px",
+     "fontFamily": "madefor-display-bold",
+     "fontWeight": "700",
+     "lineHeight": "33.6px",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(70, 28, 17)",
+     "boxShadow": "none",
+     "display": "block",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      56.98,
+      394.52,
+      600,
+      33.59
+     ]
+    },
+    "svgFill": "",
+    "svgHTML": "<svg viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13.2222 5.05556H8.94444V0.777778C8.94444 0.35 8.59444 0 8.16667 0H5.83333C5.40556 0 5.05556 0.35 5.05556 0.777778V5.05556H0.777778C0.35 5.05556 0 5.40556 0 5.83333V8.16667C0 8.59444 0.35 8.94444 0.777778 8.94444H5.05556V13.2222C5.05556 13.65 5.40556 14 5.83333 14H8.16667C8.59444 14 8.94444 13.65 8.94444 13.2222V8.94444H13.2222C13.65 8.94444 14 8.59444 14 8.16667V5.83333C14 5.40556 13.65 5.05556 13.2222 5.05556Z\"></path></svg>",
+    "panel": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "grid",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      41.98,
+      438.11,
+      661,
+      304.47
+     ]
+    },
+    "table": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      55.31,
+      463.73,
+      633.83,
+      240
+     ]
+    },
+    "rows": [
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        463.73,
+        633.83,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        463.73,
+        513.09,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        568.41,
+        463.73,
+        120.73,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        463.73,
+        513.09,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(70, 28, 17, 0.2)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        503.73,
+        633.83,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        503.73,
+        513.09,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        568.41,
+        503.73,
+        120.73,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        503.73,
+        513.09,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        543.73,
+        633.83,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        543.73,
+        513.09,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        568.41,
+        543.73,
+        120.73,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "19.1235px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "26.7729px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        55.31,
+        543.73,
+        513.09,
+        40
+       ]
+      }
+     }
+    ],
+    "rowCount": 6
+   },
+   "tables": [
+    [
+     [
+      "Out of hours Emergency appointment New patient",
+      "£250"
+     ],
+     [
+      "Emergency appointment for New Patients",
+      "£150"
+     ],
+     [
+      "Digital X-rays",
+      "£15.75"
+     ],
+     [
+      "Student Dental Examination 18+",
+      "£35"
+     ],
+     [
+      "Routine Dental Examination",
+      "£55"
+     ],
+     [
+      "New Patient consultation",
+      "from £85"
+     ]
+    ],
+    [
+     [
+      "Periodontal treatment with dentist",
+      "£245"
+     ],
+     [
+      "Routine hygiene with dentist",
+      "£120"
+     ],
+     [
+      "New patient hygiene with dentist",
+      "£130"
+     ],
+     [
+      "Direct Access Extensive Hygienist session (full payment on booking)",
+      "£180"
+     ],
+     [
+      "First visit Hygienist session (after initial consultation, full payment on booking)",
+      "£95"
+     ],
+     [
+      "Routine Hygienist Session (deposit £30)",
+      "£85"
+     ]
+    ],
+    [
+     [
+      "Extraction 3rd Molar",
+      "From £315"
+     ],
+     [
+      "Extraction Simple",
+      "From £209"
+     ],
+     [
+      "Extraction Complex",
+      "From £262.50"
+     ],
+     [
+      "Tooth-coloured filling Anterior tooth",
+      "From £189"
+     ],
+     [
+      "Silver Amalgam filling",
+      "£120"
+     ],
+     [
+      "Tooth coloured filling posterior tooth",
+      "From £189 – £262.50"
+     ]
+    ],
+    [
+     [
+      "Bridges (per tooth)",
+      "From £880"
+     ],
+     [
+      "Full Gold Crown",
+      "From £1000"
+     ],
+     [
+      "All porcelain Crown",
+      "From £880"
+     ],
+     [
+      "Porcelain bonded to precious Metal",
+      "From £880"
+     ]
+    ],
+    [
+     [
+      "Full Acrylic Denture",
+      "from £880"
+     ],
+     [
+      "Cobalt chrome Denture",
+      "from £650"
+     ],
+     [
+      "Partial Acrylic Denture",
+      "From £650"
+     ]
+    ],
+    [
+     [
+      "CBCT Scan",
+      "£200"
+     ],
+     [
+      "Dental implant",
+      "From £3000"
+     ],
+     [
+      "Dental Implant consultation",
+      "£95"
+     ]
+    ],
+    [
+     [
+      "Tooth Coloured Filling Children (non adult tooth)",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist over 12 years",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist under 12 years",
+      "£42.50"
+     ],
+     [
+      "Children’s Examination (Age 12-17)",
+      "£30"
+     ],
+     [
+      "Children’s Examination (Age 8-12)",
+      "£25"
+     ],
+     [
+      "Children’s Examination (Age 0-7)",
+      "£20"
+     ],
+     [
+      "New Patient Children’s Examination",
+      "£30"
+     ]
+    ],
+    [
+     [
+      "Enlighten tooth whitening",
+      "From £650"
+     ],
+     [
+      "Veneers",
+      "From £880"
+     ],
+     [
+      "Anterior composite bonding",
+      "From £300"
+     ]
+    ],
+    [
+     [
+      "Spark Aligners",
+      "From £3900"
+     ],
+     [
+      "Children Fixed Braces (Under 18 years Dual arch)",
+      "From £3500-4500"
+     ],
+     [
+      "Adult Fixed braces (Dual arch)",
+      "From £3800-5300"
+     ],
+     [
+      "Invisalign Lite/Full",
+      "From £3100-5000"
+     ],
+     [
+      "Invisalign Go With dentist - Dual Arch",
+      "From £3900"
+     ],
+     [
+      "Orthodontic Consultation (Consultant)",
+      "From £95"
+     ],
+     [
+      "Invisalign Go With dentist - Single Arch",
+      "From £3000"
+     ],
+     [
+      "Invisalign Go Consult – redeemable with Invisalign Go",
+      "From £55"
+     ]
+    ],
+    [
+     [
+      "Consultation (redeemable if proceed with treatment)",
+      "£75"
+     ],
+     [
+      "CBCT",
+      "£250"
+     ],
+     [
+      "RCT Incisor",
+      "From £630"
+     ],
+     [
+      "RCT pre molar",
+      "From £740"
+     ],
+     [
+      "RCT molar",
+      "From £850"
+     ],
+     [
+      "Re-RCT",
+      "From an additional £265 per tooth"
+     ],
+     [
+      "Core restoration",
+      "From £180"
+     ]
+    ],
+    [
+     [
+      "Skin Consultation (redeemable against skincare product)",
+      "£50"
+     ],
+     [
+      "Obagi Blue Peel Radiance Chemical Peel",
+      "£120"
+     ],
+     [
+      "Profhilo (per Treatment)",
+      "From £300"
+     ],
+     [
+      "Dermal Fillers",
+      "From £350"
+     ],
+     [
+      "3 Areas",
+      "From £325"
+     ],
+     [
+      "Anti Wrinkle Treatment Consultation (redeemable against treatment)",
+      "£95"
+     ],
+     [
+      "2 Areas",
+      "From £280"
+     ]
+    ]
+   ],
+   "panelHTML": "<div><div><div role=\"group\"><div><div><div><table><tbody><tr role=\"row\"><td><div><div>Out of hours Emergency appointment New patient\n</div></div></td><td><div><div>£250</div></div></td></tr><tr role=\"row\"><td><div><div>Emergency appointment for New Patients\n</div></div></td><td><div><div>£150</div></div></td></tr><tr role=\"row\"><td><div><div>Digital X-rays\n</div></div></td><td><div><div>£15.75</div></div></td></tr><tr role=\"row\"><td><div><div>Student Dental Examination 18+\n</div></div></td><td><div><div>£35</div></div></td></tr><tr role=\"row\"><td><div><div>Routine Dental Examination\n</div></div></td><td><div><div>£55</div></div></td></tr><tr role=\"row\"><td><div><div>New Patient consultation</div></div></td><td><div><div>from £85</div></div></td></tr></tbody></table></div></div></div></div></div></div>"
+  }
+ ],
+ "m1": [
+  {
+   "ul": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "15px",
+    "rect": [
+     18.39,
+     321.53,
+     360,
+     689
+    ]
+   },
+   "li": {
+    "backgroundColor": "rgb(255, 246, 236)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "20px",
+    "borderBottom": "1px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "display": "list-item",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     18.39,
+     321.53,
+     360,
+     49
+    ]
+   },
+   "btn": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "10px 15px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px solid rgb(26, 106, 255)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal 15px",
+    "rect": [
+     18.39,
+     321.53,
+     360,
+     48
+    ]
+   },
+   "label": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(70, 28, 17)",
+    "fontSize": "20px",
+    "fontFamily": "madefor-display-bold",
+    "fontWeight": "700",
+    "lineHeight": "28px",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(70, 28, 17)",
+    "boxShadow": "none",
+    "display": "block",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     33.39,
+     331.53,
+     299,
+     28
+    ]
+   },
+   "icon": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     347.39,
+     337.53,
+     16,
+     16
+    ]
+   },
+   "count": 11,
+   "ids": [
+    "comp-mqtrdbgz",
+    "comp-mrp0sh6d"
+   ],
+   "titles": [
+    "Examination Services",
+    "Hygienist Services",
+    "Dental Treatments",
+    "Crowns & Bridges",
+    "Dentures",
+    "Implant Services",
+    "Children's Services",
+    "Cosmetic Treatments",
+    "Orthodontic Services",
+    "Root Canal Treatment",
+    "Facial Aesthetics"
+   ],
+   "liRects": [
+    [
+     321.53125,
+     49
+    ],
+    [
+     385.53125,
+     49
+    ],
+    [
+     449.53125,
+     49
+    ],
+    [
+     513.53125,
+     49
+    ],
+    [
+     577.53125,
+     49
+    ],
+    [
+     641.53125,
+     49
+    ],
+    [
+     705.53125,
+     49
+    ],
+    [
+     769.53125,
+     49
+    ],
+    [
+     833.53125,
+     49
+    ],
+    [
+     897.53125,
+     49
+    ],
+    [
+     961.53125,
+     49
+    ]
+   ],
+   "svgFill": "rgb(70, 28, 17)",
+   "open": {
+    "li": {
+     "backgroundColor": "rgb(255, 246, 236)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "20px",
+     "borderBottom": "1px solid rgb(255, 255, 255)",
+     "boxShadow": "none",
+     "display": "list-item",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      18.39,
+      321.53,
+      360,
+      299.58
+     ]
+    },
+    "btn": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "13.3333px",
+     "fontFamily": "Arial",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "10px 15px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px solid rgb(26, 106, 255)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal 15px",
+     "rect": [
+      18.39,
+      321.53,
+      360,
+      48
+     ]
+    },
+    "label": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(70, 28, 17)",
+     "fontSize": "20px",
+     "fontFamily": "madefor-display-bold",
+     "fontWeight": "700",
+     "lineHeight": "28px",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(70, 28, 17)",
+     "boxShadow": "none",
+     "display": "block",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      33.39,
+      331.53,
+      299,
+      28
+     ]
+    },
+    "svgFill": "",
+    "svgHTML": "<svg viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13.2222 5.05556H8.94444V0.777778C8.94444 0.35 8.59444 0 8.16667 0H5.83333C5.40556 0 5.05556 0.35 5.05556 0.777778V5.05556H0.777778C0.35 5.05556 0 5.40556 0 5.83333V8.16667C0 8.59444 0.35 8.94444 0.777778 8.94444H5.05556V13.2222C5.05556 13.65 5.40556 14 5.83333 14H8.16667C8.59444 14 8.94444 13.65 8.94444 13.2222V8.94444H13.2222C13.65 8.94444 14 8.59444 14 8.16667V5.83333C14 5.40556 13.65 5.05556 13.2222 5.05556Z\"></path></svg>",
+    "panel": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "grid",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      18.39,
+      369.53,
+      360,
+      250.58
+     ]
+    },
+    "table": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      32.36,
+      369.53,
+      331.55,
+      240
+     ]
+    },
+    "rows": [
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        369.53,
+        331.55,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        369.53,
+        268.39,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        300.75,
+        369.53,
+        63.16,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        369.53,
+        268.39,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(70, 28, 17, 0.2)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        409.53,
+        331.55,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        409.53,
+        268.39,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        300.75,
+        409.53,
+        63.16,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        409.53,
+        268.39,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        449.53,
+        331.55,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        449.53,
+        268.39,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        300.75,
+        449.53,
+        63.16,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "10.8366px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "15.1713px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        32.36,
+        449.53,
+        268.39,
+        40
+       ]
+      }
+     }
+    ],
+    "rowCount": 6
+   },
+   "tables": [
+    [
+     [
+      "Out of hours Emergency appointment New patient",
+      "£250"
+     ],
+     [
+      "Emergency appointment for New Patients",
+      "£150"
+     ],
+     [
+      "Digital X-rays",
+      "£15.75"
+     ],
+     [
+      "Student Dental Examination 18+",
+      "£35"
+     ],
+     [
+      "Routine Dental Examination",
+      "£55"
+     ],
+     [
+      "New Patient consultation",
+      "from £85"
+     ]
+    ],
+    [
+     [
+      "Periodontal treatment with dentist",
+      "£245"
+     ],
+     [
+      "Routine hygiene with dentist",
+      "£120"
+     ],
+     [
+      "New patient hygiene with dentist",
+      "£130"
+     ],
+     [
+      "Direct Access Extensive Hygienist session (full payment on booking)",
+      "£180"
+     ],
+     [
+      "First visit Hygienist session (after initial consultation, full payment on booking)",
+      "£95"
+     ],
+     [
+      "Routine Hygienist Session (deposit £30)",
+      "£85"
+     ]
+    ],
+    [
+     [
+      "Extraction 3rd Molar",
+      "From £315"
+     ],
+     [
+      "Extraction Simple",
+      "From £209"
+     ],
+     [
+      "Extraction Complex",
+      "From £262.50"
+     ],
+     [
+      "Tooth-coloured filling Anterior tooth",
+      "From £189"
+     ],
+     [
+      "Silver Amalgam filling",
+      "£120"
+     ],
+     [
+      "Tooth coloured filling posterior tooth",
+      "From £189 – £262.50"
+     ]
+    ],
+    [
+     [
+      "Bridges (per tooth)",
+      "From £880"
+     ],
+     [
+      "Full Gold Crown",
+      "From £1000"
+     ],
+     [
+      "All porcelain Crown",
+      "From £880"
+     ],
+     [
+      "Porcelain bonded to precious Metal",
+      "From £880"
+     ]
+    ],
+    [
+     [
+      "Full Acrylic Denture",
+      "from £880"
+     ],
+     [
+      "Cobalt chrome Denture",
+      "from £650"
+     ],
+     [
+      "Partial Acrylic Denture",
+      "From £650"
+     ]
+    ],
+    [
+     [
+      "CBCT Scan",
+      "£200"
+     ],
+     [
+      "Dental implant",
+      "From £3000"
+     ],
+     [
+      "Dental Implant consultation",
+      "£95"
+     ]
+    ],
+    [
+     [
+      "Tooth Coloured Filling Children (non adult tooth)",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist over 12 years",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist under 12 years",
+      "£42.50"
+     ],
+     [
+      "Children’s Examination (Age 12-17)",
+      "£30"
+     ],
+     [
+      "Children’s Examination (Age 8-12)",
+      "£25"
+     ],
+     [
+      "Children’s Examination (Age 0-7)",
+      "£20"
+     ],
+     [
+      "New Patient Children’s Examination",
+      "£30"
+     ]
+    ],
+    [
+     [
+      "Enlighten tooth whitening",
+      "From £650"
+     ],
+     [
+      "Veneers",
+      "From £880"
+     ],
+     [
+      "Anterior composite bonding",
+      "From £300"
+     ]
+    ],
+    [
+     [
+      "Spark Aligners",
+      "From £3900"
+     ],
+     [
+      "Children Fixed Braces (Under 18 years Dual arch)",
+      "From £3500-4500"
+     ],
+     [
+      "Adult Fixed braces (Dual arch)",
+      "From £3800-5300"
+     ],
+     [
+      "Invisalign Lite/Full",
+      "From £3100-5000"
+     ],
+     [
+      "Invisalign Go With dentist - Dual Arch",
+      "From £3900"
+     ],
+     [
+      "Orthodontic Consultation (Consultant)",
+      "From £95"
+     ],
+     [
+      "Invisalign Go With dentist - Single Arch",
+      "From £3000"
+     ],
+     [
+      "Invisalign Go Consult – redeemable with Invisalign Go",
+      "From £55"
+     ]
+    ],
+    [
+     [
+      "Consultation (redeemable if proceed with treatment)",
+      "£75"
+     ],
+     [
+      "CBCT",
+      "£250"
+     ],
+     [
+      "RCT Incisor",
+      "From £630"
+     ],
+     [
+      "RCT pre molar",
+      "From £740"
+     ],
+     [
+      "RCT molar",
+      "From £850"
+     ],
+     [
+      "Re-RCT",
+      "From an additional £265 per tooth"
+     ],
+     [
+      "Core restoration",
+      "From £180"
+     ]
+    ],
+    [
+     [
+      "Skin Consultation (redeemable against skincare product)",
+      "£50"
+     ],
+     [
+      "Obagi Blue Peel Radiance Chemical Peel",
+      "£120"
+     ],
+     [
+      "Profhilo (per Treatment)",
+      "From £300"
+     ],
+     [
+      "Dermal Fillers",
+      "From £350"
+     ],
+     [
+      "3 Areas",
+      "From £325"
+     ],
+     [
+      "Anti Wrinkle Treatment Consultation (redeemable against treatment)",
+      "£95"
+     ],
+     [
+      "2 Areas",
+      "From £280"
+     ]
+    ]
+   ],
+   "panelHTML": "<div><div><div role=\"group\"><div><div><div><table><tbody><tr role=\"row\"><td><div><div>Out of hours Emergency appointment New patient\n</div></div></td><td><div><div>£250</div></div></td></tr><tr role=\"row\"><td><div><div>Emergency appointment for New Patients\n</div></div></td><td><div><div>£150</div></div></td></tr><tr role=\"row\"><td><div><div>Digital X-rays\n</div></div></td><td><div><div>£15.75</div></div></td></tr><tr role=\"row\"><td><div><div>Student Dental Examination 18+\n</div></div></td><td><div><div>£35</div></div></td></tr><tr role=\"row\"><td><div><div>Routine Dental Examination\n</div></div></td><td><div><div>£55</div></div></td></tr><tr role=\"row\"><td><div><div>New Patient consultation</div></div></td><td><div><div>from £85</div></div></td></tr></tbody></table></div></div></div></div></div></div>"
+  }
+ ],
+ "m2": [
+  {
+   "ul": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "15px",
+    "rect": [
+     40.61,
+     464.48,
+     360,
+     689
+    ]
+   },
+   "li": {
+    "backgroundColor": "rgb(255, 246, 236)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "10px",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "20px",
+    "borderBottom": "1px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "display": "list-item",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     40.61,
+     464.48,
+     360,
+     49
+    ]
+   },
+   "btn": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "10px 15px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px solid rgb(26, 106, 255)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal 15px",
+    "rect": [
+     40.61,
+     464.48,
+     360,
+     48
+    ]
+   },
+   "label": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(70, 28, 17)",
+    "fontSize": "20px",
+    "fontFamily": "madefor-display-bold",
+    "fontWeight": "700",
+    "lineHeight": "28px",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(70, 28, 17)",
+    "boxShadow": "none",
+    "display": "block",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     55.61,
+     474.48,
+     299,
+     28
+    ]
+   },
+   "icon": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13.3333px",
+    "fontFamily": "Arial",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "padding": "0px",
+    "margin": "0px",
+    "borderRadius": "0px",
+    "borderBottom": "0px none rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "display": "flex",
+    "textAlign": "start",
+    "letterSpacing": "normal",
+    "gap": "normal",
+    "rect": [
+     369.61,
+     480.48,
+     16,
+     16
+    ]
+   },
+   "count": 11,
+   "ids": [
+    "comp-mqtrdbgz",
+    "comp-mrp0sh6d"
+   ],
+   "titles": [
+    "Examination Services",
+    "Hygienist Services",
+    "Dental Treatments",
+    "Crowns & Bridges",
+    "Dentures",
+    "Implant Services",
+    "Children's Services",
+    "Cosmetic Treatments",
+    "Orthodontic Services",
+    "Root Canal Treatment",
+    "Facial Aesthetics"
+   ],
+   "liRects": [
+    [
+     464.484375,
+     49
+    ],
+    [
+     528.484375,
+     49
+    ],
+    [
+     592.484375,
+     49
+    ],
+    [
+     656.484375,
+     49
+    ],
+    [
+     720.484375,
+     49
+    ],
+    [
+     784.484375,
+     49
+    ],
+    [
+     848.484375,
+     49
+    ],
+    [
+     912.484375,
+     49
+    ],
+    [
+     976.484375,
+     49
+    ],
+    [
+     1040.484375,
+     49
+    ],
+    [
+     1104.484375,
+     49
+    ]
+   ],
+   "svgFill": "rgb(70, 28, 17)",
+   "open": {
+    "li": {
+     "backgroundColor": "rgb(255, 246, 236)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "20px",
+     "borderBottom": "1px solid rgb(255, 255, 255)",
+     "boxShadow": "none",
+     "display": "list-item",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      40.61,
+      464.48,
+      360,
+      361.75
+     ]
+    },
+    "btn": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "13.3333px",
+     "fontFamily": "Arial",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "10px 15px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px solid rgb(26, 106, 255)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal 15px",
+     "rect": [
+      40.61,
+      464.48,
+      360,
+      48
+     ]
+    },
+    "label": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(70, 28, 17)",
+     "fontSize": "20px",
+     "fontFamily": "madefor-display-bold",
+     "fontWeight": "700",
+     "lineHeight": "28px",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(70, 28, 17)",
+     "boxShadow": "none",
+     "display": "block",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      55.61,
+      474.48,
+      299,
+      28
+     ]
+    },
+    "svgFill": "",
+    "svgHTML": "<svg viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13.2222 5.05556H8.94444V0.777778C8.94444 0.35 8.59444 0 8.16667 0H5.83333C5.40556 0 5.05556 0.35 5.05556 0.777778V5.05556H0.777778C0.35 5.05556 0 5.40556 0 5.83333V8.16667C0 8.59444 0.35 8.94444 0.777778 8.94444H5.05556V13.2222C5.05556 13.65 5.40556 14 5.83333 14H8.16667C8.59444 14 8.94444 13.65 8.94444 13.2222V8.94444H13.2222C13.65 8.94444 14 8.59444 14 8.16667V5.83333C14 5.40556 13.65 5.05556 13.2222 5.05556Z\"></path></svg>",
+    "panel": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "grid",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      40.61,
+      512.48,
+      360,
+      312.75
+     ]
+    },
+    "table": {
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "fontSize": "10px",
+     "fontFamily": "Arial, Helvetica, sans-serif",
+     "fontWeight": "400",
+     "lineHeight": "normal",
+     "padding": "0px",
+     "margin": "0px",
+     "borderRadius": "0px",
+     "borderBottom": "0px none rgb(0, 0, 0)",
+     "boxShadow": "none",
+     "display": "flex",
+     "textAlign": "start",
+     "letterSpacing": "normal",
+     "gap": "normal",
+     "rect": [
+      66.75,
+      537.34,
+      307.2,
+      240
+     ]
+    },
+    "rows": [
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        537.34,
+        307.2,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        537.34,
+        248.69,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        315.44,
+        537.34,
+        58.52,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        537.34,
+        248.69,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(70, 28, 17, 0.2)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        577.34,
+        307.2,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        577.34,
+        248.69,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        315.44,
+        577.34,
+        58.52,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        577.34,
+        248.69,
+        40
+       ]
+      }
+     },
+     {
+      "tr": {
+       "backgroundColor": "rgba(255, 255, 255, 0)",
+       "color": "rgb(0, 0, 0)",
+       "fontSize": "10px",
+       "fontFamily": "Arial, Helvetica, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "normal",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px solid rgb(255, 255, 255)",
+       "boxShadow": "none",
+       "display": "table",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        617.34,
+        307.2,
+        40
+       ]
+      },
+      "td0": {
+       "backgroundColor": "rgba(4, 90, 255, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        617.34,
+        248.69,
+        40
+       ]
+      },
+      "td1": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "0px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "table-cell",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        315.44,
+        617.34,
+        58.52,
+        40
+       ]
+      },
+      "txt0": {
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "color": "rgb(70, 28, 17)",
+       "fontSize": "23.5856px",
+       "fontFamily": "mandioca, sans-serif",
+       "fontWeight": "400",
+       "lineHeight": "33.0199px",
+       "padding": "2px 2px 2px 10px",
+       "margin": "0px",
+       "borderRadius": "0px",
+       "borderBottom": "0px none rgb(70, 28, 17)",
+       "boxShadow": "none",
+       "display": "flex",
+       "textAlign": "start",
+       "letterSpacing": "normal",
+       "gap": "normal",
+       "rect": [
+        66.75,
+        617.34,
+        248.69,
+        40
+       ]
+      }
+     }
+    ],
+    "rowCount": 6
+   },
+   "tables": [
+    [
+     [
+      "Out of hours Emergency appointment New patient",
+      "£250"
+     ],
+     [
+      "Emergency appointment for New Patients",
+      "£150"
+     ],
+     [
+      "Digital X-rays",
+      "£15.75"
+     ],
+     [
+      "Student Dental Examination 18+",
+      "£35"
+     ],
+     [
+      "Routine Dental Examination",
+      "£55"
+     ],
+     [
+      "New Patient consultation",
+      "from £85"
+     ]
+    ],
+    [
+     [
+      "Periodontal treatment with dentist",
+      "£245"
+     ],
+     [
+      "Routine hygiene with dentist",
+      "£120"
+     ],
+     [
+      "New patient hygiene with dentist",
+      "£130"
+     ],
+     [
+      "Direct Access Extensive Hygienist session (full payment on booking)",
+      "£180"
+     ],
+     [
+      "First visit Hygienist session (after initial consultation, full payment on booking)",
+      "£95"
+     ],
+     [
+      "Routine Hygienist Session (deposit £30)",
+      "£85"
+     ]
+    ],
+    [
+     [
+      "Extraction 3rd Molar",
+      "From £315"
+     ],
+     [
+      "Extraction Simple",
+      "From £209"
+     ],
+     [
+      "Extraction Complex",
+      "From £262.50"
+     ],
+     [
+      "Tooth-coloured filling Anterior tooth",
+      "From £189"
+     ],
+     [
+      "Silver Amalgam filling",
+      "£120"
+     ],
+     [
+      "Tooth coloured filling posterior tooth",
+      "From £189 – £262.50"
+     ]
+    ],
+    [
+     [
+      "Bridges (per tooth)",
+      "From £880"
+     ],
+     [
+      "Full Gold Crown",
+      "From £1000"
+     ],
+     [
+      "All porcelain Crown",
+      "From £880"
+     ],
+     [
+      "Porcelain bonded to precious Metal",
+      "From £880"
+     ]
+    ],
+    [
+     [
+      "Full Acrylic Denture",
+      "from £880"
+     ],
+     [
+      "Cobalt chrome Denture",
+      "from £650"
+     ],
+     [
+      "Partial Acrylic Denture",
+      "From £650"
+     ]
+    ],
+    [
+     [
+      "CBCT Scan",
+      "£200"
+     ],
+     [
+      "Dental implant",
+      "From £3000"
+     ],
+     [
+      "Dental Implant consultation",
+      "£95"
+     ]
+    ],
+    [
+     [
+      "Tooth Coloured Filling Children (non adult tooth)",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist over 12 years",
+      "£85"
+     ],
+     [
+      "Children’s Hygienist under 12 years",
+      "£42.50"
+     ],
+     [
+      "Children’s Examination (Age 12-17)",
+      "£30"
+     ],
+     [
+      "Children’s Examination (Age 8-12)",
+      "£25"
+     ],
+     [
+      "Children’s Examination (Age 0-7)",
+      "£20"
+     ],
+     [
+      "New Patient Children’s Examination",
+      "£30"
+     ]
+    ],
+    [
+     [
+      "Enlighten tooth whitening",
+      "From £650"
+     ],
+     [
+      "Veneers",
+      "From £880"
+     ],
+     [
+      "Anterior composite bonding",
+      "From £300"
+     ]
+    ],
+    [
+     [
+      "Spark Aligners",
+      "From £3900"
+     ],
+     [
+      "Children Fixed Braces (Under 18 years Dual arch)",
+      "From £3500-4500"
+     ],
+     [
+      "Adult Fixed braces (Dual arch)",
+      "From £3800-5300"
+     ],
+     [
+      "Invisalign Lite/Full",
+      "From £3100-5000"
+     ],
+     [
+      "Invisalign Go With dentist - Dual Arch",
+      "From £3900"
+     ],
+     [
+      "Orthodontic Consultation (Consultant)",
+      "From £95"
+     ],
+     [
+      "Invisalign Go With dentist - Single Arch",
+      "From £3000"
+     ],
+     [
+      "Invisalign Go Consult – redeemable with Invisalign Go",
+      "From £55"
+     ]
+    ],
+    [
+     [
+      "Consultation (redeemable if proceed with treatment)",
+      "£75"
+     ],
+     [
+      "CBCT",
+      "£250"
+     ],
+     [
+      "RCT Incisor",
+      "From £630"
+     ],
+     [
+      "RCT pre molar",
+      "From £740"
+     ],
+     [
+      "RCT molar",
+      "From £850"
+     ],
+     [
+      "Re-RCT",
+      "From an additional £265 per tooth"
+     ],
+     [
+      "Core restoration",
+      "From £180"
+     ]
+    ],
+    [
+     [
+      "Skin Consultation (redeemable against skincare product)",
+      "£50"
+     ],
+     [
+      "Obagi Blue Peel Radiance Chemical Peel",
+      "£120"
+     ],
+     [
+      "Profhilo (per Treatment)",
+      "From £300"
+     ],
+     [
+      "Dermal Fillers",
+      "From £350"
+     ],
+     [
+      "3 Areas",
+      "From £325"
+     ],
+     [
+      "Anti Wrinkle Treatment Consultation (redeemable against treatment)",
+      "£95"
+     ],
+     [
+      "2 Areas",
+      "From £280"
+     ]
+    ]
+   ],
+   "panelHTML": "<div><div><div role=\"group\"><div><div><div><table><tbody><tr role=\"row\"><td><div><div>Out of hours Emergency appointment New patient\n</div></div></td><td><div><div>£250</div></div></td></tr><tr role=\"row\"><td><div><div>Emergency appointment for New Patients\n</div></div></td><td><div><div>£150</div></div></td></tr><tr role=\"row\"><td><div><div>Digital X-rays\n</div></div></td><td><div><div>£15.75</div></div></td></tr><tr role=\"row\"><td><div><div>Student Dental Examination 18+\n</div></div></td><td><div><div>£35</div></div></td></tr><tr role=\"row\"><td><div><div>Routine Dental Examination\n</div></div></td><td><div><div>£55</div></div></td></tr><tr role=\"row\"><td><div><div>New Patient consultation</div></div></td><td><div><div>from £85</div></div></td></tr></tbody></table></div></div></div></div></div></div>"
+  }
+ ]
+}

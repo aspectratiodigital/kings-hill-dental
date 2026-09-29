@@ -1,0 +1,21 @@
+node_modules/
+
+# _capture is a huge scratch/scrape dump (1GB+ of one-off debug scripts,
+# screenshots, and Wix capture data). Only keep what build-v2's pipeline
+# and the regression test suite actually depend on.
+_capture/*
+!_capture/package.json
+!_capture/package-lock.json
+!_capture/capture.js
+!_capture/optimise.js
+!_capture/copy.json
+!_capture/acc-fees.json
+!_capture/v2c.js
+!_capture/v2t.js
+
+# abandoned early concept, superseded by site-v2
+_old_concept_a/
+
+*.log
+Thumbs.db
+.DS_Store
