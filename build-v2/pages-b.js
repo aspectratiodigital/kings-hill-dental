@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { I, PORTAL } = require('./parts');
+const { I, PORTAL, WHATSAPP } = require('./parts');
 const { arrowBtn, partners, pageHero } = require('./pages-a');
 const fees = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'acc-fees.json'), 'utf8')).d2[0];
 
@@ -10,21 +10,17 @@ const ctaBand = (title = 'Not sure where to start?', text = 'Book an appointment
 /* ---------- DENTISTRY hub ---------- */
 function dentistry() {
   const cats = [
-    ['general', 'General & Preventative', 'Protecting oral health with routine dentistry and general dental care. Regular visits to the dentist and hygiene will help you take the very best care of your natural smile.', 'topic-general', [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry'], ['Bruxism']], '/dentistry/general-preventative/'],
+    ['general', 'General & Preventative', 'Protecting oral health with routine dentistry and general dental care. Regular visits to the dentist and hygiene will help you take the very best care of your natural smile.', 'topic-general', [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/']], '/dentistry/general-preventative/'],
     ['restorative', 'Restorative Dentistry', 'Teeth go through a lot during our lifetime. Restorative dentistry allows us to fix any problems such as cavities, chips, and broken or missing teeth, restoring your beautiful smile.', 'topic-restorative', [['Fillings', '/dentistry/restorative/#fillings'], ['Crowns & bridges', '/dentistry/restorative/#crowns-bridges'], ['Root canals', '/dentistry/restorative/#root-canals'], ['Dentures', '/dentistry/restorative/#dentures'], ['Implants', '/dentistry/restorative/#implants']], '/dentistry/restorative/'],
     ['cosmetic', 'Cosmetic Dentistry', 'We have an expansive range of cosmetic treatments that can correct minor issues, straighten smiles and whiten teeth. We want to help you build a natural looking smile.', 'topic-cosmetic', [['Teeth whitening', '/dentistry/cosmetic/#whitening'], ['Composite bonding', '/dentistry/cosmetic/#bonding'], ['Veneers', '/dentistry/cosmetic/#veneers']], '/dentistry/cosmetic/'],
     ['orthodontic', 'Orthodontic Dentistry', 'Creating beautifully straight and healthy smiles with orthodontic treatment. Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws.', 'topic-orthodontic', [['Invisalign', '/dentistry/orthodontic/#invisalign'], ['Invisalign Go', '/dentistry/orthodontic/#invisalign-go'], ['Fixed braces', '/dentistry/orthodontic/#fixed-braces'], ['Spark aligners', '/dentistry/orthodontic/#spark-aligners']], '/dentistry/orthodontic/'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry'])}`, title: `Dentistry`, img: 'hero-old', alt: `A dentist talking with a patient`, intro: `<p class="lede" data-reveal>At Kings Hill Dental our number 1 priority is our patients. Our warm and skilled team endeavour to provide the highest quality of advice and care, whilst ensuring our patients feel comfortable, safe and informed.</p><p data-reveal>We never push our patients towards treatments or cosmetic work and instead we work with you, to find the best treatment to improve your confidence and create the natural beautiful smile you deserve!</p>` })}
-<section class="section section--tight" style="padding-top:0"><div class="wrap">
-<p class="lede" data-reveal style="max-width:44em">You can discover our range of dentistry options, from general health, dental repairs, long term treatments and cosmetic work, or if you’re not sure, you can book an appointment with one of our dentists to find the right treatment for you.</p>
-<div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}</div>
-</div></section>
-<section class="section" style="padding-top:0"><div class="wrap rows">
-${cats.map(([id, t, d, img, pills, href], i) => `<article class="row" id="${id}"><div class="row-media clip-in"><img data-parallax="34" src="/img/${img}.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>${t}</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>${d}</p><div class="pills" data-reveal>${pills.map(([n, h]) => (h ? `<a href="${h}">${n}</a>` : `<span class="pill-off">${n}</span>`)).join('')}</div><div class="actions" style="margin-top:32px" data-reveal>${arrowBtn('Find out More', href, 'btn--ghost')}</div></div></article>`).join('')}
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry'])}`, title: `Dentistry`, img: 'topic-general-2', alt: `Three children brushing their teeth together at the practice`, intro: `<p class="lede" data-reveal>At Kings Hill Dental our number 1 priority is our patients. Our warm and skilled team endeavour to provide the highest quality of advice and care, whilst ensuring our patients feel comfortable, safe and informed.</p><p data-reveal>We never push our patients towards treatments or cosmetic work and instead we work with you, to find the best treatment to improve your confidence and create the natural beautiful smile you deserve!</p><p data-reveal>You can discover our range of dentistry options, from general health, dental repairs, long term treatments and cosmetic work, or if you’re not sure, you can book an appointment with one of our dentists to find the right treatment for you.</p>` })}
+<section class="section"><div class="wrap rows">
+${cats.map(([id, t, d, img, pills, href], i) => `<article class="row" id="${id}"><div class="row-media clip-in"><img data-parallax="34" src="/img/${img}.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>${t}</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>${d}</p><div class="hover-tabs" data-hover-tabs data-reveal>${pills.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</div><div class="actions" style="margin-top:32px" data-reveal>${arrowBtn('Find out More', href, 'btn--ghost')}</div></div></article>`).join('')}
 </div></section>`;
-  return { path: '/dentistry/', title: 'Dentistry | Kings Hill Dental', description: 'General and preventative, restorative, cosmetic and orthodontic dentistry at Kings Hill Dental in West Malling.', body };
+  return { path: '/dentistry/', title: 'Dentistry | Kings Hill Dental', description: 'General and preventative, restorative, cosmetic and orthodontic dentistry at Kings Hill Dental in West Malling.', bodyClass: 'wide-intro', body };
 }
 
 /* ---------- AESTHETICS ---------- */
@@ -36,11 +32,7 @@ function aesthetics() {
     ['dermal-fillers', 'Dermal Fillers', 'Dermal fillers are a common aesthetic treatment that use hyaluronic acid, a substance found naturally in the body, to replenish lost volume and hydration in the skin.', 'aes-fillers'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Aesthetics'])}`, title: `Aesthetics`, img: 'aes-skin-care', alt: `Skin care treatment`, intro: `<p class="lede" data-reveal>We are able to help reverse the signs of ageing with confidence-boosting facial aesthetic treatments. Non-surgical treatments such as anti-wrinkle injections and dermal fillers can restore lost volume and reduce noticeable lines.</p><p data-reveal>We believe natural is beautiful and our aesthetics procedures exist to help reduce small imperfections and boost your confidence. We aim to ensure all of our patients are well informed about the type of treatment they are undergoing, especially by matching patients with the correct specific treatment for them.</p>` })}
-<section class="section section--tight" style="padding-top:0"><div class="wrap">
-<p class="lede" data-reveal style="max-width:44em">You can discover our range of aesthetic procedures below or if you’re not sure what kind of work you want done, you can book an appointment with our team and we can help you find the right treatment!</p>
-<div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}</div>
-</div></section>
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Aesthetics'])}`, title: `Aesthetics`, img: 'aes-skin-care', alt: `Skin care treatment`, intro: `<p class="lede" data-reveal>We are able to help reverse the signs of ageing with confidence-boosting facial aesthetic treatments. Non-surgical treatments such as anti-wrinkle injections and dermal fillers can restore lost volume and reduce noticeable lines.</p><p data-reveal>We believe natural is beautiful and our aesthetics procedures exist to help reduce small imperfections and boost your confidence. We aim to ensure all of our patients are well informed about the type of treatment they are undergoing, especially by matching patients with the correct specific treatment for them.</p><p data-reveal>You can discover our range of aesthetic procedures below or if you’re not sure what kind of work you want done, you can book an appointment with our team and we can help you find the right treatment!</p>` })}
 <section class="section tint"><div class="wrap cards cards--4">
 ${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/contact/?about=Aesthetics" data-reveal style="--d:${i}"><div class="card-img"><img src="/img/${img}.webp" alt="" loading="lazy" width="1400" height="900"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>`;
@@ -140,182 +132,173 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
 
 /* ---------- TREATMENT pages ---------- */
 function asideCard(current) {
-  const links = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/'], ['All general & preventative', '/dentistry/general-preventative/']].filter((l) => l[1] !== current);
-  return `<aside class="tx-aside"><div class="aside-card"><h3>Book a visit</h3><p>Our team will explain everything before we begin, so you always know what to expect.</p>${arrowBtn('Book an Appointment', PORTAL, 'btn--light', true)}<div class="aside-links">${links.map(([t, h]) => `<a href="${h}">${t}${I.arrow}</a>`).join('')}</div></div></aside>`;
+  const field = ['General & Preventative', '/dentistry/general-preventative/'];
+  const items = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/']].filter((l) => l[1] !== current);
+  const links = [field, ...items];
+  return `<aside class="tx-aside"><div class="aside-card"><h3>Book a visit</h3><p>Our team will explain everything before we begin, so you always know what to expect.</p>${arrowBtn('Book an Appointment', PORTAL, 'btn--light btn--sm', true)}<a class="btn btn--outline-light btn--sm" href="${WHATSAPP}" target="_blank" rel="noopener">Get Advice</a><div class="aside-links">${links.map(([t, h]) => `<a href="${h}">${t}${I.arrow}</a>`).join('')}</div></div></aside>`;
 }
 const checklist = (a) => `<ul class="checklist">${a.map((t, i) => `<li style="--i:${i}">${I.tickBig}<span>${t}</span></li>`).join('')}</ul>`;
 const accItem = (t, html, open, id) => `<details${open ? ' open' : ''}${id ? ` id="${id}"` : ''}><summary>${t}<span class="pm" aria-hidden="true"></span></summary><div class="panel"><div><div class="panel-in stack">${html}</div></div></div></details>`;
 
 function examinations() {
   const steps = [
-    ['Teeth & gums', 'Checking for any signs of wear, decay or gum disease'],
-    ['Soft tissues', 'A look at your tongue and soft tissues, making sure they’re healthy'],
-    ['Face, neck & jaw', 'Checking for any issues or abnormalities'],
-    ['Bite', 'Making sure your teeth mesh together properly'],
-    ['Oral cancer check', 'A routine screening for early warning signs'],
+    ['Teeth & gums', 'Checking for any signs of wear, decay or gum disease.'],
+    ['Soft tissues', 'A look at your tongue and soft tissues, making sure they’re healthy.'],
+    ['Face, neck & jaw', 'Checking for any issues or abnormalities.'],
+    ['Bite', 'Making sure your teeth mesh together properly.'],
+    ['Oral cancer check', 'A routine screening for early warning signs.'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Dental examinations'])}`, title: `Dental Examinations`, img: 'tx-exam', alt: `A dentist and patient during an examination`, intro: `<p class="lede" data-reveal>Routine examinations are the foundation of your oral health care. Regular check-ups allow us to spot and address any problems early.</p>` })}
-<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<section class="phero tx-phero"><div class="split-frame">
+<div class="split-panel">
+${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Dental examinations'])}
+<h1 data-split>Dental Examinations</h1>
+</div>
+<div class="split-photo"><img data-parallax="20" src="/img/tx-exam.webp" alt="A dentist and patient during an examination" fetchpriority="high"></div>
+</div></section>
+<section class="section"><div class="wrap tx-layout">
 <div>
-<div class="design-note"><span class="design-note-tag">Design concept — The Visit Journey</span><p>Same copy as the live page, reframed as a step-by-step process rather than a flat list. Real practice sites we looked at (Homesley Dental's "What to Expect at Your First Checkup" is a good example) lean on a numbered walkthrough for exactly this kind of content — it reads as reassuring rather than clinical, and gives us somewhere to hang a bit of motion.</p></div>
-<p class="lede" data-reveal>During your appointment, we will examine and assess your teeth, gums and mouth, as well as look at your overall health.</p>
-<div class="stat-strip" data-reveal><div><strong>20+</strong><span>Years experience</span></div><div><strong>5</strong><span>Point assessment</span></div><div><strong>6mo</strong><span>Standard recall</span></div></div>
-<h2 class="h3" data-reveal>Our dental examination includes:</h2>
-<ol class="proc-rail" data-reveal>${steps.map(([t, d], i) => `<li style="--i:${i}"><span class="proc-n">${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
-
-<div class="concept-block">
-<div class="design-note"><span class="design-note-tag">Design concept — Two-column Q&amp;A</span><p>The same two questions from the live accordion, laid out as a static label-and-answer grid instead of click-to-expand. With only two questions there's nothing to save space on, so this trades the interaction for something that reads faster.</p></div>
-<div class="qa-split" data-reveal>
-<div class="qa-row"><h3>What happens during the check up?</h3><div class="qa-a"><p>We carry out a thorough examination that covers every aspect of your oral health. As well as assessing your teeth, we will ask some questions about your general health and medical history, in case this is affecting your dental wellbeing.</p><p>We will also check any previous treatment you have had, including crowns, bridges and implants, to make sure they are still working correctly. We may need to take x-rays of your mouth. We will also discuss any concerns you may have, or if there are any cosmetic treatments you wish to know more about.</p><p>Following the assessment, if we find anything that requires further treatment, we will set out your treatment plan and discuss with you the next steps and expected costs.</p></div></div>
-<div class="qa-row"><h3>How often do I need to see a dentist?</h3><div class="qa-a"><p>You may not need to see us every six months and your dentist will let you know when you need to come back for your next check-up. If you have any problems between check-ups please phone us to arrange an earlier appointment.</p></div></div>
+<p class="lede" data-reveal>Routine examinations are the foundation of your oral health care. Regular check-ups allow us to spot and address any problems early.</p>
+<p data-reveal>During your appointment, we will examine and assess your teeth, gums and mouth, as well as look at your overall health.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Reasons to keep up with your check-ups:</h2>
+${checklist(['Regular check-ups let us spot problems while they’re still simple to treat', 'We keep track of any previous treatment, making sure crowns, bridges and fillings are still working well', 'An oral cancer screening is included as standard at every examination'])}
+<p data-reveal>Most patients are seen every six months, though your dentist will let you know what’s right for you.</p>
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What happens during the check up?', '<p>We carry out a thorough examination that covers every aspect of your oral health. As well as assessing your teeth, we will ask some questions about your general health and medical history, in case this is affecting your dental wellbeing.</p><p>We will also check any previous treatment you have had, including crowns, bridges and implants, to make sure they are still working correctly. We may need to take x-rays of your mouth. We will also discuss any concerns you may have, or if there are any cosmetic treatments you wish to know more about.</p><p>Following the assessment, if we find anything that requires further treatment, we will set out your treatment plan and discuss with you the next steps and expected costs.</p>')}
+${accItem('How often do I need to see a dentist?', '<p>You may not need to see us every six months and your dentist will let you know when you need to come back for your next check-up. If you have any problems between check-ups please phone us to arrange an earlier appointment.</p>')}
 </div>
-</div>
-
-<figure class="pull-note" data-reveal><img src="/img/practice-consultation.webp" alt="A dentist and patient reviewing a treatment plan together at Kings Hill Dental" loading="lazy" width="1459" height="785"><p>We'll talk you through everything we find, and what (if anything) happens next, before you leave the chair.</p></figure>
+<h2 class="tx-h3" style="margin-top:clamp(32px,4vw,48px)" data-reveal>What we check during your examination</h2>
+<ol class="timeline" style="margin-top:32px"><span class="prog" aria-hidden="true"></span>${steps.map(([t, d]) => `<li><h3 class="h4" style="margin-bottom:4px">${t}</h3><p>${d}</p></li>`).join('')}</ol>
 </div>
 ${asideCard('/dentistry/general-preventative/dental-examinations/')}
 </div></section>`;
-  return { path: '/dentistry/general-preventative/dental-examinations/', title: 'Dental Examinations | Kings Hill Dental', description: 'Routine dental examinations at Kings Hill Dental: what happens during a check-up and how often you should visit.', body };
+  return { path: '/dentistry/general-preventative/dental-examinations/', title: 'Dental Examinations | Kings Hill Dental', description: 'Routine dental examinations at Kings Hill Dental: what happens during a check-up and how often you should visit.', bodyClass: 'tx-page', body };
 }
 
 function hygiene() {
   const steps = ['To begin with, we will assess your mouth and gum health, looking for any signs of gum disease or decay.', 'We then apply a disclosing solution to your teeth which will make any dental biofilm easier to detect.', 'We will then show you any problem areas and provide tips on how to improve your oral health.', 'At this point we will begin the Dental Spa treatment. The combination of air, fine powder and warm water creates a spray that will gently and comfortably exfoliate and remove stain.', 'After this, we will remove any remaining tartar using our no pain instrument. This is minimally invasive, comfortable and highly efficient.', 'A final check is then performed to ensure all biofilm and tartar has been removed. It may be necessary to use a handscaler to remove any stubborn deposits.', 'At the end of this appointment, we will set a date for your next treatment.'];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Hygiene & gum health'])}`, title: `Hygiene &amp; Gum health`, img: 'tx-hygiene', alt: `A patient smiling during a hygiene appointment`, intro: `<p class="lede" data-reveal>Defending your oral health from gum disease with hygiene and periodontal treatments. Hygienists are trained in assessing, tracking and treating gum disease.</p>` })}
-<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<section class="phero tx-phero hygiene-hero"><div class="phero-frame">
+<img class="phero-img phero-img--hygiene" data-parallax="20" src="/img/tx-hygiene.webp" alt="A patient smiling during a hygiene appointment" fetchpriority="high">
+<div class="phero-fade" aria-hidden="true"></div>
+<div class="simple-hero-content">
+${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Hygiene & gum health'])}
+<h1 data-split>Hygiene &amp; Gum health</h1>
+</div>
+</div></section>
+<section class="section"><div class="wrap tx-layout">
 <div>
-<p class="lede" data-reveal>It’s important to see a hygienist and have your teeth professionally cleaned to prevent gum disease from developing and affecting your smile.</p>
-<h2 class="h3" style="margin:36px 0 0" data-reveal>Reasons to visit the hygienist:</h2>
+<p class="lede" data-reveal>Defending your oral health from gum disease with hygiene and periodontal treatments. Hygienists are trained in assessing, tracking and treating gum disease.</p>
+<p data-reveal>It’s important to see a hygienist and have your teeth professionally cleaned to prevent gum disease from developing and affecting your smile.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Reasons to visit the hygienist:</h2>
 ${checklist(['Visits every 6 months drastically reduce the chance of developing gum disease or teeth damage', 'Frequent visits are crucial if there’s family history with gum issues', 'Helps prevent future expensive dental treatment'])}
 <p data-reveal>Poor gum health is also linked to conditions such as heart disease, respiratory infections, diabetes and dementia.</p>
-<div class="acc" data-single style="margin-top:48px" data-reveal>
-${accItem('What happens during the appointment?', '<p>Hygiene appointments are designed around assessing and treating gum disease, so the first step is to check for signs of the condition. Following this examination, your hygienist will carry out a scale and polish – a thorough clean that removes tartar and plaque from the tooth surfaces and around the gum line. This is especially effective as they can reach areas that you can’t with a toothbrush.</p><p>The clean will leave your teeth smooth and clean, plus it will also remove some stains. Once the polish is finished, your hygienist will provide advice on how to keep your gums bacteria-free.</p>', true)}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What happens during the appointment?', '<p>Hygiene appointments are designed around assessing and treating gum disease, so the first step is to check for signs of the condition. Following this examination, your hygienist will carry out a scale and polish – a thorough clean that removes tartar and plaque from the tooth surfaces and around the gum line. This is especially effective as they can reach areas that you can’t with a toothbrush.</p><p>The clean will leave your teeth smooth and clean, plus it will also remove some stains. Once the polish is finished, your hygienist will provide advice on how to keep your gums bacteria-free.</p>')}
 ${accItem('Guided Biofilm Therapy', '<p>At Kings Hill Dental we are very proud to be able to offer the revolutionary EMS GBT “Dental Spa” Treatment. We aim to create a relaxing, calm atmosphere at our practice, and this new equipment helps us to achieve this by providing hygiene treatment in a revolutionary new way.</p>')}
+${accItem('What is GBT?', `<p>Biofilm is a layer of bacteria that accumulates on your teeth and can lead to gum disease if good oral hygiene is not maintained. It can also increase the risk of cardiovascular and respiratory disease, diabetes and arthritis. This spa treatment is a new state-of-the-art approach to remove biofilm.</p><p>Guided Biofilm Therapy (GBT) is based on clinically proven technologies invented in cooperation with highly respected and experienced periodontologists, caries specialists and dental hygienists. It is minimally invasive, safe, effective and gentle to teeth and soft tissues, implants and restorations. The treatment works especially well for nervous patients as it is more comfortable than the traditional scale and polish.</p><ol class="timeline" style="margin-top:32px"><span class="prog" aria-hidden="true"></span>${steps.map((s) => `<li><p>${s}</p></li>`).join('')}</ol>`)}
 </div>
-<h2 class="h2" style="margin-top:clamp(56px,8vw,110px)" data-split>What is GBT?</h2>
-<div class="stack" style="margin-top:32px" data-reveal><p>Biofilm is a layer of bacteria that accumulates on your teeth and can lead to gum disease if good oral hygiene is not maintained. It can also increase the risk of cardiovascular and respiratory disease, diabetes and arthritis. This spa treatment is a new state-of-the-art approach to remove biofilm.</p>
-<p>Guided Biofilm Therapy (GBT) is based on clinically proven technologies invented in cooperation with highly respected and experienced periodontologists, caries specialists and dental hygienists. It is minimally invasive, safe, effective and gentle to teeth and soft tissues, implants and restorations. The treatment works especially well for nervous patients as it is more comfortable than the traditional scale and polish.</p></div>
-<ol class="timeline" style="margin-top:48px"><span class="prog" aria-hidden="true"></span>${steps.map((s) => `<li><p>${s}</p></li>`).join('')}</ol>
 </div>
 ${asideCard('/dentistry/general-preventative/hygiene-gum-health/')}
 </div></section>`;
-  return { path: '/dentistry/general-preventative/hygiene-gum-health/', title: 'Hygiene & Gum Health | Kings Hill Dental', description: 'Hygiene appointments and Guided Biofilm Therapy at Kings Hill Dental: protect your gums and your natural teeth.', body };
+  return { path: '/dentistry/general-preventative/hygiene-gum-health/', title: 'Hygiene & Gum Health | Kings Hill Dental', description: 'Hygiene appointments and Guided Biofilm Therapy at Kings Hill Dental: protect your gums and your natural teeth.', bodyClass: 'tx-page', body };
 }
 
-/* ---------- TREATMENT pages: design-concept pages (new) ----------
-   Dental Examinations was redesigned in place above; Children's Dentistry and Bruxism are brand
-   new pages — until now both were just a sentence on the General & Preventative accordion, linking
-   out to the contact form. Copy beyond that one sentence each is draft, written to show the layout
-   working with real sentence lengths — flag it for a proper clinical read-through before this goes live. */
+/* ---------- TREATMENT pages: Children's Dentistry and Bruxism ----------
+   Both were, until now, just a sentence on the General & Preventative accordion, linking out to the
+   contact form. Built out here to match the Hygiene & Gum Health page's layout (chosen as the shared
+   template over the other draft concepts). Copy beyond the original one-sentence blurb is still new
+   and should have a proper clinical read-through before this goes live. */
 function childrensDentistry() {
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Children’s dentistry'])}`, title: `Children’s Dentistry`, img: 'tx-children', alt: `A young child brushing their teeth with a dentist, watching in a mirror`, intro: `<p class="lede" data-reveal>Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.</p>` })}
-<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<section class="phero tx-phero">
+<div class="band-top">
+${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Children’s dentistry'])}
+<h1 data-split>Children’s Dentistry</h1>
+</div>
+<div class="band-photo"><img data-parallax="20" src="/img/tx-children.webp" alt="A young child brushing their teeth with a dentist, watching in a mirror" fetchpriority="high"></div>
+</section>
+<section class="section"><div class="wrap tx-layout">
 <div>
-<div class="design-note"><span class="design-note-tag">Design concept — A Gentle Start</span><p>Pediatric dental sites we looked at lead with reassurance for the parent booking the visit, not the child sitting in the chair — calm, plain-spoken copy rather than cartoon mascots, which felt closer to our own brand voice than the bright primary-colour template most children's dental sites default to.</p></div>
-<p class="lede" data-reveal>We know a first trip to the dentist can feel like a big moment — for both of you. Our team keeps visits short, friendly and unhurried, so your child grows up seeing the dentist as a normal, positive part of looking after themselves.</p>
-
-<div class="concept-block">
-<div class="design-note"><span class="design-note-tag">Design concept — Age-milestone tabs</span><p>The same "what to expect" information, split by age instead of one long scroll. Parents of a one-year-old and parents of a seven-year-old are looking for different reassurance, so letting them jump straight to their stage felt more useful than making everyone read all of it.</p></div>
-<div class="age-tabs" data-tabs>
-<div class="cx-tabs" role="tablist" aria-label="Age group">
-<button role="tab" aria-selected="true">First tooth</button>
-<button role="tab" aria-selected="false">Ages 3–6</button>
-<button role="tab" aria-selected="false">Ages 7+</button>
+<p class="lede" data-reveal>Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.</p>
+<p data-reveal>We know a first trip to the dentist can feel like a big moment — for both of you. Our team keeps visits short, friendly and unhurried, so your child grows up seeing the dentist as a normal, positive part of looking after themselves.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Reasons to start early:</h2>
+${checklist(['The same kind, familiar team at every visit', 'A dedicated kids’ corner while you wait', 'Short, positive appointments — just long enough, never longer', 'Building healthy habits early, for life'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('When should my child have their first check-up?', '<p>We recommend a first check-up once the first tooth appears, or by their first birthday. We keep the visit short — often just a friendly look and a count of teeth — so your child can meet the team before any treatment is ever needed.</p>')}
+${accItem('What happens as they get older?', '<p>From around age three, regular check-ups let us catch early signs of decay while it’s still simple to treat, and we can apply fluoride varnish and fissure sealants to help protect new teeth.</p><p>Once adult teeth start coming through, we keep an eye on spacing and bite, and can flag anything that may benefit from an orthodontic opinion later on.</p>')}
 </div>
-<div class="age-panels">
-<div role="tabpanel">${checklist(['Book a first check-up once the first tooth appears, or by their first birthday', 'We keep the visit short — often just a friendly look and a count of teeth', 'It helps your child meet the team before any treatment is ever needed'])}</div>
-<div role="tabpanel" hidden>${checklist(['Regular check-ups catch early signs of decay while it’s still simple to treat', 'We can apply fluoride varnish and fissure sealants to help protect new teeth', 'We’ll help you build a fuss-free brushing routine at home'])}</div>
-<div role="tabpanel" hidden>${checklist(['Adult teeth start coming through, so we keep an eye on spacing and bite', 'We talk to your child directly, building their own confidence and ownership', 'We can flag anything that may benefit from an orthodontic opinion later on'])}</div>
-</div>
-</div>
-</div>
-
-<div class="concept-block">
-<div class="design-note"><span class="design-note-tag">Design concept — Reassurance grid</span><p>A second pass at the same "why visits here are easy" message, as a scannable icon grid rather than tabs — closer in spirit to the icon strip already used on the homepage, so it would sit comfortably if this page linked back to it.</p></div>
-<div class="benefit-grid" data-reveal>
-<div><span class="ic">${I.heart}</span><h3>Friendly, familiar faces</h3><p>The same kind team each visit, so nothing feels unfamiliar.</p></div>
-<div><span class="ic">${I.users}</span><h3>A dedicated kids’ corner</h3><p>A comfortable space of their own while they wait.</p></div>
-<div><span class="ic">${I.clock}</span><h3>Short, positive appointments</h3><p>Just long enough, never longer.</p></div>
-<div><span class="ic">${I.shield}</span><h3>Healthy habits, early</h3><p>Building routines that last well beyond childhood.</p></div>
-</div>
-</div>
-
-<figure class="photo-note" data-reveal><img src="/img/practice-children-s-area.webp" alt="The children's corner at Kings Hill Dental, with books, drawings and a comfortable place to wait" loading="lazy" width="1374" height="782"><figcaption><h3>Our own little corner of the practice</h3><p>A quiet space with books and drawings from patients past, so the waiting room feels like part of the visit rather than something to get through.</p></figcaption></figure>
+<h2 class="tx-h3" style="margin-top:clamp(32px,4vw,48px)" data-reveal>What to expect, by age</h2>
+<ol class="timeline" style="margin-top:32px"><span class="prog" aria-hidden="true"></span>
+<li><h3 class="h4" style="margin-bottom:4px">First tooth</h3><p>Book a first check-up once the first tooth appears, or by their first birthday. It helps your child meet the team before any treatment is ever needed.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Ages 3–6</h3><p>Regular check-ups catch early signs of decay while it’s still simple to treat, and we’ll help you build a fuss-free brushing routine at home.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Ages 7+</h3><p>Adult teeth start coming through, so we keep an eye on spacing and bite, and talk to your child directly, building their own confidence and ownership.</p></li>
+</ol>
 </div>
 ${asideCard('/dentistry/general-preventative/childrens-dentistry/')}
 </div></section>`;
-  return { path: '/dentistry/general-preventative/childrens-dentistry/', title: 'Children’s Dentistry | Kings Hill Dental', description: 'Gentle, friendly dental care for children at Kings Hill Dental, from their first tooth onwards.', body };
+  return { path: '/dentistry/general-preventative/childrens-dentistry/', title: 'Children’s Dentistry | Kings Hill Dental', description: 'Gentle, friendly dental care for children at Kings Hill Dental, from their first tooth onwards.', bodyClass: 'tx-page', body };
 }
 
 function bruxism() {
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Bruxism'])}`, title: `Bruxism`, img: 'tx-bruxism', alt: `A man experiencing jaw discomfort`, intro: `<p class="lede" data-reveal>If you are suffering with consistent grinding and clenching of your teeth, then you might have bruxism. Our experts can help diagnose and treat it, leaving you discomfort free.</p>` })}
-<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<section class="tx-phero inset-hero"><div class="wrap inset-row">
+<div class="inset-text">
+${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Bruxism'])}
+<h1 class="h1" data-split>Bruxism</h1>
+</div>
+<div class="inset-media"><img src="/img/tx-bruxism.webp" alt="A man experiencing jaw discomfort" fetchpriority="high"></div>
+</div></section>
+<section class="section"><div class="wrap tx-layout">
 <div>
-<div class="design-note"><span class="design-note-tag">Design concept — Recognise &amp; Resolve</span><p>Bruxism is symptom-led — people usually arrive already wondering "is this what I have?" rather than looking to browse a treatment. The sections below lead with that question before getting to causes and treatment, borrowing the self-assessment pattern several health sites use to turn a wall of symptoms into something you actually engage with.</p></div>
-<p class="lede" data-reveal>Grinding or clenching often happens without realising — most people find out from a partner, a headache pattern, or a dentist spotting the wear. None of these on their own mean much, but a few together are worth a conversation.</p>
-
-<div class="concept-block">
-<div class="design-note"><span class="design-note-tag">Design concept — Interactive self-check</span><p>A tappable checklist rather than a static list of symptoms. It's not a diagnosis — just a gentler way to reflect on your own signs than reading a paragraph, with a short, honest response rather than anything alarming.</p></div>
-<div class="symptom-check" data-symptom-check>
-<div class="symptom-grid">
-${['Waking up with a sore or tired jaw', 'Headaches, especially first thing in the morning', 'Teeth feeling more sensitive than usual', 'A partner or family member mentioning hearing you grind at night', 'Noticeably flat or worn edges on your teeth', 'A clicking or tight feeling in your jaw joint'].map((s, i) => `<label class="symptom"><input type="checkbox"><span class="bx">${I.check}</span><span>${s}</span></label>`).join('')}
+<p class="lede" data-reveal>If you are suffering with consistent grinding and clenching of your teeth, then you might have bruxism. Our experts can help diagnose and treat it, leaving you discomfort free.</p>
+<p data-reveal>Grinding or clenching often happens without realising — most people find out from a partner, a headache pattern, or a dentist spotting the wear. None of these on their own mean much, but a few together are worth a conversation.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Signs to look out for:</h2>
+${checklist(['Waking up with a sore or tired jaw', 'Headaches, especially first thing in the morning', 'Noticeably flat or worn edges on your teeth', 'A partner mentioning they’ve heard you grinding at night'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What can cause it?', '<p>Stress and anxiety are by far the most common trigger, alongside sleep disorders such as snoring or sleep apnoea, lifestyle factors like caffeine, alcohol or smoking, and a bite that isn’t quite meeting evenly.</p>')}
+${accItem('How we can help', '<p>We can fit a custom night guard to protect your teeth as you sleep, review your bite and jaw alignment for any contributing cause, and monitor wear over time so we catch any changes early.</p>')}
 </div>
-<div class="symptom-result"><p data-symptom-result>Tap anything that sounds familiar.</p></div>
-</div>
-</div>
-
-<div class="concept-block">
-<div class="design-note"><span class="design-note-tag">Design concept — Causes &amp; treatment, side by side</span><p>Pairing "why this happens" directly against "what we do about it" so the two never feel like separate topics — the treatment column answers the causes column line for line.</p></div>
-<div class="compare-grid" data-reveal>
-<div class="compare-col"><h3>What can cause it</h3><ul><li>Stress and anxiety, by far the most common trigger</li><li>Sleep disorders, including snoring and sleep apnoea</li><li>Lifestyle factors such as caffeine, alcohol or smoking</li><li>A bite that isn’t quite meeting evenly</li></ul></div>
-<div class="compare-col compare-col--sol"><h3>How we can help</h3><ul><li>A custom-fitted night guard to protect your teeth as you sleep</li><li>Reviewing your bite and jaw alignment for any contributing cause</li><li>Simple, practical advice on easing stress-related grinding</li><li>Monitoring wear over time, so we catch changes early</li></ul></div>
-</div>
-</div>
-
-<figure class="pull-note" data-reveal><img src="/img/practice-consultation.webp" alt="A calm, one-to-one conversation between a dentist and patient" loading="lazy" width="1459" height="785"><p>Most cases are straightforward to manage once we know what we're dealing with — the first step is just a conversation.</p></figure>
 </div>
 ${asideCard('/dentistry/general-preventative/bruxism/')}
 </div></section>`;
-  return { path: '/dentistry/general-preventative/bruxism/', title: 'Bruxism | Kings Hill Dental', description: 'Recognise the signs of bruxism (teeth grinding) and how Kings Hill Dental can help treat it.', body };
+  return { path: '/dentistry/general-preventative/bruxism/', title: 'Bruxism | Kings Hill Dental', description: 'Recognise the signs of bruxism (teeth grinding) and how Kings Hill Dental can help treat it.', bodyClass: 'tx-page', body };
 }
 
 /* ---------- TREATMENT FIELD: restorative (design kept from the dentistry hub — feature row + pills) ---------- */
 function restorativeField() {
   const treatments = [
-    ['fillings', 'Fillings', 'A well-established and inexpensive way to repair tooth damage — often the first treatment we recommend for a cavity, or a cracked or broken tooth.', ['Prevents decay growing deeper and damaging the root', 'Relieves pain and sensitivity', 'Restores the tooth’s functionality', 'A seamless, natural-looking finish']],
-    ['crowns-bridges', 'Crowns & Bridges', 'A crown restores and protects a heavily filled or broken tooth, while a bridge replaces a missing tooth by joining crowns either side of the gap.', ['Restores functionality and improves aesthetics', 'Durable, and prevents further damage', 'Looks, feels and functions like a natural tooth', 'Can improve speech affected by missing teeth']],
-    ['root-canals', 'Root Canal Treatment', 'When the internal tissue of a tooth becomes infected, root canal treatment removes it and seals the tooth, saving it from extraction.', ['Stops the infection spreading further', 'Relieves pain from an infected tooth', 'Less expensive than replacing the tooth', 'A treated tooth can last a long time']],
-    ['dentures', 'Dentures', 'Removable partial or full dentures give you a complete, natural-looking smile, and can also improve how you eat and speak.', ['Natural-looking appearance', 'Can enhance facial shape', 'Improves eating and speaking ability', 'An effective, affordable way to restore your smile']],
-    ['implants', 'Implants', 'One of the most effective and long-lasting ways to replace one or more missing teeth, using titanium posts that act like natural tooth roots.', ['Sturdy, permanent positioning', 'Protects the jawbone and surrounding teeth', 'Restores speaking and chewing ability', 'Avoids adhesives or daily soaking routines']],
+    ['fillings', 'Fillings', 'A well-established and inexpensive way to repair tooth damage — often the first treatment we recommend for a cavity, or a cracked or broken tooth.', ['Prevents decay growing deeper and damaging the root', 'Relieves pain and sensitivity', 'Restores the tooth’s functionality', 'A seamless, natural-looking finish'], 'rx-fillings'],
+    ['crowns-bridges', 'Crowns & Bridges', 'A crown restores and protects a heavily filled or broken tooth, while a bridge replaces a missing tooth by joining crowns either side of the gap.', ['Restores functionality and improves aesthetics', 'Durable, and prevents further damage', 'Looks, feels and functions like a natural tooth', 'Can improve speech affected by missing teeth'], 'hero-restorative'],
+    ['root-canals', 'Root Canal Treatment', 'When the internal tissue of a tooth becomes infected, root canal treatment removes it and seals the tooth, saving it from extraction.', ['Stops the infection spreading further', 'Relieves pain from an infected tooth', 'Less expensive than replacing the tooth', 'A treated tooth can last a long time'], 'topic-restorative'],
+    ['dentures', 'Dentures', 'Removable partial or full dentures give you a complete, natural-looking smile, and can also improve how you eat and speak.', ['Natural-looking appearance', 'Can enhance facial shape', 'Improves eating and speaking ability', 'An effective, affordable way to restore your smile'], 'rx-dentures'],
+    ['implants', 'Implants', 'One of the most effective and long-lasting ways to replace one or more missing teeth, using titanium posts that act like natural tooth roots.', ['Sturdy, permanent positioning', 'Protects the jawbone and surrounding teeth', 'Restores speaking and chewing ability', 'Avoids adhesives or daily soaking routines'], 'practice-consultation'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative'])}`, title: `Restorative Dentistry`, img: 'hero-restorative', alt: `A dentist showing a patient a shade guide during a consultation`, intro: `<p class="lede" data-reveal>Teeth go through a lot during our lifetime. Whether it’s a cavity, a chip, or a missing tooth, restorative dentistry can repair the damage and bring back your natural, confident smile.</p><p data-reveal>You can find out more about each of our restorative options below.</p><div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}</div>` })}
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative'])}`, title: `Restorative Dentistry`, img: 'hero-restorative', alt: `A dentist showing a patient a shade guide during a consultation`, intro: `<p class="lede" data-reveal>Teeth go through a lot during our lifetime. Whether it’s a cavity, a chip, or a missing tooth, restorative dentistry can repair the damage and bring back your natural, confident smile.</p><p data-reveal>You can find out more about each of our restorative options below.</p>` })}
 <section class="section" style="padding-top:0"><div class="wrap rows">
 <article class="row"><div class="row-media clip-in"><img data-parallax="34" src="/img/topic-restorative.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>Fixing, restoring, rebuilding</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>From a simple filling to a full implant, our restorative treatments repair damage, relieve discomfort and restore the look and function of your natural teeth. Choose a treatment below to find out more.</p><div class="pills" data-reveal>${treatments.map(([id, t]) => `<a href="#${id}">${t}</a>`).join('')}</div></div></article>
 </div></section>
-<section class="section tint"><div class="wrap" style="max-width:900px">
+<section class="section" style="background:#fff"><div class="wrap" style="max-width:1080px">
 <h2 class="h1" data-split>Explore our restorative treatments</h2>
 <div class="rule" data-reveal></div>
-<div class="acc" data-single style="margin-top:32px" data-reveal>
-${treatments.map(([id, t, d, benefits], i) => accItem(t, `<p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div>`, i === 0, id)).join('')}
+<div class="acc rx-acc" data-single style="margin-top:32px" data-reveal>
+${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0, id)).join('')}
 </div>
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;
-  return { path: '/dentistry/restorative/', title: 'Restorative Dentistry | Kings Hill Dental', description: 'Fillings, crowns & bridges, root canal treatment, dentures and implants at Kings Hill Dental in West Malling.', body };
+  return { path: '/dentistry/restorative/', title: 'Restorative Dentistry | Kings Hill Dental', description: 'Fillings, crowns & bridges, root canal treatment, dentures and implants at Kings Hill Dental in West Malling.', bodyClass: 'wide-intro', body };
 }
 
 /* ---------- TREATMENT FIELD: cosmetic (new layout option — a segmented, tabbed showcase) ---------- */
 function cosmeticField() {
   const treatments = [
-    ['whitening', 'Teeth Whitening', 'topic-cosmetic', 'A simple, effective way to lift years of staining and reveal a brighter smile — professional-strength whitening, applied and monitored by our team rather than a high-street kit.', ['A noticeably brighter smile', 'Professional strength, safely supervised', 'Longer-lasting than over-the-counter kits', 'Safe for teeth and gums']],
-    ['bonding', 'Composite Bonding', 'cx-bonding', 'A quick, minimally-invasive way to reshape a chipped, gapped or uneven tooth. We sculpt tooth-coloured composite directly onto the tooth, blending it seamlessly with your natural smile.', ['Corrects chips, gaps and uneven edges', 'No drilling in most cases', 'Usually completed in a single visit', 'A natural, seamless finish']],
-    ['veneers', 'Veneers', 'hero-cosmetic', 'Thin, custom-made shells bonded to the front of your teeth — ideal for correcting colour, shape and alignment together, for a natural-looking, long-lasting smile.', ['Corrects colour, shape and alignment together', 'Custom shade-matched to your natural teeth', 'Stain-resistant and durable', 'A natural, long-lasting result']],
+    ['whitening', 'Teeth Whitening', 'cx-whitening', 'A simple, effective way to lift years of staining and reveal a brighter smile — professional-strength whitening, applied and monitored by our team rather than a high-street kit.', ['A noticeably brighter smile', 'Professional strength, safely supervised', 'Longer-lasting than over-the-counter kits', 'Safe for teeth and gums'], '50% 25%'],
+    ['bonding', 'Composite Bonding', 'cx-bonding', 'A quick, minimally-invasive way to reshape a chipped, gapped or uneven tooth. We sculpt tooth-coloured composite directly onto the tooth, blending it seamlessly with your natural smile.', ['Corrects chips, gaps and uneven edges', 'No drilling in most cases', 'Usually completed in a single visit', 'A natural, seamless finish'], '28% 35%'],
+    ['veneers', 'Veneers', 'hero-cosmetic', 'Thin, custom-made shells bonded to the front of your teeth — ideal for correcting colour, shape and alignment together, for a natural-looking, long-lasting smile.', ['Corrects colour, shape and alignment together', 'Custom shade-matched to your natural teeth', 'Stain-resistant and durable', 'A natural, long-lasting result'], '82% 38%'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic'])}`, title: `Cosmetic Dentistry`, img: 'hero-cosmetic', alt: `A dentist matching a veneer shade for a patient`, intro: `<p class="lede" data-reveal>We have an expansive range of cosmetic treatments that can correct minor issues, straighten smiles and whiten teeth. We want to help you build a natural-looking smile you’re proud of.</p><p data-reveal>We never push our patients towards cosmetic work — instead, we’ll help you find the treatment that’s genuinely right for you.</p><div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}</div>` })}
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic'])}`, title: `Cosmetic Dentistry`, img: 'hero-cosmetic', alt: `A dentist matching a veneer shade for a patient`, intro: `<p class="lede" data-reveal>We have an expansive range of cosmetic treatments that can correct minor issues, straighten smiles and whiten teeth. We want to help you build a natural-looking smile you’re proud of.</p><p data-reveal>We never push our patients towards cosmetic work — instead, we’ll help you find the treatment that’s genuinely right for you.</p>` })}
 <section class="section" style="padding-top:0" aria-label="Cosmetic treatments"><div class="wrap">
 <h2 class="h1" data-split>Choose a treatment</h2>
 <div class="rule" data-reveal></div>
@@ -323,13 +306,13 @@ ${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Co
 <div class="cx" data-cx data-reveal>
 <div class="cx-tabs" role="tablist" aria-label="Choose a cosmetic treatment">${treatments.map(([id, t], i) => `<button type="button" id="${id}" role="tab" aria-selected="${i === 0}">${t}</button>`).join('')}</div>
 <div class="cx-card">
-<div class="cx-media">${treatments.map(([id, t, img], i) => `<img class="${i === 0 ? 'on' : ''}" src="/img/${img}.webp" alt="" loading="lazy" width="1200" height="900">`).join('')}</div>
+<div class="cx-media">${treatments.map(([id, t, img, d, benefits, pos], i) => `<img class="${i === 0 ? 'on' : ''}" src="/img/${img}.webp" alt="" loading="lazy" width="1200" height="900"${pos ? ` style="object-position:${pos}"` : ''}>`).join('')}</div>
 <div class="cx-body">${treatments.map(([id, t, img, d, benefits], i) => `<div data-cx-body${i ? ' hidden' : ''}><h3 class="h3">${t}</h3><p style="margin-top:14px">${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:24px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div>`).join('')}</div>
 </div>
 </div>
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;
-  return { path: '/dentistry/cosmetic/', title: 'Cosmetic Dentistry | Kings Hill Dental', description: 'Teeth whitening, composite bonding and veneers at Kings Hill Dental in West Malling.', body };
+  return { path: '/dentistry/cosmetic/', title: 'Cosmetic Dentistry | Kings Hill Dental', description: 'Teeth whitening, composite bonding and veneers at Kings Hill Dental in West Malling.', bodyClass: 'wide-intro', body };
 }
 
 /* ---------- TREATMENT FIELD: orthodontic (new layout option — hover list with a swapping portrait, echoing the team section) ---------- */
@@ -341,12 +324,12 @@ function orthodonticField() {
     ['Spark Aligners', 'A clear aligner alternative, virtually invisible in everyday wear, offering a discreet way to straighten your teeth.', 'tx-spark', '/contact/?about=Spark%20aligners', 'spark-aligners'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic'])}`, title: `Orthodontic Dentistry`, img: 'hero-orthodontic', alt: `A clear aligner and dental mould held in hand`, intro: `<p class="lede" data-reveal>Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws, creating beautifully straight, healthy smiles.</p><p data-reveal>You can find out more about our options of Orthodontic care below.</p><div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}</div>` })}
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic'])}`, title: `Orthodontic Dentistry`, img: 'hero-orthodontic', alt: `A clear aligner and dental mould held in hand`, intro: `<p class="lede" data-reveal>Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws, creating beautifully straight, healthy smiles.</p><p data-reveal>You can find out more about our options of Orthodontic care below.</p>` })}
 <section class="section tint"><div class="wrap cards">
 ${cards.map(([t, d, img, h, id], i) => `<a class="card" id="${id}" href="${h}" data-reveal style="--d:${i % 2}"><div class="card-img" style="aspect-ratio:16/9"><img src="/img/${img}.webp" alt="" loading="lazy" width="1800" height="800"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;
-  return { path: '/dentistry/orthodontic/', title: 'Orthodontic Dentistry | Kings Hill Dental', description: 'Invisalign, Invisalign Go, fixed braces and Spark aligners at Kings Hill Dental in West Malling.', body };
+  return { path: '/dentistry/orthodontic/', title: 'Orthodontic Dentistry | Kings Hill Dental', description: 'Invisalign, Invisalign Go, fixed braces and Spark aligners at Kings Hill Dental in West Malling.', bodyClass: 'wide-intro', body };
 }
 
 module.exports = { dentistry, aesthetics, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField };

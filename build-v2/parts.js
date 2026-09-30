@@ -31,6 +31,7 @@ const I = {
   coins: S('<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.700 3.100 3 7 3s7-1.300 7-3V6M5 12v6c0 1.700 3.100 3 7 3s7-1.300 7-3v-6"/>'),
   eye: S('<path d="M2 12s3.500-7 10-7 10 7 10 7-3.500 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
   tick: S('<path d="m4.500 12.500 5 5L19.500 7"/>'),
+  gradCap: S('<path d="M2 9.5 12 5l10 4.5-10 4.5-10-4.5Z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4"/><path d="M20.5 9.5v6"/>'),
 };
 I.tickBig = `<svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="17" r="15" stroke-width="1.4" opacity=".4"/><path d="m9.500 17.500 5 5 10-11"/></svg>`;
 
@@ -66,10 +67,10 @@ function header(current) {
       // several categories: hovering one extends this same box to reveal its items alongside the list
       const cats = n.mega.map((c, i) => `<li class="mega-cat"><a class="mega-cat-link" href="${c.h}" data-idx="${i}"><span class="lbl">${c.t}</span>${I.chevRight}</a></li>`).join('');
       const subs = n.mega.map((c, i) => `<div class="mega-sub" data-idx="${i}"><ul>${c.items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>`).join('');
-      return `<li class="has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true"${cur}>${n.t}${I.chev}</button><div class="mega mega--flyout" data-mega-extend><div class="mega-inner"><ul class="mega-cats">${cats}</ul><div class="mega-subs">${subs}</div></div></div></li>`;
+      return `<li class="has-menu"><a class="nav-link" href="${n.h}" aria-expanded="false" aria-haspopup="true"${cur}><span class="lbl">${n.t}</span>${I.chev}</a><div class="mega mega--flyout" data-mega-extend><div class="mega-inner"><ul class="mega-cats">${cats}</ul><div class="mega-subs">${subs}</div></div></div></li>`;
     }
     const cols = n.mega.map((c) => `<div><h3><a href="${c.h}">${c.t}</a></h3><ul>${c.items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>`).join('');
-    return `<li class="has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true"${cur}>${n.t}${I.chev}</button><div class="mega">${cols}</div></li>`;
+    return `<li class="has-menu"><a class="nav-link" href="${n.h}" aria-expanded="false" aria-haspopup="true"${cur}><span class="lbl">${n.t}</span>${I.chev}</a><div class="mega">${cols}</div></li>`;
   }).join('');
   const drawer = NAV.map((n, i) => {
     if (!n.mega) return `<li><a class="big" style="--i:${i}" href="${n.h}">${n.t}</a></li>`;
@@ -88,7 +89,7 @@ function header(current) {
 const HOURS = [['Monday', '09:30 - 17:30', 1], ['Tuesday', '09:30 - 18:30', 2], ['Wednesday', '09:30 - 18:30', 3], ['Thursday', '09:30 - 18:30', 4], ['Friday', '09:30 - 14:30', 5], ['Saturday', 'By Appointment', 6], ['Sunday', 'Closed', 0]];
 
 function footerBottom() {
-  return `<div class="foot-bottom"><span>© <span class="year">2026</span> Kings Hill Dental</span><span><a href="/privacy-policy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/accessibility-statement/">Accessibility</a></span><a href="http://aspectratiodigital.com" target="_blank" rel="noopener">Website by <em>Aspect Ratio Digital</em></a></div>`;
+  return `<div class="foot-bottom"><span>© <span class="year">2026</span> Kings Hill Dental</span><span><a href="/privacy-policy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/accessibility-statement/">Accessibility</a></span><span>Website by <a class="credit-link" href="http://aspectratiodigital.com" target="_blank" rel="noopener">Aspect Ratio Digital</a></span></div>`;
 }
 
 function footer() {

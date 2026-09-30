@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { I, wave, PORTAL, PHONE, EMAIL, WHATSAPP, HOURS } = require('./parts');
-const { teamOptions } = require('./team-options');
+const { teamOptions, teamPopups } = require('./team-options');
 const { aboutIntro } = require('./about-intro-options');
 const copy = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'copy.json'), 'utf8'));
 
@@ -16,7 +16,7 @@ function partners() {
   return `<section class="section section--tight partners-sec" aria-labelledby="partners-h"><div class="wrap"><h2 class="h1" id="partners-h" data-split>Our partners</h2></div><div class="marquee"><div class="marquee-track">${logos.map((l) => `<a class="plogo" href="${PARTNER_URLS[l]}" target="_blank" rel="noopener" aria-label="${alt[l]} (opens in a new tab)" style="--k:${(1 / Math.sqrt(aspects[l])).toFixed(3)}">${fs.readFileSync(path.join(__dirname, 'vec', 'logo-' + l + '.svg'), 'utf8')}</a>`).join('')}</div></div></section>`;
 }
 
-function contactForm({ id = 'contact-form', heading = true } = {}) {
+function contactForm({ id = 'contact-form', heading = true, note = true } = {}) {
   return `<div class="form-card" data-reveal>
 <form class="form form--compact" id="${id}" data-form data-done="${id}-done" data-subject="Website enquiry" novalidate>
 <fieldset><legend>What can we help with?</legend><div class="choices">${['Check-up', 'Hygiene', 'Orthodontics', 'Implants', 'Aesthetics', 'Something else'].map((c, i) => `<label class="choice"><input type="radio" name="reason" value="${c}"${i === 0 ? ' checked' : ''}><span>${c}</span></label>`).join('')}</div></fieldset>
@@ -29,7 +29,7 @@ function contactForm({ id = 'contact-form', heading = true } = {}) {
 <div class="field"><textarea id="${id}-msg" name="message" placeholder=" " required></textarea><label for="${id}-msg">Message</label><p class="err" role="alert"></p></div>
 <label class="check"><input type="checkbox" name="offers" value="on"><span>I’d like to be informed of exclusive offers and other practice information</span></label>
 <div><button class="btn" type="submit">Send message${I.arrow}</button></div>
-<p class="form-note">Our friendly reception team will call you back to answer your questions promptly.</p>
+${note ? `<p class="form-note">Our friendly reception team will call you back to answer your questions promptly.</p>` : ''}
 </form>
 <div class="form-done" id="${id}-done" role="status"><div class="badge">${I.check}</div><h3 class="h3">Thank you.</h3><p style="margin-inline:auto">Your message is ready to go. If your email app didn’t open, you can reach us on <a href="tel:${PHONE.replace(/ /g, '')}">${PHONE}</a>.</p></div>
 </div>`;
@@ -160,6 +160,9 @@ ${contactForm({ id: 'home-form' })}
 }
 
 /* ---------- ABOUT ---------- */
+const iconForFact = (t) => /GDC number/i.test(t) ? I.shield : /BDS|BSc|MSc|BChD|BDent|Graduate|University/i.test(t) ? I.gradCap : I.award;
+const factRow = (t) => `<span class="fact-ic" aria-hidden="true">${iconForFact(t)}</span><span>${t}</span>`;
+
 function peopleData() {
   const order = [['amelia-madan-dumper', 'Amelia Madan-Dumper', 'Principal Dentist', 'team-amelia', '#ffd0c5'], ['simon-dumper', 'Simon Dumper', 'Principal Dentist', 'team-simon', '#e0a192'], ['lucy-hicks', 'Lucy Hicks', 'Dental Hygienist', 'team-lucy', '#fbe9d9'], ['mohammed-lalji', 'Mohammed Lalji', 'Dentist', 'team-mohammed', '#ffd0c5'], ['dr-furqan-jamal', 'Dr Furqan Jamal', 'Specialist Orthodontist', 'team-furqan', '#bc7b69'], ['gemma-abbott', 'Gemma Abbott', 'Orthodontic Coordinator', 'team-gemma', '#e0a192'], ['carly-marinelli', 'Carly Marinelli', 'Practice Coordinator', 'team-carly', '#fbe9d9'], ['chelsea-white', 'Chelsea White', 'Qualified Dental Nurse', 'team-chelsea', '#ffd0c5'], ['vicky-mayne', 'Vicky Mayne', 'Qualified Dental Nurse', 'team-vicky', '#e0a192']];
   return order.map(([slug, name, role, img, tone]) => {
@@ -167,7 +170,8 @@ function peopleData() {
     const g = items.findIndex((t) => /^GDC Number/.test(t));
     const facts = []; const bio = [];
     items.slice(g >= 0 ? g : 2).forEach((t) => { if (/^GDC Number/.test(t)) return; if (/^\d{4,}$/.test(t)) { facts.push('<b>GDC number</b> ' + t); return; } (t.length > 110 ? bio : facts).push(t.replace(/Orthondontist/g, 'Orthodontist').replace(/\bimpove\b/g, 'improve')); });
-    return { slug, name, role, img: '/img/' + img + '.webp', tone, facts: facts.filter((f) => !/^Morning jaw/.test(f)).slice(0, 4), bio: bio.slice(0, 3) };
+    const cleanFacts = facts.filter((f) => !/^Morning jaw/.test(f)).slice(0, 4);
+    return { slug, name, role, img: '/img/' + img + '.webp', tone, factsRaw: cleanFacts, facts: cleanFacts.map(factRow), bio: bio.slice(0, 3) };
   });
 }
 
@@ -183,27 +187,25 @@ ${pageHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/"
 ${aboutIntro()}
 
 ${teamOptions(people)}
-<dialog id="person-dialog" aria-label="Team member"><div class="modal"><div class="modal-card"><button class="modal-x" type="button" aria-label="Close">×</button><div class="modal-photo"><img src="" alt=""></div><div class="modal-body"><h3></h3><p class="role"></p><div class="facts"></div><div class="bio stack"></div></div></div></div></dialog>
-<script type="application/json" id="people-data">${JSON.stringify(Object.fromEntries(people.map((p, i) => [i, { name: p.name, role: p.role, img: p.img, tone: p.tone, facts: p.facts, bio: p.bio }])))}</script>
+${teamPopups(people)}
 
 <section class="section" id="practice" aria-labelledby="prac-h"><div class="wrap prac-head">
 <div class="prac-head-row">
-<div>
-<h2 class="h1" id="prac-h" data-split>Our practice</h2>
-<div class="rule" data-reveal></div>
-<p data-reveal>Take a look around. Hover a photo to open it up, or click to see it full size.</p>
-</div>
 <div class="prac-head-side" data-reveal>
 <div class="chips" role="tablist" aria-label="View"><button class="chip" type="button" data-mode="photos" aria-selected="true">Photos</button><button class="chip" type="button" data-mode="tour" aria-selected="false">360° tour</button></div>
 <p class="prac-cap" aria-live="polite"><span data-mcap>Exterior</span></p>
 </div>
+<div class="prac-head-title">
+<h2 class="h1" id="prac-h" data-split>Our practice</h2>
+<div class="rule" data-reveal></div>
+<p data-reveal>Take a look around. Hover a photo to see more of the practice.</p>
+</div>
 </div>
 </div>
 <div class="wrap wrap-mosaic">
-<div class="mosaic" data-mosaic data-reveal>${mosaic.map(([s, l], i) => `<button type="button" class="mo mo${i + 1}" data-i="${i}" aria-label="${l}. Enlarge photo"><img src="/img/practice-${s}.webp" alt="${l} at Kings Hill Dental" loading="${i < 3 ? 'eager' : 'lazy'}" width="1600" height="900"><span>${l}</span></button>`).join('')}</div>
+<div class="mosaic" data-mosaic data-reveal>${mosaic.map(([s, l], i) => `<button type="button" class="mo mo${i + 1}" data-i="${i}" aria-label="${l}"><img src="/img/practice-${s}.webp" alt="${l} at Kings Hill Dental" loading="${i < 3 ? 'eager' : 'lazy'}" width="1600" height="900"><span>${l}</span></button>`).join('')}</div>
 <div class="tour" hidden><iframe title="360 degree tour of Kings Hill Dental" data-src="${STREETVIEW}" loading="lazy" allowfullscreen></iframe></div>
 </div>
-<dialog id="lightbox" class="lightbox" aria-label="Enlarged photo"><div class="modal"><button class="modal-x" type="button" aria-label="Close">×</button><img src="" alt=""></div></dialog>
 </section>
 
 ${partnerGrid()}`;

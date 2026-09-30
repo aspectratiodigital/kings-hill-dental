@@ -36,7 +36,7 @@
 }
 
 /* ===== welcome composition (original design) ===== */
-.welcome { position: relative; background: var(--cream); container-type: inline-size; padding: 0; overflow: hidden; }
+.welcome { position: relative; background: color-mix(in srgb, var(--brown) 5%, var(--cream)); container-type: inline-size; padding: 0; overflow: hidden; }
 .w-art { position: relative; width: 100%; aspect-ratio: 1440 / 1129; }
 .w-shape { position: absolute; color: var(--brown); display: block; }
 .w-rect { background: var(--brown); }
@@ -51,7 +51,7 @@
   .w-art { aspect-ratio: auto; display: grid; }
   .w-art::before { content: ""; display: block; aspect-ratio: 1.15; grid-row: 1; }
   .w-shape.r1 { left: -30% !important; top: 34% !important; width: 90% !important; height: 62% !important; }
-  .w-shape.b1, .w-shape.b2, .w-shape.r2 { display: none; }
+  .w-shape.b1, .w-shape.b2, .w-shape.r1, .w-shape.r2 { display: none; }
   .w-img.wa { left: -6% !important; top: 2% !important; width: 66% !important; height: 62% !important; }
   .w-img.wb { left: 36% !important; top: 14% !important; width: 64% !important; height: 60% !important; }
   .w-text { position: relative; left: 0; top: 0; width: auto; padding: 24px var(--gutter) 56px; grid-row: 2; background: var(--cream); }
@@ -68,7 +68,7 @@
 .svc > a:hover .svc-icon, .svc.is-active .svc-icon { background: none; color: var(--rose); transform: scale(1.06) rotate(-4deg); }
 
 /* ===== membership (original design) with interactive ticks ===== */
-.member { background: var(--cream) url(/img/tex-b.webp); background-size: 300px auto; }
+.member, .team-sec { background: var(--cream) url(/img/tex-b.webp); background-size: 300px auto; }
 .plans-old { display: grid; gap: clamp(28px, 4vw, 64px); grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 1000px) { .plans-old { grid-template-columns: .82fr 1.18fr; } .plans-intro { position: sticky; top: calc(var(--header-h) + 30px); } }
 .mcards { display: grid; gap: clamp(18px, 2.4vw, 36px); grid-template-columns: 1fr; }
@@ -126,6 +126,8 @@
 @media (min-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 560px); } }
 .contact-foot .contact-grid { align-items: stretch; }
 .contact-foot .form-card { height: 100%; display: flex; flex-direction: column; background: var(--brown); box-shadow: none; }
+.contact-foot .contact-copy { height: 100%; display: flex; flex-direction: column; }
+.contact-foot .contact-info-grid { margin-top: auto; padding-top: 30px; }
 .contact-foot .form-card .form { flex: 1; align-content: space-between; }
 .contact-foot .form-card legend, .contact-foot .form-card .form-note, .contact-foot .form-card .check span { color: color-mix(in srgb, var(--cream) 85%, transparent); }
 .contact-foot .form-card .field label { color: color-mix(in srgb, var(--cream) 65%, transparent); }
@@ -140,7 +142,7 @@
 .contact-foot .form-card .choice span { background: transparent; border-width: 2px; border-color: var(--cream); color: var(--cream); }
 .contact-foot .form-card .choice span::before { border-width: 2px; }
 .contact-foot .form-card .choice input:checked + span { background: var(--cream); color: var(--brown); border-color: var(--cream); }
-.contact-foot .form-card .choice input:checked + span::before { background: var(--cream); box-shadow: inset 0 0 0 3px var(--pink); border-color: var(--pink); }
+.contact-foot .form-card .choice input:checked + span::before { background: var(--cream); box-shadow: inset 0 0 0 3px var(--brown); border-color: var(--cream); }
 .contact-foot .form-card .choice input:hover:not(:checked) + span { border-color: var(--pink); }
 /* checkbox: a circle, not a square, with a pink fill and white tick when checked */
 .contact-foot .form-card .check input { border-radius: 50%; border-color: var(--cream); background: transparent; }
@@ -156,6 +158,7 @@
 .form--compact { gap: 14px; }
 .form--compact .fields { gap: 12px; }
 .form-card:has(.form--compact) { padding: clamp(20px, 2.4vw, 30px); border-radius: 22px; }
+.contact-foot .form-card:has(.form--compact) { padding-bottom: 0; }
 .form--compact .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .form--compact .choice span { padding: 10px 10px; font-size: 14px; gap: 8px; width: 100%; justify-content: flex-start; white-space: nowrap; }
 .form--compact .choice span::before { width: 13px; height: 13px; flex: none; }
@@ -168,7 +171,7 @@
 .form--compact .btn { min-height: 48px; }
 @media (max-width: 420px) { .form--compact .choices { grid-template-columns: repeat(2, 1fr); } }
 .hero-old-img { aspect-ratio: 909 / 491; }
-.hero-old-img img { height: 100%; object-fit: cover; object-position: 30% 50%; }
+.hero-old-img img { height: 100%; object-fit: cover; object-position: 30% 50%; border-radius: 28px; }
 .w-text { width: 35%; }
 .w-text .w-kicker { margin-left: -38%; }
 .w-text p { font-size: max(15px, 1.33cqw); line-height: 1.45; }
@@ -202,9 +205,12 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 /* --- welcome: no background shape, shorter section --- */
 .w-art { aspect-ratio: 1440 / 720; }
 .w-shape.b1, .w-shape.b2, .w-shape.r1, .w-shape.r2 { display: none; }
-.w-text { top: 5.5%; }
+.w-text { width: auto; right: max(var(--gutter), calc((100% - var(--wrap)) / 2)); }
 @media (max-width: 899px) {
   .w-art { aspect-ratio: auto; }
+}
+@media (min-width: 900px) {
+  .w-text { top: 50%; transform: translateY(-50%); }
 }
 
 /* --- services: a line above each row (like the icon strip) highlights only while hovered --- */
@@ -280,7 +286,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .hero-old .lede { font-size: clamp(1.08rem, 1.32vw, 1.28rem); }
 .hero-old-text p:not(.lede) { font-size: calc(var(--fs-body) * 1.07); }
 .hero-old-img { width: min(65.5vw, 1140px); }
-.hero-old .assure { margin-top: 0; column-gap: clamp(20px, 3vw, 44px); }
+.hero-old .assure { column-gap: clamp(20px, 3vw, 44px); }
 .hero-old .assure li, .hero-old .assure li + li { padding-right: 0; padding-left: 0; }
 .hero-old .assure .ai { width: 60px; height: 60px; }
 @media (max-width: 899px) { .hero-old-text { min-height: 0; } }
@@ -347,7 +353,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 @media (min-width: 900px) { .tA { grid-template-columns: 1.1fr .9fr; } }
 .tA-list { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid color-mix(in srgb, var(--brown) 18%, transparent); }
 .tA-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 14px; align-items: baseline; width: 100%; padding: 16px 4px; background: none; border: 0; border-bottom: 1.5px solid color-mix(in srgb, var(--brown) 18%, transparent); color: var(--brown); text-align: left; cursor: pointer; transition: color .35s; position: relative; }
-.tA-item::before { content: ""; position: absolute; left: 0; top: -1.5px; height: 2px; width: 100%; background: var(--brown); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.tA-item::before { content: ""; position: absolute; left: 0; bottom: -1.5px; height: 2px; width: 100%; background: var(--brown); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
 .tA-item .n { font: 700 13px/1 var(--ui); color: var(--rose); }
 .tA-item .nm { font: 400 clamp(1.5rem, 2.6vw, 2.4rem)/1.1 var(--serif); }
 .tA-item .rl { font-size: 14px; opacity: .7; text-align: right; }
@@ -425,17 +431,19 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .prac-head { padding-bottom: clamp(24px, 3.4vw, 40px); }
 .prac-head-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 40px; }
 .prac-head-row .lede, .prac-head-row p { max-width: 42ch; }
-.prac-head-side { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.prac-head-side { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.prac-head-title { text-align: right; }
+.prac-head-title .rule { margin-left: auto; }
 .prac .chips, .prac-head-side .chips { display: flex; gap: 10px; }
 .prac-cap { margin: 14px 0 0; font: 400 1.4rem/1.2 var(--serif); color: var(--clay); min-height: 1.4em; }
 .cta-band { background: var(--cream) url(/img/tex-b.webp); background-size: 300px auto; }
-.gp-page .phero-copy { max-width: 64rem; }
+.gp-page .phero-copy, .wide-intro .phero-copy { max-width: 64rem; }
 #practice { padding-top: clamp(24px, 3vw, 40px); }
 .wrap-mosaic { max-width: min(100% - var(--gutter) * 2, 1080px); }
 .mosaic { --cols: 1fr 1fr 1fr 1fr; --rows: 1fr 1fr 1fr; display: grid; gap: 10px; grid-template-columns: var(--cols); grid-template-rows: var(--rows); aspect-ratio: 16 / 9; border-radius: 24px; transition: grid-template-columns .95s var(--ease), grid-template-rows .95s var(--ease); }
-@media (max-width: 720px) { .prac-head-row { align-items: flex-start; } .prac-head-side { align-items: flex-start; text-align: left; } .mosaic { aspect-ratio: 3 / 4; } }
+@media (max-width: 720px) { .prac-head-row { align-items: flex-start; } .prac-head-side { align-items: flex-start; text-align: left; } .prac-head-title { text-align: left; } .prac-head-title .rule { margin-left: 0; } .mosaic { aspect-ratio: 3 / 4; } }
 .mosaic[hidden] { display: none; }
-.mo { position: relative; padding: 0; border: 0; border-radius: 16px; overflow: hidden; cursor: zoom-in; background: var(--blush); min-width: 0; min-height: 0; }
+.mo { position: relative; padding: 0; border: 0; border-radius: 16px; overflow: hidden; cursor: pointer; background: var(--blush); min-width: 0; min-height: 0; }
 .mo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease), filter .6s; }
 .mo span { position: absolute; left: 12px; bottom: 12px; background: var(--cream); color: var(--brown); border-radius: var(--r-sm); padding: 7px 12px; font: 700 13px/1 var(--ui); opacity: 0; transform: translateY(8px); transition: opacity .35s, transform .5s var(--ease); }
 .mo.is-on span { opacity: 1; transform: none; }
@@ -462,7 +470,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mega h3 { font: 700 13px/1 var(--ui); letter-spacing: .06em; text-transform: uppercase; color: var(--rose); margin: 0 0 14px; }
 .mega li { position: relative; }
 .mega li a { position: relative; display: inline-block; padding: 9px 0; font: 700 13.5px/1 var(--ui); line-height: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--brown); text-decoration: none; transition: color .3s; white-space: nowrap; }
-.mega li a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 2px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.mega li a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .mega li a:hover { color: var(--clay); transform: none; }
 .mega li a:hover::after { transform: scaleX(1); }
 .mega ul { display: grid; gap: 6px; }
@@ -481,7 +489,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mega-cats .mega-cat-link { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 9px 0; border-radius: 0; text-decoration: none; white-space: nowrap; font: 700 13.5px/1 var(--ui); letter-spacing: .05em; text-transform: uppercase; color: var(--brown); background: none; transition: color .3s; }
 .mega-cat-link .lbl { position: relative; }
 .mega-cats .mega-cat-link::after { content: none; }
-.mega-cat-link .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.mega-cat-link .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .mega-cat-link .chevr { flex: none; width: 14px; height: 14px; opacity: .55; transition: transform .3s var(--ease), opacity .3s; }
 .mega-cats .mega-cat-link:hover, .mega-cats .mega-cat-link.is-on { background: none; color: var(--clay); }
 .mega-cats .mega-cat-link:hover .lbl::after, .mega-cats .mega-cat-link.is-on .lbl::after { transform: scaleX(1); }
@@ -498,6 +506,26 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mega-sub.is-on { opacity: 1; visibility: visible; }
 .mega-sub ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 
+/* ================= round 6: hero image+text as one centered unit on wide screens =================
+   Previously the image bled edge-to-edge against the browser's right edge (relative to the full-width
+   .hero-old section) while the text sat inside the centred .wrap — fine up to ~laptop widths, but on a
+   wide desktop monitor the pairing lost its shared centre: the image kept bleeding further right while
+   the text stayed put, so the combined composition no longer read as one balanced, centred block.
+   Turning it into a real (non-absolute) flex row inside .wrap fixes this: both pieces now share one
+   centred container, so they're always centred as a unit, and flexbox shrinks them together (never
+   overlapping) on the rare viewport wide enough that they wouldn't otherwise fit side by side. */
+.hero-old-top { display: flex; flex-direction: column; }
+@media (min-width: 900px) {
+  .hero-old { --wrap: 1440px; padding-top: var(--header-h); }
+  .hero-old-top { flex-direction: row; align-items: center; justify-content: center; gap: clamp(24px, 4vw, 64px); }
+  .hero-old-img { position: static; order: 2; flex: 1 1 auto; min-width: 0; aspect-ratio: 1.359; }
+  .hero-old-text { order: 1; flex: 0 0 auto; min-height: 0; justify-content: flex-start; padding-block: 0; }
+  /* the text+image "box" is centred (both ways) within exactly the first viewport-height of
+     the page, so the icon strip that follows always starts below it, off the initial screen,
+     regardless of how tall the box's own content happens to be */
+  .hero-old-stage { min-height: calc(100svh - var(--header-h)); display: flex; align-items: center; justify-content: center; }
+}
+
 /* ================= round 5 refinements ================= */
 
 /* --- hero heading: guaranteed two lines regardless of width --- */
@@ -510,7 +538,10 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .partners-sec { background: var(--cream) url(/img/tex-b.webp); background-size: 300px auto; padding-block: clamp(32px, 4vw, 56px); }
 
 /* ================= about intro: a letter from the principals ================= */
-.ai-letter { display: grid; gap: clamp(22px, 3vw, 40px); grid-template-columns: 1fr; align-items: stretch; margin-top: clamp(18px, 2.6vw, 32px); }
+#letter-h, #pg-h { text-align: center; }
+.ai-letter-copy { transition: transform .4s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .ai-letter-copy { transition: none; } }
+.ai-letter { display: grid; gap: clamp(22px, 3vw, 40px); grid-template-columns: 1fr; align-items: stretch; margin-top: clamp(36px, 5.5vw, 64px); }
 @media (min-width: 900px) { .ai-letter { grid-template-columns: .8fr 1.2fr; } }
 .ai-letter-media { margin: 0; height: 100%; }
 .ai-letter-media img { width: 100%; height: 100%; min-height: 340px; max-height: 546px; object-fit: cover; object-position: 50% 15%; border-radius: 10px; display: block; }
@@ -531,14 +562,14 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .gp-tile:hover, .gp-tile:focus-within, .gp-tile.is-on { flex: 3.4 1 0%; }
 .gp-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transition: transform 1.2s var(--ease); }
 .gp-tile:hover .gp-photo, .gp-tile:focus-within .gp-photo, .gp-tile.is-on .gp-photo { transform: scale(1.03); }
-.gp-caption { position: absolute; z-index: 1; inset: auto 0 0; padding: clamp(18px, 2.4vw, 30px) clamp(16px, 2vw, 26px) clamp(12px, 1.6vw, 18px); }
+.gp-caption { position: absolute; z-index: 1; inset: auto 0 0; padding: clamp(100px, 34vw, 220px) clamp(16px, 2vw, 26px) clamp(12px, 1.6vw, 18px); }
 .gp-caption::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--brown) 55%, transparent) 75%, color-mix(in srgb, var(--brown) 92%, transparent) 100%); opacity: .5; transition: opacity .5s var(--ease); z-index: -1; }
 .gp-tile:hover .gp-caption::before, .gp-tile:focus-within .gp-caption::before, .gp-tile.is-on .gp-caption::before { opacity: 1; }
 .gp-caption h3 { position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--cream); font: 400 1.45rem/1.15 var(--serif); margin: 0; }
 .gp-caption p { position: relative; color: color-mix(in srgb, var(--cream) 92%, transparent); opacity: 0; max-height: 0; overflow: hidden; font-size: 14.5px; line-height: 1.5; margin-top: .5em; transition: opacity .3s .1s, max-height .3s; }
-.gp-more { position: relative; display: inline-flex; align-items: center; gap: .5em; margin-top: 16px; font: 700 16.5px/1 var(--ui); letter-spacing: .01em; color: var(--cream); text-decoration: none; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .3s .1s, color .3s; pointer-events: none; }
+.gp-more { position: relative; display: inline-flex; align-items: center; gap: .5em; margin-top: 16px; padding-bottom: 6px; font: 700 16.5px/1 var(--ui); letter-spacing: .01em; color: var(--cream); text-decoration: none; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .3s .1s, max-height .3s, color .3s; pointer-events: none; }
 .gp-more .lbl { position: relative; }
-.gp-more .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.gp-more .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .gp-more svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
 .gp-more:hover .lbl::after { transform: scaleX(1); }
 .gp-more:hover svg { transform: translateX(3px); }
@@ -568,6 +599,16 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .cx-tabs button { position: relative; z-index: 1; padding: 12px 22px; border: 0; background: none; border-radius: 999px; cursor: pointer; font: 700 13.5px/1 var(--ui); letter-spacing: .03em; text-transform: uppercase; color: var(--brown); transition: color .3s; white-space: nowrap; }
 .cx-tabs button[aria-selected="true"] { color: var(--cream); }
 .cx-tabs::before { content: ""; position: absolute; top: 5px; bottom: 5px; left: 0; width: var(--w, 33%); transform: translateX(var(--x, 5px)); background: var(--brown); border-radius: 999px; transition: transform .5s var(--ease), width .5s var(--ease); }
+
+/* dentistry hub: category pill rows, restyled as the cosmetic page's sliding-pill tabs — but
+   hover-driven rather than click-to-select, since these are plain navigation links (each one
+   takes you straight to its own page) rather than an on-page content switcher */
+.hover-tabs { position: relative; display: inline-flex; flex-wrap: nowrap; max-width: 100%; gap: 2px; background: var(--cream); border-radius: 999px; padding: 5px; box-shadow: inset 0 0 0 1px var(--line); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.hover-tabs::-webkit-scrollbar { display: none; }
+.hover-tabs a { position: relative; z-index: 1; flex: none; padding: 11px 16px; border-radius: 999px; font: 700 12.5px/1 var(--ui); letter-spacing: .02em; text-transform: uppercase; color: var(--brown); text-decoration: none; white-space: nowrap; transition: color .3s; }
+.hover-tabs a:hover, .hover-tabs a:focus-visible { color: var(--cream); }
+.hover-tabs::before { content: ""; position: absolute; top: 5px; bottom: 5px; left: 0; width: var(--w, 0px); transform: translateX(var(--x, 5px)); background: var(--brown); border-radius: 999px; opacity: 0; transition: transform .4s var(--ease), width .4s var(--ease), opacity .25s var(--ease); }
+.hover-tabs:hover::before, .hover-tabs:focus-within::before { opacity: 1; }
 .cx-card { position: relative; background: var(--cream); border-radius: 32px; overflow: hidden; box-shadow: 0 40px 70px -40px rgba(70, 28, 17, .5), 0 0 0 1px var(--line); display: grid; }
 @media (min-width: 760px) { .cx-card { grid-template-columns: 1fr 1fr; } }
 .cx-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
@@ -577,102 +618,107 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .cx-body { position: relative; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center; }
 .cx-body [data-cx-body][hidden] { display: none; }
 
-/* ================= treatment page design concepts (Dental Examinations / Children's
-   Dentistry / Bruxism redesign exploration) — shared bits used across the three pages ================= */
+/* ================= treatment pages: shared aside/timeline tweaks ================= */
 
-/* small annotation callout labelling each design experiment; not meant for the final, shipped page */
-.design-note { display: grid; gap: 6px; max-width: 62ch; margin-bottom: clamp(28px, 4vw, 44px); padding: 14px 20px; border: 1.5px dashed var(--line); border-radius: 14px; background: color-mix(in srgb, var(--cream-2) 55%, transparent); }
-.design-note-tag { font: 700 11.5px/1 var(--ui); letter-spacing: .08em; text-transform: uppercase; color: var(--rose); }
-.design-note p { margin: 0; font-size: 14.5px; font-style: italic; color: var(--ink-soft); }
-.concept-block + .concept-block { margin-top: clamp(56px, 8vw, 96px); padding-top: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+/* the aside "book a visit" card's link list always leads with the treatment field itself,
+   set apart from the specific-treatment links below it by a fainter divider */
+.aside-links a:first-child { border-bottom-color: color-mix(in srgb, var(--pink) 70%, transparent); }
 
-/* stat strip: three quick, real numbers for trust (reused facts, not new claims) */
-.stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 3vw, 28px); margin: 32px 0 44px; padding: clamp(20px, 3vw, 32px) 0; border-block: 1px solid var(--line); }
-.stat-strip div { text-align: center; display: grid; gap: 4px; }
-.stat-strip strong { font: 400 clamp(1.8rem, 3.4vw, 2.6rem)/1 var(--serif); color: var(--brown); }
-.stat-strip span { font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
-@media (max-width: 560px) { .stat-strip { grid-template-columns: 1fr; gap: 18px; text-align: left; } .stat-strip div { grid-template-columns: auto 1fr; align-items: baseline; gap: 10px; text-align: left; } }
+/* the timeline's connecting line should stop at the last step, not trail on past it */
+.timeline li:last-child { padding-bottom: 0; }
 
-/* process rail: numbered steps connected by a line — horizontal on desktop, vertical on mobile */
-.proc-rail { display: grid; gap: 28px; grid-template-columns: 1fr; counter-reset: pr; margin: 8px 0 0; position: relative; }
-@media (min-width: 900px) { .proc-rail { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
-.proc-rail::before { content: ""; position: absolute; background: var(--line); }
-@media (max-width: 899px) { .proc-rail::before { left: 21px; top: 6px; bottom: 6px; width: 2px; } }
-@media (min-width: 900px) { .proc-rail::before { left: calc(100% / 10); right: calc(100% / 10); top: 21px; height: 2px; } }
-.proc-rail li { position: relative; counter-increment: pr; list-style: none; padding-left: 62px; opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--i, 0) * .1s); }
-.proc-rail.is-in li, .no-js .proc-rail li { opacity: 1; transform: none; }
-@media (min-width: 900px) { .proc-rail li { padding-left: 0; padding-top: 58px; text-align: center; } }
-.proc-n { position: absolute; left: 0; top: -2px; width: 44px; height: 44px; border-radius: 50%; background: var(--cream); border: 2px solid var(--brown); color: var(--brown); display: grid; place-items: center; font: 700 16px/1 var(--ui); }
-@media (min-width: 900px) { .proc-n { left: 50%; top: 0; translate: -50% 0; } }
-.proc-rail h3 { font: 700 14.5px/1.3 var(--ui); letter-spacing: .01em; text-transform: none; margin-bottom: 6px; color: var(--brown); }
-.proc-rail p { font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 32ch; }
-@media (min-width: 900px) { .proc-rail p { margin-inline: auto; } }
+/* every heading within a treatment page's body copy (the "reasons to visit" intro, the
+   accordion's own <summary> text, and any closing "what happens next" heading) shares one
+   size — matching the accordion's, since that's the one already used in most places */
+.tx-h3 { font: 400 clamp(1.4rem, 2.4vw, 2.1rem)/1.15 var(--serif); }
 
-/* two-column Q&A: label-left, answer-right (a static alternative to the click-to-expand accordion) */
-.qa-split { display: grid; gap: 0; margin-top: 8px; border-top: 1px solid var(--line); }
-.qa-row { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 28px 0; border-bottom: 1px solid var(--line); }
-@media (min-width: 760px) { .qa-row { grid-template-columns: 280px 1fr; gap: 40px; } }
-.qa-row h3 { font-size: 1.25rem; color: var(--brown); }
-.qa-row .qa-a p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
-.qa-row .qa-a p + p { margin-top: .8em; }
+/* general & preventative treatment pages: most of these keep the title off the photo entirely
+   (split/band/inset layouts), so the default phero-shade isn't needed and is switched off here —
+   except the Hygiene baseline below, which still overlays its title on the photo and needs it back */
+.tx-phero .phero-shade { display: none; }
+.tx-phero + .section { padding-top: clamp(32px, 5vw, 56px); }
 
-/* pull-note: a supporting photo paired with a short statement */
-.pull-note { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: center; margin: clamp(48px, 7vw, 80px) 0; }
-@media (min-width: 760px) { .pull-note { grid-template-columns: .8fr 1.2fr; gap: 40px; } }
-.pull-note img { width: 100%; height: 100%; max-height: 320px; object-fit: cover; border-radius: 24px; }
-.pull-note p { font: 400 clamp(1.3rem, 2.2vw, 1.7rem)/1.4 var(--serif); color: var(--brown); margin: 0; }
+/* Hygiene & gum health baseline header: a cream panel carries the title on the left, blending
+   into the photo (moved well over to the right, cropped so her whole face stays clear) via a
+   soft gradient — rather than overlaying light text on the photo directly, which is what caused
+   the previous grey "halo" (thin serif strokes losing contrast against a busy, light patch of
+   the photo). Brown text on the cream side reads cleanly regardless of what's under the photo. */
+.hygiene-hero .phero-frame { background: var(--cream); }
+.hygiene-hero .phero-fade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(70, 28, 17, .28), rgba(70, 28, 17, .34) 55%, rgba(70, 28, 17, .58)); }
+/* below 900px there isn't room for a side-by-side split without crowding the breadcrumb, so
+   this falls back to the original full-bleed darkened photo with cream text instead */
+@media (min-width: 900px) {
+  .hygiene-hero .phero-img--hygiene { left: 32%; width: 68%; object-position: 40% center; }
+  .hygiene-hero .phero-fade { background: linear-gradient(90deg, var(--cream) 0%, var(--cream) 20%, color-mix(in srgb, var(--cream) 60%, transparent) 35%, color-mix(in srgb, var(--cream) 25%, transparent) 45%, transparent 56%); }
+  .hygiene-hero .simple-hero-content { color: var(--brown); width: min(100% - var(--gutter) * 2, var(--wrap)); margin-inline: auto; padding: 0; }
+  .hygiene-hero .simple-hero-content .crumbs { color: color-mix(in srgb, var(--brown) 65%, transparent); text-shadow: none; }
+  .hygiene-hero .simple-hero-content h1 { color: var(--brown); text-shadow: none; }
+}
 
-/* age-milestone tabs: reuses the cosmetic tabs' sliding-pill track for a consistent feel */
-.age-tabs { margin-top: 8px; }
-.age-panels { margin-top: 28px; }
-.age-panels [role="tabpanel"][hidden] { display: none; }
-.age-panels .checklist { margin: 0; }
+/* ================= treatment-page header concepts (client review — four different ways to keep
+   the title ON the hero photo without it ever sitting over a face) — one per page, for comparison.
+   All four keep the same curved-pill silhouette as the site's other page headers. ================= */
 
-/* benefit grid: icon + short label, echoes the homepage "assure" strip but as cards */
-.benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 8px; }
-@media (min-width: 700px) { .benefit-grid { grid-template-columns: repeat(4, 1fr); } }
-.benefit-grid > div { padding: 24px 20px; border-radius: 20px; background: var(--cream-2); }
-.benefit-grid .ic { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--cream); color: var(--rose); margin-bottom: 14px; }
-.benefit-grid .ic svg { width: 22px; height: 22px; }
-.benefit-grid h3 { font: 700 14.5px/1.3 var(--ui); margin-bottom: 6px; color: var(--brown); }
-.benefit-grid p { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
-@media (max-width: 560px) { .benefit-grid { grid-template-columns: 1fr; } }
+/* --- concept 1 (Dental Examinations): split panel — a solid colour panel carries the title,
+   the photo fills the rest; the two are two halves of one shape, so they never overlap. --- */
+.split-frame { position: relative; display: flex; flex-direction: column; height: clamp(360px, 44vw, 560px); border-radius: 0 0 50% 50% / 0 0 clamp(50px, 9vw, 130px) clamp(50px, 9vw, 130px); overflow: hidden; background: var(--brown); }
+@media (min-width: 700px) { .split-frame { flex-direction: row; } }
+.split-panel { position: relative; z-index: 1; flex: none; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4vw, 40px) var(--gutter); color: var(--cream); }
+@media (min-width: 700px) { .split-panel { width: 38%; padding-right: clamp(20px, 3vw, 40px); } }
+.split-panel .crumbs { color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 18px; }
+.split-panel h1 { color: var(--cream); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.02; letter-spacing: -.02em; }
+.split-photo { position: relative; flex: 1 1 auto; min-height: 160px; }
+.split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-/* photo-note: a real practice photo with a grounded caption, not stock illustration */
-.photo-note { margin: clamp(48px, 7vw, 80px) 0; border-radius: 28px; overflow: hidden; background: var(--cream-2); }
-@media (min-width: 760px) { .photo-note { display: grid; grid-template-columns: 1.1fr 1fr; align-items: stretch; } }
-.photo-note img { width: 100%; height: 100%; max-height: 420px; object-fit: cover; }
-.photo-note figcaption { padding: clamp(24px, 4vw, 40px); align-self: center; }
-.photo-note figcaption h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--brown); }
-.photo-note figcaption p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+/* --- concept 2 (Hygiene & Gum Health): plain left-aligned overlay — no card, no background, just
+   the path and title sitting to the left, vertically centred on the photo. Simplest of the five:
+   relies purely on left/right positioning (rather than a panel, band or card) to clear a face. --- */
+.simple-hero-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 var(--gutter); color: var(--cream); }
+.simple-hero-content .crumbs { color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 16px; text-shadow: 0 1px 12px rgba(20, 8, 4, .5); }
+.simple-hero-content h1 { color: var(--cream); font-size: clamp(2.2rem, 4.4vw, 3.8rem); line-height: 1.02; letter-spacing: -.02em; max-width: 14em; text-shadow: 0 2px 20px rgba(20, 8, 4, .55), 0 1px 4px rgba(20, 8, 4, .5); }
 
-/* symptom self-check: a tappable checklist with a live, non-diagnostic response */
-.symptom-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
-@media (min-width: 700px) { .symptom-grid { grid-template-columns: 1fr 1fr; } }
-.symptom { position: relative; display: flex; align-items: center; gap: 14px; padding: 16px 20px; border: 1.5px solid var(--line); border-radius: 16px; cursor: pointer; transition: border-color .3s, background-color .3s; }
-.symptom:hover { border-color: var(--rose); }
-.symptom input { position: absolute; opacity: 0; inset: 0; cursor: pointer; margin: 0; }
-.symptom .bx { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--brown); display: grid; place-items: center; transition: background-color .3s, border-color .3s; }
-.symptom .bx svg { width: 13px; height: 13px; color: var(--cream); opacity: 0; transform: scale(.5); transition: opacity .25s var(--ease), transform .25s var(--ease); }
-.symptom input:checked ~ .bx { background: var(--brown); }
-.symptom input:checked ~ .bx svg { opacity: 1; transform: none; }
-.symptom input:checked ~ span:not(.bx) { color: var(--brown); }
-.symptom input:focus-visible ~ .bx { outline: 2px solid var(--brown); outline-offset: 2px; }
-.symptom span:not(.bx) { font-size: 15px; line-height: 1.4; color: var(--ink-soft); transition: color .3s; }
-.symptom-result { margin-top: 24px; padding: 20px 24px; border-radius: 16px; background: var(--cream-2); transition: background-color .4s, color .4s; }
-.symptom-result p { margin: 0; font-size: 15.5px; color: var(--ink-soft); transition: color .4s; }
-.symptom-result.is-flagged { background: var(--brown); }
-.symptom-result.is-flagged p { color: var(--cream); }
+/* --- concept 3 (Children's Dentistry): top band — the title sits in a solid band stacked above
+   a shorter photo; the two form one rounded unit, but the text never touches the image. --- */
+.band-top { background: var(--brown); color: var(--cream); border-radius: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px) 0 0; padding: clamp(28px, 4.5vw, 48px) var(--gutter) clamp(22px, 3.5vw, 36px); text-align: center; }
+.band-top .crumbs { justify-content: center; color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 16px; }
+.band-top h1 { color: var(--cream); max-width: 18em; margin-inline: auto; }
+.band-photo { position: relative; height: clamp(220px, 30vw, 380px); border-radius: 0 0 50% 50% / 0 0 clamp(40px, 7vw, 90px) clamp(40px, 7vw, 90px); overflow: hidden; }
+.band-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-/* compare grid: causes vs. treatment, side by side */
-.compare-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 8px; }
-@media (min-width: 760px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
-.compare-col { padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: var(--cream-2); }
-.compare-col--sol { background: var(--brown); color: var(--cream); }
-.compare-col h3 { font-size: 1.3rem; margin-bottom: 18px; }
-.compare-col--sol h3 { color: var(--cream); }
-.compare-col ul { display: grid; gap: 12px; }
-.compare-col li { position: relative; padding-left: 26px; font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
-.compare-col--sol li { color: color-mix(in srgb, var(--cream) 88%, transparent); }
-.compare-col li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); }
-.compare-col--sol li::before { background: var(--pink); }
+/* --- concept 4 (Bruxism): inset card — a smaller, fully-framed photo floats beside the title on
+   the page's own background, rather than a full-bleed banner, so there's no overlay at all. --- */
+.inset-hero { padding: calc(var(--header-h) + clamp(24px, 4vw, 48px)) 0 clamp(8px, 2vw, 20px); }
+.inset-row { display: flex; flex-direction: column-reverse; gap: clamp(20px, 3vw, 32px); }
+@media (min-width: 760px) { .inset-row { flex-direction: row; align-items: center; gap: clamp(32px, 5vw, 64px); } }
+.inset-text { flex: 1 1 auto; }
+.inset-text .crumbs { margin-bottom: 18px; }
+.inset-media { flex: none; width: 100%; border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: 0 30px 60px -30px rgba(70, 28, 17, .4); }
+@media (min-width: 760px) { .inset-media { width: 44%; aspect-ratio: 4 / 3; } }
+.inset-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ================= restorative dentistry: accordion opens onto a matching photo ================= */
+.rx-acc summary { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+.rx-acc .panel-in { max-width: none; }
+.rx-row { display: grid; gap: clamp(24px, 4vw, 48px); grid-template-columns: 1fr; align-items: stretch; }
+@media (min-width: 700px) { .rx-row { grid-template-columns: 1fr 38%; padding-right: clamp(8px, 1.5vw, 20px); } }
+.rx-media { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 3; }
+@media (min-width: 700px) { .rx-media { aspect-ratio: 1; } }
+.rx-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ================= "meet the team" popups: one shared layout (photo left, quick facts as
+   icon pills under the name) for every team member — chosen after comparing four options. ===== */
+.mc-v1-card { grid-template-columns: 1fr; height: auto; max-height: min(92vh, 820px); overflow-y: auto; }
+@media (min-width: 700px) { .mc-v1-card { grid-template-columns: .85fr 1.15fr; } }
+.mc-v1-photo { position: relative; background: var(--tone, var(--blush)); overflow: hidden; min-height: 240px; }
+.mc-v1-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.mc-v1-body { padding: clamp(24px, 4vw, 48px); }
+.mc-v1-body h3 { font-size: clamp(1.5rem, 2.6vw, 2.4rem); }
+.mc-v1-body .role { font: italic 400 clamp(1.3rem, 1.61vw, 1.55rem) var(--serif); color: var(--rose); margin: 6px 0 0; }
+.mc-v1-gdc { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13.5px; color: var(--ink-soft); text-decoration: none; transition: color .3s; }
+.mc-v1-gdc:hover { color: var(--pink); }
+.mc-v1-gdc .fact-ic { width: 18px; height: 18px; }
+.mc-v1-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 26px; }
+.mc-v1-pills .pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--cream-2); font-size: 13.5px; transition: transform .3s var(--ease); }
+.mc-v1-pills .pill:hover { transform: translateX(4px); }
+.mc-v1-pills .pill .fact-ic { width: 18px; height: 18px; }
+.mc-v1-pills .pill b { font-family: var(--ui); }

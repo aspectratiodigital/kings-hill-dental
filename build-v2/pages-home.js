@@ -19,8 +19,8 @@ function welcome() {
   const shape = (cls, style, vb, d, flip) => `<svg class="w-shape ${cls}" style="${style}${flip ? ';--flip:-1' : ''}" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" fill="currentColor"/></svg>`;
   const rect = (cls, style) => `<span class="w-shape w-rect ${cls}" style="${style}" aria-hidden="true"></span>`;
   return `<section class="welcome" aria-labelledby="welcome-h"><div class="w-art">
-<img class="w-img wa" src="/img/welcome-a.webp" alt="The reception area at Kings Hill Dental" loading="lazy" width="1367" height="778" style="${box(-0.039077, 0.016572, 0.49123, 0.42127)};-webkit-mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)};mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)}">
-<img class="w-img wb" src="/img/welcome-b.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873" style="${box(0.18858, 0.13348, 0.36806, 0.3565)};-webkit-mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)};mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)}">
+<img class="w-img wa" src="/img/welcome-a.webp" alt="The reception area at Kings Hill Dental" loading="lazy" width="1367" height="778" style="${box(0.06, 0.02, 0.40281, 0.34544)};-webkit-mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)};mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)}">
+<img class="w-img wb" src="/img/welcome-b.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873" style="${box(0.28, 0.12, 0.30181, 0.29233)};-webkit-mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)};mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)}">
 <div class="w-text">
 <p class="w-kicker" data-reveal>Welcome to…</p>
 <h2 id="welcome-h" data-split>Kings Hill Dental</h2>
@@ -72,13 +72,15 @@ function home() {
   ];
   const body = `
 <section class="hero-old">
+<div class="wrap"><div class="hero-old-stage"><div class="hero-old-top">
 <div class="hero-old-img" data-reveal="fade"><img src="/img/hero-old.webp" alt="A dentist talking with a patient in the treatment room at Kings Hill Dental" fetchpriority="high" width="2000" height="800"></div>
-<div class="wrap"><div class="hero-old-text">
+<div class="hero-old-text">
 <h1 class="display hero-h1" aria-label="Care that starts with listening"><span data-split>Care that starts</span><span data-split>with listening</span></h1>
 <p class="lede" data-reveal style="--d:4">A Professional, honest and ethical practice that puts dental health first, aesthetics second.</p>
 <p data-reveal style="--d:5">We understand that dentistry can be scary and so we are here for you, to help give you professional, caring advice that ensures you get the best treatment tailored specifically to your personal dental needs.</p>
 <div class="actions" data-reveal style="--d:6"><a class="btn" href="${PORTAL}" target="_blank" rel="noopener">Book Consultation</a><a class="btn btn--ghost" href="#welcome-h">Our Approach</a></div>
 </div>
+</div></div>
 <ul class="assure">${assure.map(([ic, h, d], i) => `<li data-reveal="left" style="--d:${i}"><span class="ai">${ic}</span><h3>${h}</h3><p>${d}</p></li>`).join('')}</ul>
 </div>
 </section>
@@ -121,7 +123,7 @@ ${partners()}
 <p class="lede" data-reveal>Simply fill out the form and our friendly reception team will call you back to answer your questions promptly.</p>
 <div class="contact-info-grid" data-reveal>${infoList()}<div class="contact-hours"><h3 class="h4">Opening hours</h3>${hoursTable()}</div></div>
 </div>
-${contactForm({ id: 'home-form' })}
+${contactForm({ id: 'home-form', note: false })}
 </div>
 <div class="wrap" style="margin-top:clamp(20px,2.5vw,32px)">${footerBottom()}</div>
 </section>`;

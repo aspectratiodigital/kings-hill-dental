@@ -41,7 +41,7 @@
     const t = el.querySelector('[data-status-text]'); if (t) t.textContent = st.text;
     const s = el.querySelector('[data-status-sub]'); if (s) s.textContent = st.sub;
   });
-  const today = new Date(new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })).getDay();
+  const today = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/London' })).getDay();
   $$('[data-day]').forEach((r) => r.classList.toggle('today', +r.dataset.day === today));
 
   /* ---------- header, progress, back to top ---------- */
@@ -152,47 +152,6 @@
     });
   });
   window.__openAcc = openAcc;
-
-  /* ---------- generic tabs (design-concept sections: age-milestone tabs etc.) — reuses the
-     cosmetic tabs' sliding-pill track, but only swaps text panels, no image. ---------- */
-  $$('[data-tabs]').forEach((root) => {
-    const track = $('.cx-tabs', root), tabs = $$('[role="tab"]', root), panels = $$('[role="tabpanel"]', root);
-    const set = (i) => {
-      tabs.forEach((t, j) => { t.setAttribute('aria-selected', j === i); t.tabIndex = j === i ? 0 : -1; });
-      panels.forEach((p, j) => { p.hidden = j !== i; });
-      track.style.setProperty('--w', tabs[i].offsetWidth + 'px');
-      track.style.setProperty('--x', tabs[i].offsetLeft + 'px');
-    };
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => set(i));
-      t.addEventListener('keydown', (e) => {
-        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-        e.preventDefault();
-        const next = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-        tabs[next].focus(); set(next);
-      });
-    });
-    set(0);
-    addEventListener('resize', () => set(tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true')));
-  });
-
-  /* ---------- symptom self-check (Bruxism design concept: tally ticked symptoms, no diagnosis) ---------- */
-  $$('[data-symptom-check]').forEach((root) => {
-    const boxes = $$('input[type="checkbox"]', root), out = $('[data-symptom-result]', root);
-    const messages = [
-      'Tap anything that sounds familiar — there’s no wrong answer.',
-      'Just the one sign on its own is usually nothing to worry about.',
-      'A couple of these together are worth mentioning at your next visit.',
-      'Several of these together are worth a proper look — we’d suggest booking a check-up.',
-    ];
-    const update = () => {
-      const n = boxes.filter((b) => b.checked).length;
-      out.textContent = messages[Math.min(n, messages.length - 1)];
-      out.parentElement.classList.toggle('is-flagged', n >= 2);
-    };
-    boxes.forEach((b) => b.addEventListener('change', update));
-    update();
-  });
 
   /* ---------- fee search ---------- */
   const fs = $('#fee-search');
@@ -310,25 +269,13 @@
   }
 
   /* ---------- team dialog ---------- */
-  const pd = $('#person-dialog');
-  if (pd) {
-    const people = JSON.parse($('#people-data').textContent);
-    $$('[data-person]').forEach((b) => b.addEventListener('click', () => {
-      const p = people[b.dataset.person];
-      $('.modal-photo', pd).style.setProperty('--tone', p.tone);
-      $('.modal-photo img', pd).src = p.img; $('.modal-photo img', pd).alt = p.name;
-      $('h3', pd).textContent = p.name; $('.role', pd).textContent = p.role;
-      $('.facts', pd).innerHTML = p.facts.map((f) => '<div>' + f + '</div>').join('');
-      $('.bio', pd).innerHTML = p.bio.map((t) => '<p>' + t + '</p>').join('');
-      pd.showModal();
-    }));
-    pd.addEventListener('click', (e) => { if (e.target.classList.contains('modal') || e.target.closest('.modal-x')) pd.close(); });
-  }
+  $$('[data-person]').forEach((b) => b.addEventListener('click', () => { $('#' + b.dataset.open)?.showModal(); }));
+  $$('dialog').forEach((d) => d.addEventListener('click', (e) => { if (e.target.classList.contains('modal') || e.target.closest('.modal-x')) d.close(); }));
 
   /* ---------- practice mosaic ---------- */
   const mos = $('[data-mosaic]');
   if (mos) {
-    const cells = $$('.mo', mos), cap = $('[data-mcap]'), lb = $('#lightbox');
+    const cells = $$('.mo', mos), cap = $('[data-mcap]');
     // [col start, col span, row start, row span] for each tile in the 4x3 layout
     const pos = [[1, 2, 1, 1], [3, 1, 1, 1], [4, 1, 1, 1], [1, 1, 2, 1], [2, 2, 2, 1], [4, 1, 2, 1], [1, 1, 3, 1], [2, 1, 3, 1], [3, 2, 3, 1]];
     const setTracks = (k) => {
@@ -338,16 +285,12 @@
       const rows = [1, 2, 3].map((n) => (n >= r && n < r + rs ? 1.4 : 0.86) + 'fr').join(' ');
       mos.style.setProperty('--cols', cols); mos.style.setProperty('--rows', rows);
     };
-    const activate = (k) => { cells.forEach((c, j) => c.classList.toggle('is-on', j === k)); mos.classList.toggle('has-on', k != null); setTracks(k); if (k != null) cap.textContent = cells[k].getAttribute('aria-label').replace('. Enlarge photo', ''); };
+    const activate = (k) => { cells.forEach((c, j) => c.classList.toggle('is-on', j === k)); mos.classList.toggle('has-on', k != null); setTracks(k); if (k != null) cap.textContent = cells[k].getAttribute('aria-label'); };
     cells.forEach((c, k) => {
       c.addEventListener('mouseenter', () => activate(k)); c.addEventListener('focus', () => activate(k));
-      c.addEventListener('click', () => {
-        if (matchMedia('(hover: none)').matches && !c.classList.contains('is-on')) { activate(k); return; }
-        $('img', lb).src = $('img', c).src; lb.showModal();
-      });
+      c.addEventListener('click', () => activate(k));
     });
     mos.addEventListener('mouseleave', () => activate(null));
-    lb?.addEventListener('click', () => lb.close());
     setTracks(null);
     const tabs = $$('[data-mode]');
     tabs.forEach((t) => t.addEventListener('click', () => {
@@ -379,6 +322,21 @@
     set(0);
   });
 
+  /* ---------- dentistry hub: hover-driven sliding pill (plain nav links, not a content switcher) ---------- */
+  $$('[data-hover-tabs]').forEach((track) => {
+    const links = $$('a', track);
+    links.forEach((a) => {
+      a.addEventListener('mouseenter', () => {
+        track.style.setProperty('--w', a.offsetWidth + 'px');
+        track.style.setProperty('--x', a.offsetLeft + 'px');
+      });
+      a.addEventListener('focus', () => {
+        track.style.setProperty('--w', a.offsetWidth + 'px');
+        track.style.setProperty('--x', a.offsetLeft + 'px');
+      });
+    });
+  });
+
   /* ---------- general & preventative: image accordion (touch fallback — hover does the rest) ---------- */
   $$('[data-accordion]').forEach((root) => {
     $$('.gp-tile', root).forEach((tile) => {
@@ -398,6 +356,18 @@
       const replay = () => lines.forEach((l) => { l.style.animation = 'none'; void l.getBBox(); l.style.animation = ''; });
       b.addEventListener('mouseenter', replay);
       b.addEventListener('focus', replay);
+    });
+  }
+
+  /* ---------- about: letter tilts gently toward the cursor ---------- */
+  if (!reduce && matchMedia('(hover: hover)').matches) {
+    $$('.ai-letter-copy').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(1200px) rotateX(${(py * -6).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
   }
 
