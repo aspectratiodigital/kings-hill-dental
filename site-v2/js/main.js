@@ -88,9 +88,10 @@
       cats.forEach((c, j) => c.classList.toggle('is-on', j === i));
       subs.forEach((s, j) => s.classList.toggle('is-on', j === i));
       subsEl.style.height = subs[i].scrollHeight + 'px';
+      subsEl.style.width = subs[i].scrollWidth + 'px';
       inner.classList.add('is-extended');
     };
-    const off = () => { inner.classList.remove('is-extended'); subsEl.style.height = ''; cats.forEach((c) => c.classList.remove('is-on')); };
+    const off = () => { inner.classList.remove('is-extended'); subsEl.style.height = ''; subsEl.style.width = ''; cats.forEach((c) => c.classList.remove('is-on')); };
     cats.forEach((c, i) => { c.addEventListener('mouseenter', () => on(i)); c.addEventListener('focus', () => on(i)); });
     root.addEventListener('mouseleave', off);
     inner.addEventListener('focusout', (e) => { if (!inner.contains(e.relatedTarget)) off(); });
@@ -151,6 +152,47 @@
     });
   });
   window.__openAcc = openAcc;
+
+  /* ---------- generic tabs (design-concept sections: age-milestone tabs etc.) — reuses the
+     cosmetic tabs' sliding-pill track, but only swaps text panels, no image. ---------- */
+  $$('[data-tabs]').forEach((root) => {
+    const track = $('.cx-tabs', root), tabs = $$('[role="tab"]', root), panels = $$('[role="tabpanel"]', root);
+    const set = (i) => {
+      tabs.forEach((t, j) => { t.setAttribute('aria-selected', j === i); t.tabIndex = j === i ? 0 : -1; });
+      panels.forEach((p, j) => { p.hidden = j !== i; });
+      track.style.setProperty('--w', tabs[i].offsetWidth + 'px');
+      track.style.setProperty('--x', tabs[i].offsetLeft + 'px');
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => set(i));
+      t.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const next = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        tabs[next].focus(); set(next);
+      });
+    });
+    set(0);
+    addEventListener('resize', () => set(tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true')));
+  });
+
+  /* ---------- symptom self-check (Bruxism design concept: tally ticked symptoms, no diagnosis) ---------- */
+  $$('[data-symptom-check]').forEach((root) => {
+    const boxes = $$('input[type="checkbox"]', root), out = $('[data-symptom-result]', root);
+    const messages = [
+      'Tap anything that sounds familiar — there’s no wrong answer.',
+      'Just the one sign on its own is usually nothing to worry about.',
+      'A couple of these together are worth mentioning at your next visit.',
+      'Several of these together are worth a proper look — we’d suggest booking a check-up.',
+    ];
+    const update = () => {
+      const n = boxes.filter((b) => b.checked).length;
+      out.textContent = messages[Math.min(n, messages.length - 1)];
+      out.parentElement.classList.toggle('is-flagged', n >= 2);
+    };
+    boxes.forEach((b) => b.addEventListener('change', update));
+    update();
+  });
 
   /* ---------- fee search ---------- */
   const fs = $('#fee-search');

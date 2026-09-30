@@ -7,7 +7,7 @@ const H = require('./pages-home');
 const B = require('./pages-b');
 
 const OUT = path.join(__dirname, '..', 'site-v2');
-const pages = [H.home(), A.about(), A.contact(), B.dentistry(), B.aesthetics(), B.feesPage(), B.membership(), B.referrals(), B.topicGeneral(), B.examinations(), B.hygiene(), B.restorativeField(), B.cosmeticField(), B.orthodonticField(), B.privacy(), B.accessibility()];
+const pages = [H.home(), A.about(), A.contact(), B.dentistry(), B.aesthetics(), B.feesPage(), B.membership(), B.referrals(), B.topicGeneral(), B.examinations(), B.hygiene(), B.childrensDentistry(), B.bruxism(), B.restorativeField(), B.cosmeticField(), B.orthodonticField(), B.privacy(), B.accessibility()];
 for (const p of pages) {
   const dir = path.join(OUT, p.path.replace(/^\//, ''));
   fs.mkdirSync(dir, { recursive: true });

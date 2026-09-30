@@ -136,11 +136,11 @@
 .contact-foot .form-card .field input:hover, .contact-foot .form-card .field textarea:hover, .contact-foot .form-card .field select:hover { border-bottom-color: var(--pink); }
 .contact-foot .form-card .field input:focus, .contact-foot .form-card .field textarea:focus, .contact-foot .form-card .field select:focus { background: transparent; border-bottom-color: var(--pink); box-shadow: none; }
 .contact-foot .form-card .field input:not(:placeholder-shown) ~ label, .contact-foot .form-card .field textarea:not(:placeholder-shown) ~ label, .contact-foot .form-card .field input:focus ~ label, .contact-foot .form-card .field textarea:focus ~ label { color: var(--blush); }
-/* choice pills: thicker white outline, fills white when picked, pink dot (no dark ring) */
+/* choice pills: thicker white outline, fills white when picked, pink dot with a small white centre */
 .contact-foot .form-card .choice span { background: transparent; border-width: 2px; border-color: var(--cream); color: var(--cream); }
 .contact-foot .form-card .choice span::before { border-width: 2px; }
 .contact-foot .form-card .choice input:checked + span { background: var(--cream); color: var(--brown); border-color: var(--cream); }
-.contact-foot .form-card .choice input:checked + span::before { background: var(--pink); box-shadow: none; border-color: var(--pink); }
+.contact-foot .form-card .choice input:checked + span::before { background: var(--cream); box-shadow: inset 0 0 0 3px var(--pink); border-color: var(--pink); }
 .contact-foot .form-card .choice input:hover:not(:checked) + span { border-color: var(--pink); }
 /* checkbox: a circle, not a square, with a pink fill and white tick when checked */
 .contact-foot .form-card .check input { border-radius: 50%; border-color: var(--cream); background: transparent; }
@@ -320,7 +320,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 
 /* ================= shared page header (image + layered title) ================= */
 .phero { padding: calc(var(--header-h) + 10px) 0 0; }
-.phero-frame { position: relative; overflow: hidden; height: clamp(320px, 38vw, 520px); border-radius: 0 0 50% 50% / 0 0 clamp(50px, 9vw, 130px) clamp(50px, 9vw, 130px); background: var(--brown); isolation: isolate; }
+.phero-frame { position: relative; overflow: hidden; height: clamp(320px, 38vw, 520px); border-radius: 0 0 50% 50% / 0 0 clamp(50px, 9vw, 130px) clamp(50px, 9vw, 130px); background: var(--brown); isolation: isolate; transform: translateZ(0); will-change: transform; }
 .phero-img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; z-index: -2; }
 .phero-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(70, 28, 17, .32), rgba(70, 28, 17, .22) 55%, rgba(70, 28, 17, .48)); }
 .phero-content { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 var(--gutter) clamp(20px, 3.5vw, 48px); color: var(--cream); }
@@ -461,15 +461,22 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mega { box-shadow: 0 30px 60px -20px rgba(70, 28, 17, .32); }
 .mega h3 { font: 700 13px/1 var(--ui); letter-spacing: .06em; text-transform: uppercase; color: var(--rose); margin: 0 0 14px; }
 .mega li { position: relative; }
-.mega li a { position: relative; display: inline-block; padding: 9px 0; font: 700 13.5px/1 var(--ui); letter-spacing: .05em; text-transform: uppercase; color: var(--brown); text-decoration: none; transition: color .3s; white-space: nowrap; }
+.mega li a { position: relative; display: inline-block; padding: 9px 0; font: 700 13.5px/1 var(--ui); line-height: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--brown); text-decoration: none; transition: color .3s; white-space: nowrap; }
 .mega li a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 2px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .mega li a:hover { color: var(--clay); transform: none; }
 .mega li a:hover::after { transform: scaleX(1); }
 .mega ul { display: grid; gap: 6px; }
 
-.mega--flyout { padding: 20px; }
-.mega-inner { display: flex; align-items: flex-start; }
-.mega-cats { flex: none; width: 260px; list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+/* Dropdown A and dropdown B share ONE background/shadow/corner-radius — there is only one card.
+   At rest it's exactly A's size (fully rounded, like a plain single-column dropdown). Hovering a
+   category grows the card's own width to the right, like a wall sliding out, revealing B in the
+   space it opens up; the card's height then simply follows whichever category is active (it can
+   settle taller or shorter than A alone). Because the background belongs to the outer card and
+   never itself fades, only the text inside crossfades — the shape never disappears and reappears,
+   it just resizes. */
+.mega--flyout { padding: 24px 28px 26px; background: var(--cream); border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(70, 28, 17, .32); min-width: 0; }
+.mega-inner { display: flex; align-items: flex-start; gap: 36px; }
+.mega-cats { flex: none; width: max-content; min-width: 180px; list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .mega-cat { position: relative; }
 .mega-cats .mega-cat-link { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 9px 0; border-radius: 0; text-decoration: none; white-space: nowrap; font: 700 13.5px/1 var(--ui); letter-spacing: .05em; text-transform: uppercase; color: var(--brown); background: none; transition: color .3s; }
 .mega-cat-link .lbl { position: relative; }
@@ -479,13 +486,15 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mega-cats .mega-cat-link:hover, .mega-cats .mega-cat-link.is-on { background: none; color: var(--clay); }
 .mega-cats .mega-cat-link:hover .lbl::after, .mega-cats .mega-cat-link.is-on .lbl::after { transform: scaleX(1); }
 .mega-cat-link:hover .chevr, .mega-cat-link.is-on .chevr { transform: translateX(3px); opacity: 1; }
-/* the second layer lives inside the same box and grows the box open, rather than floating beside it.
-   All sub-panels share one grid cell so they can crossfade; JS sets an explicit height matching
-   whichever category is active, so the box is only ever as tall as that category's own items
-   (never stretched to fit a different category, and never resizing the category list on the left). */
-.mega-subs { display: grid; align-items: start; width: 0; height: 0; overflow: hidden; transition: width .5s var(--ease), height .5s var(--ease); }
-.mega-inner.is-extended .mega-subs { width: 284px; }
-.mega-sub { grid-column: 1; grid-row: 1; width: 284px; box-sizing: border-box; padding-left: 24px; opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; }
+/* dropdown B has no background of its own — it's plain text sitting on the shared card. Growing its
+   width (revealing B) and height (matching whichever category is active) just resizes this one
+   transparent box; the card behind it never fades, so only the text crossfades between categories.
+   Both dimensions are set by JS per active category (see main.js) so B is only ever as wide as that
+   category's own longest item, not padded out to a fixed width. Sub-panels are absolutely
+   positioned on top of each other (rather than sharing a grid cell) so each measures its own
+   natural width, unaffected by the others. */
+.mega-subs { position: relative; width: 0; height: 0; overflow: hidden; transition: width .65s var(--ease), height .65s var(--ease); }
+.mega-sub { position: absolute; top: 0; left: 0; width: max-content; opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; }
 .mega-sub.is-on { opacity: 1; visibility: visible; }
 .mega-sub ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 
@@ -504,15 +513,15 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .ai-letter { display: grid; gap: clamp(22px, 3vw, 40px); grid-template-columns: 1fr; align-items: stretch; margin-top: clamp(18px, 2.6vw, 32px); }
 @media (min-width: 900px) { .ai-letter { grid-template-columns: .8fr 1.2fr; } }
 .ai-letter-media { margin: 0; height: 100%; }
-.ai-letter-media img { width: 100%; height: 100%; min-height: 260px; max-height: 420px; object-fit: cover; object-position: 50% 15%; border-radius: 10px; display: block; }
+.ai-letter-media img { width: 100%; height: 100%; min-height: 340px; max-height: 546px; object-fit: cover; object-position: 50% 15%; border-radius: 10px; display: block; }
 .ai-letter-copy { position: relative; background: #fbf7ef; border-radius: 6px; padding: clamp(18px, 2.6vw, 28px); box-shadow: 0 22px 44px -30px rgba(70, 28, 17, .4), 0 2px 12px rgba(70, 28, 17, .07); overflow: hidden; }
-.ai-letter-copy::before { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"); pointer-events: none; }
-.ai-letterhead { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1.5px solid var(--line); }
+.ai-letter-copy::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(140% 100% at 12% 0%, rgba(70, 28, 17, .06), transparent 60%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: cover, 180px 180px; mix-blend-mode: multiply; opacity: .12; pointer-events: none; }
+.ai-letterhead { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; padding-bottom: 12px; margin-bottom: 18px; border-bottom: 1.5px solid var(--line); }
 .ai-letterhead-name { font: 400 1.15rem/1 var(--serif); color: var(--brown); }
 .ai-letterhead-place { font: italic 400 13px/1 var(--ui); letter-spacing: .02em; color: var(--ink-soft); }
-.ai-letter-copy p { position: relative; font-size: var(--fs-body); line-height: 1.55; color: var(--ink-soft); margin: 0; }
-.ai-letter-copy p + p { margin-top: .7em; }
-.ai-sign { position: relative; margin-top: 10px; display: grid; gap: 2px; }
+.ai-letter-copy p { position: relative; font-size: var(--fs-body); line-height: 1.7; color: var(--ink-soft); margin: 0; }
+.ai-letter-copy p + p { margin-top: 1.1em; }
+.ai-sign { position: relative; margin-top: 18px; display: grid; gap: 2px; }
 .ai-sign-name { font: 400 1.8rem/1 var(--serif); color: var(--brown); font-style: italic; }
 .ai-sign-role { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
 
@@ -522,7 +531,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .gp-tile:hover, .gp-tile:focus-within, .gp-tile.is-on { flex: 3.4 1 0%; }
 .gp-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transition: transform 1.2s var(--ease); }
 .gp-tile:hover .gp-photo, .gp-tile:focus-within .gp-photo, .gp-tile.is-on .gp-photo { transform: scale(1.03); }
-.gp-caption { position: absolute; inset: auto 0 0; padding: clamp(18px, 2.4vw, 30px) clamp(16px, 2vw, 26px) clamp(12px, 1.6vw, 18px); }
+.gp-caption { position: absolute; z-index: 1; inset: auto 0 0; padding: clamp(18px, 2.4vw, 30px) clamp(16px, 2vw, 26px) clamp(12px, 1.6vw, 18px); }
 .gp-caption::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--brown) 55%, transparent) 75%, color-mix(in srgb, var(--brown) 92%, transparent) 100%); opacity: .5; transition: opacity .5s var(--ease); z-index: -1; }
 .gp-tile:hover .gp-caption::before, .gp-tile:focus-within .gp-caption::before, .gp-tile.is-on .gp-caption::before { opacity: 1; }
 .gp-caption h3 { position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--cream); font: 400 1.45rem/1.15 var(--serif); margin: 0; }
@@ -567,3 +576,103 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .cx-media img.on { opacity: 1; transform: none; }
 .cx-body { position: relative; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center; }
 .cx-body [data-cx-body][hidden] { display: none; }
+
+/* ================= treatment page design concepts (Dental Examinations / Children's
+   Dentistry / Bruxism redesign exploration) — shared bits used across the three pages ================= */
+
+/* small annotation callout labelling each design experiment; not meant for the final, shipped page */
+.design-note { display: grid; gap: 6px; max-width: 62ch; margin-bottom: clamp(28px, 4vw, 44px); padding: 14px 20px; border: 1.5px dashed var(--line); border-radius: 14px; background: color-mix(in srgb, var(--cream-2) 55%, transparent); }
+.design-note-tag { font: 700 11.5px/1 var(--ui); letter-spacing: .08em; text-transform: uppercase; color: var(--rose); }
+.design-note p { margin: 0; font-size: 14.5px; font-style: italic; color: var(--ink-soft); }
+.concept-block + .concept-block { margin-top: clamp(56px, 8vw, 96px); padding-top: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+
+/* stat strip: three quick, real numbers for trust (reused facts, not new claims) */
+.stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 3vw, 28px); margin: 32px 0 44px; padding: clamp(20px, 3vw, 32px) 0; border-block: 1px solid var(--line); }
+.stat-strip div { text-align: center; display: grid; gap: 4px; }
+.stat-strip strong { font: 400 clamp(1.8rem, 3.4vw, 2.6rem)/1 var(--serif); color: var(--brown); }
+.stat-strip span { font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+@media (max-width: 560px) { .stat-strip { grid-template-columns: 1fr; gap: 18px; text-align: left; } .stat-strip div { grid-template-columns: auto 1fr; align-items: baseline; gap: 10px; text-align: left; } }
+
+/* process rail: numbered steps connected by a line — horizontal on desktop, vertical on mobile */
+.proc-rail { display: grid; gap: 28px; grid-template-columns: 1fr; counter-reset: pr; margin: 8px 0 0; position: relative; }
+@media (min-width: 900px) { .proc-rail { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+.proc-rail::before { content: ""; position: absolute; background: var(--line); }
+@media (max-width: 899px) { .proc-rail::before { left: 21px; top: 6px; bottom: 6px; width: 2px; } }
+@media (min-width: 900px) { .proc-rail::before { left: calc(100% / 10); right: calc(100% / 10); top: 21px; height: 2px; } }
+.proc-rail li { position: relative; counter-increment: pr; list-style: none; padding-left: 62px; opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--i, 0) * .1s); }
+.proc-rail.is-in li, .no-js .proc-rail li { opacity: 1; transform: none; }
+@media (min-width: 900px) { .proc-rail li { padding-left: 0; padding-top: 58px; text-align: center; } }
+.proc-n { position: absolute; left: 0; top: -2px; width: 44px; height: 44px; border-radius: 50%; background: var(--cream); border: 2px solid var(--brown); color: var(--brown); display: grid; place-items: center; font: 700 16px/1 var(--ui); }
+@media (min-width: 900px) { .proc-n { left: 50%; top: 0; translate: -50% 0; } }
+.proc-rail h3 { font: 700 14.5px/1.3 var(--ui); letter-spacing: .01em; text-transform: none; margin-bottom: 6px; color: var(--brown); }
+.proc-rail p { font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 32ch; }
+@media (min-width: 900px) { .proc-rail p { margin-inline: auto; } }
+
+/* two-column Q&A: label-left, answer-right (a static alternative to the click-to-expand accordion) */
+.qa-split { display: grid; gap: 0; margin-top: 8px; border-top: 1px solid var(--line); }
+.qa-row { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .qa-row { grid-template-columns: 280px 1fr; gap: 40px; } }
+.qa-row h3 { font-size: 1.25rem; color: var(--brown); }
+.qa-row .qa-a p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+.qa-row .qa-a p + p { margin-top: .8em; }
+
+/* pull-note: a supporting photo paired with a short statement */
+.pull-note { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: center; margin: clamp(48px, 7vw, 80px) 0; }
+@media (min-width: 760px) { .pull-note { grid-template-columns: .8fr 1.2fr; gap: 40px; } }
+.pull-note img { width: 100%; height: 100%; max-height: 320px; object-fit: cover; border-radius: 24px; }
+.pull-note p { font: 400 clamp(1.3rem, 2.2vw, 1.7rem)/1.4 var(--serif); color: var(--brown); margin: 0; }
+
+/* age-milestone tabs: reuses the cosmetic tabs' sliding-pill track for a consistent feel */
+.age-tabs { margin-top: 8px; }
+.age-panels { margin-top: 28px; }
+.age-panels [role="tabpanel"][hidden] { display: none; }
+.age-panels .checklist { margin: 0; }
+
+/* benefit grid: icon + short label, echoes the homepage "assure" strip but as cards */
+.benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 8px; }
+@media (min-width: 700px) { .benefit-grid { grid-template-columns: repeat(4, 1fr); } }
+.benefit-grid > div { padding: 24px 20px; border-radius: 20px; background: var(--cream-2); }
+.benefit-grid .ic { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--cream); color: var(--rose); margin-bottom: 14px; }
+.benefit-grid .ic svg { width: 22px; height: 22px; }
+.benefit-grid h3 { font: 700 14.5px/1.3 var(--ui); margin-bottom: 6px; color: var(--brown); }
+.benefit-grid p { font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+@media (max-width: 560px) { .benefit-grid { grid-template-columns: 1fr; } }
+
+/* photo-note: a real practice photo with a grounded caption, not stock illustration */
+.photo-note { margin: clamp(48px, 7vw, 80px) 0; border-radius: 28px; overflow: hidden; background: var(--cream-2); }
+@media (min-width: 760px) { .photo-note { display: grid; grid-template-columns: 1.1fr 1fr; align-items: stretch; } }
+.photo-note img { width: 100%; height: 100%; max-height: 420px; object-fit: cover; }
+.photo-note figcaption { padding: clamp(24px, 4vw, 40px); align-self: center; }
+.photo-note figcaption h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--brown); }
+.photo-note figcaption p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+
+/* symptom self-check: a tappable checklist with a live, non-diagnostic response */
+.symptom-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
+@media (min-width: 700px) { .symptom-grid { grid-template-columns: 1fr 1fr; } }
+.symptom { position: relative; display: flex; align-items: center; gap: 14px; padding: 16px 20px; border: 1.5px solid var(--line); border-radius: 16px; cursor: pointer; transition: border-color .3s, background-color .3s; }
+.symptom:hover { border-color: var(--rose); }
+.symptom input { position: absolute; opacity: 0; inset: 0; cursor: pointer; margin: 0; }
+.symptom .bx { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--brown); display: grid; place-items: center; transition: background-color .3s, border-color .3s; }
+.symptom .bx svg { width: 13px; height: 13px; color: var(--cream); opacity: 0; transform: scale(.5); transition: opacity .25s var(--ease), transform .25s var(--ease); }
+.symptom input:checked ~ .bx { background: var(--brown); }
+.symptom input:checked ~ .bx svg { opacity: 1; transform: none; }
+.symptom input:checked ~ span:not(.bx) { color: var(--brown); }
+.symptom input:focus-visible ~ .bx { outline: 2px solid var(--brown); outline-offset: 2px; }
+.symptom span:not(.bx) { font-size: 15px; line-height: 1.4; color: var(--ink-soft); transition: color .3s; }
+.symptom-result { margin-top: 24px; padding: 20px 24px; border-radius: 16px; background: var(--cream-2); transition: background-color .4s, color .4s; }
+.symptom-result p { margin: 0; font-size: 15.5px; color: var(--ink-soft); transition: color .4s; }
+.symptom-result.is-flagged { background: var(--brown); }
+.symptom-result.is-flagged p { color: var(--cream); }
+
+/* compare grid: causes vs. treatment, side by side */
+.compare-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 8px; }
+@media (min-width: 760px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
+.compare-col { padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: var(--cream-2); }
+.compare-col--sol { background: var(--brown); color: var(--cream); }
+.compare-col h3 { font-size: 1.3rem; margin-bottom: 18px; }
+.compare-col--sol h3 { color: var(--cream); }
+.compare-col ul { display: grid; gap: 12px; }
+.compare-col li { position: relative; padding-left: 26px; font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
+.compare-col--sol li { color: color-mix(in srgb, var(--cream) 88%, transparent); }
+.compare-col li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); }
+.compare-col--sol li::before { background: var(--pink); }

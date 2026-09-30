@@ -126,8 +126,8 @@ function topicGeneral() {
   const items = [
     ['exam', 'Dental Examinations', 'Routine dental examinations are the foundation of your oral health care. Regular check-ups allow us to keep an eye on your oral health and spot any problems early.', 'tx-exam', '/dentistry/general-preventative/dental-examinations/'],
     ['hygiene', 'Hygiene & Gum Health', 'Defending your oral health from gum disease with hygiene and periodontal treatments. Hygienists are trained experts in assessing, tracking and treating gum disease.', 'tx-hygiene', '/dentistry/general-preventative/hygiene-gum-health/', '40% 24%'],
-    ['childrens', 'Children’s Dentistry', 'Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.', 'tx-children', '/contact/?about=Check-up', '62% 25%'],
-    ['bruxism', 'Bruxism', 'If you are suffering with consistent grinding and clenching of your teeth, then you might have Bruxism. Our experts can help diagnose and treat, leaving you discomfort free.', 'tx-bruxism', '/contact/?about=Check-up'],
+    ['childrens', 'Children’s Dentistry', 'Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.', 'tx-children', '/dentistry/general-preventative/childrens-dentistry/', '62% 25%'],
+    ['bruxism', 'Bruxism', 'If you are suffering with consistent grinding and clenching of your teeth, then you might have Bruxism. Our experts can help diagnose and treat, leaving you discomfort free.', 'tx-bruxism', '/dentistry/general-preventative/bruxism/'],
   ];
   const body = `
 ${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative'])}`, title: `General &amp; Preventative`, img: 'hero-general', alt: `A dentist and patient sharing a laugh during a consultation`, intro: `<p class="lede" data-reveal>We focus on helping patients maintain healthy teeth and gums through regular examinations and preventative care. We understand the dentist can seem daunting and so our team of kind, professional dentists are here to make your visit as relaxing and informative as possible.</p><p data-reveal>Hover or select a treatment below to find out more.</p>` })}
@@ -140,24 +140,39 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
 
 /* ---------- TREATMENT pages ---------- */
 function asideCard(current) {
-  const links = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['All general & preventative', '/dentistry/general-preventative/']].filter((l) => l[1] !== current);
+  const links = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/'], ['All general & preventative', '/dentistry/general-preventative/']].filter((l) => l[1] !== current);
   return `<aside class="tx-aside"><div class="aside-card"><h3>Book a visit</h3><p>Our team will explain everything before we begin, so you always know what to expect.</p>${arrowBtn('Book an Appointment', PORTAL, 'btn--light', true)}<div class="aside-links">${links.map(([t, h]) => `<a href="${h}">${t}${I.arrow}</a>`).join('')}</div></div></aside>`;
 }
 const checklist = (a) => `<ul class="checklist">${a.map((t, i) => `<li style="--i:${i}">${I.tickBig}<span>${t}</span></li>`).join('')}</ul>`;
 const accItem = (t, html, open, id) => `<details${open ? ' open' : ''}${id ? ` id="${id}"` : ''}><summary>${t}<span class="pm" aria-hidden="true"></span></summary><div class="panel"><div><div class="panel-in stack">${html}</div></div></div></details>`;
 
 function examinations() {
+  const steps = [
+    ['Teeth & gums', 'Checking for any signs of wear, decay or gum disease'],
+    ['Soft tissues', 'A look at your tongue and soft tissues, making sure they’re healthy'],
+    ['Face, neck & jaw', 'Checking for any issues or abnormalities'],
+    ['Bite', 'Making sure your teeth mesh together properly'],
+    ['Oral cancer check', 'A routine screening for early warning signs'],
+  ];
   const body = `
 ${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Dental examinations'])}`, title: `Dental Examinations`, img: 'tx-exam', alt: `A dentist and patient during an examination`, intro: `<p class="lede" data-reveal>Routine examinations are the foundation of your oral health care. Regular check-ups allow us to spot and address any problems early.</p>` })}
 <section class="section" style="padding-top:0"><div class="wrap tx-layout">
 <div>
+<div class="design-note"><span class="design-note-tag">Design concept — The Visit Journey</span><p>Same copy as the live page, reframed as a step-by-step process rather than a flat list. Real practice sites we looked at (Homesley Dental's "What to Expect at Your First Checkup" is a good example) lean on a numbered walkthrough for exactly this kind of content — it reads as reassuring rather than clinical, and gives us somewhere to hang a bit of motion.</p></div>
 <p class="lede" data-reveal>During your appointment, we will examine and assess your teeth, gums and mouth, as well as look at your overall health.</p>
-<h2 class="h3" style="margin:36px 0 0" data-reveal>Our dental examination includes:</h2>
-${checklist(['Check teeth and gums for any signs of wear, decay or gum disease', 'Soft tissues and tongue, ensuring they are all looking healthy', 'Face, neck and jaw, checking for any issues or abnormalities', 'Bite, making sure your teeth mesh together properly', 'Oral cancer check'])}
-<div class="acc" data-single style="margin-top:48px" data-reveal>
-${accItem('What happens during the check up?', '<p>We carry out a thorough examination that covers every aspect of your oral health. As well as assessing your teeth, we will ask some questions about your general health and medical history, in case this is affecting your dental wellbeing.</p><p>We will also check any previous treatment you have had, including crowns, bridges and implants, to make sure they are still working correctly. We may need to take x-rays of your mouth. We will also discuss any concerns you may have, or if there are any cosmetic treatments you wish to know more about.</p><p>If necessary, we can provide advice and tips for your oral hygiene routine at home, to ensure you are able to keep your teeth in top condition.</p><p>Following the assessment, if we find anything that requires further treatment, we will set out your treatment plan and discuss with you the next steps and expected costs.</p>', true)}
-${accItem('How often do I need to see a dentist?', '<p>You may not need to see us every six months and your dentist will let you know when you need to come back for your next check-up. If you have any problems between check-ups please phone us to arrange an earlier appointment.</p>')}
+<div class="stat-strip" data-reveal><div><strong>20+</strong><span>Years experience</span></div><div><strong>5</strong><span>Point assessment</span></div><div><strong>6mo</strong><span>Standard recall</span></div></div>
+<h2 class="h3" data-reveal>Our dental examination includes:</h2>
+<ol class="proc-rail" data-reveal>${steps.map(([t, d], i) => `<li style="--i:${i}"><span class="proc-n">${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
+
+<div class="concept-block">
+<div class="design-note"><span class="design-note-tag">Design concept — Two-column Q&amp;A</span><p>The same two questions from the live accordion, laid out as a static label-and-answer grid instead of click-to-expand. With only two questions there's nothing to save space on, so this trades the interaction for something that reads faster.</p></div>
+<div class="qa-split" data-reveal>
+<div class="qa-row"><h3>What happens during the check up?</h3><div class="qa-a"><p>We carry out a thorough examination that covers every aspect of your oral health. As well as assessing your teeth, we will ask some questions about your general health and medical history, in case this is affecting your dental wellbeing.</p><p>We will also check any previous treatment you have had, including crowns, bridges and implants, to make sure they are still working correctly. We may need to take x-rays of your mouth. We will also discuss any concerns you may have, or if there are any cosmetic treatments you wish to know more about.</p><p>Following the assessment, if we find anything that requires further treatment, we will set out your treatment plan and discuss with you the next steps and expected costs.</p></div></div>
+<div class="qa-row"><h3>How often do I need to see a dentist?</h3><div class="qa-a"><p>You may not need to see us every six months and your dentist will let you know when you need to come back for your next check-up. If you have any problems between check-ups please phone us to arrange an earlier appointment.</p></div></div>
 </div>
+</div>
+
+<figure class="pull-note" data-reveal><img src="/img/practice-consultation.webp" alt="A dentist and patient reviewing a treatment plan together at Kings Hill Dental" loading="lazy" width="1459" height="785"><p>We'll talk you through everything we find, and what (if anything) happens next, before you leave the chair.</p></figure>
 </div>
 ${asideCard('/dentistry/general-preventative/dental-examinations/')}
 </div></section>`;
@@ -186,6 +201,85 @@ ${accItem('Guided Biofilm Therapy', '<p>At Kings Hill Dental we are very proud t
 ${asideCard('/dentistry/general-preventative/hygiene-gum-health/')}
 </div></section>`;
   return { path: '/dentistry/general-preventative/hygiene-gum-health/', title: 'Hygiene & Gum Health | Kings Hill Dental', description: 'Hygiene appointments and Guided Biofilm Therapy at Kings Hill Dental: protect your gums and your natural teeth.', body };
+}
+
+/* ---------- TREATMENT pages: design-concept pages (new) ----------
+   Dental Examinations was redesigned in place above; Children's Dentistry and Bruxism are brand
+   new pages — until now both were just a sentence on the General & Preventative accordion, linking
+   out to the contact form. Copy beyond that one sentence each is draft, written to show the layout
+   working with real sentence lengths — flag it for a proper clinical read-through before this goes live. */
+function childrensDentistry() {
+  const body = `
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Children’s dentistry'])}`, title: `Children’s Dentistry`, img: 'tx-children', alt: `A young child brushing their teeth with a dentist, watching in a mirror`, intro: `<p class="lede" data-reveal>Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.</p>` })}
+<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<div>
+<div class="design-note"><span class="design-note-tag">Design concept — A Gentle Start</span><p>Pediatric dental sites we looked at lead with reassurance for the parent booking the visit, not the child sitting in the chair — calm, plain-spoken copy rather than cartoon mascots, which felt closer to our own brand voice than the bright primary-colour template most children's dental sites default to.</p></div>
+<p class="lede" data-reveal>We know a first trip to the dentist can feel like a big moment — for both of you. Our team keeps visits short, friendly and unhurried, so your child grows up seeing the dentist as a normal, positive part of looking after themselves.</p>
+
+<div class="concept-block">
+<div class="design-note"><span class="design-note-tag">Design concept — Age-milestone tabs</span><p>The same "what to expect" information, split by age instead of one long scroll. Parents of a one-year-old and parents of a seven-year-old are looking for different reassurance, so letting them jump straight to their stage felt more useful than making everyone read all of it.</p></div>
+<div class="age-tabs" data-tabs>
+<div class="cx-tabs" role="tablist" aria-label="Age group">
+<button role="tab" aria-selected="true">First tooth</button>
+<button role="tab" aria-selected="false">Ages 3–6</button>
+<button role="tab" aria-selected="false">Ages 7+</button>
+</div>
+<div class="age-panels">
+<div role="tabpanel">${checklist(['Book a first check-up once the first tooth appears, or by their first birthday', 'We keep the visit short — often just a friendly look and a count of teeth', 'It helps your child meet the team before any treatment is ever needed'])}</div>
+<div role="tabpanel" hidden>${checklist(['Regular check-ups catch early signs of decay while it’s still simple to treat', 'We can apply fluoride varnish and fissure sealants to help protect new teeth', 'We’ll help you build a fuss-free brushing routine at home'])}</div>
+<div role="tabpanel" hidden>${checklist(['Adult teeth start coming through, so we keep an eye on spacing and bite', 'We talk to your child directly, building their own confidence and ownership', 'We can flag anything that may benefit from an orthodontic opinion later on'])}</div>
+</div>
+</div>
+</div>
+
+<div class="concept-block">
+<div class="design-note"><span class="design-note-tag">Design concept — Reassurance grid</span><p>A second pass at the same "why visits here are easy" message, as a scannable icon grid rather than tabs — closer in spirit to the icon strip already used on the homepage, so it would sit comfortably if this page linked back to it.</p></div>
+<div class="benefit-grid" data-reveal>
+<div><span class="ic">${I.heart}</span><h3>Friendly, familiar faces</h3><p>The same kind team each visit, so nothing feels unfamiliar.</p></div>
+<div><span class="ic">${I.users}</span><h3>A dedicated kids’ corner</h3><p>A comfortable space of their own while they wait.</p></div>
+<div><span class="ic">${I.clock}</span><h3>Short, positive appointments</h3><p>Just long enough, never longer.</p></div>
+<div><span class="ic">${I.shield}</span><h3>Healthy habits, early</h3><p>Building routines that last well beyond childhood.</p></div>
+</div>
+</div>
+
+<figure class="photo-note" data-reveal><img src="/img/practice-children-s-area.webp" alt="The children's corner at Kings Hill Dental, with books, drawings and a comfortable place to wait" loading="lazy" width="1374" height="782"><figcaption><h3>Our own little corner of the practice</h3><p>A quiet space with books and drawings from patients past, so the waiting room feels like part of the visit rather than something to get through.</p></figcaption></figure>
+</div>
+${asideCard('/dentistry/general-preventative/childrens-dentistry/')}
+</div></section>`;
+  return { path: '/dentistry/general-preventative/childrens-dentistry/', title: 'Children’s Dentistry | Kings Hill Dental', description: 'Gentle, friendly dental care for children at Kings Hill Dental, from their first tooth onwards.', body };
+}
+
+function bruxism() {
+  const body = `
+${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Bruxism'])}`, title: `Bruxism`, img: 'tx-bruxism', alt: `A man experiencing jaw discomfort`, intro: `<p class="lede" data-reveal>If you are suffering with consistent grinding and clenching of your teeth, then you might have bruxism. Our experts can help diagnose and treat it, leaving you discomfort free.</p>` })}
+<section class="section" style="padding-top:0"><div class="wrap tx-layout">
+<div>
+<div class="design-note"><span class="design-note-tag">Design concept — Recognise &amp; Resolve</span><p>Bruxism is symptom-led — people usually arrive already wondering "is this what I have?" rather than looking to browse a treatment. The sections below lead with that question before getting to causes and treatment, borrowing the self-assessment pattern several health sites use to turn a wall of symptoms into something you actually engage with.</p></div>
+<p class="lede" data-reveal>Grinding or clenching often happens without realising — most people find out from a partner, a headache pattern, or a dentist spotting the wear. None of these on their own mean much, but a few together are worth a conversation.</p>
+
+<div class="concept-block">
+<div class="design-note"><span class="design-note-tag">Design concept — Interactive self-check</span><p>A tappable checklist rather than a static list of symptoms. It's not a diagnosis — just a gentler way to reflect on your own signs than reading a paragraph, with a short, honest response rather than anything alarming.</p></div>
+<div class="symptom-check" data-symptom-check>
+<div class="symptom-grid">
+${['Waking up with a sore or tired jaw', 'Headaches, especially first thing in the morning', 'Teeth feeling more sensitive than usual', 'A partner or family member mentioning hearing you grind at night', 'Noticeably flat or worn edges on your teeth', 'A clicking or tight feeling in your jaw joint'].map((s, i) => `<label class="symptom"><input type="checkbox"><span class="bx">${I.check}</span><span>${s}</span></label>`).join('')}
+</div>
+<div class="symptom-result"><p data-symptom-result>Tap anything that sounds familiar.</p></div>
+</div>
+</div>
+
+<div class="concept-block">
+<div class="design-note"><span class="design-note-tag">Design concept — Causes &amp; treatment, side by side</span><p>Pairing "why this happens" directly against "what we do about it" so the two never feel like separate topics — the treatment column answers the causes column line for line.</p></div>
+<div class="compare-grid" data-reveal>
+<div class="compare-col"><h3>What can cause it</h3><ul><li>Stress and anxiety, by far the most common trigger</li><li>Sleep disorders, including snoring and sleep apnoea</li><li>Lifestyle factors such as caffeine, alcohol or smoking</li><li>A bite that isn’t quite meeting evenly</li></ul></div>
+<div class="compare-col compare-col--sol"><h3>How we can help</h3><ul><li>A custom-fitted night guard to protect your teeth as you sleep</li><li>Reviewing your bite and jaw alignment for any contributing cause</li><li>Simple, practical advice on easing stress-related grinding</li><li>Monitoring wear over time, so we catch changes early</li></ul></div>
+</div>
+</div>
+
+<figure class="pull-note" data-reveal><img src="/img/practice-consultation.webp" alt="A calm, one-to-one conversation between a dentist and patient" loading="lazy" width="1459" height="785"><p>Most cases are straightforward to manage once we know what we're dealing with — the first step is just a conversation.</p></figure>
+</div>
+${asideCard('/dentistry/general-preventative/bruxism/')}
+</div></section>`;
+  return { path: '/dentistry/general-preventative/bruxism/', title: 'Bruxism | Kings Hill Dental', description: 'Recognise the signs of bruxism (teeth grinding) and how Kings Hill Dental can help treat it.', body };
 }
 
 /* ---------- TREATMENT FIELD: restorative (design kept from the dentistry hub — feature row + pills) ---------- */
@@ -255,7 +349,7 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
   return { path: '/dentistry/orthodontic/', title: 'Orthodontic Dentistry | Kings Hill Dental', description: 'Invisalign, Invisalign Go, fixed braces and Spark aligners at Kings Hill Dental in West Malling.', body };
 }
 
-module.exports = { dentistry, aesthetics, feesPage, membership, referrals, topicGeneral, examinations, hygiene, restorativeField, cosmeticField, orthodonticField };
+module.exports = { dentistry, aesthetics, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField };
 
 /* ---------- LEGAL (client copy carried over as-is; still Wix template text) ---------- */
 function legal(slug, title, p, description) {

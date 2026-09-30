@@ -123,7 +123,7 @@ ${partners()}
 </div>
 ${contactForm({ id: 'home-form' })}
 </div>
-<div class="wrap" style="margin-top:clamp(40px,6vw,80px)">${footerBottom()}</div>
+<div class="wrap" style="margin-top:clamp(20px,2.5vw,32px)">${footerBottom()}</div>
 </section>`;
   return { path: '/', title: 'Kings Hill Dental | Dentistry & Aesthetics in West Malling', description: 'A professional, honest and ethical dental practice in Kings Hill, West Malling. Preventative, restorative, cosmetic and orthodontic dentistry plus facial aesthetics.', body };
 }
