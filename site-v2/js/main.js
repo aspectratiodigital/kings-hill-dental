@@ -259,16 +259,18 @@
     go(0); auto();
   }
 
-  /* ---------- plan toggle (supports more than one .seg + [data-plan] group per page) ---------- */
-  $$('.seg').forEach((seg) => {
-    const scope = seg.parentElement;
-    const tabs = $$('button', seg), bodies = $$('[data-plan]', scope), imgs = $$('.plan-photo img', scope);
-    const set = (k) => { seg.dataset.active = k; tabs.forEach((t, j) => t.setAttribute('aria-selected', j === k)); bodies.forEach((b, j) => (b.hidden = j !== k)); imgs.forEach((im, j) => im.classList.toggle('on', j === k)); };
-    tabs.forEach((t, k) => t.addEventListener('click', () => set(k))); set(0);
-    $$('.ages', scope).forEach((g) => {
-      const price = g.closest('[data-plan]').querySelector('.price b');
-      $$('button', g).forEach((b) => b.addEventListener('click', () => { $$('button', g).forEach((x) => x.setAttribute('aria-pressed', x === b)); price.textContent = b.dataset.price; }));
-    });
+  /* ---------- membership card age-tabs (sliding pill, same mechanic as .cx-tabs) ---------- */
+  $$('[data-age-tabs]').forEach((g) => {
+    const price = g.closest('.mcard').querySelector('.price b');
+    const btns = $$('button', g);
+    const set = (i) => {
+      btns.forEach((b, j) => b.setAttribute('aria-selected', j === i));
+      g.style.setProperty('--w', btns[i].offsetWidth + 'px');
+      g.style.setProperty('--x', btns[i].offsetLeft + 'px');
+      price.textContent = btns[i].dataset.price;
+    };
+    btns.forEach((b, i) => b.addEventListener('click', () => set(i)));
+    set(0);
   });
 
   /* ---------- team dialog ---------- */

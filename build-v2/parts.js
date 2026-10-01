@@ -61,8 +61,12 @@ const NAV = [
 ];
 
 function header(current) {
+  // the most specific NAV entry whose path matches wins "current" — stops a parent section
+  // (e.g. Fees) from also underlining when you're actually on one of its nested pages.
+  const matches = (n) => current === n.h || current.startsWith(n.h);
   const items = NAV.map((n) => {
-    const cur = current === n.h || (n.h !== '/' && current.startsWith(n.h)) ? ' aria-current="page"' : '';
+    const shadowed = NAV.some((o) => o.h !== n.h && o.h.length > n.h.length && o.h.startsWith(n.h) && matches(o));
+    const cur = matches(n) && !shadowed ? ' aria-current="page"' : '';
     if (!n.mega) return `<li><a class="nav-link" href="${n.h}"${cur}>${n.t}</a></li>`;
     if (n.mega.length > 1) {
       // several categories: hovering one extends this same box to reveal its items alongside the list
@@ -70,8 +74,9 @@ function header(current) {
       const subs = n.mega.map((c, i) => `<div class="mega-sub" data-idx="${i}"><ul>${c.items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>`).join('');
       return `<li class="has-menu"><a class="nav-link" href="${n.h}" aria-expanded="false" aria-haspopup="true"${cur}><span class="lbl">${n.t}</span>${I.chev}</a><div class="mega mega--flyout" data-mega-extend><div class="mega-inner"><ul class="mega-cats">${cats}</ul><div class="mega-subs">${subs}</div></div></div></li>`;
     }
-    const cols = n.mega.map((c) => `<div><h3><a href="${c.h}">${c.t}</a></h3><ul>${c.items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>`).join('');
-    return `<li class="has-menu"><a class="nav-link" href="${n.h}" aria-expanded="false" aria-haspopup="true"${cur}><span class="lbl">${n.t}</span>${I.chev}</a><div class="mega">${cols}</div></li>`;
+    // single category: no need for its own heading, just list the items directly
+    const list = `<ul>${n.mega[0].items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul>`;
+    return `<li class="has-menu"><a class="nav-link" href="${n.h}" aria-expanded="false" aria-haspopup="true"${cur}><span class="lbl">${n.t}</span>${I.chev}</a><div class="mega mega--flyout">${list}</div></li>`;
   }).join('');
   const drawer = NAV.map((n, i) => {
     if (!n.mega) return `<li><a class="big" style="--i:${i}" href="${n.h}">${n.t}</a></li>`;

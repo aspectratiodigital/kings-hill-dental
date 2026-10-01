@@ -218,10 +218,12 @@ function contact() {
 ${splitHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>Contact</li></ul>`, title: `Get in contact`, img: 'practice-reception-closeup', alt: `The reception at Kings Hill Dental` })}
 <section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Simply fill out the form and our friendly reception team will call you back to answer your questions promptly.</p></div></div></section>
 <section class="section section--tight" style="padding-top:0"><div class="wrap split split--wide-l split--top">
-${contactForm({ id: 'contact-form' })}
 <div class="stack" data-reveal>
-<div class="map"><iframe title="Map of Kings Hill Clinic" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kings+Hill+Clinic,+Suite+14,+10+Churchill+Square,+Kings+Hill,+West+Malling,+ME19+4YU&output=embed"></iframe></div>
-<h2 class="h3" style="margin-top:32px">Contact us.</h2>
+${contactForm({ id: 'contact-form' })}
+<div class="map" style="margin-top:32px"><iframe title="Map of Kings Hill Dental" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kings+Hill+Dental,+Ste+14,+10+Churchill+Square,+Kings+Hill,+West+Malling,+ME19+4YU&output=embed"></iframe></div>
+</div>
+<div class="stack" data-reveal>
+<h2 class="h3">Contact us.</h2>
 ${infoList()}
 <h2 class="h3" style="margin-top:32px" data-status>Opening hours.</h2>
 ${hoursTable()}

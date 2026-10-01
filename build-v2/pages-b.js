@@ -6,7 +6,7 @@ const { memberCard } = require('./pages-home');
 const fees = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'acc-fees.json'), 'utf8')).d2[0];
 
 const crumbs = (...c) => `<ul class="crumbs" aria-label="Breadcrumb">${c.map(([t, h]) => `<li>${h ? `<a href="${h}">${t}</a>` : t}</li>`).join('')}</ul>`;
-const ctaBand = (title = 'Not sure where to start?', text = 'Book an appointment and one of our dentists will help you find the right treatment.') => `<section class="section--tight cta-band"><div class="wrap"><h2 class="h1" data-split>${title}</h2><p class="lede" data-reveal style="margin-inline:auto;margin-top:22px">${text}</p><div class="actions" data-reveal>${arrowBtn('Book an Appointment', PORTAL, '', true)}<a class="btn btn--ghost" href="/contact/">Contact us</a></div></div></section>`;
+const ctaBand = (title = 'Not sure where to start?', text = 'Book an appointment and one of our dentists will help you find the right treatment.', actions = `${arrowBtn('Book an Appointment', PORTAL, '', true)}<a class="btn btn--ghost" href="/contact/">Contact us</a>`) => `<section class="section--tight cta-band"><div class="wrap"><h2 class="h1" data-split>${title}</h2><p class="lede" data-reveal style="margin-inline:auto;margin-top:22px">${text}</p><div class="actions" data-reveal>${actions}</div></div></section>`;
 
 /* ---------- DENTISTRY hub ---------- */
 function dentistry() {
@@ -147,75 +147,20 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees']), title: `Fees`, img: 'prac
 /* ---------- MEMBERSHIP ---------- */
 function membership() {
   const tiles = [[I.shield, 'Insurance', 'Worldwide dental accident and emergency insurance to put your mind at ease'], [I.coins, 'Spread costs', 'Pay for routine appointments throughout the year, reducing the upfront costs.'], [I.eye, 'Prevention', 'Regular and continued monitoring to prevent problems before they start']];
-  const tk = (a) => `<ul class="ticks">${a.map((t, i) => `<li style="--i:${i}">${I.tickBig}<span>${t}</span></li>`).join('')}</ul>`;
-  const segToggle = (label) => `<div class="seg" role="tablist" aria-label="${label}"><button type="button" role="tab" aria-selected="true">Children’s</button><button type="button" role="tab" aria-selected="false">Adult</button></div>`;
-  const timelines = {
-    child: [['Day one', 'Join the plan, and come in for a first examination and a scale and polish with oral hygiene instruction.'], ['Month six', 'Back in for a second check-up and scale and polish — right on the recommended six-month schedule.'], ['Through the year', 'Any x-rays your dentist advises, 10% off further treatment, and worldwide dental accident and emergency cover whenever it’s needed.']],
-    adult: [['Day one', 'Join the plan, and come in for a first examination and hygiene visit.'], ['Month six', 'Back in for a second examination and hygiene visit, keeping on top of your gum health.'], ['Through the year', 'Up to two routine x-rays, 10% off further treatment, and worldwide dental accident and emergency cover whenever it’s needed.']],
-  };
-  const timelineList = (rows) => `<ol class="timeline"><span class="prog" aria-hidden="true"></span>${rows.map(([t, d]) => `<li><h3 class="h4" style="margin-bottom:4px">${t}</h3><p>${d}</p></li>`).join('')}</ol>`;
-  const worth = {
-    child: { price: '£10.40', note: 'from, depending on age', rows: [['Examination', '£20'], ['Scale & polish with a hygienist', '£42.50'], ['X-ray, if needed', '£15.75']] },
-    adult: { price: '£25.85', note: 'per month', rows: [['Examination', '£55'], ['Routine hygienist session', '£85'], ['X-ray, if needed', '£15.75']] },
-  };
-  const worthPanel = (kind) => { const w = worth[kind]; return `<div><ul class="mplan-worth">${w.rows.map(([t, p]) => `<li><span>${t}</span><b>${p}</b></li>`).join('')}</ul><p style="margin-top:4px">Plus 10% off further treatment and worldwide dental accident and emergency cover, included every month.</p><div class="price" style="margin-top:20px"><b>${w.price}</b><small>${w.note}</small></div></div>`; };
+  const ageTabs = `<div class="cx-tabs" data-age-tabs role="tablist" aria-label="Age group">
+<button type="button" role="tab" aria-selected="true" data-price="£10.40">Under 8</button>
+<button type="button" role="tab" aria-selected="false" data-price="£11.25">8-12</button>
+<button type="button" role="tab" aria-selected="false" data-price="£12.10">13-17</button>
+</div>`;
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan']), title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental` })}
 <section class="section section--tight"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
-<section class="section"><div class="wrap plans" style="align-items:start">
-<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p><h3 class="h4" style="margin-top:32px" data-reveal>Not interested in a membership?</h3><p data-reveal>No problem! You can find out about our specific per procedure pricing using the button below.</p><div class="actions" style="margin-top:32px" data-reveal>${arrowBtn('Our Pricing', '/fees/')}</div></div>
-<div class="mcards">${memberCard('child', '#choose-plan', 'Compare the plans')}${memberCard('adult', '#choose-plan', 'Compare the plans')}</div>
+<section class="section"><div class="wrap">
+<div style="max-width:640px;margin-inline:auto;text-align:center"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal style="margin-inline:auto"></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
+<div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true })}</div>
 </div></section>
-<section class="section tint" id="choose-plan"><div class="wrap plans" style="align-items:start">
-<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Choose a plan</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Here’s the detail behind each plan, with pricing by age for children.</p></div>
-<div data-reveal>
-${segToggle('Membership plan')}
-<div class="plan-card">
-<div class="plan-photo"><img class="on" src="/img/plan-child.webp" alt="" loading="lazy" width="1200" height="800"><img src="/img/plan-adult.webp" alt="" loading="lazy" width="1200" height="800"></div>
-<div class="plan-body" data-plan><h3 class="h3">Children’s Membership</h3><p style="margin-top:16px">Our child’s plan encourages regular attendance, ensuring your child maintains healthy teeth and gums for life, preventing expensive procedures later in life.</p>
-<div class="ages" role="group" aria-label="Age group"><button type="button" aria-pressed="true" data-price="£10.40">Under 8 Years</button><button type="button" aria-pressed="false" data-price="£11.25">8-12 Years</button><button type="button" aria-pressed="false" data-price="£12.10">13-17 Years</button></div>
-<div class="price"><b>£10.40</b><small>per month</small></div>${tk(['A scale and polish treatment, with oral hygiene instruction', 'Up to two dental examinations per year', 'Any necessary x rays', '10% discount off routine treatment', 'Worldwide dental accident and emergency cover'])}${arrowBtn('Sign up Now', PORTAL, '', true)}</div>
-<div class="plan-body" data-plan hidden><h3 class="h3">Adult Membership</h3><p style="margin-top:16px">The plan provides all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p>
-<div class="price"><b>£25.85</b><small>per month</small></div>${tk(['Up to two dental hygiene treatments per year', 'Up to two dental examinations per year', 'Up to two routine X rays per year', '10% discount off routine treatment', 'Worldwide dental accident and emergency cover'])}${arrowBtn('Sign up Now', PORTAL, '', true)}</div>
-</div></div>
-</div></section>
-<section class="section"><div class="wrap" style="max-width:960px">
-<h2 class="h1" data-split>Plans side by side</h2>
-<div class="rule" data-reveal></div>
-<p class="lede" data-reveal>If you’d rather compare everything in one glance.</p>
-<div style="overflow-x:auto;margin-top:8px" data-reveal><table class="mplan-compare">
-<thead><tr><th scope="col"></th><th scope="col">Children’s</th><th scope="col">Adult</th></tr></thead>
-<tbody>
-<tr><th scope="row">Monthly cost</th><td><b>From £10.40</b></td><td><b>£25.85</b></td></tr>
-<tr><th scope="row">Examinations</th><td>Up to 2 a year</td><td>Up to 2 a year</td></tr>
-<tr><th scope="row">Hygiene care</th><td>Scale &amp; polish, with oral hygiene instruction</td><td>Up to 2 hygiene treatments a year</td></tr>
-<tr><th scope="row">X-rays</th><td>Any necessary x-rays</td><td>Up to 2 routine x-rays a year</td></tr>
-<tr><th scope="row">Discount on treatment</th><td colspan="2">${I.check}<span>10% off routine treatment, both plans</span></td></tr>
-<tr><th scope="row">Emergency cover</th><td colspan="2">${I.check}<span>Worldwide dental accident &amp; emergency insurance, both plans</span></td></tr>
-</tbody>
-</table></div>
-</div></section>
-<section class="section tint"><div class="wrap plans" style="align-items:start">
-<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>A year, mapped out</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>What being on the plan actually looks like over twelve months.</p></div>
-<div data-reveal>
-${segToggle('Plan timeline')}
-<div class="plan-card" style="display:block;padding:clamp(24px,3.4vw,42px)">
-<div data-plan>${timelineList(timelines.child)}</div>
-<div data-plan hidden>${timelineList(timelines.adult)}</div>
-</div>
-</div>
-</div></section>
-<section class="section"><div class="wrap plans" style="align-items:start">
-<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>What you’d pay, visit by visit</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our standard, one-off prices for each visit the plan covers — so you can see exactly what’s included.</p></div>
-<div data-reveal>
-${segToggle('Visit pricing')}
-<div class="plan-card" style="display:block;padding:clamp(24px,3.4vw,42px)">
-<div data-plan>${worthPanel('child')}</div>
-<div data-plan hidden>${worthPanel('adult')}</div>
-</div>
-</div>
-</div></section>`;
-  return { path: '/fees/membership-plan/', title: 'Membership plan | Kings Hill Dental', description: 'Kings Hill Dental membership plans for children and adults: examinations, hygiene, x-rays, discounts and worldwide emergency cover.', body };
+${ctaBand('Not interested in a membership?', 'No problem — you can find out about our specific per procedure pricing using the button below.', `${arrowBtn('Our Pricing', '/fees/')}<a class="btn btn--ghost" href="/contact/">Contact us</a>`)}`;
+  return { path: '/fees/membership-plan/', title: 'Membership plan | Kings Hill Dental', description: 'Kings Hill Dental membership plans for children and adults: examinations, hygiene, x-rays, discounts and worldwide emergency cover.', bodyClass: 'mplan-page', body };
 }
 
 /* ---------- REFERRALS ---------- */
