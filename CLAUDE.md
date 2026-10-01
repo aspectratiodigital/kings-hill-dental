@@ -42,7 +42,7 @@ From `_capture/`, with the dev server running on :5174:
 node v2c.js   # crawl: console errors, broken images, horizontal overflow at 1440px/390px
 node v2t.js   # interaction tests: accordions, forms, mega menu, carousels, etc.
 ```
-Known pre-existing failures that are **not** regressions: 2 placeholder-image flags on `/about/`, and a handful of `v2t.js` failures (`plan toggle`, `quote next`, `team carousel next`, `gallery chip`) with stale selectors from removed UI. Only chase new failures beyond these.
+Known pre-existing failure that is **not** a regression: 2 placeholder-image flags on `/about/`. (`v2t.js` previously had a handful of failures here too — `plan toggle`, `quote next`, `team carousel next`, `gallery chip` — from stale selectors against removed UI; these were fixed or deleted and `v2t.js` now passes cleanly.) Only chase new failures beyond the one above.
 
 ## Repo scope (`.gitignore`)
 
