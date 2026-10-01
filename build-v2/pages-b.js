@@ -129,7 +129,8 @@ function feesPage() {
     return `<details${i === 0 ? ' open data-keep="1"' : ''}><summary>${t.replace(/&/g, '&amp;')}<span class="pm" aria-hidden="true"></span></summary><div class="panel"><div><div class="panel-in"><table class="price-table"><caption class="vh">${t}</caption><tbody>${rows}</tbody></table></div></div></div></details>`;
   }).join('');
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Fees'])}`, title: `Fees`, img: 'practice-consultation', alt: `A consultation at Kings Hill Dental`, intro: `<p class="lede" data-reveal>All of our patients at Kings Hill Clinic receive a written treatment plan, clearly outlining the clinical needs and costs of treatment.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees']), title: `Fees`, img: 'practice-consultation', alt: `A consultation at Kings Hill Dental` })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>All of our patients at Kings Hill Clinic receive a written treatment plan, clearly outlining the clinical needs and costs of treatment.</p></div></div></section>
 <section class="section" style="padding-top:0"><div class="wrap tx-layout">
 <div>
 <div class="search" data-reveal><label class="vh" for="fee-search">Search fees</label>${I.search}<input id="fee-search" type="search" placeholder="Search treatments, e.g. hygiene or X-ray" autocomplete="off"></div>
@@ -146,7 +147,8 @@ function membership() {
   const tiles = [[I.shield, 'Insurance', 'Worldwide dental accident and emergency insurance to put your mind at ease'], [I.coins, 'Spread costs', 'Pay for routine appointments throughout the year, reducing the upfront costs.'], [I.eye, 'Prevention', 'Regular and continued monitoring to prevent problems before they start']];
   const tk = (a) => `<ul class="ticks">${a.map((t, i) => `<li style="--i:${i}">${I.tickBig}<span>${t}</span></li>`).join('')}</ul>`;
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan'])}`, title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental`, intro: `<p class="lede" data-reveal>Our membership plans make it easy to keep your smile healthy by providing consistent quality care.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan']), title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental` })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Our membership plans make it easy to keep your smile healthy by providing consistent quality care.</p></div></div></section>
 <section class="section section--tight" style="padding-top:0"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
 <section class="section tint"><div class="wrap plans" style="align-items:start">
 <div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Choose a plan</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
@@ -171,7 +173,8 @@ function referrals() {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const countries = ['United Kingdom', 'Ireland', 'United States', 'Canada', 'Australia', 'New Zealand', 'France', 'Germany', 'Spain', 'Italy', 'Netherlands', 'India', 'Other'];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Referrals'])}`, title: `Referrals`, img: 'practice-entrance', alt: `The entrance to Kings Hill Dental`, intro: `<p class="lede" data-reveal>Referring a patient to us takes a few minutes. Tell us what treatment they need, who you are and who you’re referring, and we’ll take it from there.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Referrals']), title: `Referrals`, img: 'practice-entrance', alt: `The entrance to Kings Hill Dental` })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Referring a patient to us takes a few minutes. Tell us what treatment they need, who you are and who you’re referring, and we’ll take it from there.</p></div></div></section>
 <section class="section" style="padding-top:0"><div class="wrap" style="max-width:860px">
 <div class="form-card" data-reveal>
 <div class="steps" aria-hidden="true"><i class="done"></i><i></i><i></i><i></i></div>
@@ -343,14 +346,6 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Rest
 <div class="rule" data-reveal></div>
 <div class="acc rx-acc" data-single style="margin-top:32px" data-reveal>
 ${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0, id)).join('')}
-</div>
-</div></section>
-<section class="section" style="background:#fff"><div class="wrap" style="max-width:1080px">
-<h2 class="h1" data-split>Explore our restorative treatments</h2>
-<p class="lede" data-reveal>Design test — hover over a tab to open it, instead of clicking.</p>
-<div class="rule" data-reveal></div>
-<div class="acc rx-acc" data-single data-hover style="margin-top:32px" data-reveal>
-${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0)).join('')}
 </div>
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;

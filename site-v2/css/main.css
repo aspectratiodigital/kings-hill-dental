@@ -80,8 +80,10 @@ em, .it { font-style: italic; }
 .site-header::before { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--cream) 88%, transparent); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); opacity: 0; transition: opacity .4s; box-shadow: 0 1px 0 var(--line); }
 .site-header.is-stuck::before { opacity: 1; }
 .site-header.is-hidden { transform: translateY(-100%); }
-.nav-bar { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; transform: scale(1.18); transform-origin: left center; transition: transform .4s var(--ease); }
-.site-header.is-stuck .nav-bar { transform: scale(1); }
+.nav-bar { position: relative; height: 100%; display: grid; grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr); align-items: center; gap: 20px; }
+.nav-bar .brand { grid-column: 1; justify-self: start; }
+.nav-bar > nav { grid-column: 2; justify-self: center; }
+.nav-bar .nav-cta, .nav-bar .menu-btn { grid-column: 3; justify-self: end; }
 .brand { display: block; width: clamp(175px, 16.5vw, 246px); color: var(--brown); flex: none; }
 .brand svg { width: 100%; height: auto; }
 .brand .logo-ink { fill: currentColor; stroke: currentColor; }
@@ -89,16 +91,17 @@ em, .it { font-style: italic; }
 .logo-line-r { transform-origin: 1494px 360px; }
 @keyframes logoLineIn { from { transform: scaleY(1.8) scaleX(0); } to { transform: scaleY(1.8) scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { .logo-line, .logo-line-r { animation: none; transform: scaleY(1.8); } }
-.nav { display: flex; align-items: center; gap: clamp(4px, 1.4vw, 24px); }
+.nav { display: flex; align-items: center; gap: clamp(2px, 1vw, 18px); }
 .nav > li { position: relative; }
-.nav a.nav-link, .nav button.nav-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 12px; border: 0; background: none; cursor: pointer; font: 700 13.5px/1 var(--ui); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--brown); position: relative; }
+.nav a.nav-link, .nav button.nav-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px; border: 0; background: none; cursor: pointer; font: 700 13px/1 var(--ui); letter-spacing: .04em; text-transform: uppercase; text-decoration: none; color: var(--brown); position: relative; white-space: nowrap; }
 .nav .nav-link::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .nav .nav-link:hover::after, .nav .nav-link[aria-current="page"]::after, .nav .has-menu:hover > .nav-link::after, .nav .has-menu.is-open > .nav-link::after { transform: scaleX(1); }
 .nav .has-menu > .nav-link::after { content: none; }
 .nav .has-menu > .nav-link .lbl { position: relative; }
 .nav .has-menu > .nav-link .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .nav .has-menu > .nav-link:hover .lbl::after, .nav .has-menu > .nav-link[aria-current="page"] .lbl::after, .nav .has-menu:hover > .nav-link .lbl::after, .nav .has-menu.is-open > .nav-link .lbl::after { transform: scaleX(1); }
-.nav .chev { width: 9px; height: 9px; transition: transform .3s var(--ease); }
+.nav .chev { width: 12px; height: 12px; flex: none; opacity: .75; transition: transform .3s var(--ease), opacity .3s; }
+.has-menu:hover .chev, .has-menu.is-open .chev { opacity: 1; }
 .has-menu:hover .chev, .has-menu.is-open .chev { transform: rotate(180deg); }
 .mega { position: absolute; top: calc(100% + 10px); left: 0; translate: 0 8px; min-width: 300px; padding: 26px 30px 28px; background: var(--cream); border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(70, 28, 17, .32); opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), translate .4s var(--ease), visibility .3s; }
 .has-menu:hover > .mega, .has-menu:focus-within > .mega, .has-menu.is-open > .mega { opacity: 1; visibility: visible; translate: 0 0; }

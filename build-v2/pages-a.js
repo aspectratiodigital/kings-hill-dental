@@ -215,7 +215,8 @@ ${partnerGrid()}`;
 /* ---------- CONTACT ---------- */
 function contact() {
   const body = `
-${pageHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>Contact</li></ul>`, title: `Get in contact`, img: 'practice-reception-closeup', alt: `The reception at Kings Hill Dental`, intro: `<p class="lede" data-reveal>Simply fill out the form and our friendly reception team will call you back to answer your questions promptly.</p>` })}
+${splitHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>Contact</li></ul>`, title: `Get in contact`, img: 'practice-reception-closeup', alt: `The reception at Kings Hill Dental` })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Simply fill out the form and our friendly reception team will call you back to answer your questions promptly.</p></div></div></section>
 <section class="section section--tight" style="padding-top:0"><div class="wrap split split--wide-l split--top">
 ${contactForm({ id: 'contact-form' })}
 <div class="stack" data-reveal>
