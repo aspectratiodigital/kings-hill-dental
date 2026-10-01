@@ -64,7 +64,11 @@ ${checklist(['Forehead lines', 'Frown lines', 'Vertical lip lines', 'Crow’s fe
 <h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Why have anti-wrinkle treatment?</h2>
 ${checklist(['Non-surgical option', 'Appearance enhancing', 'Confidence boosting', 'Quick, simple procedure', 'Lasting results'])}
 <div class="acc" style="margin-top:48px" data-reveal>
-${accItem('What does the treatment involve?', '<p>Treatment only takes around 10-15 minutes, and we make sure you are comfortable and relaxed throughout the appointment. We then give small injections into the muscles of your face.</p><p>There is no need to take time to recover, and the effects of treatment will show in a couple of days. You may experience minimal short-lived side effects, including minor redness and swelling, and in rare cases, some bruising.</p><p>The outcome of the treatment lasts for around six months and does wear off over time. Top-up treatments will be needed to maintain smooth, youthful results.</p>')}
+${accItem('What does the treatment involve?', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>
+<li><h3 class="h4" style="margin-bottom:4px">The appointment</h3><p>Treatment only takes around 10-15 minutes, and we make sure you are comfortable and relaxed throughout. We then give small injections into the muscles of your face.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Recovery</h3><p>There is no need to take time to recover, and the effects of treatment will show in a couple of days. You may experience minimal short-lived side effects, including minor redness and swelling, and in rare cases, some bruising.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Results</h3><p>The outcome of the treatment lasts for around six months and does wear off over time. Top-up treatments will be needed to maintain smooth, youthful results.</p></li>
+</ol>`)}
 ${aesthPractitioner()}
 </div>
 </div>
@@ -103,7 +107,12 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['Pr
 <h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas we can treat:</h2>
 ${checklist(['Face', 'Neck', 'Hands', 'Arms', 'Elbows', 'Knees', 'Abdomen'])}
 <div class="acc" style="margin-top:48px" data-reveal>
-${accItem('What does the treatment involve?', '<p>Initially, we invite you for a full medical face-to-face consultation, where we ensure the treatment is suitable for you and discuss your ideal results. You will be required to give your consent before we can begin treatment.</p><p>We ensure you are comfortable and relaxed before beginning the procedure. A specially formulated hyaluronic acid gel is injected under your skin, dispersing easily and allowing hydration from within. It promotes collagen and elastin production, helping to smooth out fine lines, lifting and tightening.</p><p>There is no downtime following treatment, so you can return to your normal routine straight away. You may experience some sensitivity or mild swelling, but this will fade after a few days.</p><p>Results can be visible as soon as 24 hours after treatment. Profhilo involves two sessions, repeated one month after the initial treatment, with further sessions at three or six month intervals discussed at consultation.</p>')}
+${accItem('What does the treatment involve?', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>
+<li><h3 class="h4" style="margin-bottom:4px">Consultation</h3><p>Initially, we invite you for a full medical face-to-face consultation, where we ensure the treatment is suitable for you and discuss your ideal results. You will be required to give your consent before we can begin treatment.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">The treatment</h3><p>We ensure you are comfortable and relaxed before beginning the procedure. A specially formulated hyaluronic acid gel is injected under your skin, dispersing easily and allowing hydration from within. It promotes collagen and elastin production, helping to smooth out fine lines, lifting and tightening.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Recovery</h3><p>There is no downtime following treatment, so you can return to your normal routine straight away. You may experience some sensitivity or mild swelling, but this will fade after a few days.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Results</h3><p>Results can be visible as soon as 24 hours after treatment. Profhilo involves two sessions, repeated one month after the initial treatment, with further sessions at three or six month intervals discussed at consultation.</p></li>
+</ol>`)}
 ${aesthPractitioner()}
 </div>
 </div>
@@ -122,7 +131,12 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['De
 <h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas we can treat:</h2>
 ${checklist(['Lips', 'Cheeks', 'Nasolabial lines', 'Marionette lines', 'Upper lip area', 'Chin'])}
 <div class="acc" style="margin-top:48px" data-reveal>
-${accItem('What does the treatment involve?', '<p>At your initial consultation, we carry out a full face-to-face consultation, including a full-face assessment and careful planning of your treatment and costs involved. We also take photographs of your face, so we can clearly show you the difference fillers can make. You will be required to give your consent before we can begin treatment.</p><p>There are a number of dermal fillers available, so we select the one suited to the end result you want to achieve. We ensure you are comfortable before beginning the procedure and can use topical local anaesthetic if needed. You may feel some discomfort, but it shouldn’t be painful.</p><p>The treatment involves injecting sterilised hyaluronic acid gel under the skin using needles. We can also sometimes use cannulas (blunt-ended tubes) to inject, ensuring the gel is placed safely under the skin.</p><p>Treatment is straightforward and quick. Your results can be visible soon after treatment and will last for around 6-10 months before needing to be topped up.</p>')}
+${accItem('What does the treatment involve?', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>
+<li><h3 class="h4" style="margin-bottom:4px">Consultation</h3><p>At your initial consultation, we carry out a full face-to-face consultation, including a full-face assessment and careful planning of your treatment and costs involved. We also take photographs of your face, so we can clearly show you the difference fillers can make. You will be required to give your consent before we can begin treatment.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Choosing your filler</h3><p>There are a number of dermal fillers available, so we select the one suited to the end result you want to achieve. We ensure you are comfortable before beginning the procedure and can use topical local anaesthetic if needed. You may feel some discomfort, but it shouldn’t be painful.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">The treatment</h3><p>The treatment involves injecting sterilised hyaluronic acid gel under the skin using needles. We can also sometimes use cannulas (blunt-ended tubes) to inject, ensuring the gel is placed safely under the skin.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Results</h3><p>Treatment is straightforward and quick. Your results can be visible soon after treatment and will last for around 6-10 months before needing to be topped up.</p></li>
+</ol>`)}
 ${aesthPractitioner()}
 </div>
 </div>
@@ -613,7 +627,10 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orth
 <h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Why have Invisalign Go treatment:</h2>
 ${checklist(['Almost invisible aligners made from clear plastic', 'Fast — results can be noticed after 3 months', 'Removable, worn for around 22.5 hours a day', 'Comfortable, precise scans for an exact fit'])}
 <div class="acc" style="margin-top:48px" data-reveal>
-${accItem('What does the treatment involve?', '<p>If you are a suitable candidate for Invisalign Go, we use advanced 3D imaging to create a personalised plan and your treatment journey, including a projected image of how your teeth will look after treatment.</p><p>From these images, a series of aligners is made specifically for your teeth, gradually yet efficiently guiding them into a straighter position. Treatment takes on average 6-9 months to complete.</p>')}
+${accItem('What does the treatment involve?', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>
+<li><h3 class="h4" style="margin-bottom:4px">Planning your smile</h3><p>If you are a suitable candidate for Invisalign Go, we use advanced 3D imaging to create a personalised plan and your treatment journey, including a projected image of how your teeth will look after treatment.</p></li>
+<li><h3 class="h4" style="margin-bottom:4px">Wearing your aligners</h3><p>From these images, a series of aligners is made specifically for your teeth, gradually yet efficiently guiding them into a straighter position. Treatment takes on average 6-9 months to complete.</p></li>
+</ol>`)}
 ${accItem('Retaining your straight smile', '<p>As with all orthodontic treatment, it is important to wear retainers to maintain long-lasting results.</p>')}
 </div>
 </div>
@@ -671,7 +688,7 @@ ${asideCard('/dentistry/orthodontic/spark-aligners/', ['Orthodontic', '/dentistr
 
 module.exports = { dentistry, aesthetics, aestheticsAntiWrinkle, aestheticsSkinCare, aestheticsProfhilo, aestheticsFillers, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField, fillings, crownsBridges, rootCanals, dentures, implants, whitening, bonding, veneers, invisalign, invisalignGo, fixedBraces, sparkAligners };
 
-/* ---------- LEGAL (client copy carried over as-is; still Wix template text) ---------- */
+/* ---------- LEGAL ---------- */
 function legal(slug, title, p, description) {
   const c = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'copy.json'), 'utf8'));
   const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -681,7 +698,185 @@ function legal(slug, title, p, description) {
 <section class="section"><div class="wrap" style="max-width:820px"><div class="stack">${html}</div></div></section>`;
   return { path: p, title: title + ' | Kings Hill Dental', description, body };
 }
-const privacy = () => legal('blank-4', 'Privacy Policy', '/privacy-policy/', 'Privacy policy for Kings Hill Dental.');
 const accessibility = () => legal('blank-5', 'Accessibility Statement', '/accessibility-statement/', 'Accessibility statement for the Kings Hill Dental website.');
+
+/* privacy, terms & conditions and complaints procedure: real copy from kingshilldental.co.uk
+   (the Wix capture only held generic placeholder boilerplate for the privacy policy, and never
+   captured terms & conditions or a complaints page at all). Clickable links in the source copy
+   are kept as real links, styled pink italic via .legal a. */
+function legalPage(title, p, description, html) {
+  const body = `${splitHero({ crumbs: crumbs(['Home', '/'], [title]), title, img: 'practice-exterior', alt: 'Kings Hill Dental' })}
+<section class="section"><div class="wrap legal" style="max-width:820px"><div class="stack">${html}</div></div></section>`;
+  return { path: p, title: title + ' | Kings Hill Dental', description, body };
+}
+
+function privacy() {
+  const html = `
+<p>This is the privacy notice of Kings Hill Clinic. In this document, “we”, “our”, or “us” refer to Kings Hill Clinic.</p>
+<h2 class="h4">Introduction</h2>
+<p>This is a notice to inform you of our policy about all information that we record about you through our website. It sets out the conditions under which we may process any information that we collect from you, or that you provide to us. It covers information that could identify you (“personal information”) and information that could not. In the context of the law and this notice, “process” means collect, store, transfer, use or otherwise act on information.</p>
+<p>We take seriously the protection of your privacy and confidentiality. We understand that all visitors to our website are entitled to know that their personal data will not be used for any purpose unintended by them, and will not accidentally fall into the hands of a third party.</p>
+<p>We undertake to preserve the confidentiality of all information you provide to us, and hope that you reciprocate.</p>
+<p>Our policy complies with UK law accordingly implemented, including that required by the EU General Data Protection Regulation (GDPR).</p>
+<p>The law requires us to tell you about your rights and our obligations to you in regards to the processing and control of your personal data. We do this now, by requesting that you read the information provided at <a href="http://www.knowyourprivacyrights.org" target="_blank" rel="noopener">knowyourprivacyrights.org</a>.</p>
+<p>Except as set out below, we do not share, or sell, or disclose to a third party, any information collected through our website.</p>
+<h2 class="h4">The bases on which we process information about you</h2>
+<p>The law requires us to determine under which of six defined bases we process different categories of your personal information, and to notify you of the basis for each category.</p>
+<p>If a basis on which we process your personal information is no longer relevant then we shall immediately stop processing your data.</p>
+<p>If the basis changes then if required by law we shall notify you of the change and of any new basis under which we have determined that we can continue to process your information.</p>
+<h2 class="h4">1. Information we process because we have a contractual obligation with you</h2>
+<p>If you join us as a patient or otherwise agree to our terms and conditions, a contract is formed between you and us.</p>
+<p>In order to carry out our obligations under that contract we must process the information you give us. Some of this information may be personal information.</p>
+<p>We may use it in order to:</p>
+<ul><li>verify your identity for security purposes</li><li>sell products to you</li><li>provide you with our services</li><li>provide you with suggestions and advice on products, services and how to obtain the most from using our website</li></ul>
+<p>We process this information on the basis there is a contract between us, or that you have requested we use the information before we enter into a legal contract.</p>
+<p>Additionally, we may aggregate this information in a general way and use it to provide class information, for example to monitor our performance with respect to a particular service we provide. If we use it for this purpose, you as an individual will not be personally identifiable.</p>
+<p>We shall continue to process this information until the contract between us ends or is terminated by either party under the terms of the contract.</p>
+<h2 class="h4">2. Information we process with your consent</h2>
+<p>Through certain actions when otherwise there is no contractual relationship between us, such as when you browse our website or ask us to provide you more information about our Practice, you provide your consent to us to process information that may be personal information.</p>
+<p>Wherever possible, we aim to obtain your explicit consent to process this information, for example, by asking you to agree to our use of cookies, and via the disclaimer on our contact and referral forms.</p>
+<p>Sometimes you might give your consent implicitly, such as when you send us a message by e-mail to which you would reasonably expect us to reply.</p>
+<p>Except where you have consented to our use of your information for a specific purpose, we do not use your information in any way that would identify you personally. We may aggregate it in a general way and use it to provide class information, for example to monitor the performance of a particular page on our website.</p>
+<p>If you have given us explicit permission to do so, we may from time to time pass your name and contact information to selected associates whom we consider may provide services or products you would find useful.</p>
+<p>We continue to process your information on this basis until you withdraw your consent or it can be reasonably assumed that your consent no longer exists.</p>
+<p>You may withdraw your consent at any time by instructing us <a href="mailto:reception@kingshilldental.co.uk">reception@kingshilldental.co.uk</a>. However, if you do so, you may not be able to use our website or our services further.</p>
+<h2 class="h4">3. Information we process because we have a legal obligation</h2>
+<p>We are subject to the law like everyone else. Sometimes, we must process your information in order to comply with a statutory obligation.</p>
+<p>For example, we may be required to give information to legal authorities if they so request or if they have the proper authorisation such as a search warrant or court order.</p>
+<p>This may include your personal information.</p>
+<h2 class="h4">4. Specific uses of information you provide to us</h2>
+<p>Personal data submitted on this website will be used for the purposes specified in this privacy policy or in relevant parts of the website.</p>
+<p>Information you give to us. We may use this information to:</p>
+<ul><li>Send you general and marketing communications</li><li>Send you e-mail notifications</li><li>To notify you about changes to our service</li><li>To ensure that content from our site is presented in the most effective manner for your and for your computer</li><li>Provide third parties with statistical information about our users – but this information will not be used to identify any individual user</li><li>Deal with enquiries and complaints made by or about you relating to the website</li></ul>
+<p>Information we collect about you. We will use this information:</p>
+<ul><li>To administer our site and for internal operations, including troubleshooting, data analysis, testing, research, statistical and review purposes</li><li>To improve our site to ensure that content is presented in the most effective manner for you and for your computer</li><li>As part of our efforts to keep our site safe and secure</li><li>To measure or understand the effectiveness of advertising we serve to you and others, and to deliver relevant advertising to you</li><li>To make suggestions and recommendations to you and other users of our site about services that may interest you or them</li></ul>
+<p>Information we receive from other sources. We may combine this information with information you give to us and information we collect about you. We may use this information and the combined information for the purposes set out above (depending on the types of information we receive).</p>
+<p>We will not without your express consent provide your personal information to any third parties for the purpose of direct marketing.</p>
+<h2 class="h4">5. Complaints regarding content on our website</h2>
+<p>If you complain about any of the content on our website, we shall investigate your complaint.</p>
+<p>If we feel it is justified or if we believe the law requires us to do so, we shall remove the content while we investigate.</p>
+<p>Free speech is a fundamental right, so we have to make a judgment as to whose right will be obstructed: yours, or that of the person who posted the content that offends you.</p>
+<p>If we think your complaint is vexatious or without any basis, we shall not correspond with you about it.</p>
+<h2 class="h4">6. Complaining</h2>
+<p>When we receive a complaint, we record all the information you have given to us.</p>
+<p>We use that information to resolve your complaint.</p>
+<p>If your complaint reasonably requires us to contact some other person, we may decide to give to that other person some of the information contained in your complaint. We do this as infrequently as possible, but it is a matter for our sole discretion as to whether we do give information, and if we do, what that information is.</p>
+<h2 class="h4">How you can complain</h2>
+<p>If you are not happy with our privacy policy or have any complaint then you should tell us by email. Our address is <a href="mailto:reception@kingshilldental.co.uk">reception@kingshilldental.co.uk</a>.</p>
+<p>If a dispute is not settled then we hope you will agree to attempt to resolve it by engaging in good faith with us in a process of mediation or arbitration.</p>
+<p>If you are in any way dissatisfied about how we process your personal information, you have a right to lodge a complaint with the Information Commissioner’s Office. This can be done at <a href="https://ico.org.uk/concerns/" target="_blank" rel="noopener">ico.org.uk/concerns</a>.</p>
+<h2 class="h4">7. Contacting us via our website</h2>
+<p>When you contact us, whether by telephone, through our website or by e-mail, we collect the data you have given to us securely in order to reply with the information you need.</p>
+<p>We record your request and our reply as well as the personally identifiable information associated with your message, such as your name and email address and other contact details so as to be able to track our communications with you to provide a high quality service. This data will be held securely online for a period of 3 months, we may also record this information within our practice management software.</p>
+<h2 class="h4">Use of information we collect through automated systems when you visit our website</h2>
+<h2 class="h4">8. Cookies</h2>
+<p>This website uses Google Analytics to help analyse how users use the site. The tool uses “cookies,” which are text files placed on your computer, to collect standard Internet log information and visitor behaviour information in an anonymous form. The information generated by the cookie about your use of the website (including IP address) is transmitted to Google. This information is then used to evaluate visitors’ use of the website and to compile statistical reports on website activity.</p>
+<p>We will never (and will not allow any third party to) use the statistical analytics tool to track or to collect any Personally Identifiable Information (PII) of visitors to our site. Google will not associate your IP address with any other data held by Google. Neither we nor Google will link, or seek to link, an IP address with the identity of a computer user. We will not associate any data gathered from this site with any Personally Identifiable Information from any source, unless you explicitly submit that information via a fill-in form on our website.</p>
+<h2 class="h4">9. Personal identifiers from your browsing activity</h2>
+<p>Requests by your web browser to our servers for web pages and other content on our website are recorded.</p>
+<p>We record information such as your geographical location, your Internet service provider and your IP address. We also record information about the software you are using to browse our website, such as the type of computer or device and the screen resolution. This information is recorded by Google Analytics as well as via certain 3rd party plugins installed on our website.</p>
+<p>We use this information in aggregate to assess the popularity of the webpages on our website and how we perform in providing content to you.</p>
+<p>If combined with other information we know about you from previous visits, the data possibly could be used to identify you personally, even if you are not signed in to our website.</p>
+<h2 class="h4">10. Our use of re-marketing</h2>
+<p>Re-marketing involves placing a cookie on your computer when you browse our website in order to be able to serve to you an advert for our products or services when you visit some other website.</p>
+<p>We may use a third party to provide us with re-marketing services from time to time. If so, then if you have consented to our use of cookies, you may see advertisements for our products and services on other websites.</p>
+<h2 class="h4">11. Our use of Call Tracking</h2>
+<p>We may have call tracking installed on our website. This tracking will automatically record certain information about the visitor by using various types of technology including cookies, clear gifs or web beacons. This automatically collected information may include the phone number, IP address or other device address or ID, geographic location of the Visitor, web browser and/or device type, the web pages or sites visited just before or just after visiting the site, the pages or other content the visitor views or interacts with, and the dates and times of the visit. Calls may also be recorded.</p>
+<h2 class="h4">Access to your own information</h2>
+<h2 class="h4">12. Access to your personal information</h2>
+<p>At any time you may review or update personally identifiable information that we hold about you by contacting us.</p>
+<p>To obtain a copy of any information that is not provided on our website you may send us a request at <a href="mailto:reception@kingshilldental.co.uk">reception@kingshilldental.co.uk</a>.</p>
+<p>After receiving the request, we will tell you when we expect to provide you with the information, and whether we require any fee for providing it to you.</p>
+<h2 class="h4">13. Removal of your information</h2>
+<p>If you wish us to remove personally identifiable information from our systems, you may contact us at <a href="mailto:reception@kingshilldental.co.uk">reception@kingshilldental.co.uk</a>.</p>
+<p>This may limit the service we can provide to you.</p>
+<h2 class="h4">14. Verification of your information</h2>
+<p>When we receive any request to access, edit or delete personal identifiable information we shall first take reasonable steps to verify your identity before granting you access or otherwise taking any action. This is important to safeguard your information.</p>
+<h2 class="h4">Other matters</h2>
+<h2 class="h4">15. Encryption of data sent between us</h2>
+<p>We use Secure Sockets Layer (SSL) certificates to verify our identity to your browser and to encrypt any data you give us.</p>
+<p>Whenever information is transferred between us, you can check that it is done so using SSL by looking for a closed padlock symbol or other trust mark in your browser’s URL bar or toolbar.</p>
+<h2 class="h4">16. Retention period for personal data</h2>
+<p>As mentioned in this privacy notice, we keep your personal information securely online for a period of 3 months. We will also keep the data on our practice management software for as long as required by us:</p>
+<ul><li>To provide you with the services you have requested</li><li>To comply with other law</li><li>To support a claim or defence in court</li></ul>
+<h2 class="h4">17. Compliance with the law</h2>
+<p>Our privacy policy has been compiled so as to comply with the law of every country or legal jurisdiction in which we aim to do business. If you think it fails to satisfy the law of your jurisdiction, we should like to hear from you.</p>
+<p>However, ultimately it is your choice as to whether you wish to use our website.</p>
+<h2 class="h4">18. Review of this privacy policy</h2>
+<p>We may update this privacy notice from time to time as necessary. The terms that apply to you are those posted here on our website on the day you use our website. We advise you to print a copy for your records.</p>
+<p>If you have any question regarding our privacy policy, please contact us.</p>`;
+  return legalPage('Privacy Policy', '/privacy-policy/', 'Privacy policy for Kings Hill Dental.', html);
+}
+
+function termsConditions() {
+  const html = `
+<p>At Kings Hill Dental we pride ourselves on excellent dental care and service and this document provides details of our terms and conditions. If you have any queries or need clarification, please contact us and a member of staff will be happy to help you.</p>
+<p>Please be aware that any information provided through any part of our website does not constitute professional advice; no professional advice can be given without a clinical consultation with a dentist. For professional dental advice we strongly recommend that you see a dentist for full consultation.</p>
+<p>Kings Hill Dental does not have a contract with an NHS Primary Care Trust and all treatments are provided on a private basis only.</p>
+<h2 class="h4">Treatment plans and Estimates</h2>
+<p>Once your treatment plan has been agreed with the Dentist, we will provide you with a detailed copy. If this plan changes due to radiographic or clinical findings, we will inform you and discuss this with you. Treatment plans and fees are valid for 90 days from the date the treatment was prescribed. If there are any points on your treatment plan that you wish to query, please do not hesitate to ask us before booking your appointments.</p>
+<h2 class="h4">Consent forms</h2>
+<p>Certain treatments require completion of a written consent form. This explains the treatment, aftercare and any risk to you thoroughly, before any of these treatments are carried out. Consent for any treatment can be withdrawn at any point by the patient or dental professional.</p>
+<h2 class="h4">Fees</h2>
+<p>Fees for treatment are due on the day the treatment is provided. We do not operate an account in arrears facility, and we require fees to be settled at the appointment where treatment is provided. Where treatment incurs a laboratory fee, a minimum of 50% of the total fee is due at the first appointment. Fees for certain treatments including Dental Implants and orthodontics are taken in staged payments at each visit.</p>
+<p>Fees for treatment where intravenous sedation is included, must be settled prior to the appointment to avoid financial transactions, or signatures being required, whilst a client is still under the influence of the sedative.</p>
+<p>In cases where treatment is paid for on finance through a Finance company, please be aware that the finance agreement must be accepted and signed prior to the start of that treatment. Please note that finance is only available on treatments over £500, not including Emergency Dental Treatment, and that a minimum deposit may also be required.</p>
+<p>If you have financed any of the costs of your treatment through the finance company, and wish to cancel your treatment after signing the agreement forms, please be aware that a cancellation fee of up to 15% of the total finance amount will be charged. In some circumstances, we reserve the right to request payment in advance for certain treatments.</p>
+<p>Kings Hill Dental reserves the right to charge time-based deposits for booking future appointments. Deposits are then deducted from the cost of treatment.</p>
+<p>Payment methods accepted are:</p>
+<ul><li>Cash</li><li>Debit/Credit Card</li><li>Stripe</li></ul>
+<p>Kings Hill Dental does not accept any payments by cheque. Please note that unpaid accounts are routinely referred to a Debt Collection Agency or the Small Claims Court, and we reserve the right to recover all costs incurred in doing so. We reserve the right to ask for payment in full before beginning any treatment plan and may have to make alternative charges based on surgery and clinician time if planned treatment cannot be completed in the allocated time.</p>
+<h2 class="h4">Late cancellation or missed appointments</h2>
+<p>Cancellations and Failed Appointments: We require a minimum of 48 business hours’ notice for cancellation of any arranged appointments. When we schedule an appointment for a patient, we are booking the surgery time for that patient’s treatment. Failure to give the appropriate notice of cancellation will result in a Failed Appointment Fee being charged. This fee is proportionate to the length of the appointment failed and is to cover the cost of the surgery time wasted.</p>
+<p>Failed Appointment Fees must be settled before any other appointment is offered and we reserve the right to take a minimum of 50% deposit before rebooking.</p>
+<p>Please note: it is also down to the principals discretion if further appointments can be booked for any late cancellations or missed appointments.</p>
+<h2 class="h4">Late for appointments</h2>
+<p>We understand that some patients travel long distances to get to the clinic, and in some cases being late for appointments can be unavoidable. If you are more than 10 minutes, please be aware that you may be asked to reschedule your appointment.</p>
+<h2 class="h4">Personal Details</h2>
+<p>It is very important that you provide a full medical history and details of any medication you take, please do let us know if these should change in any way. It is the patient’s responsibility to inform the clinic of any changes in personal details and/or their medical history.</p>
+<h2 class="h4">Use of Images and X-rays</h2>
+<p>Kings Hill Dental may ask to use images and x-rays of your smile and teeth only for marketing and educational purposes. However, if you DO NOT wish for us to use your images and x-rays in this way, please let us know.</p>
+<h2 class="h4">Use of patient contact details</h2>
+<p>At Kings Hill Dental the health of our patients is our highest priority, and we like to keep our patients informed of various important changes and of our latest special offers. We like to remind our patients of their appointments, when they are due for appointments, and other various important reminders. On this note, you may be periodically contacted by the practice via phone, text, email or by letter in the post. If you DO NOT wish to be contacted by any or all of these means, please let us know.</p>
+<h2 class="h4">Complaint’s policy</h2>
+<p>At Kings Hill Dental we always take complaints about any aspects of our services very seriously, as we endeavour to ensure that every patient has only the very best experience at all times.</p>
+<p>Complaints can be made in writing or via email, by the patient or by an authorized person on the patient’s behalf. Complaints should be made to the ‘Complaints Manager’, and should be clear, so that they can be dealt with efficiently.</p>
+<p>Every complaint will receive acknowledgment within three days, and the Management will strive to resolve the complaint within a quick, reasonable period of time (usually about 2 weeks). For our full complaints procedure and policy, please refer to our <a href="/complaints-procedure/">complaints procedure</a> or ask a member of our reception team. If a complaint is about any aspect of clinical care or associated charges it will normally be acknowledged by the Management team and then referred to the treating Dentist. Please note that in these cases, Kings Hill Dental accepts no liability on behalf of the treating Dentist and acts as a liaison between the patient and the treating Dentist only.</p>
+<p>If you are unsatisfied with our internal handling of your complaint, you are free to forward your complaint to the Dental Complaints Service (<a href="http://www.dentalcomplaints.org.uk" target="_blank" rel="noopener">www.dentalcomplaints.org.uk</a>). If still unsatisfied, you may wish to forward your complaint to the General Dental Council.</p>
+<h2 class="h4">No tolerance/Abuse policy</h2>
+<p>We operate a zero-tolerance policy of abuse to our Dentists and staff, loud/disorderly/drunken behaviour, persistent missing and late cancellation of appointments (after multiple warnings). In these situations, Kings Hill Dental reserves the right to refuse treatment and admission.</p>
+<h2 class="h4">Promotions</h2>
+<p>Kings Hill Dental occasionally runs special offers and promotions on treatments. These are subject to availability of appointments and suitability of treatment for the patient.</p>
+<h2 class="h4">Data Protection Act</h2>
+<p>We store all patient personal details on a secure computer system in accordance with the Data Protection Act &amp; GDPR. All clinical notes, digital radiographs, digital photographs etc remain the property of Kings Hill Dental. Copies of notes, radiographs and photographs can be made available on request, and we reserve the right to charge an administration fee for these.</p>`;
+  return legalPage('Terms &amp; Conditions', '/terms-and-conditions/', 'Terms and conditions for treatment at Kings Hill Dental.', html);
+}
+
+function complaintsProcedure() {
+  const html = `
+<p>In our dental practice, we take complaints very seriously and try to ensure that our patients are pleased with our service. Any patient complaints will be dealt with courteously and promptly so that the matter is resolved as quickly as possible. The complaints procedure is based on the following objectives.</p>
+<p>Our aim is to react to complaints in a manner that is professional and prompt. We learn from every mistake and respond to customers’ concerns in a caring and sensitive way.</p>
+<p>The person responsible for dealing with any complaint about a service we provide is our Practice Manager.</p>
+<p>If a patient complains over the telephone or at the reception desk, we will listen to their complaint and offer to refer him/her to the Practice Manager. If the Practice Manager is not available, the patient will be advised of an appropriate date/time and arrangements will be made for them to contact the patient. The member of staff will take brief details of the complaint and pass them on to the Practice Manager. If we cannot arrange this within a reasonable period, or if the patient does not wish to wait to discuss the matter, arrangements will be made for someone else to deal with it.</p>
+<p>If the patient complains in writing, the letter or email will be passed on to the Practice Manager.</p>
+<p>If a complaint is made regarding any aspect of clinical care or associated charges, it will normally be referred to the dentist, unless the patient does not want this to happen.</p>
+<p>We will acknowledge the patients’ complaint in writing, normally within 3 working days. We will offer to discuss the complaint at a time agreed with the patient, asking how the patient would like to be kept informed of developments, for example, by telephone, face to face meetings, letters or email.</p>
+<p>We will seek to investigate the complaint within 10 working days of receipt to give an explanation of the circumstances which led to the complaint. If the patient does not wish to meet us, then we will attempt to talk to them on the telephone. If we are unable to investigate the complaint within 10 working days we will notify the patient.</p>
+<p>On completion of our investigation, we will provide the patient with a full written report. The report will include an explanation of how the complaint has been considered, the conclusion reached in respect of each specific part of the complaint, details of any necessary remedial action and whether the practice is satisfied with any action it has already taken or will be taking as a result of the complaint.</p>
+<p>Proper and comprehensive records are kept of any complaint received.</p>
+<p>It would be expected that ‘in house’ arbitration would have been sought before taking matters further to the General Dental Council.</p>
+<p>If patients are not satisfied with the result of our procedure then a complaint may be made to:</p>
+<ul>
+<li>The Dental Complaints Service 020 8253 0800 or by visiting <a href="http://www.dentalcomplaints.org.uk/" target="_blank" rel="noopener">dentalcomplaints.org.uk</a> for complaints about private dental treatment.</li>
+<li>The General Dental Council, at <a href="http://www.gdc-uk.org/" target="_blank" rel="noopener">gdc-uk.org</a> or by calling 020 7167 6000.</li>
+<li>The Care Quality Commission by calling 03000 616161.</li>
+<li>NHS England – <a href="mailto:england.contactus@nhs.net">england.contactus@nhs.net</a>, Tel: 0300 311 2233 for complaints about NHS treatment.</li>
+<li>The Parliamentary and Health Service Ombudsman, Millbank Tower, Millbank London SW1P 4QP (tel: 0345 015 4033 or www.ombudsman.org.uk for complaints about NHS treatment).</li>
+</ul>`;
+  return legalPage('Complaints Procedure', '/complaints-procedure/', 'Our complaints procedure at Kings Hill Dental.', html);
+}
+
 module.exports.privacy = privacy;
 module.exports.accessibility = accessibility;
+module.exports.termsConditions = termsConditions;
+module.exports.complaintsProcedure = complaintsProcedure;

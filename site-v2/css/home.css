@@ -593,11 +593,14 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .au-more:hover svg { transform: translateX(3px); }
 
 /* aesthetics: small practitioner profile card, reusing the team popup's photo/body layout */
-.prac-card { display: grid; grid-template-columns: 1fr; border-radius: 22px; overflow: hidden; background: var(--cream-2); }
+.prac-card { display: grid; grid-template-columns: 1fr; border-radius: 22px; overflow: hidden; background: var(--brown); }
 @media (min-width: 560px) { .prac-card { grid-template-columns: .8fr 1.2fr; } }
 .prac-card .mc-v1-photo { min-height: 220px; }
 .prac-card .mc-v1-body { padding: clamp(22px, 3.5vw, 36px); }
-.prac-card .mc-v1-body h3 { font-size: clamp(1.4rem, 2vw, 1.7rem); }
+.prac-card .mc-v1-body h3 { font-size: clamp(1.4rem, 2vw, 1.7rem); color: var(--cream); }
+.prac-card .mc-v1-body p { color: color-mix(in srgb, var(--cream) 85%, transparent); }
+.prac-card .au-more { color: var(--cream); }
+.prac-card .au-more .lbl::after { background: var(--cream); }
 
 /* ================= about: partner tiles (style borrowed from chai-wallahs.netlify.app) ================= */
 .partners-tint { background: color-mix(in srgb, var(--brown) 5%, var(--cream)); padding-block: clamp(40px, 5vw, 64px); }

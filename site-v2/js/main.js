@@ -429,7 +429,7 @@
   function measureTimelines() {
     $$('.timeline').forEach((t) => {
       const items = $$('li', t);
-      if (items.length) t.style.setProperty('--line-end', (items[items.length - 1].offsetTop + 18) + 'px');
+      if (items.length) t.style.setProperty('--line-end', (items[items.length - 1].offsetTop + 22) + 'px');
     });
   }
   measureTimelines();
@@ -439,7 +439,7 @@
     if (!tl) return;
     const r = tl.getBoundingClientRect(), mid = innerHeight * 0.6;
     const cap = parseFloat(tl.style.getPropertyValue('--line-end')) || r.height;
-    const prog = $('.prog', tl); const h = Math.max(0, Math.min(cap - 18, mid - r.top - 12));
+    const prog = $('.prog', tl); const h = Math.max(0, Math.min(cap - 22, mid - r.top - 12));
     prog.style.height = h + 'px';
     $$('li', tl).forEach((li) => li.classList.toggle('is-on', li.getBoundingClientRect().top < mid));
   }
