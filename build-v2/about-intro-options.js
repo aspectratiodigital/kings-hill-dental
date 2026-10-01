@@ -2,7 +2,6 @@
 // left, the note styled visually like a letter (letterhead, salutation, sign-off) on the right.
 function aboutIntro() {
   return `<section class="section section--tight" aria-label="A letter from your dentists"><div class="wrap">
-<h2 class="h1" id="letter-h" data-split>A letter from us</h2>
 <div class="ai-letter">
 <figure class="ai-letter-media" data-reveal="fade"><img src="/img/about-founders.webp" alt="Simon and Amelia, the principal dentists at Kings Hill Dental" loading="lazy" width="500" height="750"></figure>
 <div class="ai-letter-copy" data-reveal>

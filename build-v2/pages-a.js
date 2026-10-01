@@ -178,8 +178,8 @@ function peopleData() {
 function about() {
   const people = peopleData();
   const shots = ['exterior', 'entrance', 'reception', 'reception-closeup', 'waiting-room', 'waiting-room-closeup', 'consultation', 'the-practice', 'main-room-2', 'main-room-3', 'main-room-4', 'children-s-area'];
-  const labels = ['Exterior', 'Entrance', 'Reception', 'Reception Close-up', 'Waiting Room', 'Waiting Room Close-up', 'Consultation', 'The Practice', 'The Practice 2', 'The Practice 3', 'The Practice 4', 'Children’s Area'];
-  const mosaic = [['exterior', 'Exterior'], ['entrance', 'Entrance'], ['reception', 'Reception'], ['waiting-room', 'Waiting room'], ['consultation', 'Consultation'], ['the-practice', 'The practice'], ['main-room-2', 'Treatment room'], ['main-room-3', 'Surgery'], ['children-s-area', 'Children’s area']];
+  const labels = ['Exterior', 'Entrance', 'Reception', 'Reception Close-up', 'Waiting Room', 'Waiting Room Close-up', 'Consultation', 'The Practice', 'Treatment Room', 'Surgery', 'Surgery 2', 'Children’s Area'];
+  const mosaic = shots.map((s, i) => [s, labels[i]]);
   const STREETVIEW = 'https://www.google.com/maps/embed?pb=!4v1780588251079!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ2Mwc0thcFFF!2m2!1d51.27284324136546!2d0.3971868508402939!3f213.80807936468835!4f-17.75704165562172!5f0.7820865974627469';
   const body = `
 ${splitHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>About</li></ul>`, title: `About us`, img: 'about-1', alt: `Treatment room at Kings Hill Dental`, objectPosition: '70% center' })}

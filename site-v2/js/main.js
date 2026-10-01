@@ -281,8 +281,8 @@
   const mos = $('[data-mosaic]');
   if (mos) {
     const cells = $$('.mo', mos), cap = $('[data-mcap]');
-    // [col start, col span, row start, row span] for each tile in the 4x3 layout
-    const pos = [[1, 2, 1, 1], [3, 1, 1, 1], [4, 1, 1, 1], [1, 1, 2, 1], [2, 2, 2, 1], [4, 1, 2, 1], [1, 1, 3, 1], [2, 1, 3, 1], [3, 2, 3, 1]];
+    // [col start, col span, row start, row span] for each tile — a plain 4-across grid, filled in order
+    const pos = cells.map((_, i) => [(i % 4) + 1, 1, Math.floor(i / 4) + 1, 1]);
     const setTracks = (k) => {
       if (k == null) { mos.style.setProperty('--cols', '1fr 1fr 1fr 1fr'); mos.style.setProperty('--rows', '1fr 1fr 1fr'); return; }
       const [c, cs, r, rs] = pos[k];

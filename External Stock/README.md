@@ -7,3 +7,4 @@ clean licensed asset existed in `KHD Stock/` or `Stock Assets/`.
 |---|---|---|
 | dental-examination.jpg | pexels.com/photo/3881451 | tx-exam.webp (replaces an unlicensed watermarked Adobe Stock preview) |
 | fixed-braces.jpg | pexels.com/photo/6529056 | tx-fixed-braces.webp (no local photo existed for this treatment) |
+| adult-smiling-dental-chair.jpg | pexels.com/photo/6627476 | plan-adult.webp (replaces 'Stock Assets/Stock 14.jpg', an unlicensed watermarked Adobe Stock preview) |

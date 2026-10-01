@@ -43,9 +43,8 @@ const jobs = [
   ['KHD Stock/Childrens Dentistry.jpg', 'tx-children', 1800, 80],
   ['KHD Stock/Bruxism.jpg', 'tx-bruxism', 1800, 80],
   ['External Stock/dental-examination.jpg', 'tx-exam', 1600, 80], // was 'Stock Assets/Stock 11.jpg' (an unlicensed watermarked Adobe Stock preview) — replaced with a Pexels photo, free for commercial use
-  ['Stock Assets/Stock 14.jpg', 'tx-hygiene-2', 1600, 80],
   ['KHD Stock/Childrens Dentistry.jpg', 'plan-child', 1200, 80],
-  ['Stock Assets/Stock 14.jpg', 'plan-adult', 1200, 80],
+  ['External Stock/adult-smiling-dental-chair.jpg', 'plan-adult', 1200, 80], // was 'Stock Assets/Stock 14.jpg' (an unlicensed watermarked Adobe Stock preview) — replaced with a Pexels photo, free for commercial use
   ['Practice/Reception.JPG', 'about-1', 1800, 80],
   ['Icons/Orthodontics Brown.png', 'icon-orthodontics', 400, 90],
   ['Icons/Dental Implants Brown.png', 'icon-restoration', 400, 90],
