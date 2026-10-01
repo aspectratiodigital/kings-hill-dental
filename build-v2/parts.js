@@ -48,9 +48,9 @@ const NAV = [
   {
     t: 'Dentistry', h: '/dentistry/', mega: [
       { t: 'General & preventative', h: '/dentistry/general-preventative/', items: [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/']] },
-      { t: 'Restorative', h: '/dentistry/restorative/', items: [['Fillings', '/dentistry/restorative/#fillings'], ['Crowns & bridges', '/dentistry/restorative/#crowns-bridges'], ['Root canals', '/dentistry/restorative/#root-canals'], ['Dentures', '/dentistry/restorative/#dentures'], ['Implants', '/dentistry/restorative/#implants']] },
-      { t: 'Cosmetic', h: '/dentistry/cosmetic/', items: [['Teeth whitening', '/dentistry/cosmetic/#whitening'], ['Composite bonding', '/dentistry/cosmetic/#bonding'], ['Veneers', '/dentistry/cosmetic/#veneers']] },
-      { t: 'Orthodontic', h: '/dentistry/orthodontic/', items: [['Invisalign', '/dentistry/orthodontic/#invisalign'], ['Invisalign Go', '/dentistry/orthodontic/#invisalign-go'], ['Fixed braces', '/dentistry/orthodontic/#fixed-braces'], ['Spark aligners', '/dentistry/orthodontic/#spark-aligners']] },
+      { t: 'Restorative', h: '/dentistry/restorative/', items: [['Fillings', '/dentistry/restorative/fillings/'], ['Crowns & bridges', '/dentistry/restorative/crowns-bridges/'], ['Root canals', '/dentistry/restorative/root-canals/'], ['Dentures', '/dentistry/restorative/dentures/'], ['Implants', '/dentistry/restorative/implants/']] },
+      { t: 'Cosmetic', h: '/dentistry/cosmetic/', items: [['Teeth whitening', '/dentistry/cosmetic/whitening/'], ['Composite bonding', '/dentistry/cosmetic/bonding/'], ['Veneers', '/dentistry/cosmetic/veneers/']] },
+      { t: 'Orthodontic', h: '/dentistry/orthodontic/', items: [['Invisalign', '/dentistry/orthodontic/invisalign/'], ['Invisalign Go', '/dentistry/orthodontic/invisalign-go/'], ['Fixed braces', '/dentistry/orthodontic/fixed-braces/'], ['Spark aligners', '/dentistry/orthodontic/spark-aligners/']] },
     ],
   },
   { t: 'Aesthetics', h: '/aesthetics/', mega: [{ t: 'Treatments', h: '/aesthetics/', items: [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']] }] },

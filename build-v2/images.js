@@ -29,12 +29,18 @@ const jobs = [
   ['KHD Stock/Crowns and Bridges.jpg', 'hero-restorative', 2000, 80],
   ['KHD Stock/Veneers.jpg', 'hero-cosmetic', 2000, 80],
   ['KHD Stock/Invisalign.jpg', 'hero-orthodontic', 2000, 80],
-  ['External Stock/fixed-braces.jpg', 'tx-fixed-braces', 900, 80], // Pexels photo, free for commercial use — no clean local asset existed for this treatment
-  ['Stock Assets/Spark Aligners.jpg', 'tx-spark', 900, 80],
+  ['External Stock/fixed-braces.jpg', 'tx-fixed-braces', 1800, 80], // Pexels photo, free for commercial use — no clean local asset existed for this treatment
+  ['Stock Assets/Spark Aligners.jpg', 'tx-spark', 1800, 80],
   ['KHD Stock/Composite Bonding.jpg', 'cx-bonding', 1400, 80],
   ['KHD Stock/Teeth Whitening.jpg', 'cx-whitening', 1400, 80],
   ['KHD Stock/Fillings.jpg', 'rx-fillings', 1400, 80],
   ['KHD Stock/Dentures.jpg', 'rx-dentures', 1400, 80],
+  ['KHD Stock/Fillings.jpg', 'tx-fillings', 1800, 80],
+  ['KHD Stock/Dentures.jpg', 'tx-dentures', 1800, 80],
+  ['KHD Stock/Teeth Whitening.jpg', 'tx-whitening', 1800, 80],
+  ['KHD Stock/Composite Bonding.jpg', 'tx-bonding', 1800, 80],
+  ['External Stock/root-canal-model.jpg', 'tx-root-canals', 1800, 80], // Pexels photo, free for commercial use — no local photo existed for this treatment
+  ['External Stock/dental-implant-model.jpg', 'tx-implants', 1800, 80], // Pexels photo, free for commercial use — no local photo existed for this treatment
   ['KHD Stock/Anti Wrinkle.jpg', 'aes-anti-wrinkle', 1400, 80],
   ['KHD Stock/Skin Care.jpg', 'aes-skin-care', 1400, 80],
   ['KHD Stock/Profhilo.jpg', 'aes-profhilo', 1400, 80],
