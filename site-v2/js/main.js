@@ -139,7 +139,7 @@
   /* ---------- accordions ---------- */
   function openAcc(d, on) {
     const panel = $('.panel', d);
-    if (on) { d.open = true; raf(() => raf(() => { d.classList.add('is-open'); $$('.checklist', d).forEach((cl) => cl.classList.add('is-in')); })); }
+    if (on) { d.open = true; raf(() => raf(() => { d.classList.add('is-open'); $$('.checklist', d).forEach((cl) => cl.classList.add('is-in')); measureTimelines(); })); }
     else { d.classList.remove('is-open'); const done = () => { if (!d.classList.contains('is-open')) d.open = false; }; panel ? panel.addEventListener('transitionend', done, { once: true }) : done(); setTimeout(done, 700); }
   }
   $$('.acc').forEach((acc) => {
@@ -259,15 +259,20 @@
     go(0); auto();
   }
 
-  /* ---------- membership card age-tabs (sliding pill, same mechanic as .cx-tabs) ---------- */
-  $$('[data-age-tabs]').forEach((g) => {
-    const price = g.closest('.mcard').querySelector('.price b');
+  /* ---------- membership card price-tabs (sliding pill, same mechanic as .cx-tabs) ---------- */
+  $$('[data-age-tabs], [data-billing-tabs]').forEach((g) => {
+    const card = g.closest('.mcard');
+    const price = card.querySelector('.price b');
+    const unit = card.querySelector('.price small:last-of-type');
+    const badge = card.querySelector('.price-badge');
     const btns = $$('button', g);
     const set = (i) => {
       btns.forEach((b, j) => b.setAttribute('aria-selected', j === i));
       g.style.setProperty('--w', btns[i].offsetWidth + 'px');
       g.style.setProperty('--x', btns[i].offsetLeft + 'px');
       price.textContent = btns[i].dataset.price;
+      if (unit && btns[i].dataset.unit) unit.textContent = btns[i].dataset.unit;
+      if (badge) { badge.hidden = !btns[i].dataset.badge; badge.textContent = btns[i].dataset.badge || ''; }
     };
     btns.forEach((b, i) => b.addEventListener('click', () => set(i)));
     set(0);

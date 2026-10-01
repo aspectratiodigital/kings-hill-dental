@@ -38,7 +38,7 @@ ${note ? `<p class="form-note">Our friendly reception team will call you back to
 function infoList() {
   const it = (ic, html) => `<div class="info-item"><span class="ic">${ic}</span><div>${html}</div></div>`;
   return `<div class="info-list">
-${it(I.pin, '<strong>Kings Hill Clinic</strong><br>Suite 14, 10 Churchill Square<br>Kings Hill, West Malling, Kent ME19 4YU')}
+${it(I.pin, `<a href="https://www.google.com/maps?q=Kings+Hill+Dental,+Ste+14,+10+Churchill+Square,+Kings+Hill,+West+Malling,+ME19+4YU" target="_blank" rel="noopener">Kings Hill Clinic<br>Suite 14, 10 Churchill Square<br>Kings Hill, West Malling, Kent ME19 4YU</a>`)}
 ${it(I.mail, `<a href="mailto:${EMAIL}">${EMAIL}</a>`)}
 ${it(I.phone, `<a href="tel:${PHONE.replace(/ /g, '')}">${PHONE}</a>`)}
 ${it(I.chat, `<a href="${WHATSAPP}" target="_blank" rel="noopener">Chat on WhatsApp</a>`)}

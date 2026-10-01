@@ -97,19 +97,13 @@
   .mcard:hover h3 { color: var(--clay); }
 }
 
-/* membership plan page: "Become a Member" shown two ways for comparison — image above (.mplan-top,
-   plain .mcard) and image on the left (.mplan-left, wider cards + a wider photo column) */
-.mplan-left .mcards { grid-template-columns: repeat(2, minmax(0, 640px)); justify-content: center; }
-@media (max-width: 719px) { .mplan-left .mcards { grid-template-columns: minmax(0, 480px); } }
-@media (min-width: 720px) {
-  .mplan-left .mcard { display: grid; grid-template-columns: 44% 1fr; grid-template-rows: 1fr auto; }
-  .mplan-left .mcard-photo { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
-  .mplan-left .mcard-body { grid-column: 2; grid-row: 1; text-align: left; padding: 26px 30px 10px; }
-  .mplan-left .mcard .price { justify-content: flex-start; }
-  .mplan-left .mcard-foot { grid-column: 2; grid-row: 2; }
-}
-.mplan-page [data-age-tabs] { margin: 14px 0 0; flex-wrap: nowrap; }
-.mplan-page [data-age-tabs] button { padding: 9px 14px; font-size: 12px; }
+/* membership plan page: "Become a Member" cards, centred and a touch wider than the default .mcards */
+.mplan-top { padding-top: 0; }
+.mplan-top .mcards { grid-template-columns: repeat(2, minmax(0, 500px)); justify-content: center; }
+@media (max-width: 719px) { .mplan-top .mcards { grid-template-columns: minmax(0, 480px); } }
+.mplan-page [data-age-tabs], .mplan-page [data-billing-tabs] { margin: 14px 0 0; flex-wrap: nowrap; }
+.mplan-page [data-age-tabs] button, .mplan-page [data-billing-tabs] button { padding: 9px 14px; font-size: 12px; }
+.price-badge:not([hidden]) { display: inline-flex; align-self: center; padding: 3px 10px; border-radius: 999px; background: var(--blush); color: var(--clay); font: 700 11px/1.4 var(--ui); text-transform: uppercase; letter-spacing: .03em; }
 
 /* ===== testimonials carousel ===== */
 .tt-track { gap: clamp(14px, 1.6vw, 22px); padding-block: 6px 10px; }
@@ -589,6 +583,21 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
   .gp-tile:hover, .gp-tile:focus-within, .gp-tile.is-on { height: 330px; }
   .gp-caption h3 { white-space: normal; }
 }
+
+/* "Find out More" link styled and animated like .gp-more, but always visible (not gated on a parent hover) */
+.au-more { position: relative; display: inline-flex; align-items: center; gap: .5em; margin-top: 18px; padding-bottom: 6px; font: 700 16.5px/1 var(--ui); letter-spacing: .01em; color: var(--brown); text-decoration: none; }
+.au-more .lbl { position: relative; }
+.au-more .lbl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--underline); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.au-more svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.au-more:hover .lbl::after { transform: scaleX(1); }
+.au-more:hover svg { transform: translateX(3px); }
+
+/* aesthetics: small practitioner profile card, reusing the team popup's photo/body layout */
+.prac-card { display: grid; grid-template-columns: 1fr; border-radius: 22px; overflow: hidden; background: var(--cream-2); }
+@media (min-width: 560px) { .prac-card { grid-template-columns: .8fr 1.2fr; } }
+.prac-card .mc-v1-photo { min-height: 220px; }
+.prac-card .mc-v1-body { padding: clamp(22px, 3.5vw, 36px); }
+.prac-card .mc-v1-body h3 { font-size: clamp(1.4rem, 2vw, 1.7rem); }
 
 /* ================= about: partner tiles (style borrowed from chai-wallahs.netlify.app) ================= */
 .partners-tint { background: color-mix(in srgb, var(--brown) 5%, var(--cream)); padding-block: clamp(40px, 5vw, 64px); }

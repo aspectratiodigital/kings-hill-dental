@@ -32,7 +32,7 @@ function welcome() {
 
 const tickRow = (t, i) => `<li style="--i:${i}"><span class="tk" aria-hidden="true"></span><span>${t}</span></li>`;
 
-function memberCard(kind, href = '/fees/membership-plan/', linkText = 'View plan details', { ext = false, extra = '' } = {}) {
+function memberCard(kind, href = '/fees/membership-plan/', linkText = 'View plan details', { ext = false, extra = '', badge = false } = {}) {
   const child = kind === 'child';
   const feats = child
     ? ['A scale and polish treatment, with oral hygiene instruction', 'Up to two dental examinations per year', 'Any necessary x rays', '10% discount off routine treatment', 'Worldwide dental accident and emergency cover']
@@ -43,7 +43,7 @@ function memberCard(kind, href = '/fees/membership-plan/', linkText = 'View plan
 <h3>${child ? 'Children’s' : 'Adult'} Membership</h3>
 <p>${child ? 'Our child’s plan encourages regular attendance, ensuring your child maintains healthy teeth and gums for life, preventing expensive procedures later in life.' : 'The plan provides all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.'}</p>
 ${extra}
-<div class="price">${child ? '<small>from</small>' : ''}<b>${child ? '£10.40' : '£25.85'}</b><small>per month</small></div>
+<div class="price">${child ? '<small>from</small>' : ''}<b>${child ? '£10.40' : '£25.85'}</b><small>per month</small>${badge ? '<span class="price-badge" hidden></span>' : ''}</div>
 <ul class="benefits">${feats.map(tickRow).join('')}</ul>
 </div>
 <a class="mcard-foot" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${linkText}${I.arrow}</a>

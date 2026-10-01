@@ -43,7 +43,14 @@ ${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/aesthetic
 }
 
 const AESTH_LINKS = [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']];
-const aesthPractitioner = () => accItem('Our Aesthetic Practitioner', '<p>Our practitioner trained in Aesthetics with Oris Medical, before going on to further develop her skills with Avanti Aesthetics and introduce Obagi medical skincare to the practice. She is passionate about healthy skin and helping patients treat the signs of ageing.</p>');
+const aesthPractitioner = () => accItem('Our Aesthetic Practitioner', `<div class="prac-card">
+<div class="mc-v1-photo" style="--tone:#ffd0c5"><img src="/img/team-amelia.webp" alt="Amelia Madan-Dumper"></div>
+<div class="mc-v1-body">
+<h3 class="h3">Amelia Madan-Dumper</h3>
+<p>I trained in Aesthetics 6 years ago, with Oris medical and then later to up level my skills with Avanti Aesthetics. I introduced Obagi medical skincare to my practice at this time.</p>
+<a class="au-more" href="/about/#team-h"><span class="lbl">Find out More</span>${I.arrow}</a>
+</div>
+</div>`);
 
 /* ---------- AESTHETICS sub-pages (built to the Hygiene & Gum Health template; copy sourced from kingshilldental.co.uk) ---------- */
 function aestheticsAntiWrinkle() {
@@ -152,16 +159,16 @@ function membership() {
 <button type="button" role="tab" aria-selected="false" data-price="£11.25">8-12</button>
 <button type="button" role="tab" aria-selected="false" data-price="£12.10">13-17</button>
 </div>`;
+  const billingTabs = `<div class="cx-tabs" data-billing-tabs role="tablist" aria-label="Billing period">
+<button type="button" role="tab" aria-selected="true" data-price="£25.85" data-unit="per month">Monthly</button>
+<button type="button" role="tab" aria-selected="false" data-price="£279" data-unit="per year" data-badge="10% Off">Yearly</button>
+</div>`;
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan']), title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental` })}
-<section class="section section--tight"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
+<section class="section section--tight"><div class="wrap"><ul class="assure assure--center" style="margin-top:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">${tiles.map(([ic, t, d]) => `<li data-reveal>${ic}<h3>${t}</h3><p>${d}</p></li>`).join('')}</ul></div></section>
 <section class="section mplan-top"><div class="wrap">
 <div style="max-width:640px;margin-inline:auto;text-align:center"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal style="margin-inline:auto"></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
-<div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true })}</div>
-</div></section>
-<section class="section tint mplan-left"><div class="wrap">
-<div style="max-width:640px;margin-inline:auto;text-align:center"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal style="margin-inline:auto"></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
-<div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true })}</div>
+<div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true, extra: billingTabs, badge: true })}</div>
 </div></section>
 ${ctaBand('Not interested in a membership?', 'No problem — you can find out about our specific per procedure pricing using the button below.', `${arrowBtn('Our Pricing', '/fees/')}<a class="btn btn--ghost" href="/contact/">Contact us</a>`)}`;
   return { path: '/fees/membership-plan/', title: 'Membership plan | Kings Hill Dental', description: 'Kings Hill Dental membership plans for children and adults: examinations, hygiene, x-rays, discounts and worldwide emergency cover.', bodyClass: 'mplan-page', body };
@@ -247,9 +254,8 @@ ${checklist(['Regular check-ups let us spot problems while they’re still simpl
 <div class="acc" style="margin-top:48px" data-reveal>
 ${accItem('What happens during the check up?', '<p>We carry out a thorough examination that covers every aspect of your oral health. As well as assessing your teeth, we will ask some questions about your general health and medical history, in case this is affecting your dental wellbeing.</p><p>We will also check any previous treatment you have had, including crowns, bridges and implants, to make sure they are still working correctly. We may need to take x-rays of your mouth. We will also discuss any concerns you may have, or if there are any cosmetic treatments you wish to know more about.</p><p>Following the assessment, if we find anything that requires further treatment, we will set out your treatment plan and discuss with you the next steps and expected costs.</p>')}
 ${accItem('How often do I need to see a dentist?', '<p>You may not need to see us every six months and your dentist will let you know when you need to come back for your next check-up. If you have any problems between check-ups please phone us to arrange an earlier appointment.</p>')}
+${accItem('What we check during your examination', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>${steps.map(([t, d]) => `<li><h3 class="h4" style="margin-bottom:4px">${t}</h3><p>${d}</p></li>`).join('')}</ol>`)}
 </div>
-<h2 class="tx-h3" style="margin-top:clamp(32px,4vw,48px)" data-reveal>What we check during your examination</h2>
-<ol class="timeline" style="margin-top:32px"><span class="prog" aria-hidden="true"></span>${steps.map(([t, d]) => `<li><h3 class="h4" style="margin-bottom:4px">${t}</h3><p>${d}</p></li>`).join('')}</ol>
 </div>
 ${asideCard('/dentistry/general-preventative/dental-examinations/')}
 </div></section>`;
@@ -295,13 +301,12 @@ ${checklist(['The same kind, familiar team at every visit', 'A dedicated kids’
 <div class="acc" style="margin-top:48px" data-reveal>
 ${accItem('When should my child have their first check-up?', '<p>We recommend a first check-up once the first tooth appears, or by their first birthday. We keep the visit short — often just a friendly look and a count of teeth — so your child can meet the team before any treatment is ever needed.</p>')}
 ${accItem('What happens as they get older?', '<p>From around age three, regular check-ups let us catch early signs of decay while it’s still simple to treat, and we can apply fluoride varnish and fissure sealants to help protect new teeth.</p><p>Once adult teeth start coming through, we keep an eye on spacing and bite, and can flag anything that may benefit from an orthodontic opinion later on.</p>')}
-</div>
-<h2 class="tx-h3" style="margin-top:clamp(32px,4vw,48px)" data-reveal>What to expect, by age</h2>
-<ol class="timeline" style="margin-top:32px"><span class="prog" aria-hidden="true"></span>
+${accItem('What to expect, by age', `<ol class="timeline"><span class="prog" aria-hidden="true"></span>
 <li><h3 class="h4" style="margin-bottom:4px">First tooth</h3><p>Book a first check-up once the first tooth appears, or by their first birthday. It helps your child meet the team before any treatment is ever needed.</p></li>
 <li><h3 class="h4" style="margin-bottom:4px">Ages 3–6</h3><p>Regular check-ups catch early signs of decay while it’s still simple to treat, and we’ll help you build a fuss-free brushing routine at home.</p></li>
 <li><h3 class="h4" style="margin-bottom:4px">Ages 7+</h3><p>Adult teeth start coming through, so we keep an eye on spacing and bite, and talk to your child directly, building their own confidence and ownership.</p></li>
-</ol>
+</ol>`)}
+</div>
 </div>
 ${asideCard('/dentistry/general-preventative/childrens-dentistry/')}
 </div></section>`;
@@ -342,7 +347,7 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Rest
 <section class="section" style="padding-top:0"><div class="wrap rows">
 <article class="row"><div class="row-media clip-in"><img data-parallax="34" src="/img/topic-restorative.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>Fixing, restoring, rebuilding</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>From a simple filling to a full implant, our restorative treatments repair damage, relieve discomfort and restore the look and function of your natural teeth. Choose a treatment below to find out more.</p><div class="pills" data-reveal>${treatments.map(([id, t]) => `<a href="#${id}">${t}</a>`).join('')}</div></div></article>
 </div></section>
-<section class="section" style="background:#fff"><div class="wrap" style="max-width:1080px">
+<section class="section" style="background:color-mix(in srgb, var(--brown) 5%, var(--cream))"><div class="wrap" style="max-width:1080px">
 <h2 class="h1" data-split>Explore our restorative treatments</h2>
 <div class="rule" data-reveal></div>
 <div class="acc rx-acc" data-single style="margin-top:32px" data-reveal>
