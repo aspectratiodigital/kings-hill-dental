@@ -97,6 +97,25 @@
   .mcard:hover h3 { color: var(--clay); }
 }
 
+/* membership plan page: side-by-side comparison table */
+.mplan-compare { width: 100%; border-collapse: collapse; min-width: 560px; }
+.mplan-compare th, .mplan-compare td { padding: 16px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.mplan-compare thead th { font: 700 12.5px/1 var(--ui); text-transform: uppercase; letter-spacing: .05em; color: var(--rose); }
+.mplan-compare tbody th { font: 400 1.05rem/1.2 var(--serif); color: var(--brown); white-space: nowrap; }
+.mplan-compare td { font-size: 15px; }
+.mplan-compare td b { font: 700 1.3rem/1 var(--ui); }
+.mplan-compare td[colspan] { color: var(--clay); display: flex; align-items: center; gap: 10px; }
+.mplan-compare td[colspan] svg { width: 18px; height: 18px; flex: none; color: var(--rose); }
+.mplan-compare tr:last-child th, .mplan-compare tr:last-child td { border-bottom: 0; }
+.mplan-compare tr:hover th, .mplan-compare tr:hover td { background: color-mix(in srgb, var(--blush) 35%, transparent); }
+
+/* membership plan page: per-visit pricing list */
+.mplan-worth { list-style: none; margin: 20px 0 0; display: grid; gap: 2px; }
+.mplan-worth li { display: flex; align-items: flex-end; gap: 10px; padding: 10px 6px; border-radius: 10px; transition: background-color .3s; }
+.mplan-worth li:hover { background: color-mix(in srgb, var(--blush) 40%, transparent); }
+.mplan-worth span { flex: 1; border-bottom: 1px dotted var(--line); padding-bottom: 5px; }
+.mplan-worth b { font: 700 15px/1 var(--ui); white-space: nowrap; }
+
 /* ===== testimonials carousel ===== */
 .tt-track { gap: clamp(14px, 1.6vw, 22px); padding-block: 6px 10px; }
 .tcard { --bg: var(--pink); --fg: var(--brown); margin: 0; flex: none; width: calc((100% - 2 * clamp(14px, 1.6vw, 22px)) / 3); min-width: 270px; padding: 22px 22px 20px; border-radius: 20px; background: var(--bg); color: var(--fg); display: flex; flex-direction: column; gap: 16px; transition: transform .6s var(--ease), box-shadow .6s var(--ease); }
@@ -328,11 +347,6 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .phero { padding: calc(var(--header-h) + 10px) 0 0; }
 .phero-frame { position: relative; overflow: hidden; height: clamp(320px, 38vw, 520px); border-radius: 0 0 50% 50% / 0 0 clamp(50px, 9vw, 130px) clamp(50px, 9vw, 130px); background: var(--brown); isolation: isolate; transform: translateZ(0); will-change: transform; }
 .phero-img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; z-index: -2; }
-.phero-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(70, 28, 17, .32), rgba(70, 28, 17, .22) 55%, rgba(70, 28, 17, .48)); }
-.phero-content { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 var(--gutter) clamp(20px, 3.5vw, 48px); color: var(--cream); }
-.phero .crumbs { justify-content: center; color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 18px; }
-.phero .crumbs a:hover { color: var(--blush); }
-.phero-title { color: var(--cream); font-size: var(--fs-h); line-height: 1; letter-spacing: -.02em; max-width: 16em; text-shadow: 0 2px 20px rgba(20, 8, 4, .55), 0 1px 4px rgba(20, 8, 4, .5); }
 .phero-intro { padding: clamp(36px, 5vw, 72px) 0 clamp(24px, 4vw, 56px); }
 .phero-copy { max-width: 46rem; margin-inline: auto; text-align: center; }
 .phero-copy p { margin-inline: auto; max-width: none; }

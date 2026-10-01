@@ -53,7 +53,7 @@ const NAV = [
       { t: 'Orthodontic', h: '/dentistry/orthodontic/', items: [['Invisalign', '/dentistry/orthodontic/#invisalign'], ['Invisalign Go', '/dentistry/orthodontic/#invisalign-go'], ['Fixed braces', '/dentistry/orthodontic/#fixed-braces'], ['Spark aligners', '/dentistry/orthodontic/#spark-aligners']] },
     ],
   },
-  { t: 'Aesthetics', h: '/aesthetics/' },
+  { t: 'Aesthetics', h: '/aesthetics/', mega: [{ t: 'Treatments', h: '/aesthetics/', items: [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']] }] },
   { t: 'Fees', h: '/fees/' },
   { t: 'Membership Plan', h: '/fees/membership-plan/' },
   { t: 'Referrals', h: '/referrals/' },

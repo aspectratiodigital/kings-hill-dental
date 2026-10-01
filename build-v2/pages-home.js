@@ -32,7 +32,7 @@ function welcome() {
 
 const tickRow = (t, i) => `<li style="--i:${i}"><span class="tk" aria-hidden="true"></span><span>${t}</span></li>`;
 
-function memberCard(kind) {
+function memberCard(kind, href = '/fees/membership-plan/', linkText = 'View plan details') {
   const child = kind === 'child';
   const feats = child
     ? ['A scale and polish treatment, with oral hygiene instruction', 'Up to two dental examinations per year', 'Any necessary x rays', '10% discount off routine treatment', 'Worldwide dental accident and emergency cover']
@@ -45,7 +45,7 @@ function memberCard(kind) {
 <div class="price">${child ? '<small>from</small>' : ''}<b>${child ? '£10.40' : '£25.85'}</b><small>per month</small></div>
 <ul class="benefits">${feats.map(tickRow).join('')}</ul>
 </div>
-<a class="mcard-foot" href="/fees/membership-plan/">View plan details${I.arrow}</a>
+<a class="mcard-foot" href="${href}">${linkText}${I.arrow}</a>
 </article>`;
 }
 
@@ -130,4 +130,4 @@ ${contactForm({ id: 'home-form', note: false })}
   return { path: '/', title: 'Kings Hill Dental | Dentistry & Aesthetics in West Malling', description: 'A professional, honest and ethical dental practice in Kings Hill, West Malling. Preventative, restorative, cosmetic and orthodontic dentistry plus facial aesthetics.', body };
 }
 
-module.exports = { home };
+module.exports = { home, memberCard };

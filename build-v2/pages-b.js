@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { I, PORTAL, WHATSAPP, splitHero } = require('./parts');
-const { arrowBtn, partners, pageHero } = require('./pages-a');
+const { arrowBtn, partners } = require('./pages-a');
+const { memberCard } = require('./pages-home');
 const fees = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'acc-fees.json'), 'utf8')).d2[0];
 
 const crumbs = (...c) => `<ul class="crumbs" aria-label="Breadcrumb">${c.map(([t, h]) => `<li>${h ? `<a href="${h}">${t}</a>` : t}</li>`).join('')}</ul>`;
@@ -33,8 +34,9 @@ function aesthetics() {
     ['dermal-fillers', 'Dermal Fillers', 'Dermal fillers are a common aesthetic treatment that use hyaluronic acid, a substance found naturally in the body, to replenish lost volume and hydration in the skin.', 'aes-fillers'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Aesthetics'])}`, title: `Aesthetics`, img: 'aes-skin-care', alt: `Skin care treatment`, intro: `<p class="lede" data-reveal>We are able to help reverse the signs of ageing with confidence-boosting facial aesthetic treatments. Non-surgical treatments such as anti-wrinkle injections and dermal fillers can restore lost volume and reduce noticeable lines.</p><p data-reveal>We believe natural is beautiful and our aesthetics procedures exist to help reduce small imperfections and boost your confidence. We aim to ensure all of our patients are well informed about the type of treatment they are undergoing, especially by matching patients with the correct specific treatment for them.</p><p data-reveal>You can discover our range of aesthetic procedures below or if you’re not sure what kind of work you want done, you can book an appointment with our team and we can help you find the right treatment!</p>` })}
-<section class="section tint"><div class="wrap cards cards--4">
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics']), title: `Aesthetics`, img: 'aes-skin-care', alt: `Skin care treatment` })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>We are able to help reverse the signs of ageing with confidence-boosting facial aesthetic treatments. Non-surgical treatments such as anti-wrinkle injections and dermal fillers can restore lost volume and reduce noticeable lines.</p><p data-reveal>We believe natural is beautiful and our aesthetics procedures exist to help reduce small imperfections and boost your confidence. We aim to ensure all of our patients are well informed about the type of treatment they are undergoing, especially by matching patients with the correct specific treatment for them.</p><p data-reveal>You can discover our range of aesthetic procedures below or if you’re not sure what kind of work you want done, you can book an appointment with our team and we can help you find the right treatment!</p></div></div></section>
+<section class="section tint" style="padding-top:0"><div class="wrap cards cards--4">
 ${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/aesthetics/${id}/" data-reveal style="--d:${i}"><div class="card-img"><img src="/img/${img}.webp" alt="" loading="lazy" width="1400" height="900"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>`;
   return { path: '/aesthetics/', title: 'Aesthetics | Kings Hill Dental', description: 'Non-surgical facial aesthetics in West Malling: anti-wrinkle treatments, Obagi skin care, Profhilo and dermal fillers.', body };
@@ -146,14 +148,28 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees']), title: `Fees`, img: 'prac
 function membership() {
   const tiles = [[I.shield, 'Insurance', 'Worldwide dental accident and emergency insurance to put your mind at ease'], [I.coins, 'Spread costs', 'Pay for routine appointments throughout the year, reducing the upfront costs.'], [I.eye, 'Prevention', 'Regular and continued monitoring to prevent problems before they start']];
   const tk = (a) => `<ul class="ticks">${a.map((t, i) => `<li style="--i:${i}">${I.tickBig}<span>${t}</span></li>`).join('')}</ul>`;
+  const segToggle = (label) => `<div class="seg" role="tablist" aria-label="${label}"><button type="button" role="tab" aria-selected="true">Children’s</button><button type="button" role="tab" aria-selected="false">Adult</button></div>`;
+  const timelines = {
+    child: [['Day one', 'Join the plan, and come in for a first examination and a scale and polish with oral hygiene instruction.'], ['Month six', 'Back in for a second check-up and scale and polish — right on the recommended six-month schedule.'], ['Through the year', 'Any x-rays your dentist advises, 10% off further treatment, and worldwide dental accident and emergency cover whenever it’s needed.']],
+    adult: [['Day one', 'Join the plan, and come in for a first examination and hygiene visit.'], ['Month six', 'Back in for a second examination and hygiene visit, keeping on top of your gum health.'], ['Through the year', 'Up to two routine x-rays, 10% off further treatment, and worldwide dental accident and emergency cover whenever it’s needed.']],
+  };
+  const timelineList = (rows) => `<ol class="timeline"><span class="prog" aria-hidden="true"></span>${rows.map(([t, d]) => `<li><h3 class="h4" style="margin-bottom:4px">${t}</h3><p>${d}</p></li>`).join('')}</ol>`;
+  const worth = {
+    child: { price: '£10.40', note: 'from, depending on age', rows: [['Examination', '£20'], ['Scale & polish with a hygienist', '£42.50'], ['X-ray, if needed', '£15.75']] },
+    adult: { price: '£25.85', note: 'per month', rows: [['Examination', '£55'], ['Routine hygienist session', '£85'], ['X-ray, if needed', '£15.75']] },
+  };
+  const worthPanel = (kind) => { const w = worth[kind]; return `<div><ul class="mplan-worth">${w.rows.map(([t, p]) => `<li><span>${t}</span><b>${p}</b></li>`).join('')}</ul><p style="margin-top:4px">Plus 10% off further treatment and worldwide dental accident and emergency cover, included every month.</p><div class="price" style="margin-top:20px"><b>${w.price}</b><small>${w.note}</small></div></div>`; };
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan']), title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental` })}
-<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Our membership plans make it easy to keep your smile healthy by providing consistent quality care.</p></div></div></section>
-<section class="section section--tight" style="padding-top:0"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
-<section class="section tint"><div class="wrap plans" style="align-items:start">
-<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Choose a plan</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
+<section class="section section--tight"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
+<section class="section"><div class="wrap plans" style="align-items:start">
+<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p><h3 class="h4" style="margin-top:32px" data-reveal>Not interested in a membership?</h3><p data-reveal>No problem! You can find out about our specific per procedure pricing using the button below.</p><div class="actions" style="margin-top:32px" data-reveal>${arrowBtn('Our Pricing', '/fees/')}</div></div>
+<div class="mcards">${memberCard('child', '#choose-plan', 'Compare the plans')}${memberCard('adult', '#choose-plan', 'Compare the plans')}</div>
+</div></section>
+<section class="section tint" id="choose-plan"><div class="wrap plans" style="align-items:start">
+<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>Choose a plan</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Here’s the detail behind each plan, with pricing by age for children.</p></div>
 <div data-reveal>
-<div class="seg" role="tablist" aria-label="Membership plan"><button type="button" role="tab" aria-selected="true">Children’s</button><button type="button" role="tab" aria-selected="false">Adult</button></div>
+${segToggle('Membership plan')}
 <div class="plan-card">
 <div class="plan-photo"><img class="on" src="/img/plan-child.webp" alt="" loading="lazy" width="1200" height="800"><img src="/img/plan-adult.webp" alt="" loading="lazy" width="1200" height="800"></div>
 <div class="plan-body" data-plan><h3 class="h3">Children’s Membership</h3><p style="margin-top:16px">Our child’s plan encourages regular attendance, ensuring your child maintains healthy teeth and gums for life, preventing expensive procedures later in life.</p>
@@ -162,6 +178,42 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership pla
 <div class="plan-body" data-plan hidden><h3 class="h3">Adult Membership</h3><p style="margin-top:16px">The plan provides all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p>
 <div class="price"><b>£25.85</b><small>per month</small></div>${tk(['Up to two dental hygiene treatments per year', 'Up to two dental examinations per year', 'Up to two routine X rays per year', '10% discount off routine treatment', 'Worldwide dental accident and emergency cover'])}${arrowBtn('Sign up Now', PORTAL, '', true)}</div>
 </div></div>
+</div></section>
+<section class="section"><div class="wrap" style="max-width:960px">
+<h2 class="h1" data-split>Plans side by side</h2>
+<div class="rule" data-reveal></div>
+<p class="lede" data-reveal>If you’d rather compare everything in one glance.</p>
+<div style="overflow-x:auto;margin-top:8px" data-reveal><table class="mplan-compare">
+<thead><tr><th scope="col"></th><th scope="col">Children’s</th><th scope="col">Adult</th></tr></thead>
+<tbody>
+<tr><th scope="row">Monthly cost</th><td><b>From £10.40</b></td><td><b>£25.85</b></td></tr>
+<tr><th scope="row">Examinations</th><td>Up to 2 a year</td><td>Up to 2 a year</td></tr>
+<tr><th scope="row">Hygiene care</th><td>Scale &amp; polish, with oral hygiene instruction</td><td>Up to 2 hygiene treatments a year</td></tr>
+<tr><th scope="row">X-rays</th><td>Any necessary x-rays</td><td>Up to 2 routine x-rays a year</td></tr>
+<tr><th scope="row">Discount on treatment</th><td colspan="2">${I.check}<span>10% off routine treatment, both plans</span></td></tr>
+<tr><th scope="row">Emergency cover</th><td colspan="2">${I.check}<span>Worldwide dental accident &amp; emergency insurance, both plans</span></td></tr>
+</tbody>
+</table></div>
+</div></section>
+<section class="section tint"><div class="wrap plans" style="align-items:start">
+<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>A year, mapped out</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>What being on the plan actually looks like over twelve months.</p></div>
+<div data-reveal>
+${segToggle('Plan timeline')}
+<div class="plan-card" style="display:block;padding:clamp(24px,3.4vw,42px)">
+<div data-plan>${timelineList(timelines.child)}</div>
+<div data-plan hidden>${timelineList(timelines.adult)}</div>
+</div>
+</div>
+</div></section>
+<section class="section"><div class="wrap plans" style="align-items:start">
+<div style="position:sticky;top:calc(var(--header-h) + 30px)"><h2 class="h1" data-split>What you’d pay, visit by visit</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>Our standard, one-off prices for each visit the plan covers — so you can see exactly what’s included.</p></div>
+<div data-reveal>
+${segToggle('Visit pricing')}
+<div class="plan-card" style="display:block;padding:clamp(24px,3.4vw,42px)">
+<div data-plan>${worthPanel('child')}</div>
+<div data-plan hidden>${worthPanel('adult')}</div>
+</div>
+</div>
 </div></section>`;
   return { path: '/fees/membership-plan/', title: 'Membership plan | Kings Hill Dental', description: 'Kings Hill Dental membership plans for children and adults: examinations, hygiene, x-rays, discounts and worldwide emergency cover.', body };
 }
@@ -332,7 +384,7 @@ function restorativeField() {
     ['fillings', 'Fillings', 'A well-established and inexpensive way to repair tooth damage — often the first treatment we recommend for a cavity, or a cracked or broken tooth.', ['Prevents decay growing deeper and damaging the root', 'Relieves pain and sensitivity', 'Restores the tooth’s functionality', 'A seamless, natural-looking finish'], 'rx-fillings'],
     ['crowns-bridges', 'Crowns & Bridges', 'A crown restores and protects a heavily filled or broken tooth, while a bridge replaces a missing tooth by joining crowns either side of the gap.', ['Restores functionality and improves aesthetics', 'Durable, and prevents further damage', 'Looks, feels and functions like a natural tooth', 'Can improve speech affected by missing teeth'], 'hero-restorative'],
     ['root-canals', 'Root Canal Treatment', 'When the internal tissue of a tooth becomes infected, root canal treatment removes it and seals the tooth, saving it from extraction.', ['Stops the infection spreading further', 'Relieves pain from an infected tooth', 'Less expensive than replacing the tooth', 'A treated tooth can last a long time'], 'topic-restorative'],
-    ['dentures', 'Dentures', 'Removable partial or full dentures give you a complete, natural-looking smile, and can also improve how you eat and speak.', ['Natural-looking appearance', 'Can enhance facial shape', 'Improves eating and speaking ability', 'An effective, affordable way to restore your smile'], 'rx-dentures'],
+    ['dentures', 'Dentures', 'Removable partial or full dentures give you a complete, natural-looking smile, and can also improve how you eat and speak.', ['Natural-looking appearance', 'Can enhance facial shape', 'Improves eating and speaking ability', 'An effective, affordable way to restore your smile'], 'rx-dentures', 'center 18%'],
     ['implants', 'Implants', 'One of the most effective and long-lasting ways to replace one or more missing teeth, using titanium posts that act like natural tooth roots.', ['Sturdy, permanent positioning', 'Protects the jawbone and surrounding teeth', 'Restores speaking and chewing ability', 'Avoids adhesives or daily soaking routines'], 'practice-consultation'],
   ];
   const body = `
@@ -345,7 +397,7 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Rest
 <h2 class="h1" data-split>Explore our restorative treatments</h2>
 <div class="rule" data-reveal></div>
 <div class="acc rx-acc" data-single style="margin-top:32px" data-reveal>
-${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0, id)).join('')}
+${treatments.map(([id, t, d, benefits, img, pos], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"${pos ? ` style="object-position:${pos}"` : ''}></div></div>`, i === 0, id)).join('')}
 </div>
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;
@@ -404,8 +456,8 @@ function legal(slug, title, p, description) {
   const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const items = c[slug].secs.filter((s) => s.tag === 'SECTION').flatMap((s) => s.items).map((t) => t.replace(/\u200b/g, '').trim()).filter(Boolean);
   const html = items.map((t) => (/^h2: /.test(t) ? '' : /^h3: /.test(t) ? `<h2 class="h4" style="margin-top:1.6em">${esc(t.slice(4))}</h2>` : /^A\[/.test(t) ? '' : `<p>${esc(t)}</p>`)).join('\n');
-  const body = `${pageHero({ crumbs: `${crumbs(['Home', '/'], [title])}`, title: `${title}`, img: 'practice-exterior', alt: `Kings Hill Dental`, intro: `` })}
-<section class="section" style="padding-top:0"><div class="wrap" style="max-width:820px"><div class="stack">${html}</div></div></section>`;
+  const body = `${splitHero({ crumbs: crumbs(['Home', '/'], [title]), title: `${title}`, img: 'practice-exterior', alt: `Kings Hill Dental` })}
+<section class="section"><div class="wrap" style="max-width:820px"><div class="stack">${html}</div></div></section>`;
   return { path: p, title: title + ' | Kings Hill Dental', description, body };
 }
 const privacy = () => legal('blank-4', 'Privacy Policy', '/privacy-policy/', 'Privacy policy for Kings Hill Dental.');

@@ -104,7 +104,10 @@
     el.innerHTML = words.map((w, i) => '<span class="line" aria-hidden="true"><span style="--d:' + i + '">' + w + '</span></span>').join(' ');
   });
   const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }), { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
-  $$('[data-split], [data-reveal], .ticks, .checklist').forEach((el) => io.observe(el));
+  $$('[data-split], [data-reveal], .ticks, .checklist').forEach((el) => {
+    if (el.classList.contains('checklist')) { const det = el.closest('.acc details'); if (det && !det.open) return; }
+    io.observe(el);
+  });
   $$('.clip-in').forEach((el) => { const host = el.parentElement; const o = new IntersectionObserver((en) => { if (en[0].isIntersecting) { el.classList.add('is-in'); o.disconnect(); } }, { threshold: 0.1 }); o.observe(host); });
   if (reduce) $$('[data-split], [data-reveal], .clip-in, .ticks, .checklist').forEach((el) => el.classList.add('is-in'));
 
@@ -136,7 +139,7 @@
   /* ---------- accordions ---------- */
   function openAcc(d, on) {
     const panel = $('.panel', d);
-    if (on) { d.open = true; raf(() => raf(() => d.classList.add('is-open'))); }
+    if (on) { d.open = true; raf(() => raf(() => { d.classList.add('is-open'); $$('.checklist', d).forEach((cl) => cl.classList.add('is-in')); })); }
     else { d.classList.remove('is-open'); const done = () => { if (!d.classList.contains('is-open')) d.open = false; }; panel ? panel.addEventListener('transitionend', done, { once: true }) : done(); setTimeout(done, 700); }
   }
   $$('.acc').forEach((acc) => {
@@ -256,17 +259,17 @@
     go(0); auto();
   }
 
-  /* ---------- plan toggle ---------- */
-  const seg = $('.seg');
-  if (seg) {
-    const tabs = $$('button', seg), bodies = $$('[data-plan]'), imgs = $$('.plan-photo img');
+  /* ---------- plan toggle (supports more than one .seg + [data-plan] group per page) ---------- */
+  $$('.seg').forEach((seg) => {
+    const scope = seg.parentElement;
+    const tabs = $$('button', seg), bodies = $$('[data-plan]', scope), imgs = $$('.plan-photo img', scope);
     const set = (k) => { seg.dataset.active = k; tabs.forEach((t, j) => t.setAttribute('aria-selected', j === k)); bodies.forEach((b, j) => (b.hidden = j !== k)); imgs.forEach((im, j) => im.classList.toggle('on', j === k)); };
     tabs.forEach((t, k) => t.addEventListener('click', () => set(k))); set(0);
-    $$('.ages').forEach((g) => {
+    $$('.ages', scope).forEach((g) => {
       const price = g.closest('[data-plan]').querySelector('.price b');
       $$('button', g).forEach((b) => b.addEventListener('click', () => { $$('button', g).forEach((x) => x.setAttribute('aria-pressed', x === b)); price.textContent = b.dataset.price; }));
     });
-  }
+  });
 
   /* ---------- team dialog ---------- */
   $$('[data-person]').forEach((b) => b.addEventListener('click', () => { $('#' + b.dataset.open)?.showModal(); }));

@@ -232,17 +232,6 @@ ${hoursTable()}
 
 module.exports = { home, about, contact, partners, contactForm, infoList, hoursTable, arrowBtn, clip };
 
-/* ---------- shared page header: full-width image, curved lower edge, title layered on top ---------- */
-function pageHero({ crumbs = '', title, img, alt = '', intro = '' }) {
-  return `<section class="phero"><div class="phero-frame">
-<img class="phero-img" data-parallax="30" src="/img/${img}.webp" alt="${alt}" fetchpriority="high">
-<div class="phero-shade" aria-hidden="true"></div>
-<div class="phero-content">${crumbs}<h1 class="phero-title" data-split>${title}</h1></div>
-</div></section>${intro ? `
-<section class="phero-intro"><div class="wrap"><div class="phero-copy">${intro}</div></div></section>` : ''}`;
-}
-module.exports.pageHero = pageHero;
-
 /* about page: partner logos as a quiet grid */
 function partnerGrid() {
   const aspects = JSON.parse(fs.readFileSync(path.join(__dirname, 'vec', 'logo-aspects.json'), 'utf8'));
