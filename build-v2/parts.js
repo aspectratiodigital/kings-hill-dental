@@ -53,8 +53,9 @@ const NAV = [
       { t: 'Orthodontic', h: '/dentistry/orthodontic/', items: [['Invisalign', '/dentistry/orthodontic/#invisalign'], ['Invisalign Go', '/dentistry/orthodontic/#invisalign-go'], ['Fixed braces', '/dentistry/orthodontic/#fixed-braces'], ['Spark aligners', '/dentistry/orthodontic/#spark-aligners']] },
     ],
   },
-  { t: 'Aesthetics', h: '/aesthetics/', mega: [{ t: 'Facial aesthetics', h: '/aesthetics/', items: [['Anti-wrinkle treatments', '/aesthetics/#anti-wrinkle'], ['Skin care', '/aesthetics/#skin-care'], ['Profhilo', '/aesthetics/#profhilo'], ['Dermal fillers', '/aesthetics/#dermal-fillers']] }] },
-  { t: 'Fees', h: '/fees/', mega: [{ t: 'Fees & plans', h: '/fees/', items: [['Fee list', '/fees/'], ['Membership plan', '/fees/membership-plan/']] }] },
+  { t: 'Aesthetics', h: '/aesthetics/' },
+  { t: 'Fees', h: '/fees/' },
+  { t: 'Membership Plan', h: '/fees/membership-plan/' },
   { t: 'Referrals', h: '/referrals/' },
   { t: 'Contact', h: '/contact/' },
 ];
@@ -135,4 +136,14 @@ ${isHome ? '' : footer()}
 `;
 }
 
-module.exports = { I, logo, wave, layout, PORTAL, PHONE, EMAIL, WHATSAPP, HOURS, NAV, footerBottom };
+// Shared "split" page header: cream panel carries the crumbs/title, photo blends in on the right
+// via a mask-fade (see .split-hero in home.css). objectPosition keeps each photo's face clear.
+function splitHero({ crumbs, title, img, alt = '', objectPosition = 'center' }) {
+  return `<section class="phero tx-phero split-hero"><div class="phero-frame">
+<img class="phero-img split-hero-img" data-parallax="20" src="/img/${img}.webp" alt="${alt}" fetchpriority="high" style="object-position:${objectPosition}">
+<div class="phero-fade" aria-hidden="true"></div>
+<div class="simple-hero-content">${crumbs}<h1 data-split>${title}</h1></div>
+</div></section>`;
+}
+
+module.exports = { I, logo, wave, layout, PORTAL, PHONE, EMAIL, WHATSAPP, HOURS, NAV, footerBottom, splitHero };

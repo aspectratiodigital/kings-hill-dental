@@ -210,7 +210,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
   .w-art { aspect-ratio: auto; }
 }
 @media (min-width: 900px) {
-  .w-text { top: 50%; transform: translateY(-50%); }
+  .w-text { top: 16.3%; }
 }
 
 /* --- services: a line above each row (like the icon strip) highlights only while hovered --- */
@@ -518,7 +518,7 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 @media (min-width: 900px) {
   .hero-old { --wrap: 1440px; padding-top: var(--header-h); }
   .hero-old-top { flex-direction: row; align-items: center; justify-content: center; gap: clamp(24px, 4vw, 64px); }
-  .hero-old-img { position: static; order: 2; flex: 1 1 auto; min-width: 0; aspect-ratio: 1.359; }
+  .hero-old-img { position: static; order: 2; flex: 1 1 auto; min-width: 0; aspect-ratio: 1.7; }
   .hero-old-text { order: 1; flex: 0 0 auto; min-height: 0; justify-content: flex-start; padding-block: 0; }
   /* the text+image "box" is centred (both ways) within exactly the first viewport-height of
      the page, so the icon strip that follows always starts below it, off the initial screen,
@@ -632,77 +632,39 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
    size — matching the accordion's, since that's the one already used in most places */
 .tx-h3 { font: 400 clamp(1.4rem, 2.4vw, 2.1rem)/1.15 var(--serif); }
 
-/* general & preventative treatment pages: most of these keep the title off the photo entirely
-   (split/band/inset layouts), so the default phero-shade isn't needed and is switched off here —
-   except the Hygiene baseline below, which still overlays its title on the photo and needs it back */
-.tx-phero .phero-shade { display: none; }
 .tx-phero + .section { padding-top: clamp(32px, 5vw, 56px); }
 
-/* Hygiene & gum health baseline header: a cream panel carries the title on the left, blending
-   into the photo (moved well over to the right, cropped so her whole face stays clear) via a
-   soft gradient — rather than overlaying light text on the photo directly, which is what caused
-   the previous grey "halo" (thin serif strokes losing contrast against a busy, light patch of
-   the photo). Brown text on the cream side reads cleanly regardless of what's under the photo. */
-.hygiene-hero .phero-frame { background: var(--cream); }
-.hygiene-hero .phero-fade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(70, 28, 17, .28), rgba(70, 28, 17, .34) 55%, rgba(70, 28, 17, .58)); }
+/* Split header baseline: a cream panel carries the title, blending into the photo (cropped per
+   page so faces stay clear) via a soft mask-fade — rather than overlaying light text on the photo
+   directly, which is what caused a grey "halo" (thin serif strokes losing contrast against a busy,
+   light patch of the photo). Brown text on the cream side reads cleanly regardless of what's under
+   the photo. Shared by the General & Preventative treatment pages, the Dentistry and General &
+   Preventative hubs, and About. */
+.split-hero .phero-frame { background: var(--cream); }
+.split-hero .phero-fade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(70, 28, 17, .28), rgba(70, 28, 17, .34) 55%, rgba(70, 28, 17, .58)); }
 /* below 900px there isn't room for a side-by-side split without crowding the breadcrumb, so
    this falls back to the original full-bleed darkened photo with cream text instead */
 @media (min-width: 900px) {
-  .hygiene-hero .phero-img--hygiene { left: 32%; width: 68%; object-position: 40% center; }
-  .hygiene-hero .phero-fade { background: linear-gradient(90deg, var(--cream) 0%, var(--cream) 20%, color-mix(in srgb, var(--cream) 60%, transparent) 35%, color-mix(in srgb, var(--cream) 25%, transparent) 45%, transparent 56%); }
-  .hygiene-hero .simple-hero-content { color: var(--brown); width: min(100% - var(--gutter) * 2, var(--wrap)); margin-inline: auto; padding: 0; }
-  .hygiene-hero .simple-hero-content .crumbs { color: color-mix(in srgb, var(--brown) 65%, transparent); text-shadow: none; }
-  .hygiene-hero .simple-hero-content h1 { color: var(--brown); text-shadow: none; }
+  .split-hero .split-hero-img { left: 32%; width: 68%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%); mask-image: linear-gradient(90deg, transparent 0%, #000 42%); }
+  .split-hero .phero-fade { background: none; }
+  .split-hero .simple-hero-content { color: var(--brown); width: min(100% - var(--gutter) * 2, var(--wrap)); margin-inline: auto; padding: 0; }
+  .split-hero .simple-hero-content .crumbs { color: color-mix(in srgb, var(--brown) 65%, transparent); text-shadow: none; }
+  .split-hero .simple-hero-content h1 { color: var(--brown); text-shadow: none; }
 }
 
-/* ================= treatment-page header concepts (client review — four different ways to keep
-   the title ON the hero photo without it ever sitting over a face) — one per page, for comparison.
-   All four keep the same curved-pill silhouette as the site's other page headers. ================= */
-
-/* --- concept 1 (Dental Examinations): split panel — a solid colour panel carries the title,
-   the photo fills the rest; the two are two halves of one shape, so they never overlap. --- */
-.split-frame { position: relative; display: flex; flex-direction: column; height: clamp(360px, 44vw, 560px); border-radius: 0 0 50% 50% / 0 0 clamp(50px, 9vw, 130px) clamp(50px, 9vw, 130px); overflow: hidden; background: var(--brown); }
-@media (min-width: 700px) { .split-frame { flex-direction: row; } }
-.split-panel { position: relative; z-index: 1; flex: none; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4vw, 40px) var(--gutter); color: var(--cream); }
-@media (min-width: 700px) { .split-panel { width: 38%; padding-right: clamp(20px, 3vw, 40px); } }
-.split-panel .crumbs { color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 18px; }
-.split-panel h1 { color: var(--cream); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.02; letter-spacing: -.02em; }
-.split-photo { position: relative; flex: 1 1 auto; min-height: 160px; }
-.split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-/* --- concept 2 (Hygiene & Gum Health): plain left-aligned overlay — no card, no background, just
-   the path and title sitting to the left, vertically centred on the photo. Simplest of the five:
-   relies purely on left/right positioning (rather than a panel, band or card) to clear a face. --- */
+/* ================= split page header: cream panel + title, blending into the photo on the right =================
+   Settled on as the one shared treatment-page header (previously four concepts under review). */
 .simple-hero-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 var(--gutter); color: var(--cream); }
 .simple-hero-content .crumbs { color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 16px; text-shadow: 0 1px 12px rgba(20, 8, 4, .5); }
 .simple-hero-content h1 { color: var(--cream); font-size: clamp(2.2rem, 4.4vw, 3.8rem); line-height: 1.02; letter-spacing: -.02em; max-width: 14em; text-shadow: 0 2px 20px rgba(20, 8, 4, .55), 0 1px 4px rgba(20, 8, 4, .5); }
-
-/* --- concept 3 (Children's Dentistry): top band — the title sits in a solid band stacked above
-   a shorter photo; the two form one rounded unit, but the text never touches the image. --- */
-.band-top { background: var(--brown); color: var(--cream); border-radius: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px) 0 0; padding: clamp(28px, 4.5vw, 48px) var(--gutter) clamp(22px, 3.5vw, 36px); text-align: center; }
-.band-top .crumbs { justify-content: center; color: color-mix(in srgb, var(--cream) 85%, transparent); margin-bottom: 16px; }
-.band-top h1 { color: var(--cream); max-width: 18em; margin-inline: auto; }
-.band-photo { position: relative; height: clamp(220px, 30vw, 380px); border-radius: 0 0 50% 50% / 0 0 clamp(40px, 7vw, 90px) clamp(40px, 7vw, 90px); overflow: hidden; }
-.band-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-/* --- concept 4 (Bruxism): inset card — a smaller, fully-framed photo floats beside the title on
-   the page's own background, rather than a full-bleed banner, so there's no overlay at all. --- */
-.inset-hero { padding: calc(var(--header-h) + clamp(24px, 4vw, 48px)) 0 clamp(8px, 2vw, 20px); }
-.inset-row { display: flex; flex-direction: column-reverse; gap: clamp(20px, 3vw, 32px); }
-@media (min-width: 760px) { .inset-row { flex-direction: row; align-items: center; gap: clamp(32px, 5vw, 64px); } }
-.inset-text { flex: 1 1 auto; }
-.inset-text .crumbs { margin-bottom: 18px; }
-.inset-media { flex: none; width: 100%; border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: 0 30px 60px -30px rgba(70, 28, 17, .4); }
-@media (min-width: 760px) { .inset-media { width: 44%; aspect-ratio: 4 / 3; } }
-.inset-media img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ================= restorative dentistry: accordion opens onto a matching photo ================= */
 .rx-acc summary { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 .rx-acc .panel-in { max-width: none; }
 .rx-row { display: grid; gap: clamp(24px, 4vw, 48px); grid-template-columns: 1fr; align-items: stretch; }
-@media (min-width: 700px) { .rx-row { grid-template-columns: 1fr 38%; padding-right: clamp(8px, 1.5vw, 20px); } }
+@media (min-width: 700px) { .rx-row { grid-template-columns: 1fr 42%; padding-right: clamp(8px, 1.5vw, 20px); } }
 .rx-media { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 3; }
-@media (min-width: 700px) { .rx-media { aspect-ratio: 1; } }
+@media (min-width: 700px) { .rx-media { aspect-ratio: auto; } }
 .rx-media img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ================= "meet the team" popups: one shared layout (photo left, quick facts as

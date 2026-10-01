@@ -141,14 +141,19 @@
   }
   $$('.acc').forEach((acc) => {
     const single = acc.hasAttribute('data-single');
+    const hover = acc.hasAttribute('data-hover');
     $$('details', acc).forEach((d) => {
       if (d.open) d.classList.add('is-open');
+      const open = () => {
+        if (d.classList.contains('is-open')) return;
+        if (single) $$('details.is-open', acc).forEach((o) => o !== d && openAcc(o, false));
+        openAcc(d, true);
+      };
       $('summary', d).addEventListener('click', (e) => {
         e.preventDefault();
-        const on = !d.classList.contains('is-open');
-        if (on && single) $$('details.is-open', acc).forEach((o) => o !== d && openAcc(o, false));
-        openAcc(d, on);
+        if (d.classList.contains('is-open')) { if (!hover) openAcc(d, false); } else open();
       });
+      if (hover) d.addEventListener('mouseenter', open);
     });
   });
   window.__openAcc = openAcc;

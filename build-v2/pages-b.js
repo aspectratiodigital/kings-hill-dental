@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { I, PORTAL, WHATSAPP } = require('./parts');
+const { I, PORTAL, WHATSAPP, splitHero } = require('./parts');
 const { arrowBtn, partners, pageHero } = require('./pages-a');
 const fees = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'acc-fees.json'), 'utf8')).d2[0];
 
@@ -16,7 +16,8 @@ function dentistry() {
     ['orthodontic', 'Orthodontic Dentistry', 'Creating beautifully straight and healthy smiles with orthodontic treatment. Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws.', 'topic-orthodontic', [['Invisalign', '/dentistry/orthodontic/#invisalign'], ['Invisalign Go', '/dentistry/orthodontic/#invisalign-go'], ['Fixed braces', '/dentistry/orthodontic/#fixed-braces'], ['Spark aligners', '/dentistry/orthodontic/#spark-aligners']], '/dentistry/orthodontic/'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry'])}`, title: `Dentistry`, img: 'topic-general-2', alt: `Three children brushing their teeth together at the practice`, intro: `<p class="lede" data-reveal>At Kings Hill Dental our number 1 priority is our patients. Our warm and skilled team endeavour to provide the highest quality of advice and care, whilst ensuring our patients feel comfortable, safe and informed.</p><p data-reveal>We never push our patients towards treatments or cosmetic work and instead we work with you, to find the best treatment to improve your confidence and create the natural beautiful smile you deserve!</p><p data-reveal>You can discover our range of dentistry options, from general health, dental repairs, long term treatments and cosmetic work, or if you’re not sure, you can book an appointment with one of our dentists to find the right treatment for you.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry']), title: `Dentistry`, img: 'topic-general-2', alt: `Three children brushing their teeth together at the practice`, objectPosition: '60% center' })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>At Kings Hill Dental our number 1 priority is our patients. Our warm and skilled team endeavour to provide the highest quality of advice and care, whilst ensuring our patients feel comfortable, safe and informed.</p><p data-reveal>We never push our patients towards treatments or cosmetic work and instead we work with you, to find the best treatment to improve your confidence and create the natural beautiful smile you deserve!</p><p data-reveal>You can discover our range of dentistry options, from general health, dental repairs, long term treatments and cosmetic work, or if you’re not sure, you can book an appointment with one of our dentists to find the right treatment for you.</p></div></div></section>
 <section class="section"><div class="wrap rows">
 ${cats.map(([id, t, d, img, pills, href], i) => `<article class="row" id="${id}"><div class="row-media clip-in"><img data-parallax="34" src="/img/${img}.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>${t}</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>${d}</p><div class="hover-tabs" data-hover-tabs data-reveal>${pills.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</div><div class="actions" style="margin-top:32px" data-reveal>${arrowBtn('Find out More', href, 'btn--ghost')}</div></div></article>`).join('')}
 </div></section>`;
@@ -34,9 +35,91 @@ function aesthetics() {
   const body = `
 ${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Aesthetics'])}`, title: `Aesthetics`, img: 'aes-skin-care', alt: `Skin care treatment`, intro: `<p class="lede" data-reveal>We are able to help reverse the signs of ageing with confidence-boosting facial aesthetic treatments. Non-surgical treatments such as anti-wrinkle injections and dermal fillers can restore lost volume and reduce noticeable lines.</p><p data-reveal>We believe natural is beautiful and our aesthetics procedures exist to help reduce small imperfections and boost your confidence. We aim to ensure all of our patients are well informed about the type of treatment they are undergoing, especially by matching patients with the correct specific treatment for them.</p><p data-reveal>You can discover our range of aesthetic procedures below or if you’re not sure what kind of work you want done, you can book an appointment with our team and we can help you find the right treatment!</p>` })}
 <section class="section tint"><div class="wrap cards cards--4">
-${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/contact/?about=Aesthetics" data-reveal style="--d:${i}"><div class="card-img"><img src="/img/${img}.webp" alt="" loading="lazy" width="1400" height="900"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
+${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/aesthetics/${id}/" data-reveal style="--d:${i}"><div class="card-img"><img src="/img/${img}.webp" alt="" loading="lazy" width="1400" height="900"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>`;
   return { path: '/aesthetics/', title: 'Aesthetics | Kings Hill Dental', description: 'Non-surgical facial aesthetics in West Malling: anti-wrinkle treatments, Obagi skin care, Profhilo and dermal fillers.', body };
+}
+
+const AESTH_LINKS = [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']];
+const aesthPractitioner = () => accItem('Our Aesthetic Practitioner', '<p>Our practitioner trained in Aesthetics with Oris Medical, before going on to further develop her skills with Avanti Aesthetics and introduce Obagi medical skincare to the practice. She is passionate about healthy skin and helping patients treat the signs of ageing.</p>');
+
+/* ---------- AESTHETICS sub-pages (built to the Hygiene & Gum Health template; copy sourced from kingshilldental.co.uk) ---------- */
+function aestheticsAntiWrinkle() {
+  const body = `
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['Anti-wrinkle treatments']), title: 'Anti-Wrinkle Treatments', img: 'aes-anti-wrinkle', alt: 'An anti-wrinkle treatment at Kings Hill Dental' })}
+<section class="section"><div class="wrap tx-layout">
+<div>
+<p class="lede" data-reveal>Combat wrinkles and lines with non-invasive anti-ageing injections, such as Botox. These treatments use a purified protein that relaxes specific muscles under the skin, eliminating lines caused by excessive movement, such as frowning and laughing.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas we can treat:</h2>
+${checklist(['Forehead lines', 'Frown lines', 'Vertical lip lines', 'Crow’s feet'])}
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Why have anti-wrinkle treatment?</h2>
+${checklist(['Non-surgical option', 'Appearance enhancing', 'Confidence boosting', 'Quick, simple procedure', 'Lasting results'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What does the treatment involve?', '<p>Treatment only takes around 10-15 minutes, and we make sure you are comfortable and relaxed throughout the appointment. We then give small injections into the muscles of your face.</p><p>There is no need to take time to recover, and the effects of treatment will show in a couple of days. You may experience minimal short-lived side effects, including minor redness and swelling, and in rare cases, some bruising.</p><p>The outcome of the treatment lasts for around six months and does wear off over time. Top-up treatments will be needed to maintain smooth, youthful results.</p>')}
+${aesthPractitioner()}
+</div>
+</div>
+${asideCard('/aesthetics/anti-wrinkle/', ['Aesthetics', '/aesthetics/'], AESTH_LINKS)}
+</div></section>`;
+  return { path: '/aesthetics/anti-wrinkle/', title: 'Anti-Wrinkle Treatments | Kings Hill Dental', description: 'Non-surgical anti-wrinkle treatment in West Malling to smooth forehead lines, frown lines and crow’s feet.', bodyClass: 'tx-page', body };
+}
+
+function aestheticsSkinCare() {
+  const body = `
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['Skin care']), title: 'Skin Care', img: 'aes-skin-care', alt: 'A skin care consultation at Kings Hill Dental' })}
+<section class="section"><div class="wrap tx-layout">
+<div>
+<p class="lede" data-reveal>Give your skin a new lease of life that will get your face glowing with vigour and energy. We offer Obagi skin care, a range of products and peels that does more than revitalise your skin.</p>
+<p data-reveal>Our popular chemical peels give facial skin a new lease of life by gently removing the outer layer of skin. This takes away old skin that may be blemished, uneven and dry, and encourages a new layer of fully rejuvenated skin to grow.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas of concern we can treat:</h2>
+${checklist(['Acne & acne scarring', 'Melasma', 'Dryness', 'Pigmentation', 'Sun damage', 'Signs of ageing', 'Enlarged pores'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('Personalised care for your individual skin needs', '<p>We carry out a full face-to-face skin consultation, discussing your individual skin concerns and the results you hope to achieve. Using the Observ 520 skin analyser, we can produce a series of images which give us a full overview of your skin condition.</p><p>In under a minute, the Observ 520 can reveal your skin’s pigmentation, sun damage and condition, giving a detailed overview and helping to visualise what your skin needs. Your treatment is then tailored exactly to you.</p>')}
+${accItem('Obagi Blue Peel RADIANCE', '<p>We offer the Obagi Blue Peel RADIANCE facial, a salicylic acid-based peel which addresses fine lines and wrinkles, rough skin and blemishes on the face. An exfoliating peel, it helps to balance uneven skin tone and results in smoother, brighter-looking skin after just one use.</p>')}
+${aesthPractitioner()}
+</div>
+</div>
+${asideCard('/aesthetics/skin-care/', ['Aesthetics', '/aesthetics/'], AESTH_LINKS)}
+</div></section>`;
+  return { path: '/aesthetics/skin-care/', title: 'Skin Care | Kings Hill Dental', description: 'Obagi skin care and chemical peels in West Malling, with personalised skin analysis using the Observ 520.', bodyClass: 'tx-page', body };
+}
+
+function aestheticsProfhilo() {
+  const body = `
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['Profhilo']), title: 'Profhilo', img: 'aes-profhilo', alt: 'A Profhilo skin treatment at Kings Hill Dental' })}
+<section class="section"><div class="wrap tx-layout">
+<div>
+<p class="lede" data-reveal>Using a unique hyaluronic acid gel, Profhilo intensely moisturises and hydrates ageing skin, smoothing lines and creating a tightening effect.</p>
+<p data-reveal>Hyaluronic acid occurs naturally in the body to maintain the skin’s moisture, but levels dip over time, drying out the skin. Profhilo’s unique form of hyaluronic acid remodels the skin and boosts skin cells to work effectively, providing elasticity and support, while stimulating collagen production to counteract sagging. It is very effective, safe and long lasting.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas we can treat:</h2>
+${checklist(['Face', 'Neck', 'Hands', 'Arms', 'Elbows', 'Knees', 'Abdomen'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What does the treatment involve?', '<p>Initially, we invite you for a full medical face-to-face consultation, where we ensure the treatment is suitable for you and discuss your ideal results. You will be required to give your consent before we can begin treatment.</p><p>We ensure you are comfortable and relaxed before beginning the procedure. A specially formulated hyaluronic acid gel is injected under your skin, dispersing easily and allowing hydration from within. It promotes collagen and elastin production, helping to smooth out fine lines, lifting and tightening.</p><p>There is no downtime following treatment, so you can return to your normal routine straight away. You may experience some sensitivity or mild swelling, but this will fade after a few days.</p><p>Results can be visible as soon as 24 hours after treatment. Profhilo involves two sessions, repeated one month after the initial treatment, with further sessions at three or six month intervals discussed at consultation.</p>')}
+${aesthPractitioner()}
+</div>
+</div>
+${asideCard('/aesthetics/profhilo/', ['Aesthetics', '/aesthetics/'], AESTH_LINKS)}
+</div></section>`;
+  return { path: '/aesthetics/profhilo/', title: 'Profhilo | Kings Hill Dental', description: 'Profhilo hyaluronic acid skin treatment in West Malling, to hydrate, smooth and tighten ageing skin.', bodyClass: 'tx-page', body };
+}
+
+function aestheticsFillers() {
+  const body = `
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics', '/aesthetics/'], ['Dermal fillers']), title: 'Dermal Fillers', img: 'aes-fillers', alt: 'A dermal filler consultation at Kings Hill Dental' })}
+<section class="section"><div class="wrap tx-layout">
+<div>
+<p class="lede" data-reveal>Dermal fillers are a common aesthetic treatment that use hyaluronic acid, a substance found naturally in the body, to replenish lost volume and hydration in the skin. Fillers can smooth fine lines and wrinkles, giving your appearance a youthful boost.</p>
+<p data-reveal>Fillers help maintain the structure of the face, which loses volume due to depleted collagen as we age. The treatment can also improve the appearance of facial skin affected by weight loss, smoking or sun damage. We look at your face as a whole, planning the areas to be treated during a full face assessment.</p>
+<h2 class="tx-h3" style="margin:36px 0 0" data-reveal>Areas we can treat:</h2>
+${checklist(['Lips', 'Cheeks', 'Nasolabial lines', 'Marionette lines', 'Upper lip area', 'Chin'])}
+<div class="acc" style="margin-top:48px" data-reveal>
+${accItem('What does the treatment involve?', '<p>At your initial consultation, we carry out a full face-to-face consultation, including a full-face assessment and careful planning of your treatment and costs involved. We also take photographs of your face, so we can clearly show you the difference fillers can make. You will be required to give your consent before we can begin treatment.</p><p>There are a number of dermal fillers available, so we select the one suited to the end result you want to achieve. We ensure you are comfortable before beginning the procedure and can use topical local anaesthetic if needed. You may feel some discomfort, but it shouldn’t be painful.</p><p>The treatment involves injecting sterilised hyaluronic acid gel under the skin using needles. We can also sometimes use cannulas (blunt-ended tubes) to inject, ensuring the gel is placed safely under the skin.</p><p>Treatment is straightforward and quick. Your results can be visible soon after treatment and will last for around 6-10 months before needing to be topped up.</p>')}
+${aesthPractitioner()}
+</div>
+</div>
+${asideCard('/aesthetics/dermal-fillers/', ['Aesthetics', '/aesthetics/'], AESTH_LINKS)}
+</div></section>`;
+  return { path: '/aesthetics/dermal-fillers/', title: 'Dermal Fillers | Kings Hill Dental', description: 'Dermal filler treatments in West Malling to restore volume and smooth fine lines and wrinkles.', bodyClass: 'tx-page', body };
 }
 
 /* ---------- FEES ---------- */
@@ -122,7 +205,8 @@ function topicGeneral() {
     ['bruxism', 'Bruxism', 'If you are suffering with consistent grinding and clenching of your teeth, then you might have Bruxism. Our experts can help diagnose and treat, leaving you discomfort free.', 'tx-bruxism', '/dentistry/general-preventative/bruxism/'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative'])}`, title: `General &amp; Preventative`, img: 'hero-general', alt: `A dentist and patient sharing a laugh during a consultation`, intro: `<p class="lede" data-reveal>We focus on helping patients maintain healthy teeth and gums through regular examinations and preventative care. We understand the dentist can seem daunting and so our team of kind, professional dentists are here to make your visit as relaxing and informative as possible.</p><p data-reveal>Hover or select a treatment below to find out more.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative']), title: `General &amp; Preventative`, img: 'hero-general', alt: `A dentist and patient sharing a laugh during a consultation`, objectPosition: '70% center' })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>We focus on helping patients maintain healthy teeth and gums through regular examinations and preventative care. We understand the dentist can seem daunting and so our team of kind, professional dentists are here to make your visit as relaxing and informative as possible.</p><p data-reveal>Hover or select a treatment below to find out more.</p></div></div></section>
 <section class="section" style="padding-top:0" aria-label="General and preventative treatments"><div class="wrap">
 <div class="gp-accordion" data-accordion data-reveal>${items.map(([id, t, d, img, h, pos], i) => `<div class="gp-tile" id="${id}" style="--d:${i}"><img class="gp-photo" src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"${pos ? ` style="object-position:${pos}"` : ''}><div class="gp-caption"><h3>${t}</h3><p>${d}</p><a class="gp-more" href="${h}"><span class="lbl">Find out more</span>${I.arrow}</a></div></div>`).join('')}</div>
 </div></section>
@@ -131,9 +215,8 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
 }
 
 /* ---------- TREATMENT pages ---------- */
-function asideCard(current) {
-  const field = ['General & Preventative', '/dentistry/general-preventative/'];
-  const items = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/']].filter((l) => l[1] !== current);
+function asideCard(current, field = ['General & Preventative', '/dentistry/general-preventative/'], items = [['Dental examinations', '/dentistry/general-preventative/dental-examinations/'], ['Hygiene & gum health', '/dentistry/general-preventative/hygiene-gum-health/'], ['Children’s dentistry', '/dentistry/general-preventative/childrens-dentistry/'], ['Bruxism', '/dentistry/general-preventative/bruxism/']]) {
+  items = items.filter((l) => l[1] !== current);
   const links = [field, ...items];
   return `<aside class="tx-aside"><div class="aside-card"><h3>Book a visit</h3><p>Our team will explain everything before we begin, so you always know what to expect.</p>${arrowBtn('Book an Appointment', PORTAL, 'btn--light btn--sm', true)}<a class="btn btn--outline-light btn--sm" href="${WHATSAPP}" target="_blank" rel="noopener">Get Advice</a><div class="aside-links">${links.map(([t, h]) => `<a href="${h}">${t}${I.arrow}</a>`).join('')}</div></div></aside>`;
 }
@@ -149,13 +232,7 @@ function examinations() {
     ['Oral cancer check', 'A routine screening for early warning signs.'],
   ];
   const body = `
-<section class="phero tx-phero"><div class="split-frame">
-<div class="split-panel">
-${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Dental examinations'])}
-<h1 data-split>Dental Examinations</h1>
-</div>
-<div class="split-photo"><img data-parallax="20" src="/img/tx-exam.webp" alt="A dentist and patient during an examination" fetchpriority="high"></div>
-</div></section>
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Dental examinations']), title: 'Dental Examinations', img: 'tx-exam', alt: 'A dentist and patient during an examination', objectPosition: '70% center' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Routine examinations are the foundation of your oral health care. Regular check-ups allow us to spot and address any problems early.</p>
@@ -178,14 +255,7 @@ ${asideCard('/dentistry/general-preventative/dental-examinations/')}
 function hygiene() {
   const steps = ['To begin with, we will assess your mouth and gum health, looking for any signs of gum disease or decay.', 'We then apply a disclosing solution to your teeth which will make any dental biofilm easier to detect.', 'We will then show you any problem areas and provide tips on how to improve your oral health.', 'At this point we will begin the Dental Spa treatment. The combination of air, fine powder and warm water creates a spray that will gently and comfortably exfoliate and remove stain.', 'After this, we will remove any remaining tartar using our no pain instrument. This is minimally invasive, comfortable and highly efficient.', 'A final check is then performed to ensure all biofilm and tartar has been removed. It may be necessary to use a handscaler to remove any stubborn deposits.', 'At the end of this appointment, we will set a date for your next treatment.'];
   const body = `
-<section class="phero tx-phero hygiene-hero"><div class="phero-frame">
-<img class="phero-img phero-img--hygiene" data-parallax="20" src="/img/tx-hygiene.webp" alt="A patient smiling during a hygiene appointment" fetchpriority="high">
-<div class="phero-fade" aria-hidden="true"></div>
-<div class="simple-hero-content">
-${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Hygiene & gum health'])}
-<h1 data-split>Hygiene &amp; Gum health</h1>
-</div>
-</div></section>
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Hygiene & gum health']), title: 'Hygiene &amp; Gum health', img: 'tx-hygiene', alt: 'A patient smiling during a hygiene appointment', objectPosition: '40% center' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Defending your oral health from gum disease with hygiene and periodontal treatments. Hygienists are trained in assessing, tracking and treating gum disease.</p>
@@ -211,13 +281,7 @@ ${asideCard('/dentistry/general-preventative/hygiene-gum-health/')}
    and should have a proper clinical read-through before this goes live. */
 function childrensDentistry() {
   const body = `
-<section class="phero tx-phero">
-<div class="band-top">
-${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Children’s dentistry'])}
-<h1 data-split>Children’s Dentistry</h1>
-</div>
-<div class="band-photo"><img data-parallax="20" src="/img/tx-children.webp" alt="A young child brushing their teeth with a dentist, watching in a mirror" fetchpriority="high"></div>
-</section>
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Children’s dentistry']), title: 'Children’s Dentistry', img: 'tx-children', alt: 'A young child brushing their teeth with a dentist, watching in a mirror', objectPosition: '62% 25%' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Dental visits from a young age can help identify developmental issues that can be fixed early, as well as protecting your child from long term damage and expensive treatment.</p>
@@ -242,13 +306,7 @@ ${asideCard('/dentistry/general-preventative/childrens-dentistry/')}
 
 function bruxism() {
   const body = `
-<section class="tx-phero inset-hero"><div class="wrap inset-row">
-<div class="inset-text">
-${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Bruxism'])}
-<h1 class="h1" data-split>Bruxism</h1>
-</div>
-<div class="inset-media"><img src="/img/tx-bruxism.webp" alt="A man experiencing jaw discomfort" fetchpriority="high"></div>
-</div></section>
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative', '/dentistry/general-preventative/'], ['Bruxism']), title: 'Bruxism', img: 'tx-bruxism', alt: 'A man experiencing jaw discomfort', objectPosition: '70% center' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>If you are suffering with consistent grinding and clenching of your teeth, then you might have bruxism. Our experts can help diagnose and treat it, leaving you discomfort free.</p>
@@ -275,7 +333,8 @@ function restorativeField() {
     ['implants', 'Implants', 'One of the most effective and long-lasting ways to replace one or more missing teeth, using titanium posts that act like natural tooth roots.', ['Sturdy, permanent positioning', 'Protects the jawbone and surrounding teeth', 'Restores speaking and chewing ability', 'Avoids adhesives or daily soaking routines'], 'practice-consultation'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative'])}`, title: `Restorative Dentistry`, img: 'hero-restorative', alt: `A dentist showing a patient a shade guide during a consultation`, intro: `<p class="lede" data-reveal>Teeth go through a lot during our lifetime. Whether it’s a cavity, a chip, or a missing tooth, restorative dentistry can repair the damage and bring back your natural, confident smile.</p><p data-reveal>You can find out more about each of our restorative options below.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative']), title: `Restorative Dentistry`, img: 'hero-restorative', alt: `A dentist showing a patient a shade guide during a consultation`, objectPosition: '70% center' })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Teeth go through a lot during our lifetime. Whether it’s a cavity, a chip, or a missing tooth, restorative dentistry can repair the damage and bring back your natural, confident smile.</p><p data-reveal>You can find out more about each of our restorative options below.</p></div></div></section>
 <section class="section" style="padding-top:0"><div class="wrap rows">
 <article class="row"><div class="row-media clip-in"><img data-parallax="34" src="/img/topic-restorative.webp" alt="" loading="lazy" width="1800" height="800"></div><div><h2 class="h2" data-split>Fixing, restoring, rebuilding</h2><div class="rule" data-reveal></div><p class="lede" data-reveal>From a simple filling to a full implant, our restorative treatments repair damage, relieve discomfort and restore the look and function of your natural teeth. Choose a treatment below to find out more.</p><div class="pills" data-reveal>${treatments.map(([id, t]) => `<a href="#${id}">${t}</a>`).join('')}</div></div></article>
 </div></section>
@@ -284,6 +343,14 @@ ${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Re
 <div class="rule" data-reveal></div>
 <div class="acc rx-acc" data-single style="margin-top:32px" data-reveal>
 ${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0, id)).join('')}
+</div>
+</div></section>
+<section class="section" style="background:#fff"><div class="wrap" style="max-width:1080px">
+<h2 class="h1" data-split>Explore our restorative treatments</h2>
+<p class="lede" data-reveal>Design test — hover over a tab to open it, instead of clicking.</p>
+<div class="rule" data-reveal></div>
+<div class="acc rx-acc" data-single data-hover style="margin-top:32px" data-reveal>
+${treatments.map(([id, t, d, benefits, img], i) => accItem(t, `<div class="rx-row"><div class="rx-text"><p>${d}</p>${checklist(benefits)}<div class="actions" style="margin-top:8px">${arrowBtn('Enquire about ' + t, '/contact/?about=' + encodeURIComponent(t), 'btn--ghost')}</div></div><div class="rx-media"><img src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"></div></div>`, i === 0)).join('')}
 </div>
 </div></section>
 ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and one of our dentists will help you find the right treatment.')}`;
@@ -298,7 +365,8 @@ function cosmeticField() {
     ['veneers', 'Veneers', 'hero-cosmetic', 'Thin, custom-made shells bonded to the front of your teeth — ideal for correcting colour, shape and alignment together, for a natural-looking, long-lasting smile.', ['Corrects colour, shape and alignment together', 'Custom shade-matched to your natural teeth', 'Stain-resistant and durable', 'A natural, long-lasting result'], '82% 38%'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic'])}`, title: `Cosmetic Dentistry`, img: 'hero-cosmetic', alt: `A dentist matching a veneer shade for a patient`, intro: `<p class="lede" data-reveal>We have an expansive range of cosmetic treatments that can correct minor issues, straighten smiles and whiten teeth. We want to help you build a natural-looking smile you’re proud of.</p><p data-reveal>We never push our patients towards cosmetic work — instead, we’ll help you find the treatment that’s genuinely right for you.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic']), title: `Cosmetic Dentistry`, img: 'hero-cosmetic', alt: `A dentist matching a veneer shade for a patient`, objectPosition: '70% center' })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>We have an expansive range of cosmetic treatments that can correct minor issues, straighten smiles and whiten teeth. We want to help you build a natural-looking smile you’re proud of.</p><p data-reveal>We never push our patients towards cosmetic work — instead, we’ll help you find the treatment that’s genuinely right for you.</p></div></div></section>
 <section class="section" style="padding-top:0" aria-label="Cosmetic treatments"><div class="wrap">
 <h2 class="h1" data-split>Choose a treatment</h2>
 <div class="rule" data-reveal></div>
@@ -324,7 +392,8 @@ function orthodonticField() {
     ['Spark Aligners', 'A clear aligner alternative, virtually invisible in everyday wear, offering a discreet way to straighten your teeth.', 'tx-spark', '/contact/?about=Spark%20aligners', 'spark-aligners'],
   ];
   const body = `
-${pageHero({ crumbs: `${crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic'])}`, title: `Orthodontic Dentistry`, img: 'hero-orthodontic', alt: `A clear aligner and dental mould held in hand`, intro: `<p class="lede" data-reveal>Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws, creating beautifully straight, healthy smiles.</p><p data-reveal>You can find out more about our options of Orthodontic care below.</p>` })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic']), title: `Orthodontic Dentistry`, img: 'hero-orthodontic', alt: `A clear aligner and dental mould held in hand`, objectPosition: '65% center' })}
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>Orthodontics is the branch of dentistry that corrects irregularities of the teeth and jaws, creating beautifully straight, healthy smiles.</p><p data-reveal>You can find out more about our options of Orthodontic care below.</p></div></div></section>
 <section class="section tint"><div class="wrap cards">
 ${cards.map(([t, d, img, h, id], i) => `<a class="card" id="${id}" href="${h}" data-reveal style="--d:${i % 2}"><div class="card-img" style="aspect-ratio:16/9"><img src="/img/${img}.webp" alt="" loading="lazy" width="1800" height="800"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>
@@ -332,7 +401,7 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
   return { path: '/dentistry/orthodontic/', title: 'Orthodontic Dentistry | Kings Hill Dental', description: 'Invisalign, Invisalign Go, fixed braces and Spark aligners at Kings Hill Dental in West Malling.', bodyClass: 'wide-intro', body };
 }
 
-module.exports = { dentistry, aesthetics, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField };
+module.exports = { dentistry, aesthetics, aestheticsAntiWrinkle, aestheticsSkinCare, aestheticsProfhilo, aestheticsFillers, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField };
 
 /* ---------- LEGAL (client copy carried over as-is; still Wix template text) ---------- */
 function legal(slug, title, p, description) {

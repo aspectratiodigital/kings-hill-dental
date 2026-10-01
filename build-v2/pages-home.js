@@ -19,8 +19,8 @@ function welcome() {
   const shape = (cls, style, vb, d, flip) => `<svg class="w-shape ${cls}" style="${style}${flip ? ';--flip:-1' : ''}" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" fill="currentColor"/></svg>`;
   const rect = (cls, style) => `<span class="w-shape w-rect ${cls}" style="${style}" aria-hidden="true"></span>`;
   return `<section class="welcome" aria-labelledby="welcome-h"><div class="w-art">
-<img class="w-img wa" src="/img/welcome-a.webp" alt="The reception area at Kings Hill Dental" loading="lazy" width="1367" height="778" style="${box(0.06, 0.02, 0.40281, 0.34544)};-webkit-mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)};mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)}">
-<img class="w-img wb" src="/img/welcome-b.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873" style="${box(0.28, 0.12, 0.30181, 0.29233)};-webkit-mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)};mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)}">
+<img class="w-img wa" src="/img/welcome-a.webp" alt="The reception area at Kings Hill Dental" loading="lazy" width="1367" height="778" style="${box(0.06, 0.041, 0.40281, 0.34544)};-webkit-mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)};mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)}">
+<img class="w-img wb" src="/img/welcome-b.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873" style="${box(0.28, 0.141, 0.30181, 0.29233)};-webkit-mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)};mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)}">
 <div class="w-text">
 <p class="w-kicker" data-reveal>Welcome to…</p>
 <h2 id="welcome-h" data-split>Kings Hill Dental</h2>

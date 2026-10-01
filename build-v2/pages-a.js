@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { I, wave, PORTAL, PHONE, EMAIL, WHATSAPP, HOURS } = require('./parts');
+const { I, wave, PORTAL, PHONE, EMAIL, WHATSAPP, HOURS, splitHero } = require('./parts');
 const { teamOptions, teamPopups } = require('./team-options');
 const { aboutIntro } = require('./about-intro-options');
 const copy = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'copy.json'), 'utf8'));
@@ -182,7 +182,7 @@ function about() {
   const mosaic = [['exterior', 'Exterior'], ['entrance', 'Entrance'], ['reception', 'Reception'], ['waiting-room', 'Waiting room'], ['consultation', 'Consultation'], ['the-practice', 'The practice'], ['main-room-2', 'Treatment room'], ['main-room-3', 'Surgery'], ['children-s-area', 'Children’s area']];
   const STREETVIEW = 'https://www.google.com/maps/embed?pb=!4v1780588251079!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ2Mwc0thcFFF!2m2!1d51.27284324136546!2d0.3971868508402939!3f213.80807936468835!4f-17.75704165562172!5f0.7820865974627469';
   const body = `
-${pageHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>About</li></ul>`, title: `About us`, img: 'about-1', alt: `Treatment room at Kings Hill Dental` })}
+${splitHero({ crumbs: `<ul class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li>About</li></ul>`, title: `About us`, img: 'about-1', alt: `Treatment room at Kings Hill Dental`, objectPosition: '70% center' })}
 
 ${aboutIntro()}
 
