@@ -136,8 +136,8 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees']), title: `Fees`, img: 'prac
 <section class="section" style="padding-top:0"><div class="wrap tx-layout">
 <div>
 <div class="search" data-reveal><label class="vh" for="fee-search">Search fees</label>${I.search}<input id="fee-search" type="search" placeholder="Search treatments, e.g. hygiene or X-ray" autocomplete="off"></div>
-<div class="acc" data-single style="margin-top:32px" data-reveal>${acc}</div>
-<p class="empty" id="fee-none" hidden>Nothing matches that search. Try a different word, or call us and we’ll help.</p>
+<div class="acc fees-acc" data-single style="margin-top:32px" data-reveal>${acc}</div>
+<p class="empty" id="fee-none" hidden>Nothing matches that search. Try a different word, or <a class="empty-wa" href="${WHATSAPP}" target="_blank" rel="noopener">message us on WhatsApp</a> and we’ll be happy to help.</p>
 </div>
 <aside class="tx-aside"><div class="aside-card"><h3>Need help choosing?</h3><p>Not sure which treatment is right for you, or nervous about getting treatment/aesthetic work for the first time?</p><p>Our kind team of dental professionals are here to help you choose the right procedure for your smile…</p>${arrowBtn('Book an Appointment', PORTAL, 'btn--light', true)}<div class="aside-links"><a href="/fees/membership-plan/">Membership plan${I.arrow}</a><a href="/contact/">Contact us${I.arrow}</a></div></div></aside>
 </div></section>`;
@@ -155,7 +155,11 @@ function membership() {
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Fees', '/fees/'], ['Membership plan']), title: `Membership Plan`, img: 'practice-waiting-room', alt: `The waiting room at Kings Hill Dental` })}
 <section class="section section--tight"><div class="wrap"><ul class="values" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-left:0">${tiles.map(([ic, t, d]) => `<li data-reveal style="border-left:0;padding-left:0">${ic}<div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ul></div></section>
-<section class="section"><div class="wrap">
+<section class="section mplan-top"><div class="wrap">
+<div style="max-width:640px;margin-inline:auto;text-align:center"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal style="margin-inline:auto"></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
+<div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true })}</div>
+</div></section>
+<section class="section tint mplan-left"><div class="wrap">
 <div style="max-width:640px;margin-inline:auto;text-align:center"><h2 class="h1" data-split>Become a Member</h2><div class="rule" data-reveal style="margin-inline:auto"></div><p class="lede" data-reveal>Our plans provide all the essential dental treatments you need, looking after your teeth and gums while making your dental care more affordable.</p></div>
 <div class="mcards" style="margin-top:clamp(32px,4vw,56px)">${memberCard('child', PORTAL, 'Sign up today', { ext: true, extra: ageTabs })}${memberCard('adult', PORTAL, 'Sign up today', { ext: true })}</div>
 </div></section>

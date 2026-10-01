@@ -192,7 +192,7 @@ ${teamPopups(people)}
 <section class="section" id="practice" aria-labelledby="prac-h"><div class="wrap prac-head">
 <div class="prac-head-row">
 <div class="prac-head-side" data-reveal>
-<div class="chips" role="tablist" aria-label="View"><button class="chip" type="button" data-mode="photos" aria-selected="true">Photos</button><button class="chip" type="button" data-mode="tour" aria-selected="false">360° tour</button></div>
+<div class="cx-tabs" role="tablist" aria-label="View"><button type="button" data-mode="photos" aria-selected="true">Photos</button><button type="button" data-mode="tour" aria-selected="false">360° tour</button></div>
 <p class="prac-cap" aria-live="polite"><span data-mcap>Exterior</span></p>
 </div>
 <div class="prac-head-title">

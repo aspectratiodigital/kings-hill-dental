@@ -2,7 +2,7 @@
 
 /* ===== round-cornered boxes instead of pills ===== */
 :root { --r-ui: 14px; --r-sm: 10px; }
-.btn, .seg, .chip, .pills a, .pill-off, .skip, .modal-x, .car-btn, .gal-cap, .hero-badge, .ages button, .choice span, .search input, .field input, .field textarea, .field select, .menu-btn { border-radius: var(--r-ui); }
+.btn, .seg, .pills a, .pill-off, .skip, .modal-x, .car-btn, .gal-cap, .hero-badge, .choice span, .search input, .field input, .field textarea, .field select, .menu-btn { border-radius: var(--r-ui); }
 .seg button, .seg::before { border-radius: var(--r-sm); }
 .check input { border-radius: 7px; }
 .q-dots button { border-radius: 4px; }
@@ -97,15 +97,16 @@
   .mcard:hover h3 { color: var(--clay); }
 }
 
-/* membership plan page: wider, horizontal member cards with room for the age-tab selector */
-.mplan-page .mcards { grid-template-columns: repeat(2, minmax(0, 560px)); justify-content: center; }
-@media (max-width: 719px) { .mplan-page .mcards { grid-template-columns: minmax(0, 480px); } }
+/* membership plan page: "Become a Member" shown two ways for comparison — image above (.mplan-top,
+   plain .mcard) and image on the left (.mplan-left, wider cards + a wider photo column) */
+.mplan-left .mcards { grid-template-columns: repeat(2, minmax(0, 640px)); justify-content: center; }
+@media (max-width: 719px) { .mplan-left .mcards { grid-template-columns: minmax(0, 480px); } }
 @media (min-width: 720px) {
-  .mplan-page .mcard { display: grid; grid-template-columns: 38% 1fr; grid-template-rows: 1fr auto; }
-  .mplan-page .mcard-photo { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
-  .mplan-page .mcard-body { grid-column: 2; grid-row: 1; text-align: left; padding: 26px 30px 10px; }
-  .mplan-page .mcard .price { justify-content: flex-start; }
-  .mplan-page .mcard-foot { grid-column: 2; grid-row: 2; }
+  .mplan-left .mcard { display: grid; grid-template-columns: 44% 1fr; grid-template-rows: 1fr auto; }
+  .mplan-left .mcard-photo { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
+  .mplan-left .mcard-body { grid-column: 2; grid-row: 1; text-align: left; padding: 26px 30px 10px; }
+  .mplan-left .mcard .price { justify-content: flex-start; }
+  .mplan-left .mcard-foot { grid-column: 2; grid-row: 2; }
 }
 .mplan-page [data-age-tabs] { margin: 14px 0 0; flex-wrap: nowrap; }
 .mplan-page [data-age-tabs] button { padding: 9px 14px; font-size: 12px; }
@@ -442,7 +443,6 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .prac-head-side { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .prac-head-title { text-align: right; }
 .prac-head-title .rule { margin-left: auto; }
-.prac .chips, .prac-head-side .chips { display: flex; gap: 10px; }
 .prac-cap { margin: 14px 0 0; font: 400 1.4rem/1.2 var(--serif); color: var(--clay); min-height: 1.4em; }
 .cta-band { background: var(--cream) url(/img/tex-b.webp); background-size: 300px auto; }
 .gp-page .phero-copy, .wide-intro .phero-copy { max-width: 64rem; }
@@ -458,6 +458,8 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 .mo.is-on img { transform: scale(1.02); }
 .mosaic.has-on .mo:not(.is-on) img { filter: saturate(.85) brightness(.95); }
 .tour iframe { width: 100%; aspect-ratio: 1; border: 0; border-radius: 26px; }
+.tour:fullscreen { display: grid; place-items: center; background: #000; }
+.tour:fullscreen iframe { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
 
 /* ================= about: partner grid ================= */
 .pgrid { list-style: none; margin: clamp(28px, 4vw, 52px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: color-mix(in srgb, var(--brown) 14%, transparent); border: 1px solid color-mix(in srgb, var(--brown) 14%, transparent); border-radius: 22px; overflow: hidden; }
@@ -615,6 +617,8 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .hover-tabs a:hover, .hover-tabs a:focus-visible { color: var(--cream); }
 .hover-tabs::before { content: ""; position: absolute; top: 5px; bottom: 5px; left: 0; width: var(--w, 0px); transform: translateX(var(--x, 5px)); background: var(--brown); border-radius: 999px; opacity: 0; transition: transform .4s var(--ease), width .4s var(--ease), opacity .25s var(--ease); }
 .hover-tabs:hover::before, .hover-tabs:focus-within::before { opacity: 1; }
+/* Restorative has one more pill than the other dentistry categories — tighten just this row so all 5 fit on one line */
+#restorative .hover-tabs a { padding: 11px 10px; }
 .cx-card { position: relative; background: var(--cream); border-radius: 32px; overflow: hidden; box-shadow: 0 40px 70px -40px rgba(70, 28, 17, .5), 0 0 0 1px var(--line); display: grid; }
 @media (min-width: 760px) { .cx-card { grid-template-columns: 1fr 1fr; } }
 .cx-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
@@ -684,7 +688,7 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .mc-v1-gdc { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13.5px; color: var(--ink-soft); text-decoration: none; transition: color .3s; }
 .mc-v1-gdc:hover { color: var(--pink); }
 .mc-v1-gdc .fact-ic { width: 18px; height: 18px; }
-.mc-v1-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 26px; }
+.mc-v1-pills { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 20px 0 26px; }
 .mc-v1-pills .pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--cream-2); font-size: 13.5px; transition: transform .3s var(--ease); }
 .mc-v1-pills .pill:hover { transform: translateX(4px); }
 .mc-v1-pills .pill .fact-ic { width: 18px; height: 18px; }

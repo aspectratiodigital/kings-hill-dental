@@ -54,8 +54,8 @@ const NAV = [
     ],
   },
   { t: 'Aesthetics', h: '/aesthetics/', mega: [{ t: 'Treatments', h: '/aesthetics/', items: [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']] }] },
-  { t: 'Fees', h: '/fees/' },
   { t: 'Membership Plan', h: '/fees/membership-plan/' },
+  { t: 'Fees', h: '/fees/' },
   { t: 'Referrals', h: '/referrals/' },
   { t: 'Contact', h: '/contact/' },
 ];

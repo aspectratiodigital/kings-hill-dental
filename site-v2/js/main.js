@@ -297,13 +297,18 @@
     });
     mos.addEventListener('mouseleave', () => activate(null));
     setTracks(null);
+    const modeTrack = $('.cx-tabs', mos.closest('section'));
     const tabs = $$('[data-mode]');
-    tabs.forEach((t) => t.addEventListener('click', () => {
+    tabs.forEach((t, i) => t.addEventListener('click', () => {
       tabs.forEach((x) => x.setAttribute('aria-selected', x === t));
+      if (modeTrack) { modeTrack.style.setProperty('--w', t.offsetWidth + 'px'); modeTrack.style.setProperty('--x', t.offsetLeft + 'px'); }
       const tour = $('.tour', mos.parentElement); const tf = $('iframe', tour);
       const is360 = t.dataset.mode === 'tour';
-      mos.hidden = is360; tour.hidden = !is360; if (is360 && !tf.src) tf.src = tf.dataset.src;
+      mos.hidden = is360; tour.hidden = !is360;
+      if (is360) { if (!tf.src) tf.src = tf.dataset.src; tour.requestFullscreen?.().catch(() => {}); }
     }));
+    document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && !tabs[0].matches('[aria-selected="true"]')) tabs[0].click(); });
+    if (modeTrack && tabs[0]) { modeTrack.style.setProperty('--w', tabs[0].offsetWidth + 'px'); modeTrack.style.setProperty('--x', tabs[0].offsetLeft + 'px'); }
   }
 
   /* ---------- team option A / treatment list: spotlight roster ---------- */
@@ -413,11 +418,23 @@
   }));
 
   /* ---------- timeline progress ---------- */
+  // the connecting line must stop at the last circle's centre, not at the bottom of its
+  // (often taller, wrapped) text — so measure each circle's real position rather than
+  // just running the line the full height of the container.
+  function measureTimelines() {
+    $$('.timeline').forEach((t) => {
+      const items = $$('li', t);
+      if (items.length) t.style.setProperty('--line-end', (items[items.length - 1].offsetTop + 18) + 'px');
+    });
+  }
+  measureTimelines();
+  addEventListener('resize', measureTimelines);
   const tl = $('.timeline');
   function timeline() {
     if (!tl) return;
     const r = tl.getBoundingClientRect(), mid = innerHeight * 0.6;
-    const prog = $('.prog', tl); const h = Math.max(0, Math.min(r.height - 24, mid - r.top - 12));
+    const cap = parseFloat(tl.style.getPropertyValue('--line-end')) || r.height;
+    const prog = $('.prog', tl); const h = Math.max(0, Math.min(cap - 18, mid - r.top - 12));
     prog.style.height = h + 'px';
     $$('li', tl).forEach((li) => li.classList.toggle('is-on', li.getBoundingClientRect().top < mid));
   }
