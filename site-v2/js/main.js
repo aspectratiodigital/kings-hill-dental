@@ -68,6 +68,8 @@
   const setMenu = (open) => { document.body.classList.toggle('menu-open', open); menuBtn?.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; };
   menuBtn?.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
   $$('.drawer a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  /* phones: opening one treatment field in the menu closes the others */
+  $$('.drawer .d-nested').forEach((root) => $$('details.d-field', root).forEach((d) => d.addEventListener('toggle', () => { if (d.open) $$('details.d-field', root).forEach((o) => { if (o !== d) o.open = false; }); })));
   $$('.has-menu').forEach((li) => {
     const btn = $('.nav-link', li);
     btn.addEventListener('click', (e) => { if (btn.tagName === 'BUTTON') { const o = li.classList.toggle('is-open'); btn.setAttribute('aria-expanded', o); e.stopPropagation(); } });
@@ -280,6 +282,9 @@
 
   /* ---------- team dialog ---------- */
   $$('[data-person]').forEach((b) => b.addEventListener('click', () => { $('#' + b.dataset.open)?.showModal(); }));
+  /* phones: the swipeable team portraits open the same bio dialogs (the name list is hidden there) */
+  const phone = matchMedia('(max-width: 450px)');
+  $$('.tA-fig').forEach((f) => f.addEventListener('click', () => { if (phone.matches) $('#person-' + f.dataset.idx)?.showModal(); }));
   $$('dialog').forEach((d) => d.addEventListener('click', (e) => { if (e.target.classList.contains('modal') || e.target.closest('.modal-x')) d.close(); }));
 
   /* ---------- practice mosaic ---------- */
@@ -343,11 +348,11 @@
     links.forEach((a) => {
       a.addEventListener('mouseenter', () => {
         track.style.setProperty('--w', a.offsetWidth + 'px');
-        track.style.setProperty('--x', a.offsetLeft + 'px');
+        track.style.setProperty('--x', a.offsetLeft + 'px'); track.style.setProperty('--y', a.offsetTop + 'px'); track.style.setProperty('--h', a.offsetHeight + 'px');
       });
       a.addEventListener('focus', () => {
         track.style.setProperty('--w', a.offsetWidth + 'px');
-        track.style.setProperty('--x', a.offsetLeft + 'px');
+        track.style.setProperty('--x', a.offsetLeft + 'px'); track.style.setProperty('--y', a.offsetTop + 'px'); track.style.setProperty('--h', a.offsetHeight + 'px');
       });
     });
   });
@@ -465,6 +470,7 @@
     $$('input, textarea, select', form).forEach((i) => {
       if (!i.name) return;
       if (i.type === 'checkbox' || i.type === 'radio') { if (i.checked) o[i.name] = (o[i.name] ? o[i.name] + ', ' : '') + (i.value === 'on' ? 'Yes' : i.value); }
+      else if (i.type === 'file') { if (i.files[0]) o[i.name] = i.files[0].name + ' (please attach this file to the email)'; }
       else if (i.value.trim()) o[i.name] = i.value.trim();
     });
     return o;
@@ -475,6 +481,7 @@
     const body = Object.entries(data).map(([k, v]) => k.replace(/_/g, ' ') + ': ' + v).join('\n');
     location.href = 'mailto:reception@kingshilldental.co.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
+  $$('input[type=file]').forEach((f) => f.addEventListener('change', () => { const n = f.parentElement.querySelector('.file-name'); if (n) n.textContent = f.files[0] ? f.files[0].name : ''; }));
   $$('select').forEach((s) => { const f = () => s.classList.toggle('has-value', !!s.value); s.addEventListener('change', f); f(); });
   $$('.field input, .field textarea').forEach((i) => i.addEventListener('input', () => i.closest('.field').classList.remove('is-bad')));
   $$('form[data-form]').forEach((form) => {

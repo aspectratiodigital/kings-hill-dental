@@ -8,11 +8,11 @@ const copy = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', '
 const arrowBtn = (t, href, cls = '', ext = false) => `<a class="btn ${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${t}${I.arrow}</a>`;
 
 /* ---------- shared components ---------- */
-const PARTNER_URLS = { '3-shape': 'https://www.3shape.com/', 'philips-sonicare': 'https://www.philips.co.uk/c-m-pe/sonicare-electric-toothbrushes', invisalign: 'https://www.invisalign.co.uk/', 'angel-aligner': 'https://www.angelalign.com/', ems: 'https://www.ems-dental.com/', 'oral-b': 'https://www.oralb.co.uk/', itero: 'https://www.itero.com/', sensodyne: 'https://www.sensodyne.co.uk/', 'spark-aligner': 'https://sparkaligners.com/', straumann: 'https://www.straumann.com/', suri: 'https://www.trysuri.com/', 'ems-gbt': 'https://www.ems-dental.com/en/guided-biofilm-therapy' };
+const PARTNER_URLS = { '3-shape': 'https://www.3shape.com/', 'philips-sonicare': 'https://www.philips.co.uk/c-m-pe/sonicare-electric-toothbrushes', invisalign: 'https://www.invisalign.co.uk/', 'angel-aligner': 'https://www.angelalign.com/', ems: 'https://www.ems-dental.com/', 'oral-b': 'https://www.oralb.co.uk/', itero: 'https://www.itero.com/', sensodyne: 'https://www.sensodyne.co.uk/', 'spark-aligner': 'https://sparkaligners.com/', straumann: 'https://www.straumann.com/', suri: 'https://www.trysuri.com/', 'ems-gbt': 'https://www.ems-dental.com/en/guided-biofilm-therapy', denplan: 'https://www.denplan.co.uk/', enlighten: 'https://enlightensmiles.com/' };
 function partners() {
   const aspects = JSON.parse(fs.readFileSync(path.join(__dirname, 'vec', 'logo-aspects.json'), 'utf8'));
-  const logos = ['3-shape', 'philips-sonicare', 'invisalign', 'angel-aligner', 'ems', 'oral-b', 'itero', 'sensodyne', 'spark-aligner', 'straumann', 'suri', 'ems-gbt'];
-  const alt = { '3-shape': '3Shape', 'philips-sonicare': 'Philips Sonicare', invisalign: 'Invisalign', 'angel-aligner': 'Angel Aligner', ems: 'EMS', 'oral-b': 'Oral-B', itero: 'iTero', sensodyne: 'Sensodyne', 'spark-aligner': 'Spark Aligner', straumann: 'Straumann', suri: 'Suri', 'ems-gbt': 'Guided Biofilm Therapy' };
+  const logos = ['3-shape', 'philips-sonicare', 'invisalign', 'angel-aligner', 'ems', 'oral-b', 'itero', 'sensodyne', 'spark-aligner', 'straumann', 'suri', 'ems-gbt', 'denplan', 'enlighten'];
+  const alt = { '3-shape': '3Shape', 'philips-sonicare': 'Philips Sonicare', invisalign: 'Invisalign', 'angel-aligner': 'Angel Aligner', ems: 'EMS', 'oral-b': 'Oral-B', itero: 'iTero', sensodyne: 'Sensodyne', 'spark-aligner': 'Spark Aligner', straumann: 'Straumann', suri: 'Suri', 'ems-gbt': 'Guided Biofilm Therapy', denplan: 'Denplan', enlighten: 'Enlighten Teeth Whitening' };
   return `<section class="section section--tight partners-sec" aria-labelledby="partners-h"><div class="wrap"><h2 class="h1" id="partners-h" data-split>Our partners</h2></div><div class="marquee"><div class="marquee-track">${logos.map((l) => `<a class="plogo" href="${PARTNER_URLS[l]}" target="_blank" rel="noopener" aria-label="${alt[l]} (opens in a new tab)" style="--k:${(1 / Math.sqrt(aspects[l])).toFixed(3)}">${fs.readFileSync(path.join(__dirname, 'vec', 'logo-' + l + '.svg'), 'utf8')}</a>`).join('')}</div></div></section>`;
 }
 
@@ -198,7 +198,7 @@ ${teamPopups(people)}
 <div class="prac-head-title">
 <h2 class="h1" id="prac-h" data-split>Our practice</h2>
 <div class="rule" data-reveal></div>
-<p data-reveal>Take a look around. Hover a photo to see more of the practice.</p>
+<p data-reveal>Take a look around. <span class="d-only">Hover a photo</span><span class="m-only">Swipe through the photos</span> to see more of the practice.</p>
 </div>
 </div>
 </div>
@@ -237,7 +237,7 @@ module.exports = { home, about, contact, partners, contactForm, infoList, hoursT
 /* about page: partner logos as a quiet grid */
 function partnerGrid() {
   const aspects = JSON.parse(fs.readFileSync(path.join(__dirname, 'vec', 'logo-aspects.json'), 'utf8'));
-  const list = [['3-shape', '3Shape'], ['philips-sonicare', 'Philips Sonicare'], ['invisalign', 'Invisalign'], ['angel-aligner', 'Angel Aligner'], ['ems', 'EMS'], ['oral-b', 'Oral-B'], ['itero', 'iTero'], ['sensodyne', 'Sensodyne'], ['spark-aligner', 'Spark Aligner'], ['straumann', 'Straumann'], ['suri', 'Suri'], ['ems-gbt', 'Guided Biofilm Therapy']];
+  const list = [['3-shape', '3Shape'], ['philips-sonicare', 'Philips Sonicare'], ['invisalign', 'Invisalign'], ['angel-aligner', 'Angel Aligner'], ['ems', 'EMS'], ['oral-b', 'Oral-B'], ['itero', 'iTero'], ['sensodyne', 'Sensodyne'], ['spark-aligner', 'Spark Aligner'], ['straumann', 'Straumann'], ['suri', 'Suri'], ['ems-gbt', 'Guided Biofilm Therapy'], ['denplan', 'Denplan'], ['enlighten', 'Enlighten Teeth Whitening']];
   return `<section class="section section--tight partners-tint" aria-labelledby="pg-h"><div class="wrap"><h2 class="h1" id="pg-h" data-split>Our partners</h2>
 <div class="ptiles">${list.map(([k, n], i) => `<a class="ptile" href="${PARTNER_URLS[k]}" target="_blank" rel="noopener" aria-label="${n} (opens in a new tab)" data-reveal style="--d:${i};--k:${(1 / Math.sqrt(aspects[k])).toFixed(3)}">${fs.readFileSync(path.join(__dirname, 'vec', 'logo-' + k + '.svg'), 'utf8')}</a>`).join('')}</div></div></section>`;
 }

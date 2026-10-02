@@ -80,7 +80,13 @@ function header(current) {
   }).join('');
   const drawer = NAV.map((n, i) => {
     if (!n.mega) return `<li><a class="big" style="--i:${i}" href="${n.h}">${n.t}</a></li>`;
-    return `<li><details style="--i:${i}"><summary>${n.t}${I.chev}</summary><ul>${n.mega.flatMap((c) => c.items).map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="${n.h}"><strong>All ${n.t.toLowerCase()}</strong></a></li></ul></details></li>`;
+    const flat = `<div class="d-flat"><ul>${n.mega.flatMap((c) => c.items).map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="${n.h}"><strong>All ${n.t.toLowerCase()}</strong></a></li></ul></div>`;
+    const all = `<li><a class="d-all" href="${n.h}"><strong>All ${n.t}</strong></a></li>`;
+    // phones: Dentistry lists just its treatment fields, each one expanding (one at a time) to its treatments
+    const nested = n.mega.length > 1
+      ? `<div class="d-nested"><ul>${n.mega.map((c) => `<li><details class="d-field"><summary>${c.t}${I.chev}</summary><ul>${c.items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></details></li>`).join('')}${all}</ul></div>`
+      : `<div class="d-nested"><ul>${n.mega[0].items.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}${all}</ul></div>`;
+    return `<li><details style="--i:${i}"><summary>${n.t}${I.chev}</summary>${flat}${nested}</details></li>`;
   }).join('');
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap nav-bar">
@@ -98,9 +104,9 @@ function footerBottom() {
   return `<div class="foot-bottom"><span>© <span class="year">2026</span> Kings Hill Dental</span><span><a href="/privacy-policy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions/">Terms &amp; conditions</a> &nbsp;·&nbsp; <a href="/complaints-procedure/">Complaints procedure</a></span><span>Website by <a class="credit-link" href="http://aspectratiodigital.com" target="_blank" rel="noopener">Aspect Ratio Digital</a></span></div>`;
 }
 
-function footer() {
+function footer(cls = '') {
   const hrs = HOURS.map(([d, t, n]) => `<div data-day="${n}"><span>${d}</span><span>${t}</span></div>`).join('');
-  return `<footer class="site-footer"><div class="wrap"><div class="foot-top">
+  return `<footer class="site-footer${cls ? ' ' + cls : ''}"><div class="wrap"><div class="foot-top">
 <div class="foot-brand"><a class="brand" href="/" aria-label="Kings Hill Dental home">${logo()}</a><a href="https://www.google.com/maps?q=Kings+Hill+Dental,+Ste+14,+10+Churchill+Square,+Kings+Hill,+West+Malling,+ME19+4YU" target="_blank" rel="noopener">Kings Hill Clinic<br>Suite 14, 10 Churchill Square<br>Kings Hill<br>West Malling, Kent<br>ME19 4YU</a><div class="socials"><a href="https://www.facebook.com/kingshilldental/" target="_blank" rel="noopener" aria-label="Facebook">${I.fb}</a><a href="https://www.instagram.com/kingshilldental/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">${I.ig}</a></div></div>
 <div><h4>Explore</h4><ul><li><a href="/about/">About</a></li><li><a href="/dentistry/">Dentistry</a></li><li><a href="/aesthetics/">Aesthetics</a></li><li><a href="/fees/">Fees</a></li><li><a href="/fees/membership-plan/">Membership plan</a></li><li><a href="/referrals/">Referrals</a></li><li><a href="/contact/">Contact</a></li></ul></div>
 <div class="foot-contact"><h4>Get in touch</h4><a href="mailto:${EMAIL}">${EMAIL}</a><a href="tel:${PHONE.replace(/ /g, '')}">${PHONE}</a><a href="${WHATSAPP}" target="_blank" rel="noopener">Chat on WhatsApp</a><div style="margin-top:18px"><a class="btn btn--sm" href="${PORTAL}" target="_blank" rel="noopener">Book online</a></div></div>
@@ -126,6 +132,7 @@ function layout({ title, description, path: p, body, bodyClass = '', schema = ''
 <link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 450px)">
 ${schema}
 </head>
 <body class="${bodyClass}">
@@ -133,7 +140,7 @@ ${header(p)}
 <main id="main">
 ${body}
 </main>
-${isHome ? '' : footer()}
+${footer(isHome ? 'home-foot' : '')}
 <button class="to-top" type="button" aria-label="Back to top">${I.up}</button>
 <script src="/js/main.js" defer></script>
 </body>

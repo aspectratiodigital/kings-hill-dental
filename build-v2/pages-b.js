@@ -190,7 +190,7 @@ ${ctaBand('Not interested in a membership?', 'No problem — you can find out ab
 
 /* ---------- REFERRALS ---------- */
 function referrals() {
-  const tx = ['Orthodontics', 'Implants', 'Facial Aesthetics', 'Skin Care', 'Hygiene', 'Endodontic treatment & CBCT'];
+  const tx = ['Orthodontics', 'Implants', 'Facial Aesthetics', 'Skin Care', 'Hygiene', 'Endodontic treatment', 'CBCT'];
   const f = (id, name, label, extra = '', type = 'text') => `<div class="field"><input id="${id}" name="${name}" type="${type}" placeholder=" " ${extra}><label for="${id}">${label}</label><p class="err" role="alert"></p></div>`;
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const countries = ['United Kingdom', 'Ireland', 'United States', 'Canada', 'Australia', 'New Zealand', 'France', 'Germany', 'Spain', 'Italy', 'Netherlands', 'India', 'Other'];
@@ -212,6 +212,7 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Referrals']), title: `Referrals`, 
 <div class="fields fields--2">${f('pt-name', 'patient_name', 'Name', 'required autocomplete="off"')}<div class="field"><select id="pt-gender" name="patient_gender"><option value=""></option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select><label for="pt-gender">Gender</label><p class="err"></p></div>
 ${f('pt-email', 'patient_email', 'Email', 'required', 'email')}${f('pt-phone', 'patient_phone', 'Phone', '', 'tel')}</div>
 <fieldset><legend>Birthday</legend><div class="fields" style="grid-template-columns:1fr 2fr 1fr;gap:12px">${f('pt-day', 'birth_day', 'Day', 'inputmode="numeric" maxlength="2"')}<div class="field"><select id="pt-month" name="birth_month"><option value=""></option>${months.map((m) => `<option>${m}</option>`).join('')}</select><label for="pt-month">Month</label><p class="err"></p></div>${f('pt-year', 'birth_year', 'Year', 'inputmode="numeric" maxlength="4"')}</div></fieldset>
+<div class="file-field"><label class="btn btn--ghost file-btn" for="pt-file">Attach a file</label><input id="pt-file" name="attachment" type="file" accept="image/*,.pdf"><span class="file-name" id="pt-file-name"></span><span class="file-hint">E.G. an x-ray</span></div>
 <div class="step-actions"><button class="btn btn--ghost" type="button" data-back>Back</button><button class="btn" type="button" data-next>Review${I.arrow}</button></div></div>
 <div class="step"><h2 class="h3">Check and send</h2><div class="summary" aria-live="polite"></div><p class="form-note">We’ll be in touch with you and the patient to arrange their appointment.</p>
 <div class="step-actions"><button class="btn btn--ghost" type="button" data-back>Back</button><button class="btn" type="submit">Send referral${I.arrow}</button></div></div>
@@ -231,7 +232,7 @@ function topicGeneral() {
   ];
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['General & preventative']), title: `General &amp; Preventative`, img: 'hero-general', alt: `A dentist and patient sharing a laugh during a consultation`, objectPosition: '70% center' })}
-<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>We focus on helping patients maintain healthy teeth and gums through regular examinations and preventative care. We understand the dentist can seem daunting and so our team of kind, professional dentists are here to make your visit as relaxing and informative as possible.</p><p data-reveal>Hover or select a treatment below to find out more.</p></div></div></section>
+<section class="phero-intro"><div class="wrap"><div class="phero-copy"><p class="lede" data-reveal>We focus on helping patients maintain healthy teeth and gums through regular examinations and preventative care. We understand the dentist can seem daunting and so our team of kind, professional dentists are here to make your visit as relaxing and informative as possible.</p><p data-reveal><span class="d-only">Hover or select a treatment below</span><span class="m-only">Swipe through our treatments below</span> to find out more.</p></div></div></section>
 <section class="section" style="padding-top:0" aria-label="General and preventative treatments"><div class="wrap">
 <div class="gp-accordion" data-accordion data-reveal>${items.map(([id, t, d, img, h, pos], i) => `<div class="gp-tile" id="${id}" style="--d:${i}"><img class="gp-photo" src="/img/${img}.webp" alt="" loading="lazy" width="900" height="700"${pos ? ` style="object-position:${pos}"` : ''}><div class="gp-caption"><h3>${t}</h3><p>${d}</p><a class="gp-more" href="${h}"><span class="lbl">Find out more</span>${I.arrow}</a></div></div>`).join('')}</div>
 </div></section>

@@ -52,8 +52,8 @@
   .w-art::before { content: ""; display: block; aspect-ratio: 1.15; grid-row: 1; }
   .w-shape.r1 { left: -30% !important; top: 34% !important; width: 90% !important; height: 62% !important; }
   .w-shape.b1, .w-shape.b2, .w-shape.r1, .w-shape.r2 { display: none; }
-  .w-img.wa { left: -6% !important; top: 2% !important; width: 66% !important; height: 62% !important; }
-  .w-img.wb { left: 36% !important; top: 14% !important; width: 64% !important; height: 60% !important; }
+  .w-img.wa { left: 3% !important; top: 6cqw !important; width: 52% !important; height: auto !important; }
+  .w-img.wb { left: 42% !important; top: 26cqw !important; width: 54% !important; height: auto !important; }
   .w-text { position: relative; left: 0; top: 0; width: auto; padding: 24px var(--gutter) 56px; grid-row: 2; background: var(--cream); }
   .w-text .w-kicker { margin-left: 0; font-size: 1.8rem; }
   .w-text h2 { font-size: clamp(2.6rem, 11vw, 4rem); }
@@ -290,8 +290,8 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 /* --- hero: text+image fill the first screen, icon strip sits just below the fold --- */
 .hero-old .wrap { display: flex; flex-direction: column; }
 .hero-old-text { min-height: calc(100svh - var(--header-h) - 32px); display: flex; flex-direction: column; justify-content: center; padding-block: clamp(4px, 1vw, 14px) clamp(40px, 5.5vw, 76px); }
-.hero-old .display { font-size: clamp(3.1rem, 5.7vw, 5.2rem); }
-.hero-old .lede { font-size: clamp(1.08rem, 1.32vw, 1.28rem); }
+.hero-old .display { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+.hero-old .lede { font-size: calc(var(--fs-body) * 1.07); }
 .hero-old-text p:not(.lede) { font-size: calc(var(--fs-body) * 1.07); }
 .hero-old-img { width: min(65.5vw, 1140px); }
 .hero-old .assure { column-gap: clamp(20px, 3vw, 44px); }
@@ -604,9 +604,9 @@ p, .lede, .hero-old .lede, .w-text p, .svc p, .mcard-body > p, .benefits li, .he
 
 /* ================= about: partner tiles (style borrowed from chai-wallahs.netlify.app) ================= */
 .partners-tint { background: color-mix(in srgb, var(--brown) 5%, var(--cream)); padding-block: clamp(40px, 5vw, 64px); }
-.ptiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin-top: clamp(28px, 3vw, 44px); max-width: 940px; margin-inline: auto; }
-@media (min-width: 640px) { .ptiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.ptile { aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center; min-width: 0; overflow: hidden; }
+.ptiles { --g: clamp(12px, 1.6vw, 20px); --cols: 3; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--g); margin-top: clamp(28px, 3vw, 44px); max-width: 940px; margin-inline: auto; }
+@media (min-width: 640px) { .ptiles { --cols: 4; } }
+.ptile { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--g)) / var(--cols)); aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center; min-width: 0; overflow: hidden; }
 .ptile svg { height: calc(var(--k, .78) * 80px); width: auto; max-width: 90%; max-height: 90%; color: var(--brown); transition: color .35s var(--ease), transform .5s var(--ease); }
 .ptile:hover svg { color: var(--rose); transform: scale(1.06); }
 
@@ -623,11 +623,11 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 /* dentistry hub: category pill rows, restyled as the cosmetic page's sliding-pill tabs — but
    hover-driven rather than click-to-select, since these are plain navigation links (each one
    takes you straight to its own page) rather than an on-page content switcher */
-.hover-tabs { position: relative; display: inline-flex; flex-wrap: nowrap; max-width: 100%; gap: 2px; background: var(--cream); border-radius: 999px; padding: 5px; box-shadow: inset 0 0 0 1px var(--line); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.hover-tabs { position: relative; display: inline-flex; flex-wrap: wrap; max-width: 100%; gap: 2px; background: var(--cream); border-radius: 26px; padding: 5px; box-shadow: inset 0 0 0 1px var(--line); }
 .hover-tabs::-webkit-scrollbar { display: none; }
 .hover-tabs a { position: relative; z-index: 1; flex: none; padding: 11px 16px; border-radius: 999px; font: 700 12.5px/1 var(--ui); letter-spacing: .02em; text-transform: uppercase; color: var(--brown); text-decoration: none; white-space: nowrap; transition: color .3s; }
 .hover-tabs a:hover, .hover-tabs a:focus-visible { color: var(--cream); }
-.hover-tabs::before { content: ""; position: absolute; top: 5px; bottom: 5px; left: 0; width: var(--w, 0px); transform: translateX(var(--x, 5px)); background: var(--brown); border-radius: 999px; opacity: 0; transition: transform .4s var(--ease), width .4s var(--ease), opacity .25s var(--ease); }
+.hover-tabs::before { content: ""; position: absolute; top: 0; left: 0; width: var(--w, 0px); height: var(--h, 0px); transform: translate(var(--x, 5px), var(--y, 5px)); background: var(--brown); border-radius: 999px; opacity: 0; transition: transform .4s var(--ease), width .4s var(--ease), opacity .25s var(--ease); }
 .hover-tabs:hover::before, .hover-tabs:focus-within::before { opacity: 1; }
 /* Restorative has one more pill than the other dentistry categories — tighten just this row so all 5 fit on one line */
 #restorative .hover-tabs a { padding: 11px 10px; }
@@ -717,4 +717,48 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
     mask-image: linear-gradient(90deg, transparent -17.6%, #000 24.4%), linear-gradient(90deg, transparent 0%, #000 10%);
     -webkit-mask-composite: source-in; mask-composite: intersect;
   }
+}
+
+/* testimonials on desktop: slightly narrower cards at a 4:3 ratio (phones and tablets keep their own sizing) */
+@media (min-width: 900px) {
+  .tcard { width: 392px; min-width: 0; aspect-ratio: 4 / 3; }
+}
+
+/* ================= desktop: taller header + bigger logo; wider/taller hero image with a longer fade ================= */
+@media (min-width: 1021px) {
+  :root { --header-h: 112px; }
+  .brand { width: clamp(176px, 26.2vw - 103px, 296px); }
+}
+@media (min-width: 900px) {
+  .hero-old-text { position: relative; z-index: 2; }
+  .hero-old-img { margin-left: clamp(-190px, -9vw, -90px); aspect-ratio: 1.5; max-height: calc(100svh - var(--header-h) - 40px); }
+  .hero-old-img img { border-radius: 0 28px 28px 0; -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.4) 16%, rgba(0,0,0,.85) 30%, #000 42%); mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.4) 16%, rgba(0,0,0,.85) 30%, #000 42%); }
+}
+
+/* ================= welcome: team photo fading into the text ================= */
+.wv { padding: clamp(40px, 6vw, 96px) 0; background: color-mix(in srgb, var(--brown) 5%, var(--cream)); color: var(--brown); overflow: hidden; }
+.wv-grid { display: grid; align-items: center; gap: 24px; }
+.wv-fig { margin: 0; }
+.wv-fig img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 28px; -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, .18) 14%, #000 55%); mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, .18) 14%, #000 55%); }
+.wv-kicker { font: 400 clamp(1.8rem, 3.6vw, 3.1rem)/1 var(--serif); letter-spacing: -.02em; margin: 0 0 .12em; max-width: none; }
+.wv-text h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); line-height: 1; margin-bottom: .35em; }
+.wv-text p:not(.wv-kicker) { max-width: none; }
+.wv-text h3 { margin: 1.2em 0 .8em; }
+.wv-text { text-align: center; }
+.wv-text p { margin-inline: auto; }
+.wv-text .actions { margin-top: 0; justify-content: center; }
+@media (min-width: 900px) {
+  .wv-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; }
+  .wv-fig img { aspect-ratio: 1.12; -webkit-mask-image: linear-gradient(to right, #000 22%, rgba(0, 0, 0, .55) 52%, rgba(0, 0, 0, .18) 76%, transparent 96%); mask-image: linear-gradient(to right, #000 22%, rgba(0, 0, 0, .55) 52%, rgba(0, 0, 0, .18) 76%, transparent 96%); }
+  .wv-text { position: relative; z-index: 1; margin-left: -3%; }
+  .wv-text p:not(.wv-kicker) { max-width: 79%; }
+}
+
+/* ---- narrow desktop (1021-1359px): compact logo/nav/button so everything stays on one line ---- */
+@media (min-width: 1021px) and (max-width: 1359px) {
+  .nav-bar { gap: 10px; }
+  .nav { gap: 0; }
+  .nav a.nav-link, .nav button.nav-link { padding: 10px 7px; font-size: 12px; }
+  .nav-cta { min-height: 42px; padding: 0 16px; font-size: 13.5px; }
+  .brand { width: calc(30.8vw - 164px); }
 }

@@ -5,29 +5,15 @@ const { arrowBtn, partners, contactForm, infoList, hoursTable } = require('./pag
 
 const vec = (n) => fs.readFileSync(path.join(__dirname, 'vec', n + '.svg'), 'utf8');
 
-// old "welcome" composition: organic masks + brown shapes, positioned as fractions of the section width
-const BLOB = 'M99.949 49.636c14.615-.63 29.231-1.255 43.846-1.891 5.373-.234 10.746-.471 16.117-.745 5.693-.29 11.385-.609 17.075-.947 3.176-.189 3.265-.025 2.819 3.049-.399 2.751-.798 5.493-1.518 8.181-1.11 4.146-2.673 8.113-4.768 11.866-2.411 4.317-5.97 7.549-10.112 10.136-2.394 1.495-5.106 2.226-7.97 2.293a43.6 43.6 0 0 1-10.878-1.115c-2.824-.653-5.617-1.438-8.523-1.744-4.175-.439-7.878.558-11.14 3.199-1.853 1.501-3.401 3.26-4.703 5.24-1.769 2.689-3.198 5.557-4.521 8.483a459 459 0 0 1-3.243 6.971c-4.315 9.127-11.724 13.603-21.704 14.113-3.005.154-6.029.243-9.032.104-7.002-.324-12.453 2.708-17.126 7.509-2.413 2.479-4.082 5.485-5.835 8.428a313 313 0 0 1-4.684 7.661c-2.286 3.599-5.369 6.385-9.131 8.396-4.971 2.658-10.245 4.431-15.879 5.035a24 24 0 0 1-3.543.12c-3.213-.137-3.565-.536-3.614-3.811-.356-23.392-.687-46.784-1.079-70.175-.12-7.155-.404-14.308-.619-21.462-.042-1.388-.129-2.775-.166-4.163-.063-2.352-.054-2.373 2.191-2.453 3.225-.115 6.452-.194 9.677-.293l68.06-2.082.004.094Z';
-const MASK_A = "M33.758 60.174c-17.32 24.757-8.751 62.067 3.819 86.859 7.773 15.332 21.838 35.886 46.141 31.984 5.526-.887 10.586-3.167 16.054-4.271 16.952-3.424 36.019 4.667 51.766-1.53 6.229-2.451 11.013-6.889 14.686-11.707 11.588-15.202 12.988-35.352 3.585-51.58-6.596-11.383-18.021-20.815-22.417-32.896-4.313-11.851-1.286-24.74-4.481-36.828-3.886-14.703-20.471-25.243-37.541-16.56-6.449 3.28-11.975 7.686-19.005 10.185-7.319 2.602-15.435 3.282-22.862 5.674-13.94 4.488-23.516 11.767-29.745 20.67z";
-const MASK_B = "M174.761 109.25c.733-12.075.003-24.139-5.324-35.632-8.069-17.408-23.705-32.533-42.663-43.175-22.025-12.364-54.487-15.325-75.156-1.561-15.273 10.171-20.931 26.719-23.951 42.375-5.73 29.704-3.7 62.905 20.85 85.758 23.015 21.424 70.254 30.188 101.761 15.515 17.856-8.316 20.664-27.907 22.375-42.658.791-6.808 1.688-13.717 2.108-20.622z";
-const maskUrl = (vb, d) => `url(data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='${vb}'><path d='${d}'/></svg>`).replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29')})`;
-
-// (left, top, width, height) as fractions of section width; height of the art box = 1129/1440 of width
-const K = 1440 / 720;
-const box = (l, t, w, h, extra = '') => `left:${(l * 100).toFixed(3)}%;top:${(t * 100 * K).toFixed(3)}%;width:${(w * 100).toFixed(3)}%;height:${(h * 100 * K).toFixed(3)}%;${extra}`;
+// Welcome section: team photo fading into the text on the right
+const WELCOME_P = "We create beautiful smiles in West Malling. At Kings Hill Dental, we combine cutting-edge dental technology with a standard of care that goes above and beyond. Our exceptional treatments focus on your comfort and care, promoting great oral health and boosting your confidence with life-changing cosmetic treatments. We have a brilliant team of specialists, dentists, therapists and nurses who care and support you through your patient journey, providing expert care with a gentle touch.";
+const welcomeActions = `<div class="actions" data-reveal>${arrowBtn('Book Online', PORTAL, '', true)}<a class="btn btn--ghost" href="tel:${PHONE.replace(/ /g, '')}">Call Us</a></div>`;
 
 function welcome() {
-  const shape = (cls, style, vb, d, flip) => `<svg class="w-shape ${cls}" style="${style}${flip ? ';--flip:-1' : ''}" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" fill="currentColor"/></svg>`;
-  const rect = (cls, style) => `<span class="w-shape w-rect ${cls}" style="${style}" aria-hidden="true"></span>`;
-  return `<section class="welcome" aria-labelledby="welcome-h"><div class="w-art">
-<img class="w-img wa" src="/img/welcome-a.webp" alt="The reception area at Kings Hill Dental" loading="lazy" width="1367" height="778" style="${box(0.06, 0.041, 0.40281, 0.34544)};-webkit-mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)};mask-image:${maskUrl('23.999 20.502 152 158.998', MASK_A)}">
-<img class="w-img wb" src="/img/welcome-b.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873" style="${box(0.28, 0.141, 0.30181, 0.29233)};-webkit-mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)};mask-image:${maskUrl('25 19.792 150.001 160', MASK_B)}">
-<div class="w-text">
-<p class="w-kicker" data-reveal>Welcome to…</p>
-<h2 id="welcome-h" data-split>Kings Hill Dental</h2>
-<p data-reveal>We create beautiful smiles in West Malling. At Kings Hill Dental, we combine cutting-edge dental technology with a standard of care that goes above and beyond. Our exceptional treatments focus on your comfort and care, promoting great oral health and boosting your confidence with life-changing cosmetic treatments. We have a brilliant team of specialists, dentists, therapists and nurses who care and support you through your patient journey, providing expert care with a gentle touch.</p>
-<h3 data-reveal>Get in touch with our team today</h3>
-<div class="actions" data-reveal>${arrowBtn('Book Online', PORTAL, '', true)}<a class="btn btn--ghost" href="tel:${PHONE.replace(/ /g, '')}">Call Us</a></div>
-</div></div></section>`;
+  return `<section class="wv" aria-labelledby="welcome-h"><div class="wrap wv-grid">
+<figure class="wv-fig" data-reveal><img src="/img/welcome-team.webp" alt="The Kings Hill Dental team gathered in reception" loading="lazy" width="1420" height="873"></figure>
+<div class="wv-text"><p class="wv-kicker" data-reveal>Welcome to…</p><h2 id="welcome-h" data-reveal>Kings Hill Dental</h2><p data-reveal>${WELCOME_P}</p><h3 data-reveal>Get in touch with our team today</h3>${welcomeActions}</div>
+</div></section>`;
 }
 
 const tickRow = (t, i) => `<li style="--i:${i}"><span class="tk" aria-hidden="true"></span><span>${t}</span></li>`;
@@ -74,7 +60,7 @@ function home() {
   const body = `
 <section class="hero-old">
 <div class="wrap"><div class="hero-old-stage"><div class="hero-old-top">
-<div class="hero-old-img" data-reveal="fade"><img src="/img/hero-old.webp" alt="A dentist talking with a patient in the treatment room at Kings Hill Dental" fetchpriority="high" width="2000" height="800"></div>
+<div class="hero-old-img" data-reveal="fade"><picture><source media="(max-width: 450px)" srcset="/img/hero-general.webp"><source media="(min-width: 900px)" srcset="/img/hero-general.webp"><img src="/img/hero-old.webp" alt="A dentist talking with a patient in the treatment room at Kings Hill Dental" fetchpriority="high" width="2000" height="800"></picture></div>
 <div class="hero-old-text">
 <h1 class="display hero-h1" aria-label="Care that starts with listening"><span data-split>Care that starts</span><span data-split>with listening</span></h1>
 <p class="lede" data-reveal style="--d:4">A Professional, honest and ethical practice that puts dental health first, aesthetics second.</p>
@@ -128,7 +114,7 @@ ${contactForm({ id: 'home-form', note: false })}
 </div>
 <div class="wrap" style="margin-top:clamp(20px,2.5vw,32px)">${footerBottom()}</div>
 </section>`;
-  return { path: '/', title: 'Kings Hill Dental | Dentistry & Aesthetics in West Malling', description: 'A professional, honest and ethical dental practice in Kings Hill, West Malling. Preventative, restorative, cosmetic and orthodontic dentistry plus facial aesthetics.', body };
+  return { path: '/', title: 'Kings Hill Dental | Dentistry & Aesthetics in West Malling', description: 'A professional, honest and ethical dental practice in Kings Hill, West Malling. Preventative, restorative, cosmetic and orthodontic dentistry plus facial aesthetics.', bodyClass: 'home-page', body };
 }
 
 module.exports = { home, memberCard };

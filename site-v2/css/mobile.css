@@ -1,0 +1,228 @@
+/* Kings Hill Dental — mobile layer (phones, 350–450px; designed at 400px).
+   Linked with media="(max-width: 450px)" so none of this can reach tablet/desktop.
+   Loaded after main.css and home.css, so on tied specificity this file wins. */
+
+:root { --m-gap: 12px; --m-card: 76%; }
+
+/* ================= swipe rows =================
+   One card fully in view with the next peeking in from the right, native scroll-snap (no JS).
+   Containers that sit inside a .wrap bleed out to the screen edges with negative margins; the ones
+   that ARE the .wrap just drop the wrap's centring and pad themselves instead. */
+.rows, .cards, .mcards, .gp-accordion, .mosaic, .tA-stage, .tt-track {
+  display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start !important; gap: var(--m-gap);
+  overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  padding: 8px var(--gutter) 26px;
+}
+.rows::-webkit-scrollbar, .cards::-webkit-scrollbar, .mcards::-webkit-scrollbar, .gp-accordion::-webkit-scrollbar,
+.mosaic::-webkit-scrollbar, .tA-stage::-webkit-scrollbar, .tt-track::-webkit-scrollbar { display: none; }
+.wrap.rows, .wrap.cards { width: auto; max-width: none; margin-inline: 0; }
+.mcards, .gp-accordion, .mosaic, .tA-stage, .tt-track { margin-inline: calc(var(--gutter) * -1); }
+.rows > *, .cards > *, .mcards > *, .gp-accordion > *, .mosaic > *, .tA-stage > *, .tt-track > * {
+  flex: 0 0 var(--m-card); width: var(--m-card); min-width: 0; scroll-snap-align: start;
+}
+.rows { gap: var(--m-gap); }
+
+/* ================= hub cards (Dentistry fields, Aesthetics, Orthodontic) ================= */
+.row { display: flex; flex-direction: column; align-items: stretch; gap: 0; background: var(--cream); border-radius: 24px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(70, 28, 17, .45); text-align: center; }
+.row-media { border-radius: 0; aspect-ratio: 4 / 3; }
+.row-media img { height: 100%; }
+.row > div:last-child { display: flex; flex-direction: column; align-items: center; flex: 1; padding: 22px 18px 24px; }
+.row h2 { font-size: 1.9rem; line-height: 1.05; }
+.row .rule { margin: 14px auto 16px; }
+.row .lede { font-size: 15.5px; line-height: 1.55; }
+.row .hover-tabs { flex-wrap: wrap; justify-content: center; overflow: visible; border-radius: 18px; margin-top: 18px; }
+.row .hover-tabs a { padding: 9px 12px; font-size: 11.5px; }
+#restorative .hover-tabs a { padding: 9px 12px; }
+.row .hover-tabs::before { display: none; }
+.row .actions { margin-top: auto !important; padding-top: 20px; justify-content: center; }
+.card { text-align: center; }
+.card-body { align-items: center; }
+.card .link-arrow { align-self: center !important; }
+.card h3 { font-size: 1.6rem; }
+
+/* ================= General & Preventative: swipeable photo tiles ================= */
+.gp-accordion { height: auto; }
+.gp-tile { flex: 0 0 var(--m-card) !important; height: 440px !important; transition: none; cursor: default; }
+.gp-tile:hover, .gp-tile:focus-within, .gp-tile.is-on { height: 440px !important; }
+.gp-photo, .gp-tile:hover .gp-photo { transform: none; }
+.gp-caption { padding: 150px 20px 22px; text-align: center; }
+.gp-caption::before { opacity: 1; }
+.gp-caption h3 { white-space: normal; font-size: 1.7rem; }
+.gp-caption p { opacity: 1; max-height: none; margin-top: .6em; font-size: 14.5px; }
+.gp-more { opacity: 1; max-height: 44px; pointer-events: auto; margin-top: 14px; }
+
+/* ================= Cosmetic: tab bar that fits 400px ================= */
+.cx-tabs { display: flex; width: 100%; flex-wrap: nowrap; gap: 0; }
+.cx-tabs button { flex: 1 1 0; min-width: 0; padding: 12px 4px; font-size: 11.5px; line-height: 1.2; white-space: normal; text-align: center; }
+.cx-card { border-radius: 24px; }
+.cx-body { padding: 24px 20px 28px; text-align: left; }
+
+.wv-text { text-align: center; }
+.wv-text .actions { justify-content: center; }
+.services-intro, .plans-intro { text-align: center; }
+.services-intro .rule, .plans-intro .rule, .rule { margin-inline: auto; }
+.services-intro .actions, .plans-intro .actions { justify-content: center; }
+.svc > a { align-items: center; }
+
+.member .mcards { margin-top: 8px; }
+.mcard { box-shadow: 0 2px 10px rgba(70, 28, 17, .28), 0 20px 34px -26px rgba(70, 28, 17, .5); }
+.mcard-body { padding: 18px 16px 6px; }
+.benefits { margin-inline: -4px; }
+.benefits li { padding: 6px 6px; font-size: 14px; }
+
+/* testimonials: undo the pinned/scroll-driven sideways motion — plain swiping instead */
+.tt-sec.hs-on, .tt-sec { height: auto !important; }
+.tt-sec .tt-stick, .tt-sec.hs-on .tt-stick { position: static; height: auto; min-height: 0; overflow: visible; padding-block: 56px 40px; gap: 16px; }
+.tt-sec .tt-stick > .wrap:first-child { text-align: center; }
+.tt-sec .tt-wrap { width: 100%; max-width: none; margin: 0; overflow: visible; }
+.tt-sec .tt-track, .tt-sec.hs-on .tt-track { overflow-x: auto; scroll-snap-type: x mandatory; transform: none !important; margin-inline: 0; }
+.tt-track > .tcard { flex: 0 0 var(--m-card); width: var(--m-card); min-width: 0; }
+
+/* ================= About ================= */
+/* team: swipeable portrait cards (tap opens the bio); the name list stays for screen readers only */
+.tA { gap: 0; margin-top: 18px; }
+.tA-list { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.tA-stage { min-height: 0; border-radius: 0; }
+.tA-fig { position: relative; inset: auto; flex: 0 0 var(--m-card); aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; opacity: 1; transform: none; cursor: pointer; }
+.tA-fig figcaption::after { content: "View profile  \2192"; margin-top: 8px; font: 700 12.5px/1 var(--ui); letter-spacing: .04em; text-transform: uppercase; color: var(--pink); }
+
+/* practice photos: big swipeable cards instead of a 4-across thumbnail grid */
+.mosaic { display: flex; grid-template-columns: none; grid-template-rows: none; height: auto; }
+.mosaic .mo { grid-column: auto !important; grid-row: auto !important; position: relative; flex: 0 0 var(--m-card); aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; }
+.mosaic .mo img { width: 100%; height: 100%; object-fit: cover; filter: none; transform: none; }
+.mosaic .mo span { opacity: 1; transform: none; }
+.mosaic[hidden] { display: none; }
+.wrap-mosaic { width: 100%; max-width: none; }
+.prac-head-row { text-align: center; }
+
+/* ================= Membership plan page ================= */
+.mplan-top .mcards { grid-template-columns: none; justify-content: flex-start; }
+
+/* ================= small polish ================= */
+.search input { text-overflow: ellipsis; }
+.actions { gap: 10px; }
+.cta-band .actions { flex-direction: column; align-items: stretch; max-width: 320px; margin-inline: auto; }
+.cta-band .actions .btn { width: 100%; }
+.m-only { display: inline; }
+.d-only { display: none; }
+
+/* about: photo row sits in a full-width wrap already (no gutter to bleed out of); Photos / 360° tabs shrink-wrap and centre */
+.wrap-mosaic .mosaic { margin-inline: 0; }
+.prac-head-side { display: flex; justify-content: center; }
+.prac-head-side .cx-tabs { display: inline-flex; width: auto; }
+.prac-head-side .cx-tabs button { flex: none; padding: 12px 18px; font-size: 12.5px; white-space: nowrap; }
+
+/* ================= home touch-ups ================= */
+.tt-sec .tt-stick > .wrap:first-child, .partners-sec .wrap, .partners-sec h2 { text-align: center; }
+
+/* membership plan cards: keep the age / billing tabs on one line */
+.mplan-page [data-age-tabs] button, .mplan-page [data-billing-tabs] button { padding: 9px 10px; white-space: nowrap; }
+
+/* a .rows container holding a single card (e.g. the Restorative intro) is just a full-width card, not a swipe row */
+.rows > .row:only-child { flex: 0 0 100%; width: 100%; }
+
+/* ================= HOME (body.home-page) =================
+   Type scale: headings 42px (hero 48px) · normal body 15px · text sitting on an element (cards,
+   list items, quotes) 13px · buttons 15px. Change the four variables to retune the whole page. */
+.home-page { --m-h: 42px; --m-hero: 48px; --m-body: 15px; --m-small: 13px; }
+
+.home-page h2, .home-page .h1, .home-page .wv-text h2 { font-size: var(--m-h); line-height: 1.02; }
+.home-page .wv-kicker { font-size: 32px; }
+.home-page .hero-old .display { font-size: var(--m-hero); line-height: 1; margin-bottom: 18px; }
+
+.home-page .lede, .home-page .hero-old .lede, .home-page .hero-old-text p:not(.lede), .home-page .wv-text p:not(.wv-kicker),
+.home-page .plans-intro p, .home-page .services-intro p, .home-page .contact-copy p { font-size: var(--m-body); line-height: 1.6; }
+.home-page .assure p, .home-page .svc p, .home-page .mcard-body > p, .home-page .benefits li, .home-page .tcard blockquote { font-size: var(--m-small); line-height: 1.5; }
+.home-page .btn, .home-page .mcard-foot, .home-page .link-arrow, .home-page .hero-old .actions .btn { font-size: var(--m-body); }
+
+/* hero: photo fades into the page from below (mobile gets the un-faded source photo), a little more air above it */
+.home-page .hero-old { padding-top: calc(var(--header-h) + 22px); padding-bottom: 36px; }
+.home-page .hero-old-img { position: relative; margin: 0 0 14px; width: auto; aspect-ratio: 1.55; }
+.home-page .hero-old-img img { object-position: 52% 50%; }
+.home-page .hero-old-img::after { content: ""; position: absolute; inset: 0; border-radius: 28px; pointer-events: none; background: linear-gradient(to top, var(--cream) 0%, color-mix(in srgb, var(--cream) 82%, transparent) 14%, transparent 55%); }
+.home-page .hero-old-text { text-align: center; }
+.home-page .hero-old .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.home-page .hero-old .actions .btn { padding: 0 10px; min-height: 52px; }
+
+/* the four reassurance cards: titles on a single line */
+.home-page .hero-old .assure { margin-top: 34px; gap: 12px; }
+.home-page .hero-old .assure li, .home-page .hero-old .assure li + li { padding: 20px 4px 22px; text-align: center; }
+.home-page .hero-old .assure .ai { margin-inline: auto; width: 52px; height: 52px; }
+.home-page .hero-old .assure h3 { font-size: 18px; white-space: nowrap; letter-spacing: -.01em; }
+
+/* welcome: one 3:4 team photo, tighter spacing into Our services */
+.home-page .wv { padding: 44px var(--gutter) 0; }
+.home-page .wv .wrap { width: 100%; }
+.home-page .wv-fig img { object-position: 50% 45%; border-radius: 24px; }
+.home-page .wv-text { padding: 28px 0 24px; }
+.home-page .services-svc-tight { padding-top: 24px; }
+
+/* our services: smaller arrow circle gives the text more width */
+.home-page .svc > a { grid-template-columns: 80px 1fr 34px; gap: 14px; }
+.home-page .svc .go { width: 34px; height: 34px; border-width: 1.5px; }
+.home-page .svc .go svg { width: 14px; height: 14px; }
+
+/* membership + testimonial cards: wider, shorter, same width as each other */
+.home-page .mcards > *, .home-page .tt-track > .tcard { flex: 0 0 82%; width: 82%; }
+.home-page .mcard-photo { aspect-ratio: 392 / 230; }
+.home-page .mcard-body { padding: 16px 14px 4px; }
+.home-page .mcard h3 { font-size: 1.5rem; }
+.home-page .mcard .price { margin: 12px 0 8px; padding-top: 12px; }
+.home-page .benefits li { padding: 5px 6px; }
+.home-page .tcard { padding: 20px 18px 18px; }
+.home-page .tt-sec .tt-stick { gap: 30px; }
+
+/* ================= no pink rules under headings ================= */
+.rule { display: none; }
+
+/* ================= sitewide footer: left-aligned, also shown on the homepage ================= */
+.site-footer { padding-top: 44px; }
+.foot-top { gap: 34px; padding-bottom: 30px; }
+.foot-brand .brand { width: 190px; margin-bottom: 18px; }
+.site-footer h4 { margin-bottom: 10px; }
+.site-footer ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+.site-footer li a { padding: 8px 0; }
+.foot-hours div { max-width: none; }
+.foot-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+.home-page .site-footer { display: block; border-top: 1px solid rgba(255, 246, 236, .16); }
+/* the homepage's own contact details / legal row now live in the footer, so only the form stays above it */
+.home-page .contact-info-grid { display: none; }
+.home-page .contact-foot > .wrap:last-child { display: none; }
+.home-page .contact-foot { padding-bottom: 36px; }
+
+/* ================= menu ================= */
+.menu-btn { border: 0; width: 56px; height: 56px; }
+.menu-btn span { left: 11px; right: 11px; height: 2.5px; border-radius: 2px; }
+.menu-btn span:nth-child(1) { top: 19px; } .menu-btn span:nth-child(2) { top: 27px; } .menu-btn span:nth-child(3) { top: 35px; }
+.menu-open .menu-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-open .menu-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.menu-open .menu-btn span { background: var(--brown); }
+.menu-open .brand { color: var(--brown); }
+/* a light drawer, so the logo and the X stay brown */
+.drawer { background: var(--cream); color: var(--brown); }
+.drawer details { border-bottom: 0; }
+.drawer a.big:hover { color: var(--clay); }
+.drawer details a { color: var(--clay); font-size: 16px; }
+.d-flat { display: none; }
+.drawer .d-nested { display: block; }
+.d-nested ul { display: block; }
+.d-nested ul ul { padding: 0 0 10px 2px; }
+.d-nested > ul > li > details > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font: 600 1.6rem/1.2 var(--serif); padding: 10px 0; }
+.d-nested > ul > li > details > summary::-webkit-details-marker { display: none; }
+.d-nested summary svg { width: 15px; height: 15px; flex: none; opacity: .75; transition: transform .3s var(--ease); }
+.d-nested details[open] > summary svg { transform: rotate(180deg); }
+.d-nested .d-all { margin-top: 6px; font-size: 17px; }
+.d-nested .d-all strong { color: var(--brown); }
+
+/* ================= page headers: square photo banner, fading into the page from below, centred brown title ================= */
+.split-hero { padding-top: var(--header-h); }
+.split-hero .phero-frame { height: auto; aspect-ratio: 1 / 1; border-radius: 0; background: var(--cream); }
+.split-hero .phero-fade { background: linear-gradient(to top, var(--cream) 0%, color-mix(in srgb, var(--cream) 85%, transparent) 20%, transparent 55%); }
+.split-hero .simple-hero-content { justify-content: flex-end; align-items: center; text-align: center; padding: 0 var(--gutter) 26px; color: var(--brown); }
+.split-hero .simple-hero-content h1 { font-size: 42px; line-height: 1.02; color: var(--brown); text-shadow: none; }
+.split-hero .simple-hero-content .crumbs { order: 2; justify-content: center; margin: 12px 0 0; font-size: 13px; color: color-mix(in srgb, var(--brown) 70%, transparent); text-shadow: none; }
+.drawer .d-nested details > summary svg { transform: none; }
+.drawer .d-nested details[open] > summary svg { transform: rotate(180deg); }
+.contact-page .split-hero .split-hero-img { object-position: 6% center !important; }

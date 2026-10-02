@@ -36,6 +36,8 @@ button { font: inherit; color: inherit; }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .wrap { width: min(100% - var(--gutter) * 2, var(--wrap)); margin-inline: auto; }
+picture { display: contents; }
+.m-only { display: none; } /* mobile-only copy; swapped in by mobile.css */
 .section { position: relative; padding-block: clamp(72px, 10vw, 148px); }
 .section--tight { padding-block: clamp(48px, 6vw, 88px); }
 .tint { background: var(--cream-2); }
@@ -513,3 +515,15 @@ ol { margin: 0; padding: 0; list-style: none; }
 .dark .modal-card { color: var(--ink); }
 .dark .modal-card h3 { color: var(--brown); }
 .hero { overflow: clip; }
+
+/* phone-only pieces, switched on by mobile.css: the nested treatment-field menu and the sitewide footer on the homepage */
+.drawer .d-nested { display: none; }
+.home-page .site-footer { display: none; }
+
+/* referral file attach */
+.file-field { position: relative; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin-top: 18px; }
+.file-field input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.file-field input[type=file]:focus-visible + .file-name, .file-field .file-btn:has(+ input:focus-visible) { outline: 2px solid var(--brown); outline-offset: 3px; }
+.file-btn { cursor: pointer; }
+.file-name { font-size: 15px; color: var(--brown); word-break: break-all; }
+.file-hint { font-size: 15px; color: var(--ink-soft); }
