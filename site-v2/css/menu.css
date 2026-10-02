@@ -1,0 +1,37 @@
+/* Burger menu + drawer: shared by phones and tablets (loaded at <=1020px, where the desktop nav is replaced by the burger) */
+.menu-btn { border: 0; width: 56px; height: 56px; }
+.menu-btn span { left: 11px; right: 11px; height: 2.5px; border-radius: 2px; }
+.menu-btn span:nth-child(1) { top: 19px; } .menu-btn span:nth-child(2) { top: 27px; } .menu-btn span:nth-child(3) { top: 35px; }
+.menu-open .menu-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-open .menu-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.menu-open .menu-btn span { background: var(--brown); }
+.menu-open .brand { color: var(--brown); }
+/* a light drawer, so the logo and the X stay brown */
+.drawer { background: var(--cream); color: var(--brown); }
+.drawer details { border-bottom: 0; }
+.drawer a.big:hover { color: var(--clay); }
+.drawer details a { color: var(--clay); font-size: 16px; }
+.d-flat { display: none; }
+.drawer .d-nested { display: block; }
+.d-nested ul { display: block; }
+.d-nested ul ul { padding: 0 0 10px 2px; }
+.d-nested > ul > li > details > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font: 600 1.6rem/1.2 var(--serif); padding: 10px 0; }
+.d-nested > ul > li > details > summary::-webkit-details-marker { display: none; }
+.d-nested summary svg { width: 15px; height: 15px; flex: none; opacity: .75; transition: transform .3s var(--ease); }
+.d-nested details[open] > summary svg { transform: rotate(180deg); }
+.d-nested .d-all { margin-top: 6px; font-size: 17px; }
+.d-nested .d-all strong { color: var(--brown); }
+.drawer .d-nested details > summary svg { transform: none; }
+.drawer .d-nested details[open] > summary svg { transform: rotate(180deg); }
+
+/* tablet: same layout, scaled up */
+@media (min-width: 451px) {
+  .menu-btn { width: 64px; height: 64px; }
+  .menu-btn span { left: 13px; right: 13px; height: 3px; }
+  .menu-btn span:nth-child(1) { top: 22px; } .menu-btn span:nth-child(2) { top: 31px; } .menu-btn span:nth-child(3) { top: 40px; }
+  .menu-open .menu-btn span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .menu-open .menu-btn span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+  .d-nested > ul > li > details > summary { font-size: 2.1rem; padding: 12px 0; }
+  .drawer details a { font-size: 19px; }
+  .d-nested .d-all { font-size: 20px; }
+}

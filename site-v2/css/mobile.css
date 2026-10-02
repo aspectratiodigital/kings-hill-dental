@@ -192,30 +192,6 @@
 .home-page .contact-foot > .wrap:last-child { display: none; }
 .home-page .contact-foot { padding-bottom: 36px; }
 
-/* ================= menu ================= */
-.menu-btn { border: 0; width: 56px; height: 56px; }
-.menu-btn span { left: 11px; right: 11px; height: 2.5px; border-radius: 2px; }
-.menu-btn span:nth-child(1) { top: 19px; } .menu-btn span:nth-child(2) { top: 27px; } .menu-btn span:nth-child(3) { top: 35px; }
-.menu-open .menu-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-open .menu-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-.menu-open .menu-btn span { background: var(--brown); }
-.menu-open .brand { color: var(--brown); }
-/* a light drawer, so the logo and the X stay brown */
-.drawer { background: var(--cream); color: var(--brown); }
-.drawer details { border-bottom: 0; }
-.drawer a.big:hover { color: var(--clay); }
-.drawer details a { color: var(--clay); font-size: 16px; }
-.d-flat { display: none; }
-.drawer .d-nested { display: block; }
-.d-nested ul { display: block; }
-.d-nested ul ul { padding: 0 0 10px 2px; }
-.d-nested > ul > li > details > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font: 600 1.6rem/1.2 var(--serif); padding: 10px 0; }
-.d-nested > ul > li > details > summary::-webkit-details-marker { display: none; }
-.d-nested summary svg { width: 15px; height: 15px; flex: none; opacity: .75; transition: transform .3s var(--ease); }
-.d-nested details[open] > summary svg { transform: rotate(180deg); }
-.d-nested .d-all { margin-top: 6px; font-size: 17px; }
-.d-nested .d-all strong { color: var(--brown); }
-
 /* ================= page headers: square photo banner, fading into the page from below, centred brown title ================= */
 .split-hero { padding-top: var(--header-h); }
 .split-hero .phero-frame { height: auto; aspect-ratio: 1 / 1; border-radius: 0; background: var(--cream); }
@@ -223,6 +199,4 @@
 .split-hero .simple-hero-content { justify-content: flex-end; align-items: center; text-align: center; padding: 0 var(--gutter) 26px; color: var(--brown); }
 .split-hero .simple-hero-content h1 { font-size: 42px; line-height: 1.02; color: var(--brown); text-shadow: none; }
 .split-hero .simple-hero-content .crumbs { order: 2; justify-content: center; margin: 12px 0 0; font-size: 13px; color: color-mix(in srgb, var(--brown) 70%, transparent); text-shadow: none; }
-.drawer .d-nested details > summary svg { transform: none; }
-.drawer .d-nested details[open] > summary svg { transform: rotate(180deg); }
 .contact-page .split-hero .split-hero-img { object-position: 6% center !important; }

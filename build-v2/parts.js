@@ -132,6 +132,7 @@ function layout({ title, description, path: p, body, bodyClass = '', schema = ''
 <link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/menu.css" media="(max-width: 1020px)">
 <link rel="stylesheet" href="/css/mobile.css" media="(max-width: 450px)">
 ${schema}
 </head>
