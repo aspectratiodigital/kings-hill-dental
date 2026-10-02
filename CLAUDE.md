@@ -57,7 +57,7 @@ This repo intentionally excludes:
 ## Design system quick reference
 
 - Colors: `--cream #fff6ec`, `--cream-2 #fbe9d9`, `--brown #461c11`, `--pink #e0a192`, `--blush #ffd0c5`, `--rose #bc7b69`, `--clay #905849`, `--umber`, `--coral`. Ink/line derived from brown.
-- Fonts: `--serif` "KHD Serif" (headings), `--sans` "KHD Body" (body), `--ui` "KHD Display" (buttons/labels/uppercase UI text).
+- Fonts (self-hosted woff2 in `site-v2/fonts/`): `--serif` "KHD Serif" = Cormorant Garamond SemiBold (all headings/titles), `--sans` "KHD Body" = Lato (everything else), `--ui` is an alias of `--sans` (buttons/labels/nav).
 - Easing: `--ease: cubic-bezier(.22, 1, .36, 1)` — use for anything site-authored (not browser defaults).
 - Brand tone: warm and professional, cream/brown/pink palette, serif headings with occasional italic accents. Subtle interactive polish (reveal-on-scroll via `[data-reveal]`/`[data-split]`, accordions, hover underlines) rather than flashy motion.
 - Shared components worth reusing before inventing new ones: `.acc` (accordion, supports multiple instances + `data-single`), `.timeline` (numbered vertical steps with scroll progress), `.checklist` (tick-list with draw-in SVG), `.choice`/`.check` (pill/checkbox inputs), `.cx-tabs` (sliding-pill tab bar, driven by `--w`/`--x` custom properties), `.tx-layout` + `asideCard()` (2-col treatment page layout with sticky booking card).

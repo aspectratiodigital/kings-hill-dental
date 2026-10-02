@@ -39,7 +39,7 @@ ${splitHero({ crumbs: crumbs(['Home', '/'], ['Aesthetics']), title: `Aesthetics`
 <section class="section tint" style="padding-top:0"><div class="wrap cards cards--4">
 ${items.map(([id, t, d, img], i) => `<a class="card" id="${id}" href="/aesthetics/${id}/" data-reveal style="--d:${i}"><div class="card-img"><img src="/img/${img}.webp" alt="" loading="lazy" width="1400" height="900"></div><div class="card-body"><h3>${t}</h3><p>${d}</p><span class="link-arrow" style="align-self:flex-start">Find out More${I.arrow}</span></div></a>`).join('')}
 </div></section>`;
-  return { path: '/aesthetics/', title: 'Aesthetics | Kings Hill Dental', description: 'Non-surgical facial aesthetics in West Malling: anti-wrinkle treatments, Obagi skin care, Profhilo and dermal fillers.', body };
+  return { path: '/aesthetics/', title: 'Aesthetics | Kings Hill Dental', description: 'Non-surgical facial aesthetics in West Malling: anti-wrinkle treatments, Obagi skin care, Profhilo and dermal fillers.', bodyClass: 'wide-intro', body };
 }
 
 const AESTH_LINKS = [['Anti-wrinkle treatments', '/aesthetics/anti-wrinkle/'], ['Skin care', '/aesthetics/skin-care/'], ['Profhilo', '/aesthetics/profhilo/'], ['Dermal fillers', '/aesthetics/dermal-fillers/']];
@@ -350,7 +350,7 @@ ${asideCard('/dentistry/general-preventative/bruxism/')}
 function restorativeField() {
   const treatments = [
     ['fillings', 'Fillings', 'A well-established and inexpensive way to repair tooth damage — often the first treatment we recommend for a cavity, or a cracked or broken tooth.', ['Prevents decay growing deeper and damaging the root', 'Relieves pain and sensitivity', 'Restores the tooth’s functionality', 'A seamless, natural-looking finish'], 'rx-fillings'],
-    ['crowns-bridges', 'Crowns & Bridges', 'A crown restores and protects a heavily filled or broken tooth, while a bridge replaces a missing tooth by joining crowns either side of the gap.', ['Restores functionality and improves aesthetics', 'Durable, and prevents further damage', 'Looks, feels and functions like a natural tooth', 'Can improve speech affected by missing teeth'], 'hero-restorative'],
+    ['crowns-bridges', 'Crowns & Bridges', 'A crown restores and protects a heavily filled or broken tooth, while a bridge replaces a missing tooth by joining crowns either side of the gap.', ['Restores functionality and improves aesthetics', 'Durable, and prevents further damage', 'Looks, feels and functions like a natural tooth', 'Can improve speech affected by missing teeth'], 'tx-crowns-bridges'],
     ['root-canals', 'Root Canal Treatment', 'When the internal tissue of a tooth becomes infected, root canal treatment removes it and seals the tooth, saving it from extraction.', ['Stops the infection spreading further', 'Relieves pain from an infected tooth', 'Less expensive than replacing the tooth', 'A treated tooth can last a long time'], 'topic-restorative'],
     ['dentures', 'Dentures', 'Removable partial or full dentures give you a complete, natural-looking smile, and can also improve how you eat and speak.', ['Natural-looking appearance', 'Can enhance facial shape', 'Improves eating and speaking ability', 'An effective, affordable way to restore your smile'], 'rx-dentures', 'center 18%'],
     ['implants', 'Implants', 'One of the most effective and long-lasting ways to replace one or more missing teeth, using titanium posts that act like natural tooth roots.', ['Sturdy, permanent positioning', 'Protects the jawbone and surrounding teeth', 'Restores speaking and chewing ability', 'Avoids adhesives or daily soaking routines'], 'practice-consultation'],
@@ -377,7 +377,7 @@ function cosmeticField() {
   const treatments = [
     ['whitening', 'Teeth Whitening', 'cx-whitening', 'A simple, effective way to lift years of staining and reveal a brighter smile — professional-strength whitening, applied and monitored by our team rather than a high-street kit.', ['A noticeably brighter smile', 'Professional strength, safely supervised', 'Longer-lasting than over-the-counter kits', 'Safe for teeth and gums'], '50% 25%', '/dentistry/cosmetic/whitening/'],
     ['bonding', 'Composite Bonding', 'cx-bonding', 'A quick, minimally-invasive way to reshape a chipped, gapped or uneven tooth. We sculpt tooth-coloured composite directly onto the tooth, blending it seamlessly with your natural smile.', ['Corrects chips, gaps and uneven edges', 'No drilling in most cases', 'Usually completed in a single visit', 'A natural, seamless finish'], '28% 35%', '/dentistry/cosmetic/bonding/'],
-    ['veneers', 'Veneers', 'hero-cosmetic', 'Thin, custom-made shells bonded to the front of your teeth — ideal for correcting colour, shape and alignment together, for a natural-looking, long-lasting smile.', ['Corrects colour, shape and alignment together', 'Custom shade-matched to your natural teeth', 'Stain-resistant and durable', 'A natural, long-lasting result'], '82% 38%', '/dentistry/cosmetic/veneers/'],
+    ['veneers', 'Veneers', 'tx-veneers', 'Thin, custom-made shells bonded to the front of your teeth — ideal for correcting colour, shape and alignment together, for a natural-looking, long-lasting smile.', ['Corrects colour, shape and alignment together', 'Custom shade-matched to your natural teeth', 'Stain-resistant and durable', 'A natural, long-lasting result'], '82% 38%', '/dentistry/cosmetic/veneers/'],
   ];
   const body = `
 ${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic']), title: `Cosmetic Dentistry`, img: 'hero-cosmetic', alt: `A dentist matching a veneer shade for a patient`, objectPosition: '70% center' })}
@@ -402,7 +402,7 @@ ${ctaBand('Not sure which treatment is right for you?', 'Book an appointment and
 function orthodonticField() {
   const cards = [
     ['Invisalign', 'Clear, removable aligners for a subtle way to straighten your smile — comfortable, virtually invisible, and fitted around your lifestyle.', 'hero-orthodontic', '/dentistry/orthodontic/invisalign/', 'invisalign'],
-    ['Invisalign Go', 'A shorter, more affordable Invisalign treatment designed for mild-to-moderate cases, giving you a straighter smile sooner.', 'topic-orthodontic', '/dentistry/orthodontic/invisalign-go/', 'invisalign-go'],
+    ['Invisalign Go', 'A shorter, more affordable Invisalign treatment designed for mild-to-moderate cases, giving you a straighter smile sooner.', 'tx-invisalign-go', '/dentistry/orthodontic/invisalign-go/', 'invisalign-go'],
     ['Fixed Braces', 'Traditional fixed braces for precise, reliable results — a tried-and-tested option for even the more complex cases.', 'tx-fixed-braces', '/dentistry/orthodontic/fixed-braces/', 'fixed-braces'],
     ['Spark Aligners', 'A clear aligner alternative, virtually invisible in everyday wear, offering a discreet way to straighten your teeth.', 'tx-spark', '/dentistry/orthodontic/spark-aligners/', 'spark-aligners'],
   ];
@@ -445,7 +445,7 @@ ${asideCard('/dentistry/restorative/fillings/', ['Restorative', '/dentistry/rest
 
 function crownsBridges() {
   const body = `
-${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative', '/dentistry/restorative/'], ['Crowns & bridges']), title: 'Crowns & Bridges', img: 'hero-restorative', alt: 'A dentist showing a patient a shade guide during a consultation', objectPosition: '70% center' })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Restorative', '/dentistry/restorative/'], ['Crowns & bridges']), title: 'Crowns & Bridges', img: 'tx-crowns-bridges', alt: 'A porcelain dental bridge beside a tooth model', objectPosition: 'center 96%' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Restore and repair teeth with crowns, or replace a missing tooth with a natural-looking bridge.</p>
@@ -574,7 +574,7 @@ ${asideCard('/dentistry/cosmetic/bonding/', ['Cosmetic', '/dentistry/cosmetic/']
 
 function veneers() {
   const body = `
-${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic', '/dentistry/cosmetic/'], ['Veneers']), title: 'Veneers', img: 'hero-cosmetic', alt: 'A dentist matching a veneer shade for a patient', objectPosition: '70% center' })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Cosmetic', '/dentistry/cosmetic/'], ['Veneers']), title: 'Veneers', img: 'tx-veneers', alt: 'A dentist fitting a veneer for a smiling patient', objectPosition: 'center 40%' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Veneers are usually fitted to the front upper and lower teeth and are made from ceramic, porcelain or composite material. They can be used to enhance your smile and help to protect an affected tooth from further damage.</p>
@@ -620,7 +620,7 @@ ${asideCard('/dentistry/orthodontic/invisalign/', ['Orthodontic', '/dentistry/or
 
 function invisalignGo() {
   const body = `
-${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic', '/dentistry/orthodontic/'], ['Invisalign Go']), title: 'Invisalign Go', img: 'topic-orthodontic', alt: 'An Invisalign Go clear aligner case and aligner models', objectPosition: 'center 72%' })}
+${splitHero({ crumbs: crumbs(['Home', '/'], ['Dentistry', '/dentistry/'], ['Orthodontic', '/dentistry/orthodontic/'], ['Invisalign Go']), title: 'Invisalign Go', img: 'tx-invisalign-go', alt: 'Two clear Invisalign aligners held in cupped hands', objectPosition: 'center' })}
 <section class="section"><div class="wrap tx-layout">
 <div>
 <p class="lede" data-reveal>Invisalign Go aligners are a discreet and efficient way to transform your smile, offering a simplified and fast treatment for mild-to-moderate cases.</p>
@@ -689,17 +689,6 @@ ${asideCard('/dentistry/orthodontic/spark-aligners/', ['Orthodontic', '/dentistr
 module.exports = { dentistry, aesthetics, aestheticsAntiWrinkle, aestheticsSkinCare, aestheticsProfhilo, aestheticsFillers, feesPage, membership, referrals, topicGeneral, examinations, hygiene, childrensDentistry, bruxism, restorativeField, cosmeticField, orthodonticField, fillings, crownsBridges, rootCanals, dentures, implants, whitening, bonding, veneers, invisalign, invisalignGo, fixedBraces, sparkAligners };
 
 /* ---------- LEGAL ---------- */
-function legal(slug, title, p, description) {
-  const c = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '_capture', 'copy.json'), 'utf8'));
-  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const items = c[slug].secs.filter((s) => s.tag === 'SECTION').flatMap((s) => s.items).map((t) => t.replace(/\u200b/g, '').trim()).filter(Boolean);
-  const html = items.map((t) => (/^h2: /.test(t) ? '' : /^h3: /.test(t) ? `<h2 class="h4" style="margin-top:1.6em">${esc(t.slice(4))}</h2>` : /^A\[/.test(t) ? '' : `<p>${esc(t)}</p>`)).join('\n');
-  const body = `${splitHero({ crumbs: crumbs(['Home', '/'], [title]), title: `${title}`, img: 'practice-exterior', alt: `Kings Hill Dental` })}
-<section class="section"><div class="wrap" style="max-width:820px"><div class="stack">${html}</div></div></section>`;
-  return { path: p, title: title + ' | Kings Hill Dental', description, body };
-}
-const accessibility = () => legal('blank-5', 'Accessibility Statement', '/accessibility-statement/', 'Accessibility statement for the Kings Hill Dental website.');
-
 /* privacy, terms & conditions and complaints procedure: real copy from kingshilldental.co.uk
    (the Wix capture only held generic placeholder boilerplate for the privacy policy, and never
    captured terms & conditions or a complaints page at all). Clickable links in the source copy
@@ -877,6 +866,5 @@ function complaintsProcedure() {
 }
 
 module.exports.privacy = privacy;
-module.exports.accessibility = accessibility;
 module.exports.termsConditions = termsConditions;
 module.exports.complaintsProcedure = complaintsProcedure;

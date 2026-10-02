@@ -29,6 +29,9 @@ const jobs = [
   ['KHD Stock/Crowns and Bridges.jpg', 'hero-restorative', 2000, 80],
   ['KHD Stock/Veneers.jpg', 'hero-cosmetic', 2000, 80],
   ['KHD Stock/Invisalign.jpg', 'hero-orthodontic', 2000, 80],
+  ['External Stock/invisalign-go-aligners.jpg', 'tx-invisalign-go', 1800, 80], // Pexels photo, free for commercial use — replaces the low-res KHD Stock/Invisalign Go.jpg
+  ['External Stock/veneer-fitting.jpg', 'tx-veneers', 1800, 80], // Pexels photo, free for commercial use — replaces KHD Stock/Veneers.jpg, which duplicated the Cosmetic hub photo
+  ['External Stock/crown-bridge-model.jpg', 'tx-crowns-bridges', 1800, 80], // Pexels photo, free for commercial use — replaces KHD Stock/Crowns and Bridges.jpg, which duplicated the Restorative hub photo
   ['External Stock/fixed-braces.jpg', 'tx-fixed-braces', 1800, 80], // Pexels photo, free for commercial use — no clean local asset existed for this treatment
   ['Stock Assets/Spark Aligners.jpg', 'tx-spark', 1800, 80],
   ['KHD Stock/Composite Bonding.jpg', 'cx-bonding', 1400, 80],

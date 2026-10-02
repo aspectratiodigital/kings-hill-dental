@@ -229,7 +229,7 @@ ${infoList()}
 ${hoursTable()}
 </div>
 </div></section>`;
-  return { path: '/contact/', title: 'Contact | Kings Hill Dental', description: 'Contact Kings Hill Dental in West Malling: phone, email, WhatsApp, opening hours and a simple enquiry form.', body };
+  return { path: '/contact/', title: 'Contact | Kings Hill Dental', description: 'Contact Kings Hill Dental in West Malling: phone, email, WhatsApp, opening hours and a simple enquiry form.', bodyClass: 'contact-page', body };
 }
 
 module.exports = { home, about, contact, partners, contactForm, infoList, hoursTable, arrowBtn, clip };

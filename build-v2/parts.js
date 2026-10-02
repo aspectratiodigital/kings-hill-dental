@@ -95,7 +95,7 @@ function header(current) {
 const HOURS = [['Monday', '09:30 - 17:30', 1], ['Tuesday', '09:30 - 18:30', 2], ['Wednesday', '09:30 - 18:30', 3], ['Thursday', '09:30 - 18:30', 4], ['Friday', '09:30 - 14:30', 5], ['Saturday', 'By Appointment', 6], ['Sunday', 'Closed', 0]];
 
 function footerBottom() {
-  return `<div class="foot-bottom"><span>© <span class="year">2026</span> Kings Hill Dental</span><span><a href="/privacy-policy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions/">Terms &amp; conditions</a> &nbsp;·&nbsp; <a href="/complaints-procedure/">Complaints procedure</a> &nbsp;·&nbsp; <a href="/accessibility-statement/">Accessibility</a></span><span>Website by <a class="credit-link" href="http://aspectratiodigital.com" target="_blank" rel="noopener">Aspect Ratio Digital</a></span></div>`;
+  return `<div class="foot-bottom"><span>© <span class="year">2026</span> Kings Hill Dental</span><span><a href="/privacy-policy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions/">Terms &amp; conditions</a> &nbsp;·&nbsp; <a href="/complaints-procedure/">Complaints procedure</a></span><span>Website by <a class="credit-link" href="http://aspectratiodigital.com" target="_blank" rel="noopener">Aspect Ratio Digital</a></span></div>`;
 }
 
 function footer() {
@@ -122,8 +122,8 @@ function layout({ title, description, path: p, body, bodyClass = '', schema = ''
 <meta name="theme-color" content="#fff6ec">
 <meta name="form-endpoint" content="">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23461c11'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='%23ffd0c5'%3EK%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="/fonts/heading.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/mandioca-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/home.css">
 ${schema}

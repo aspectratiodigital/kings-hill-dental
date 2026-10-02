@@ -705,3 +705,16 @@ details[id], .tA-item[id], .cx-tabs button[id] { scroll-margin-top: calc(var(--h
 .mc-v1-pills .pill:hover { transform: translateX(4px); }
 .mc-v1-pills .pill .fact-ic { width: 18px; height: 18px; }
 .mc-v1-pills .pill b { font-family: var(--ui); }
+
+/* contact: the terrarium sits at the left of the photo, so the photo is slid right. The box moves
+   17.6% of its own width (12% of the frame) and the standard fade (transparent→black over 42% of
+   the original box) is shifted back by the same amount so it lands exactly where it does on every
+   other header; a short feather on the photo's own left edge hides the seam it would otherwise leave */
+@media (min-width: 900px) {
+  .contact-page .split-hero .split-hero-img {
+    left: 44%; object-position: left center;
+    -webkit-mask-image: linear-gradient(90deg, transparent -17.6%, #000 24.4%), linear-gradient(90deg, transparent 0%, #000 10%);
+    mask-image: linear-gradient(90deg, transparent -17.6%, #000 24.4%), linear-gradient(90deg, transparent 0%, #000 10%);
+    -webkit-mask-composite: source-in; mask-composite: intersect;
+  }
+}

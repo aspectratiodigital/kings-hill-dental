@@ -1,18 +1,18 @@
 /* Kings Hill Dental — hand-built stylesheet. Palette, fonts and copy carried over from the original design. */
-@font-face { font-family: "KHD Serif"; src: url(../fonts/heading.woff2) format("woff2"); font-display: swap; }
-@font-face { font-family: "KHD Body"; src: url(../fonts/mandioca-400.woff2) format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "KHD Body"; src: url(../fonts/mandioca-400i.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "KHD Body"; src: url(../fonts/mandioca-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "KHD Display"; src: url(../fonts/madefor-display-bold.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "KHD Serif"; src: url(../fonts/cormorant-garamond-600.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "KHD Serif"; src: url(../fonts/cormorant-garamond-600i.woff2) format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "KHD Body"; src: url(../fonts/lato-400.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "KHD Body"; src: url(../fonts/lato-400i.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "KHD Body"; src: url(../fonts/lato-700.woff2) format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
   --cream: #fff6ec; --cream-2: #fbe9d9; --brown: #461c11; --pink: #e0a192; --blush: #ffd0c5;
   --rose: #bc7b69; --clay: #905849; --umber: #76483c; --coral: #ff9a7e;
   --underline: #b07265;
   --ink: var(--brown); --ink-soft: #6b4438; --line: rgba(70, 28, 17, .16);
-  --serif: "KHD Serif", "Iowan Old Style", Georgia, serif;
-  --sans: "KHD Body", "Helvetica Neue", Arial, sans-serif;
-  --ui: "KHD Display", "KHD Body", Arial, sans-serif;
+  --serif: "KHD Serif", "Cormorant Garamond", Georgia, serif;
+  --sans: "KHD Body", Lato, "Helvetica Neue", Arial, sans-serif;
+  --ui: var(--sans);
   --gutter: clamp(20px, 4.4vw, 64px);
   --wrap: 1360px;
   --ease: cubic-bezier(.22, 1, .36, 1);
@@ -459,8 +459,9 @@ legend { padding: 0; font: 700 15px/1.3 var(--ui); margin-bottom: 12px; }
 .timeline .prog { position: absolute; left: 25px; top: 22px; width: 2px; height: 0; background: var(--brown); }
 .timeline li { position: relative; padding: 0 0 34px 68px; counter-increment: st; }
 .timeline li:last-child { padding-bottom: 0; }
+.panel-in > .timeline:first-child { margin-top: 5px; }
 .timeline li::before { content: counter(st); position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--cream); border: 2px solid var(--line); display: grid; place-items: center; font: 700 15px/1 var(--ui); transition: background-color .5s, color .5s, border-color .5s, transform .6s var(--ease); z-index: 1; }
-.timeline li.is-on::before { background: var(--brown); color: var(--cream); border-color: var(--brown); transform: scale(1.06); }
+.timeline li.is-on::before { background: var(--brown); color: var(--cream); border-color: var(--brown); transform: scale(1.06); transform-origin: 50% 0; }
 .timeline li p { margin: 0; }
 .checklist { display: grid; gap: 14px; margin: 26px 0; }
 .checklist li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; font-size: 1.02em; }
